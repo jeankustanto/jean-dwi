@@ -71,27 +71,18 @@
             transform: scale(0);
         }
         
-        /* Love Image Styles */
-        .love-image {
-            width: 80px;
-            height: 80px;
+        /* Couple Photo Styles (mengganti love image) */
+        .couple-photo {
+            width: 250px;
+            height: 250px;
+            border-radius: 10px;
+            object-fit: cover;
             margin: 15px 0;
-            animation: scaleIn 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, heartbeat 2s ease-in-out infinite;
-            animation-delay: 1.4s, 2.5s;
+            animation: scaleIn 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+            animation-delay: 1.4s;
             opacity: 0;
             transform: scale(0);
-        }
-        
-        @keyframes heartbeat {
-            0%, 100% {
-                transform: scale(1);
-            }
-            10%, 30% {
-                transform: scale(1.1);
-            }
-            20%, 40% {
-                transform: scale(1);
-            }
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Bayangan halus */
         }
         
         /* Button Styles */
@@ -123,20 +114,6 @@
             border-color: rgba(25, 25, 112, 0.9); /* Border biru navy soft saat hover */
             transform: translateY(-5px);
             box-shadow: 0 8px 25px rgba(25, 25, 112, 0.4); /* Shadow biru navy soft saat hover */
-        }
-        
-        .open-btn i {
-            animation: envelopeFloat 3s ease-in-out infinite;
-            animation-delay: 2.5s;
-        }
-        
-        @keyframes envelopeFloat {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-5px);
-            }
         }
         
         @keyframes scaleIn {
@@ -223,23 +200,21 @@
             
             .container {
                 padding: 15px;
-                background-color: rgba(0, 0, 0, 0.4); /* Tambahkan background semi-transparan untuk mobile */
-                border-radius: 15px;
                 width: 90%;
                 max-width: 400px;
                 margin: 0 auto;
             }
             
             .invitation-subtitle {
-                color: rgba(255, 255, 255, 0.9);
+                color: white;
                 font-size: 1.1rem;
                 margin-bottom: 15px;
-                text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+                text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5); /* Bayangan teks untuk keterbacaan */
             }
             
-            .love-image {
-                width: 70px;
-                height: 70px;
+            .couple-photo {
+                width: 220px;
+                height: 220px;
                 margin: 10px 0;
             }
             
@@ -249,7 +224,6 @@
                 border: 2px solid rgba(46, 125, 50, 0.8);
                 padding: 14px 30px;
                 font-size: 1rem;
-                backdrop-filter: blur(5px);
                 margin-top: 15px;
             }
             
@@ -275,9 +249,9 @@
                 margin-bottom: 12px;
             }
             
-            .love-image {
-                width: 60px;
-                height: 60px;
+            .couple-photo {
+                width: 200px;
+                height: 200px;
                 margin: 8px 0;
             }
             
@@ -304,7 +278,7 @@
     
     <div class="container">
         <p class="invitation-subtitle">Nama yang diundang</p>
-        <img src="images/love.png" alt="Love" class="love-image">
+        <img src="images/love.png" alt="Foto Pengantin" class="couple-photo">
         <button class="open-btn" onclick="openInvitation()">
             <i class="fas fa-envelope-open-text"></i> Invitation Open
         </button>
@@ -315,20 +289,6 @@
         function openInvitation() {
             // Ganti URL ini dengan halaman undangan lengkap Anda
             window.location.href = "invitation.html";
-        }
-        
-        // Menambahkan efek parallax sederhana untuk background
-        document.addEventListener('mousemove', (e) => {
-            const x = e.clientX / window.innerWidth;
-            const y = e.clientY / window.innerHeight;
-            
-            const background = document.querySelector('.background');
-            background.style.backgroundPosition = `${50 + x * 5}% ${50 + y * 5}%`;
-        });
-        
-        // Nonaktifkan efek parallax di mobile untuk performa lebih baik
-        if (window.innerWidth <= 768) {
-            document.removeEventListener('mousemove', null);
         }
     </script>
 </body>
