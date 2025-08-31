@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Undangan Pernikahan</title>
+    <title>Undangan Pernikahan | Jean & Dwi</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500&family=Loster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500&family=Lobster&family=Amiri+Quran&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -14,212 +14,150 @@
         }
         
         body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #1a2a6c, #2a3990);
             height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        /* Mobile Frame */
+        .mobile-frame {
+            width: 320px;
+            height: 640px;
+            border-radius: 36px;
+            border: 12px solid #222;
             overflow: hidden;
             position: relative;
-            font-family: 'Poppins', sans-serif;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            background: #000;
+            z-index: 2;
         }
         
-        /* Background Styles */
-        .background {
+        .mobile-frame::before {
+            content: '';
             position: absolute;
             top: 0;
-            left: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+            height: 25px;
+            background: #222;
+            border-radius: 0 0 15px 15px;
+            z-index: 10;
+        }
+        
+        .mobile-screen {
             width: 100%;
             height: 100%;
-            background-color: #003092; /* Biru lebih gelap */
-            animation: backgroundPulse 8s infinite alternate;
+            background: linear-gradient(135deg, #1a2a6c, #2a3990);
+            overflow: hidden;
+            position: relative;
         }
         
-        @keyframes backgroundPulse {
-            0% {
-                background-color: #003092;
-            }
-            100% {
-                background-color: #0047AB; /* Biru sedikit lebih terang untuk efek pulse */
-            }
-        }
-        
-        /* Fog Effect */
-        .fog {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(ellipse at center, 
-                rgba(0, 0, 0, 0) 0%, 
-                rgba(0, 0, 0, 0.4) 50%, 
-                rgba(0, 0, 0, 0.7) 100%);
-            z-index: 1;
-            animation: fogMove 20s infinite alternate ease-in-out;
-        }
-        
-        @keyframes fogMove {
-            0%, 100% {
-                opacity: 0.7;
-                transform: scale(1);
-            }
-            50% {
-                opacity: 0.9;
-                transform: scale(1.05);
-            }
-        }
-        
-        /* Container Styles */
-        .container {
+        /* Mobile Container */
+        .mobile-container {
             position: relative;
             z-index: 2;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh;
+            height: 100%;
             padding: 20px;
             text-align: center;
         }
         
-        /* Flower Ornament Styles */
-        .flower-ornament {
-            position: absolute;
-            top: 20px;
-            left: 0;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            z-index: 2;
-            animation: flowerFloat 6s ease-in-out infinite;
+        .mobile-arabic {
+            color: #ffffff;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            font-family: 'Amiri Quran', serif;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+            animation-delay: 0.3s;
         }
         
-        .flower-ornament img {
-            width: 150px;
-            height: auto;
-            opacity: 0.8;
-        }
-        
-        @keyframes flowerFloat {
-            0%, 100% {
-                transform: translateY(0) rotate(0deg);
-            }
-            50% {
-                transform: translateY(-10px) rotate(3deg);
-            }
-        }
-        
-        /* Arabic Text Styles */
-        .arabic-text {
+        .mobile-title {
             color: #ffffff;
             font-size: 1.8rem;
-            margin-bottom: 30px;
-            text-align: center;
-            font-weight: 400;
-            font-family: 'Amiri Quran', serif;
-            animation: scaleIn 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-            animation-delay: 0.3s;
-            opacity: 0;
-            transform: scale(0);
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-        }
-        
-        /* Invitation Title Styles */
-        .invitation-title {
-            color: #ffffff;
-            font-size: 2.5rem;
             margin-bottom: 20px;
-            text-align: center;
-            font-weight: 400;
-            font-family: 'Loster', cursive;
-            animation: scaleIn 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-            animation-delay: 0.6s;
+            font-family: 'Lobster', cursive;
+            letter-spacing: 1px;
             opacity: 0;
-            transform: scale(0);
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+            animation: fadeIn 1s forwards;
+            animation-delay: 0.5s;
         }
         
-        /* Couple Photo Styles */
-        .couple-photo {
-            width: 100%;
+        .mobile-photo {
+            width: 80%;
             height: auto;
-            object-fit: cover;
+            border-radius: 8px;
             margin-bottom: 20px;
-            animation: scaleIn 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-            animation-delay: 0.9s;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
             opacity: 0;
-            transform: scale(0);
+            animation: fadeIn 1s forwards;
+            animation-delay: 0.7s;
         }
         
-        /* Invitation Subtitle Styles */
-        .invitation-subtitle {
-            color: #ffffff; /* Putih untuk kontras yang lebih baik dengan background gelap */
+        .mobile-name {
+            color: #ffffff;
             font-size: 1.2rem;
             margin-bottom: 20px;
-            text-align: center;
-            font-weight: 400;
-            font-family: 'Playfair Display', serif;
-            animation: scaleIn 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-            animation-delay: 1.2s;
+            font-family: 'Dancing Script', cursive;
             opacity: 0;
-            transform: scale(0);
+            animation: fadeIn 1s forwards;
+            animation-delay: 0.9s;
         }
         
-        /* Button Styles */
-        .open-btn {
-            background-color: rgba(46, 125, 50, 0.8); /* Hijau dengan transparansi */
+        .mobile-button {
+            background: linear-gradient(90deg, #fdbb2d, #b21f1f);
             color: white;
-            border: 2px solid #2e7d32;
-            padding: 15px 35px;
-            font-size: 1.1rem;
-            border-radius: 50px;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-size: 0.9rem;
             cursor: pointer;
             display: flex;
             align-items: center;
-            gap: 12px;
-            transition: all 0.4s ease;
+            gap: 8px;
             font-family: 'Poppins', sans-serif;
-            font-weight: 500;
-            letter-spacing: 0.5px;
-            box-shadow: 0 4px 15px rgba(46, 125, 50, 0.3);
-            animation: scaleIn 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-            animation-delay: 1.5s;
+            font-weight: 600;
+            box-shadow: 0 5px 15px rgba(178, 31, 31, 0.4);
             opacity: 0;
-            transform: scale(0);
+            animation: fadeIn 1s forwards;
+            animation-delay: 1.1s;
+            transition: all 0.3s ease;
         }
         
-        .open-btn:hover {
-            background-color: rgba(25, 25, 112, 0.9); /* Biru navy soft saat hover */
-            border-color: rgba(25, 25, 112, 0.9); /* Border biru navy soft saat hover */
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(25, 25, 112, 0.4); /* Shadow biru navy soft saat hover */
+        .mobile-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(178, 31, 31, 0.5);
         }
         
-        @keyframes scaleIn {
-            0% {
+        /* Animations */
+        @keyframes fadeIn {
+            from {
                 opacity: 0;
-                transform: scale(0);
             }
-            70% {
+            to {
                 opacity: 1;
-                transform: scale(1.05);
-            }
-            100% {
-                opacity: 1;
-                transform: scale(1);
             }
         }
         
-        /* Stars Animation */
-        .stars-container {
+        /* Background Effects */
+        .mobile-stars {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            overflow: hidden;
             z-index: 1;
-            pointer-events: none;
         }
         
-        .star {
+        .mobile-star {
             position: absolute;
             background-color: white;
             border-radius: 50%;
@@ -237,140 +175,126 @@
             }
         }
         
-        /* Snow Animation */
-        .snow-container {
+        /* Decorative Elements */
+        .flower-left, .flower-right {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
             z-index: 1;
-            pointer-events: none;
+            opacity: 0.7;
         }
         
-        .snowflake {
-            position: absolute;
-            top: -10px;
-            color: white;
-            font-size: 1em;
-            animation: fall linear infinite;
+        .flower-left {
+            top: 10%;
+            left: 5%;
+            transform: rotate(-15deg);
+            animation: floatLeft 8s ease-in-out infinite;
         }
         
-        @keyframes fall {
-            from {
-                transform: translateY(-100px);
+        .flower-right {
+            top: 10%;
+            right: 5%;
+            transform: rotate(15deg);
+            animation: floatRight 8s ease-in-out infinite;
+        }
+        
+        @keyframes floatLeft {
+            0%, 100% {
+                transform: rotate(-15deg) translateY(0);
             }
-            to {
-                transform: translateY(calc(100vh + 100px));
+            50% {
+                transform: rotate(-20deg) translateY(-10px);
             }
         }
         
-        /* Mobile Responsive Styles */
-        @media (max-width: 768px) {
-            .container {
-                padding: 15px;
-                width: 90%;
-                max-width: 400px;
-                margin: 0 auto;
+        @keyframes floatRight {
+            0%, 100% {
+                transform: rotate(15deg) translateY(0);
+            }
+            50% {
+                transform: rotate(20deg) translateY(-10px);
+            }
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 480px) {
+            .mobile-frame {
+                width: 280px;
+                height: 560px;
             }
             
-            .flower-ornament img {
-                width: 120px;
-            }
-            
-            .arabic-text {
-                font-size: 1.5rem;
-                margin-bottom: 20px;
-            }
-            
-            .invitation-title {
-                font-size: 2rem;
-                margin-bottom: 15px;
-            }
-            
-            .couple-photo {
-                width: 100%;
-                margin-bottom: 15px;
-            }
-            
-            .invitation-subtitle {
-                color: #ffffff; /* Putih untuk kontras yang lebih baik */
-                font-size: 1.1rem;
-                margin-bottom: 15px;
-            }
-            
-            .open-btn {
-                background-color: rgba(46, 125, 50, 0.8);
-                color: white;
-                border: 2px solid rgba(46, 125, 50, 0.8);
-                padding: 14px 30px;
+            .mobile-arabic {
                 font-size: 1rem;
             }
             
-            .open-btn:hover {
-                background-color: rgba(25, 25, 112, 0.9); /* Biru navy soft saat hover di mobile */
-                border-color: rgba(25, 25, 112, 0.9); /* Border biru navy soft saat hover di mobile */
+            .mobile-title {
+                font-size: 1.5rem;
+            }
+            
+            .mobile-name {
+                font-size: 1rem;
+            }
+            
+            .mobile-button {
+                padding: 10px 20px;
+                font-size: 0.8rem;
             }
         }
         
-        @media (max-width: 480px) {
-            .container {
-                padding: 12px;
-                width: 95%;
+        @media (max-width: 320px) {
+            .mobile-frame {
+                width: 240px;
+                height: 480px;
+                border-width: 8px;
             }
             
-            .flower-ornament img {
-                width: 100px;
+            .mobile-arabic {
+                font-size: 0.9rem;
+                margin-bottom: 10px;
             }
             
-            .arabic-text {
+            .mobile-title {
                 font-size: 1.3rem;
                 margin-bottom: 15px;
             }
             
-            .invitation-title {
-                font-size: 1.8rem;
-                margin-bottom: 12px;
+            .mobile-photo {
+                margin-bottom: 15px;
             }
             
-            .couple-photo {
-                width: 100%;
-                margin-bottom: 12px;
+            .mobile-name {
+                font-size: 0.9rem;
+                margin-bottom: 15px;
             }
             
-            .invitation-subtitle {
-                font-size: 1rem;
-                margin-bottom: 12px;
-            }
-            
-            .open-btn {
-                padding: 12px 25px;
-                font-size: 0.95rem;
+            .mobile-button {
+                padding: 8px 15px;
+                font-size: 0.7rem;
             }
         }
     </style>
 </head>
 <body>
-    <div class="background"></div>
-    <div class="fog"></div>
-    
-    <div class="stars-container" id="stars-container"></div>
-    
-    <div class="snow-container" id="snow-container"></div>
-    
-    <div class="flower-ornament">
-        <img src="images/flower1.png" alt="Flower Ornament">
+    <!-- Decorative Elements -->
+    <div class="flower-left">
+        <img src="images/flower1.png" alt="Flower Ornament" style="width: 120px; height: auto;">
+    </div>
+    <div class="flower-right">
+        <img src="images/flower1.png" alt="Flower Ornament" style="width: 120px; height: auto;">
     </div>
     
-    <div class="container">
-        <p class="arabic-text">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</p>
-        <h1 class="invitation-title">The Invitation</h1>
-        <img src="images/love.png" alt="Foto Pengantin" class="couple-photo">
-        <p class="invitation-subtitle">Nama yang diundang</p>
-        <button class="open-btn" onclick="openInvitation()">
-            <i class="fas fa-envelope-open-text"></i> Invitation Open
-        </button>
+    <!-- Mobile Frame -->
+    <div class="mobile-frame">
+        <div class="mobile-screen">
+            <div class="mobile-stars" id="mobile-stars"></div>
+            <div class="mobile-container">
+                <p class="mobile-arabic">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</p>
+                <h1 class="mobile-title">The Wedding Invitation</h1>
+                <img src="images/love.png" alt="Foto Pengantin" class="mobile-photo">
+                <p class="mobile-name">Kepada Yth. Bapak/Ibu/Saudara/i</p>
+                <button class="mobile-button" onclick="openInvitation()">
+                    <i class="fas fa-envelope-open-text"></i> Buka Undangan
+                </button>
+            </div>
+        </div>
     </div>
 
     <script>
@@ -382,15 +306,15 @@
         
         // Fungsi untuk membuat bintang-bintang
         function createStars() {
-            const starsContainer = document.getElementById('stars-container');
-            const starsCount = 100;
+            const starsContainer = document.getElementById('mobile-stars');
+            const starsCount = 50;
             
             for (let i = 0; i < starsCount; i++) {
                 const star = document.createElement('div');
-                star.classList.add('star');
+                star.classList.add('mobile-star');
                 
                 // Ukuran acak untuk bintang
-                const size = Math.random() * 3 + 1;
+                const size = Math.random() * 2 + 1;
                 star.style.width = `${size}px`;
                 star.style.height = `${size}px`;
                 
@@ -405,42 +329,9 @@
             }
         }
         
-        // Fungsi untuk membuat efek salju
-        function createSnowflakes() {
-            const snowContainer = document.getElementById('snow-container');
-            const snowflakeSymbols = ['❄', '❅', '❆'];
-            const snowflakeCount = 30; // Dikurangi agar tidak terlalu banyak dengan bintang
-            
-            for (let i = 0; i < snowflakeCount; i++) {
-                const snowflake = document.createElement('div');
-                snowflake.classList.add('snowflake');
-                snowflake.innerHTML = snowflakeSymbols[Math.floor(Math.random() * snowflakeSymbols.length)];
-                
-                // Posisi horizontal acak
-                snowflake.style.left = Math.random() * 100 + '%';
-                
-                // Ukuran acak
-                const size = Math.random() * 0.8 + 0.8; // Antara 0.8 dan 1.6
-                snowflake.style.fontSize = size + 'em';
-                
-                // Durasi animasi acak
-                const duration = Math.random() * 3 + 5; // Antara 5 dan 8 detik
-                snowflake.style.animationDuration = duration + 's';
-                
-                // Opacity acak
-                snowflake.style.opacity = Math.random() * 0.6 + 0.4; // Antara 0.4 dan 1
-                
-                // Delay animasi acak
-                snowflake.style.animationDelay = Math.random() * 5 + 's';
-                
-                snowContainer.appendChild(snowflake);
-            }
-        }
-        
         // Panggil fungsi saat halaman dimuat
         window.addEventListener('load', () => {
             createStars();
-            createSnowflakes();
         });
     </script>
 </body>
