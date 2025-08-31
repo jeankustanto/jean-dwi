@@ -57,14 +57,14 @@
             text-align: center;
         }
         
-        /* Cover Image Styles */
+        /* Cover Image Styles - Frame Removed */
         .cover-image {
             width: 80%;
             max-width: 400px;
             height: auto;
-            border-radius: 15px;
+            border-radius: 0; /* Menghilangkan border radius */
             object-fit: cover;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            box-shadow: none; /* Menghilangkan shadow */
             margin-bottom: 40px;
             animation: scaleIn 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
             animation-delay: 0.5s;
@@ -139,9 +139,10 @@
         }
         
         .open-btn:hover {
-            background-color: rgba(56, 142, 60, 0.9);
+            background-color: rgba(25, 25, 112, 0.9); /* Biru navy soft saat hover */
+            border-color: rgba(25, 25, 112, 0.9); /* Border biru navy soft saat hover */
             transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(46, 125, 50, 0.4);
+            box-shadow: 0 8px 25px rgba(25, 25, 112, 0.4); /* Shadow biru navy soft saat hover */
         }
         
         .open-btn i {
@@ -239,7 +240,7 @@
             
             .cover-image {
                 width: 85%;
-                border-radius: 12px;
+                border-radius: 0; /* Tetap tanpa border radius di mobile */
                 margin-bottom: 30px;
             }
             
@@ -267,7 +268,8 @@
             }
             
             .open-btn:hover {
-                background-color: rgba(255, 255, 255, 0.3);
+                background-color: rgba(25, 25, 112, 0.7); /* Biru navy soft saat hover di mobile */
+                border-color: rgba(25, 25, 112, 0.7); /* Border biru navy soft saat hover di mobile */
             }
             
             .dove {
@@ -288,7 +290,7 @@
             
             .cover-image {
                 width: 90%;
-                border-radius: 10px;
+                border-radius: 0; /* Tetap tanpa border radius di mobile kecil */
                 margin-bottom: 25px;
             }
             
@@ -333,7 +335,6 @@
             <i class="fas fa-envelope-open-text"></i> Buka Undangan
         </button>
     </div>
-
     <script>
         // Fungsi untuk membuka undangan
         function openInvitation() {
