@@ -57,6 +57,18 @@
             text-align: center;
         }
         
+        /* Couple Photo Styles (mengganti love image) */
+        .couple-photo {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            margin-bottom: 20px;
+            animation: scaleIn 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+            animation-delay: 0.5s;
+            opacity: 0;
+            transform: scale(0);
+        }
+        
         /* Invitation Subtitle Styles */
         .invitation-subtitle {
             color: #388e3c; /* Hijau medium untuk desktop */
@@ -69,20 +81,6 @@
             animation-delay: 1.2s;
             opacity: 0;
             transform: scale(0);
-        }
-        
-        /* Couple Photo Styles (mengganti love image) */
-        .couple-photo {
-            width: 250px;
-            height: 250px;
-            border-radius: 10px;
-            object-fit: cover;
-            margin: 15px 0;
-            animation: scaleIn 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-            animation-delay: 1.4s;
-            opacity: 0;
-            transform: scale(0);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Bayangan halus */
         }
         
         /* Button Styles */
@@ -106,7 +104,6 @@
             animation-delay: 1.5s;
             opacity: 0;
             transform: scale(0);
-            margin-top: 20px;
         }
         
         .open-btn:hover {
@@ -205,17 +202,16 @@
                 margin: 0 auto;
             }
             
+            .couple-photo {
+                width: 100%;
+                margin-bottom: 15px;
+            }
+            
             .invitation-subtitle {
                 color: white;
                 font-size: 1.1rem;
                 margin-bottom: 15px;
                 text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5); /* Bayangan teks untuk keterbacaan */
-            }
-            
-            .couple-photo {
-                width: 220px;
-                height: 220px;
-                margin: 10px 0;
             }
             
             .open-btn {
@@ -224,7 +220,6 @@
                 border: 2px solid rgba(46, 125, 50, 0.8);
                 padding: 14px 30px;
                 font-size: 1rem;
-                margin-top: 15px;
             }
             
             .open-btn:hover {
@@ -244,21 +239,19 @@
                 width: 95%;
             }
             
+            .couple-photo {
+                width: 100%;
+                margin-bottom: 12px;
+            }
+            
             .invitation-subtitle {
                 font-size: 1rem;
                 margin-bottom: 12px;
             }
             
-            .couple-photo {
-                width: 200px;
-                height: 200px;
-                margin: 8px 0;
-            }
-            
             .open-btn {
                 padding: 12px 25px;
                 font-size: 0.95rem;
-                margin-top: 12px;
             }
             
             .dove {
@@ -277,8 +270,8 @@
     </div>
     
     <div class="container">
-        <p class="invitation-subtitle">Nama yang diundang</p>
         <img src="images/love.png" alt="Foto Pengantin" class="couple-photo">
+        <p class="invitation-subtitle">Nama yang diundang</p>
         <button class="open-btn" onclick="openInvitation()">
             <i class="fas fa-envelope-open-text"></i> Invitation Open
         </button>
