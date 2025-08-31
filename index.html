@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Undangan Pernikahan</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -53,88 +53,32 @@
             padding: 20px;
         }
         
-        .cover-image-container {
-            position: relative;
+        .cover-image {
             width: 80%;
             max-width: 400px;
-            margin-bottom: 30px;
-            animation: fadeInZoom 1.5s ease-out, float 6s ease-in-out infinite;
-            animation-delay: 0.5s, 2s;
-            animation-fill-mode: both;
-            opacity: 0;
-            transform: scale(0.8);
-        }
-        
-        .cover-image {
-            width: 100%;
             height: auto;
             border-radius: 10px;
             object-fit: cover;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-        
-        .names-on-image {
-            position: absolute;
-            top: 20px;
-            left: 0;
-            width: 100%;
-            text-align: center;
-            color: white;
-            font-family: 'Great Vibes', cursive;
-            font-size: 2.5rem;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
-            animation: fadeInDown 1.5s ease-out;
-            animation-delay: 1s;
-            animation-fill-mode: both;
+            margin-bottom: 30px;
+            animation: scaleIn 1s ease-out forwards;
+            animation-delay: 0.5s;
             opacity: 0;
-            transform: translateY(-20px);
-            z-index: 3;
+            transform: scale(0);
         }
         
-        .names-on-image .ampersand {
-            font-size: 2rem;
-            margin: 0 10px;
-            display: inline-block;
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes fadeInDown {
+        @keyframes scaleIn {
             0% {
                 opacity: 0;
-                transform: translateY(-20px);
+                transform: scale(0);
             }
-            100% {
+            70% {
                 opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes pulse {
-            0%, 100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.2);
-            }
-        }
-        
-        @keyframes fadeInZoom {
-            0% {
-                opacity: 0;
-                transform: scale(0.8);
+                transform: scale(1.1);
             }
             100% {
                 opacity: 1;
                 transform: scale(1);
-            }
-        }
-        
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-15px);
             }
         }
         
@@ -146,22 +90,10 @@
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
             font-weight: bold;
             font-family: 'Dancing Script', cursive;
-            animation: fadeInUp 1.5s ease-out, textGlow 3s ease-in-out infinite;
-            animation-delay: 1s, 3s;
-            animation-fill-mode: both;
+            animation: scaleIn 1s ease-out forwards, textGlow 3s ease-in-out infinite;
+            animation-delay: 1s, 2s;
             opacity: 0;
-            transform: translateY(20px);
-        }
-        
-        @keyframes fadeInUp {
-            0% {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            transform: scale(0);
         }
         
         @keyframes textGlow {
@@ -186,11 +118,10 @@
             gap: 10px;
             transition: all 0.3s ease;
             backdrop-filter: blur(5px);
-            animation: fadeInUp 1.5s ease-out, buttonPulse 2s ease-in-out infinite;
-            animation-delay: 1.5s, 4s;
-            animation-fill-mode: both;
+            animation: scaleIn 1s ease-out forwards, buttonPulse 2s ease-in-out infinite;
+            animation-delay: 1.5s, 3s;
             opacity: 0;
-            transform: translateY(20px);
+            transform: scale(0);
         }
         
         .open-btn:hover {
@@ -210,7 +141,7 @@
         
         .open-btn i {
             animation: envelopeShake 3s ease-in-out infinite;
-            animation-delay: 5s;
+            animation-delay: 4s;
         }
         
         @keyframes envelopeShake {
@@ -243,25 +174,28 @@
             font-size: 2rem;
             color: white;
             opacity: 0.8;
-            animation: fly 15s linear infinite;
+            animation: fly 15s linear infinite, scaleIn 1s ease-out forwards;
+            animation-delay: 0s, 0.2s;
+            opacity: 0;
+            transform: scale(0);
         }
         
         .dove:nth-child(1) {
             top: 20%;
-            animation-duration: 20s;
-            animation-delay: 0s;
+            animation-duration: 20s, 1s;
+            animation-delay: 0s, 0.2s;
         }
         
         .dove:nth-child(2) {
             top: 40%;
-            animation-duration: 25s;
-            animation-delay: 5s;
+            animation-duration: 25s, 1s;
+            animation-delay: 5s, 0.4s;
         }
         
         .dove:nth-child(3) {
             top: 60%;
-            animation-duration: 18s;
-            animation-delay: 2s;
+            animation-duration: 18s, 1s;
+            animation-delay: 2s, 0.6s;
         }
         
         @keyframes fly {
@@ -297,7 +231,9 @@
             position: absolute;
             background-color: white;
             border-radius: 50%;
-            animation: twinkle 4s infinite;
+            animation: twinkle 4s infinite, scaleIn 0.5s ease-out forwards;
+            opacity: 0;
+            transform: scale(0);
         }
         
         @keyframes twinkle {
@@ -312,22 +248,9 @@
         }
         
         @media (max-width: 768px) {
-            .cover-image-container {
-                width: 85%;
-            }
-            
             .cover-image {
+                width: 85%;
                 border-radius: 8px;
-            }
-            
-            .names-on-image {
-                font-size: 2rem;
-                top: 15px;
-            }
-            
-            .names-on-image .ampersand {
-                font-size: 1.5rem;
-                margin: 0 5px;
             }
             
             .invitation-name {
@@ -346,22 +269,9 @@
         }
         
         @media (max-width: 480px) {
-            .cover-image-container {
-                width: 90%;
-            }
-            
             .cover-image {
+                width: 90%;
                 border-radius: 5px;
-            }
-            
-            .names-on-image {
-                font-size: 1.8rem;
-                top: 10px;
-            }
-            
-            .names-on-image .ampersand {
-                font-size: 1.3rem;
-                margin: 0 3px;
             }
             
             .invitation-name {
@@ -391,12 +301,7 @@
     </div>
     
     <div class="container">
-        <div class="cover-image-container">
-            <div class="names-on-image">
-                Jean <span class="ampersand">&</span> dwi
-            </div>
-            <img src="images/img-cover.png" alt="Cover Image" class="cover-image">
-        </div>
+        <img src="images/img-cover.png" alt="Cover Image" class="cover-image">
         <h1 class="invitation-name">Undangan Pernikahan</h1>
         <button class="open-btn" onclick="openInvitation()">
             <i class="fas fa-envelope"></i> Open Invitation
@@ -423,7 +328,7 @@
                 star.style.top = `${Math.random() * 100}%`;
                 
                 // Delay animasi acak
-                star.style.animationDelay = `${Math.random() * 4}s`;
+                star.style.animationDelay = `${Math.random() * 2}s, ${Math.random() * 0.5}s`;
                 
                 starsContainer.appendChild(star);
             }
