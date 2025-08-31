@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Undangan Pernikahan</title>
+    <title>Undangan Pernikahan | Jean & Dwi</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -17,31 +17,34 @@
             height: 100vh;
             overflow: hidden;
             position: relative;
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
         
+        /* Background Styles */
         .background {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
+            background-color: #e8f5e9; /* Hijau soft untuk desktop */
             background-image: url('images/bg.jpg');
             background-size: cover;
             background-position: center;
-            filter: brightness(0.8);
+            filter: brightness(0.9);
             animation: backgroundPulse 8s infinite alternate;
         }
         
         @keyframes backgroundPulse {
             0% {
-                filter: brightness(0.8);
+                filter: brightness(0.9);
             }
             100% {
-                filter: brightness(0.9);
+                filter: brightness(1);
             }
         }
         
+        /* Container Styles */
         .container {
             position: relative;
             z-index: 2;
@@ -51,17 +54,19 @@
             justify-content: center;
             height: 100vh;
             padding: 20px;
+            text-align: center;
         }
         
+        /* Cover Image Styles */
         .cover-image {
             width: 80%;
             max-width: 400px;
             height: auto;
-            border-radius: 10px;
+            border-radius: 15px;
             object-fit: cover;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            margin-bottom: 30px;
-            animation: scaleIn 1s ease-out forwards;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            margin-bottom: 40px;
+            animation: scaleIn 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
             animation-delay: 0.5s;
             opacity: 0;
             transform: scale(0);
@@ -74,7 +79,7 @@
             }
             70% {
                 opacity: 1;
-                transform: scale(1.1);
+                transform: scale(1.05);
             }
             100% {
                 opacity: 1;
@@ -82,83 +87,78 @@
             }
         }
         
-        .invitation-name {
-            color: white;
-            font-size: 2.5rem;
-            margin-bottom: 20px;
+        /* Invitation Name Styles */
+        .invitation-title {
+            color: #2e7d32; /* Hijau gelap untuk desktop */
+            font-size: 2.8rem;
+            margin-bottom: 10px;
             text-align: center;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-            font-weight: bold;
-            font-family: 'Dancing Script', cursive;
-            animation: scaleIn 1s ease-out forwards, textGlow 3s ease-in-out infinite;
-            animation-delay: 1s, 2s;
+            font-weight: 700;
+            font-family: 'Great Vibes', cursive;
+            letter-spacing: 1px;
+            animation: scaleIn 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+            animation-delay: 1s;
             opacity: 0;
             transform: scale(0);
         }
         
-        @keyframes textGlow {
-            0%, 100% {
-                text-shadow: 0 0 5px rgba(255, 255, 255, 0.5), 0 2px 4px rgba(0, 0, 0, 0.5);
-            }
-            50% {
-                text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 2px 4px rgba(0, 0, 0, 0.5);
-            }
+        .invitation-subtitle {
+            color: #388e3c; /* Hijau medium untuk desktop */
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            text-align: center;
+            font-weight: 400;
+            font-family: 'Playfair Display', serif;
+            animation: scaleIn 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+            animation-delay: 1.2s;
+            opacity: 0;
+            transform: scale(0);
         }
         
+        /* Button Styles */
         .open-btn {
-            background-color: rgba(255, 255, 255, 0.2);
+            background-color: rgba(46, 125, 50, 0.8); /* Hijau dengan transparansi */
             color: white;
-            border: 2px solid white;
-            padding: 15px 30px;
-            font-size: 1.2rem;
+            border: 2px solid #2e7d32;
+            padding: 15px 35px;
+            font-size: 1.1rem;
             border-radius: 50px;
             cursor: pointer;
             display: flex;
             align-items: center;
-            gap: 10px;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(5px);
-            animation: scaleIn 1s ease-out forwards, buttonPulse 2s ease-in-out infinite;
-            animation-delay: 1.5s, 3s;
+            gap: 12px;
+            transition: all 0.4s ease;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(46, 125, 50, 0.3);
+            animation: scaleIn 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+            animation-delay: 1.5s;
             opacity: 0;
             transform: scale(0);
         }
         
         .open-btn:hover {
-            background-color: rgba(255, 255, 255, 0.3);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-        
-        @keyframes buttonPulse {
-            0%, 100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.05);
-            }
+            background-color: rgba(56, 142, 60, 0.9);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(46, 125, 50, 0.4);
         }
         
         .open-btn i {
-            animation: envelopeShake 3s ease-in-out infinite;
-            animation-delay: 4s;
+            animation: envelopeFloat 3s ease-in-out infinite;
+            animation-delay: 2.5s;
         }
         
-        @keyframes envelopeShake {
+        @keyframes envelopeFloat {
             0%, 100% {
-                transform: rotate(0deg);
+                transform: translateY(0);
             }
-            5%, 15% {
-                transform: rotate(-10deg);
-            }
-            10%, 20% {
-                transform: rotate(10deg);
-            }
-            25% {
-                transform: rotate(0deg);
+            50% {
+                transform: translateY(-5px);
             }
         }
         
+        /* Dove Animation */
         .dove-container {
             position: absolute;
             top: 0;
@@ -172,7 +172,7 @@
         .dove {
             position: absolute;
             font-size: 2rem;
-            color: white;
+            color: #2e7d32; /* Hijau untuk desktop */
             opacity: 0.8;
             animation: fly 15s linear infinite, scaleIn 1s ease-out forwards;
             animation-delay: 0s, 0.2s;
@@ -218,81 +218,106 @@
             }
         }
         
-        .stars {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-        }
-        
-        .star {
-            position: absolute;
-            background-color: white;
-            border-radius: 50%;
-            animation: twinkle 4s infinite, scaleIn 0.5s ease-out forwards;
+        /* Decorative Elements */
+        .decorative-line {
+            width: 150px;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #2e7d32, transparent);
+            margin: 15px 0 25px;
+            animation: scaleIn 1.2s ease-out forwards;
+            animation-delay: 1.4s;
             opacity: 0;
-            transform: scale(0);
+            transform: scaleX(0);
         }
         
-        @keyframes twinkle {
-            0%, 100% {
-                opacity: 0.2;
-                transform: scale(1);
-            }
-            50% {
-                opacity: 1;
-                transform: scale(1.2);
-            }
-        }
-        
+        /* Mobile Responsive Styles */
         @media (max-width: 768px) {
-            .cover-image {
-                width: 85%;
-                border-radius: 8px;
+            .background {
+                background-color: #e8f5e9; /* Tetap hijau soft untuk mobile */
+                background-image: url('images/bg.jpg');
             }
             
-            .invitation-name {
-                font-size: 2rem;
-                margin-bottom: 15px;
+            .cover-image {
+                width: 85%;
+                border-radius: 12px;
+                margin-bottom: 30px;
+            }
+            
+            .invitation-title {
+                color: white;
+                font-size: 2.4rem;
+                margin-bottom: 8px;
+                text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            }
+            
+            .invitation-subtitle {
+                color: rgba(255, 255, 255, 0.9);
+                font-size: 1.1rem;
+                margin-bottom: 25px;
+                text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
             }
             
             .open-btn {
+                background-color: rgba(255, 255, 255, 0.2);
+                color: white;
+                border: 2px solid white;
+                padding: 14px 30px;
                 font-size: 1rem;
-                padding: 12px 25px;
+                backdrop-filter: blur(5px);
+            }
+            
+            .open-btn:hover {
+                background-color: rgba(255, 255, 255, 0.3);
             }
             
             .dove {
+                color: white;
                 font-size: 1.5rem;
+            }
+            
+            .decorative-line {
+                width: 120px;
+                background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.7), transparent);
             }
         }
         
         @media (max-width: 480px) {
-            .cover-image {
-                width: 90%;
-                border-radius: 5px;
+            .container {
+                padding: 15px;
             }
             
-            .invitation-name {
-                font-size: 1.8rem;
+            .cover-image {
+                width: 90%;
+                border-radius: 10px;
+                margin-bottom: 25px;
+            }
+            
+            .invitation-title {
+                font-size: 2rem;
+            }
+            
+            .invitation-subtitle {
+                font-size: 1rem;
+                margin-bottom: 20px;
             }
             
             .open-btn {
-                font-size: 0.9rem;
-                padding: 10px 20px;
+                padding: 12px 25px;
+                font-size: 0.95rem;
             }
             
             .dove {
                 font-size: 1.2rem;
+            }
+            
+            .decorative-line {
+                width: 100px;
             }
         }
     </style>
 </head>
 <body>
     <div class="background"></div>
-    
-    <div class="stars" id="stars"></div>
     
     <div class="dove-container">
         <i class="fas fa-dove dove"></i>
@@ -302,46 +327,29 @@
     
     <div class="container">
         <img src="images/img-cover.png" alt="Cover Image" class="cover-image">
-        <h1 class="invitation-name">Undangan Pernikahan</h1>
+        <h1 class="invitation-title">Jean & Dwi</h1>
+        <div class="decorative-line"></div>
+        <p class="invitation-subtitle">Undangan Pernikahan</p>
         <button class="open-btn" onclick="openInvitation()">
-            <i class="fas fa-envelope"></i> Open Invitation
+            <i class="fas fa-envelope-open-text"></i> Buka Undangan
         </button>
     </div>
 
     <script>
-        // Fungsi untuk membuat bintang-bintang
-        function createStars() {
-            const starsContainer = document.getElementById('stars');
-            const starsCount = 50;
-            
-            for (let i = 0; i < starsCount; i++) {
-                const star = document.createElement('div');
-                star.classList.add('star');
-                
-                // Ukuran acak untuk bintang
-                const size = Math.random() * 3 + 1;
-                star.style.width = `${size}px`;
-                star.style.height = `${size}px`;
-                
-                // Posisi acak
-                star.style.left = `${Math.random() * 100}%`;
-                star.style.top = `${Math.random() * 100}%`;
-                
-                // Delay animasi acak
-                star.style.animationDelay = `${Math.random() * 2}s, ${Math.random() * 0.5}s`;
-                
-                starsContainer.appendChild(star);
-            }
-        }
-        
         // Fungsi untuk membuka undangan
         function openInvitation() {
             // Ganti URL ini dengan halaman undangan lengkap Anda
             window.location.href = "invitation.html";
         }
         
-        // Panggil fungsi saat halaman dimuat
-        window.addEventListener('load', createStars);
+        // Menambahkan efek parallax sederhana untuk background
+        document.addEventListener('mousemove', (e) => {
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+            
+            const background = document.querySelector('.background');
+            background.style.backgroundPosition = `${50 + x * 5}% ${50 + y * 5}%`;
+        });
     </script>
 </body>
 </html>
