@@ -5,18 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Undangan Pernikahan</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
         }
         
         body {
             height: 100vh;
             overflow: hidden;
             position: relative;
+            font-family: 'Montserrat', sans-serif;
         }
         
         .background {
@@ -29,6 +30,16 @@
             background-size: cover;
             background-position: center;
             filter: brightness(0.8);
+            animation: backgroundPulse 8s infinite alternate;
+        }
+        
+        @keyframes backgroundPulse {
+            0% {
+                filter: brightness(0.8);
+            }
+            100% {
+                filter: brightness(0.9);
+            }
         }
         
         .container {
@@ -51,6 +62,31 @@
             border: 5px solid rgba(255, 255, 255, 0.7);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             margin-bottom: 30px;
+            animation: fadeInZoom 1.5s ease-out, float 6s ease-in-out infinite;
+            animation-delay: 0.5s, 2s;
+            animation-fill-mode: both;
+            opacity: 0;
+            transform: scale(0.8);
+        }
+        
+        @keyframes fadeInZoom {
+            0% {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
         }
         
         .invitation-name {
@@ -60,6 +96,32 @@
             text-align: center;
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
             font-weight: bold;
+            font-family: 'Dancing Script', cursive;
+            animation: fadeInUp 1.5s ease-out, textGlow 3s ease-in-out infinite;
+            animation-delay: 1s, 3s;
+            animation-fill-mode: both;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes textGlow {
+            0%, 100% {
+                text-shadow: 0 0 5px rgba(255, 255, 255, 0.5), 0 2px 4px rgba(0, 0, 0, 0.5);
+            }
+            50% {
+                text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 2px 4px rgba(0, 0, 0, 0.5);
+            }
         }
         
         .open-btn {
@@ -75,12 +137,46 @@
             gap: 10px;
             transition: all 0.3s ease;
             backdrop-filter: blur(5px);
+            animation: fadeInUp 1.5s ease-out, buttonPulse 2s ease-in-out infinite;
+            animation-delay: 1.5s, 4s;
+            animation-fill-mode: both;
+            opacity: 0;
+            transform: translateY(20px);
         }
         
         .open-btn:hover {
             background-color: rgba(255, 255, 255, 0.3);
             transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        @keyframes buttonPulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+        
+        .open-btn i {
+            animation: envelopeShake 3s ease-in-out infinite;
+            animation-delay: 5s;
+        }
+        
+        @keyframes envelopeShake {
+            0%, 100% {
+                transform: rotate(0deg);
+            }
+            5%, 15% {
+                transform: rotate(-10deg);
+            }
+            10%, 20% {
+                transform: rotate(10deg);
+            }
+            25% {
+                transform: rotate(0deg);
+            }
         }
         
         .dove-container {
@@ -139,6 +235,33 @@
             }
         }
         
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+        
+        .star {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            animation: twinkle 4s infinite;
+        }
+        
+        @keyframes twinkle {
+            0%, 100% {
+                opacity: 0.2;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.2);
+            }
+        }
+        
         @media (max-width: 768px) {
             .cover-image {
                 width: 85%;
@@ -155,6 +278,10 @@
             .open-btn {
                 font-size: 1rem;
                 padding: 12px 25px;
+            }
+            
+            .dove {
+                font-size: 1.5rem;
             }
         }
         
@@ -173,11 +300,17 @@
                 font-size: 0.9rem;
                 padding: 10px 20px;
             }
+            
+            .dove {
+                font-size: 1.2rem;
+            }
         }
     </style>
 </head>
 <body>
     <div class="background"></div>
+    
+    <div class="stars" id="stars"></div>
     
     <div class="dove-container">
         <i class="fas fa-dove dove"></i>
@@ -194,10 +327,39 @@
     </div>
 
     <script>
+        // Fungsi untuk membuat bintang-bintang
+        function createStars() {
+            const starsContainer = document.getElementById('stars');
+            const starsCount = 50;
+            
+            for (let i = 0; i < starsCount; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star');
+                
+                // Ukuran acak untuk bintang
+                const size = Math.random() * 3 + 1;
+                star.style.width = `${size}px`;
+                star.style.height = `${size}px`;
+                
+                // Posisi acak
+                star.style.left = `${Math.random() * 100}%`;
+                star.style.top = `${Math.random() * 100}%`;
+                
+                // Delay animasi acak
+                star.style.animationDelay = `${Math.random() * 4}s`;
+                
+                starsContainer.appendChild(star);
+            }
+        }
+        
+        // Fungsi untuk membuka undangan
         function openInvitation() {
             // Ganti URL ini dengan halaman undangan lengkap Anda
             window.location.href = "invitation.html";
         }
+        
+        // Panggil fungsi saat halaman dimuat
+        window.addEventListener('load', createStars);
     </script>
 </body>
 </html>
