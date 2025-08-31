@@ -23,141 +23,175 @@
             overflow: hidden;
         }
         
-        /* Mobile Frame */
-        .mobile-frame {
-            width: 320px;
-            height: 640px;
-            border-radius: 36px;
-            border: 12px solid #222;
-            overflow: hidden;
-            position: relative;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-            background: #000;
-            z-index: 2;
-        }
-        
-        .mobile-frame::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60%;
-            height: 25px;
-            background: #222;
-            border-radius: 0 0 15px 15px;
-            z-index: 10;
-        }
-        
-        .mobile-screen {
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, #1a2a6c, #2a3990);
-            overflow: hidden;
-            position: relative;
-        }
-        
-        /* Mobile Container */
-        .mobile-container {
+        /* Main Container */
+        .invitation-container {
             position: relative;
             z-index: 2;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100%;
+            width: 90%;
+            max-width: 400px;
             padding: 20px;
             text-align: center;
         }
         
-        .mobile-arabic {
+        /* Flower Ornament at the top - hanya satu */
+        .flower-ornament {
+            margin-bottom: 30px;
+            animation: flowerFloat 6s ease-in-out infinite;
+        }
+        
+        .flower-ornament img {
+            width: 200px;
+            height: auto;
+            filter: drop-shadow(0 0 15px rgba(253, 187, 45, 0.7));
+        }
+        
+        @keyframes flowerFloat {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-10px) rotate(3deg);
+            }
+        }
+        
+        /* Content Elements */
+        .arabic-text {
             color: #ffffff;
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             margin-bottom: 15px;
             font-family: 'Amiri Quran', serif;
             opacity: 0;
-            animation: fadeIn 1s forwards;
+            animation: fadeInDown 1s forwards;
             animation-delay: 0.3s;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
         }
         
-        .mobile-title {
+        .invitation-title {
             color: #ffffff;
-            font-size: 1.8rem;
-            margin-bottom: 20px;
+            font-size: 1.8rem; /* Diperkecil dari 2.2rem */
+            margin-bottom: 25px;
             font-family: 'Lobster', cursive;
             letter-spacing: 1px;
             opacity: 0;
-            animation: fadeIn 1s forwards;
+            animation: fadeInDown 1s forwards;
             animation-delay: 0.5s;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
         }
         
-        .mobile-photo {
-            width: 80%;
+        .couple-photo {
+            width: 100%;
+            max-width: 300px;
             height: auto;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            margin-bottom: 25px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
             opacity: 0;
-            animation: fadeIn 1s forwards;
+            animation: scaleIn 1s forwards;
             animation-delay: 0.7s;
         }
         
-        .mobile-name {
+        .guest-name {
             color: #ffffff;
-            font-size: 1.2rem;
-            margin-bottom: 20px;
+            font-size: 1.3rem;
+            margin-bottom: 15px; /* Dikurangi dari 30px */
             font-family: 'Dancing Script', cursive;
             opacity: 0;
-            animation: fadeIn 1s forwards;
+            animation: fadeInUp 1s forwards;
             animation-delay: 0.9s;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
         }
         
-        .mobile-button {
-            background: linear-gradient(90deg, #fdbb2d, #b21f1f);
+        .invited-to {
+            color: #ffffff;
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            font-family: 'Dancing Script', cursive;
+            font-weight: 700;
+            opacity: 0;
+            animation: fadeInUp 1s forwards;
+            animation-delay: 1.1s;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+            min-height: 30px; /* Memberikan ruang untuk teks dinamis */
+            text-transform: capitalize; /* Membuat huruf pertama kapital */
+        }
+        
+        .open-button {
+            background-color: rgba(76, 175, 80, 0.8); /* Hijau soft */
             color: white;
             border: none;
-            padding: 12px 25px;
-            border-radius: 30px;
-            font-size: 0.9rem;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1rem;
             cursor: pointer;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
             font-family: 'Poppins', sans-serif;
             font-weight: 600;
-            box-shadow: 0 5px 15px rgba(178, 31, 31, 0.4);
+            box-shadow: 0 8px 20px rgba(76, 175, 80, 0.4);
             opacity: 0;
-            animation: fadeIn 1s forwards;
-            animation-delay: 1.1s;
+            animation: fadeInUp 1s forwards;
+            animation-delay: 1.3s;
             transition: all 0.3s ease;
         }
         
-        .mobile-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(178, 31, 31, 0.5);
+        .open-button:hover {
+            background-color: rgba(255, 255, 255, 0.9); /* Putih bercahaya saat hover */
+            color: #1a2a6c; /* Ubah warna teks menjadi biru gelap untuk kontras */
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.8); /* Efek cahaya putih saat hover */
         }
         
         /* Animations */
-        @keyframes fadeIn {
+        @keyframes fadeInDown {
             from {
                 opacity: 0;
+                transform: translateY(-20px);
             }
             to {
                 opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
             }
         }
         
         /* Background Effects */
-        .mobile-stars {
+        .stars-container {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             z-index: 1;
+            overflow: hidden;
         }
         
-        .mobile-star {
+        .star {
             position: absolute;
             background-color: white;
             border-radius: 50%;
@@ -175,126 +209,145 @@
             }
         }
         
-        /* Decorative Elements */
-        .flower-left, .flower-right {
+        /* Particles Effect */
+        .particles {
             position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             z-index: 1;
-            opacity: 0.7;
+            overflow: hidden;
+            pointer-events: none;
         }
         
-        .flower-left {
-            top: 10%;
-            left: 5%;
-            transform: rotate(-15deg);
-            animation: floatLeft 8s ease-in-out infinite;
+        .particle {
+            position: absolute;
+            background-color: rgba(253, 187, 45, 0.7);
+            border-radius: 50%;
+            pointer-events: none;
+            opacity: 0;
+            animation: particleFloat 15s infinite ease-in;
         }
         
-        .flower-right {
-            top: 10%;
-            right: 5%;
-            transform: rotate(15deg);
-            animation: floatRight 8s ease-in-out infinite;
-        }
-        
-        @keyframes floatLeft {
-            0%, 100% {
-                transform: rotate(-15deg) translateY(0);
+        @keyframes particleFloat {
+            0% {
+                opacity: 0;
+                transform: translateY(100vh) scale(0);
             }
-            50% {
-                transform: rotate(-20deg) translateY(-10px);
+            10% {
+                opacity: 1;
             }
-        }
-        
-        @keyframes floatRight {
-            0%, 100% {
-                transform: rotate(15deg) translateY(0);
+            90% {
+                opacity: 1;
             }
-            50% {
-                transform: rotate(20deg) translateY(-10px);
+            100% {
+                opacity: 0;
+                transform: translateY(-100vh) scale(1.5);
             }
         }
         
         /* Responsive adjustments */
-        @media (max-width: 480px) {
-            .mobile-frame {
-                width: 280px;
-                height: 560px;
+        @media (max-width: 768px) {
+            .invitation-container {
+                width: 95%;
+                max-width: 350px;
             }
             
-            .mobile-arabic {
-                font-size: 1rem;
+            .flower-ornament img {
+                width: 180px;
             }
             
-            .mobile-title {
-                font-size: 1.5rem;
+            .arabic-text {
+                font-size: 1.3rem;
             }
             
-            .mobile-name {
-                font-size: 1rem;
+            .invitation-title {
+                font-size: 1.6rem;
             }
             
-            .mobile-button {
-                padding: 10px 20px;
-                font-size: 0.8rem;
+            .couple-photo {
+                max-width: 280px;
+            }
+            
+            .guest-name {
+                font-size: 1.2rem;
+            }
+            
+            .invited-to {
+                font-size: 1.1rem;
+            }
+            
+            .open-button {
+                padding: 12px 25px;
+                font-size: 0.9rem;
             }
         }
         
-        @media (max-width: 320px) {
-            .mobile-frame {
-                width: 240px;
-                height: 480px;
-                border-width: 8px;
+        @media (max-width: 480px) {
+            .invitation-container {
+                width: 90%;
+                padding: 15px;
             }
             
-            .mobile-arabic {
-                font-size: 0.9rem;
+            .flower-ornament img {
+                width: 150px;
+                margin-bottom: 20px;
+            }
+            
+            .arabic-text {
+                font-size: 1.2rem;
+                margin-bottom: 12px;
+            }
+            
+            .invitation-title {
+                font-size: 1.5rem;
+                margin-bottom: 20px;
+            }
+            
+            .couple-photo {
+                max-width: 250px;
+                margin-bottom: 20px;
+            }
+            
+            .guest-name {
+                font-size: 1.1rem;
                 margin-bottom: 10px;
             }
             
-            .mobile-title {
-                font-size: 1.3rem;
-                margin-bottom: 15px;
+            .invited-to {
+                font-size: 1rem;
+                margin-bottom: 25px;
             }
             
-            .mobile-photo {
-                margin-bottom: 15px;
-            }
-            
-            .mobile-name {
+            .open-button {
+                padding: 10px 20px;
                 font-size: 0.9rem;
-                margin-bottom: 15px;
-            }
-            
-            .mobile-button {
-                padding: 8px 15px;
-                font-size: 0.7rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Decorative Elements -->
-    <div class="flower-left">
-        <img src="images/flower1.png" alt="Flower Ornament" style="width: 120px; height: auto;">
-    </div>
-    <div class="flower-right">
-        <img src="images/flower1.png" alt="Flower Ornament" style="width: 120px; height: auto;">
-    </div>
+    <!-- Background Effects -->
+    <div class="stars-container" id="stars-container"></div>
+    <div class="particles" id="particles"></div>
     
-    <!-- Mobile Frame -->
-    <div class="mobile-frame">
-        <div class="mobile-screen">
-            <div class="mobile-stars" id="mobile-stars"></div>
-            <div class="mobile-container">
-                <p class="mobile-arabic">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</p>
-                <h1 class="mobile-title">The Wedding Invitation</h1>
-                <img src="images/love.png" alt="Foto Pengantin" class="mobile-photo">
-                <p class="mobile-name">Kepada Yth. Bapak/Ibu/Saudara/i</p>
-                <button class="mobile-button" onclick="openInvitation()">
-                    <i class="fas fa-envelope-open-text"></i> Buka Undangan
-                </button>
-            </div>
+    <!-- Main Invitation Container -->
+    <div class="invitation-container">
+        <!-- Flower Ornament at the top - hanya satu -->
+        <div class="flower-ornament">
+            <img src="images/flower1.png" alt="Flower Ornament">
         </div>
+        
+        <!-- Content Elements -->
+        <p class="arabic-text">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</p>
+        <h1 class="invitation-title">The Wedding Invitation</h1>
+        <img src="images/love.png" alt="Foto Pengantin" class="couple-photo">
+        <p class="guest-name">Kepada Yth. Bapak/Ibu/Saudara/i</p>
+        <p class="invited-to" id="invited-to"></p>
+        <button class="open-button" onclick="openInvitation()">
+            <i class="fas fa-envelope-open-text"></i> Buka Undangan
+        </button>
     </div>
 
     <script>
@@ -304,17 +357,44 @@
             window.location.href = "invitation.html";
         }
         
+        // Fungsi untuk mendapatkan parameter dari URL
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+        
+        // Fungsi untuk menampilkan nama tamu dari parameter URL
+        function displayGuestName() {
+            const toParam = getQueryParam('to');
+            const invitedToElement = document.getElementById('invited-to');
+            
+            if (toParam) {
+                // Mengganti karakter '+' dengan spasi
+                const guestName = toParam.replace(/\+/g, ' ');
+                // Menampilkan nama tamu dengan format yang lebih baik
+                invitedToElement.textContent = guestName;
+                
+                // Menambahkan animasi setelah elemen ditampilkan
+                setTimeout(() => {
+                    invitedToElement.style.animation = 'fadeInUp 1s forwards';
+                }, 100);
+            } else {
+                // Jika tidak ada parameter, sembunyikan elemen
+                invitedToElement.style.display = 'none';
+            }
+        }
+        
         // Fungsi untuk membuat bintang-bintang
         function createStars() {
-            const starsContainer = document.getElementById('mobile-stars');
-            const starsCount = 50;
+            const starsContainer = document.getElementById('stars-container');
+            const starsCount = 80;
             
             for (let i = 0; i < starsCount; i++) {
                 const star = document.createElement('div');
-                star.classList.add('mobile-star');
+                star.classList.add('star');
                 
                 // Ukuran acak untuk bintang
-                const size = Math.random() * 2 + 1;
+                const size = Math.random() * 3 + 1;
                 star.style.width = `${size}px`;
                 star.style.height = `${size}px`;
                 
@@ -329,9 +409,39 @@
             }
         }
         
+        // Fungsi untuk membuat partikel
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particlesCount = 30;
+            
+            for (let i = 0; i < particlesCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // Ukuran acak untuk partikel
+                const size = Math.random() * 5 + 2;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                
+                // Posisi horizontal acak
+                particle.style.left = `${Math.random() * 100}%`;
+                
+                // Durasi animasi acak
+                const duration = Math.random() * 10 + 10; // Antara 10 dan 20 detik
+                particle.style.animationDuration = `${duration}s`;
+                
+                // Delay animasi acak
+                particle.style.animationDelay = `${Math.random() * 10}s`;
+                
+                particlesContainer.appendChild(particle);
+            }
+        }
+        
         // Panggil fungsi saat halaman dimuat
         window.addEventListener('load', () => {
             createStars();
+            createParticles();
+            displayGuestName();
         });
     </script>
 </body>
