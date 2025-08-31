@@ -37,6 +37,7 @@
             background-repeat: no-repeat;
             z-index: 2;
             opacity: 0.9;
+            animation: topFrameFloat 8s ease-in-out infinite;
         }
         
         /* Bottom Ornament Frame */
@@ -52,6 +53,26 @@
             background-repeat: no-repeat;
             z-index: 2;
             opacity: 0.9;
+            animation: bottomFrameFloat 8s ease-in-out infinite;
+        }
+        
+        /* Animations for frames */
+        @keyframes topFrameFloat {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        @keyframes bottomFrameFloat {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(10px);
+            }
         }
         
         /* Main Container */
@@ -94,14 +115,14 @@
         
         .couple-photo {
             width: 100%;
-            max-width: 300px;
+            max-width: 350px; /* Diperbesar untuk menyesuaikan dengan frame */
             height: auto;
             border-radius: 10px;
             margin-bottom: 25px;
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
             opacity: 0;
-            animation: scaleIn 1s forwards;
-            animation-delay: 0.7s;
+            animation: scaleIn 1s forwards, photoFloat 6s ease-in-out infinite;
+            animation-delay: 0.7s, 2s;
         }
         
         .guest-name {
@@ -144,8 +165,8 @@
             font-weight: 600;
             box-shadow: 0 8px 20px rgba(76, 175, 80, 0.4);
             opacity: 0;
-            animation: fadeInUp 1s forwards;
-            animation-delay: 1.3s;
+            animation: fadeInUp 1s forwards, buttonPulse 2s ease-in-out infinite;
+            animation-delay: 1.3s, 3s;
             transition: all 0.3s ease;
         }
         
@@ -187,6 +208,24 @@
             to {
                 opacity: 1;
                 transform: scale(1);
+            }
+        }
+        
+        @keyframes photoFloat {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        @keyframes buttonPulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
             }
         }
         
@@ -268,16 +307,16 @@
                 max-width: 350px;
             }
             
+            .couple-photo {
+                max-width: 320px; /* Disesuaikan untuk tablet */
+            }
+            
             .arabic-text {
                 font-size: 1.3rem;
             }
             
             .invitation-title {
                 font-size: 1.6rem;
-            }
-            
-            .couple-photo {
-                max-width: 280px;
             }
             
             .guest-name {
@@ -304,6 +343,10 @@
                 padding: 15px;
             }
             
+            .couple-photo {
+                max-width: 280px; /* Disesuaikan untuk mobile */
+            }
+            
             .arabic-text {
                 font-size: 1.2rem;
                 margin-bottom: 12px;
@@ -311,11 +354,6 @@
             
             .invitation-title {
                 font-size: 1.5rem;
-                margin-bottom: 20px;
-            }
-            
-            .couple-photo {
-                max-width: 250px;
                 margin-bottom: 20px;
             }
             
