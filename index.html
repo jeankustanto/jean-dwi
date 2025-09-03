@@ -862,6 +862,345 @@
                 height: 60px;
             }
         }
+        
+        /* Halaman Detail Undangan */
+        .detail-page {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+            z-index: 100;
+            overflow-y: auto;
+            transform: translateY(100%);
+            transition: transform 0.5s ease-in-out;
+        }
+        
+        .detail-page.active {
+            transform: translateY(0);
+        }
+        
+        .detail-header {
+            position: relative;
+            height: 50vh;
+            background: linear-gradient(to bottom, #0a1929, #000814);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+        
+        .detail-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://images.unsplash.com/photo-1511795409844-ef04b3b271e9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.3;
+        }
+        
+        .detail-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+        
+        .detail-subtitle {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 300;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .close-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 3;
+            transition: all 0.3s ease;
+        }
+        
+        .close-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(90deg);
+        }
+        
+        .detail-content {
+            padding: 40px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+        }
+        
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #333;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, #ff7e5f, #feb47b);
+        }
+        
+        .arabic-text {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8rem;
+            text-align: right;
+            margin-bottom: 10px;
+            line-height: 1.8;
+            color: #333;
+        }
+        
+        .translation {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .love-story {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #333;
+            text-align: justify;
+            margin-bottom: 20px;
+        }
+        
+        .love-story strong {
+            color: #ff7e5f;
+        }
+        
+        .info-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .info-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .info-content {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #555;
+        }
+        
+        .couple-info {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        
+        .person {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .person-name {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .person-parents {
+            font-size: 0.9rem;
+            color: #555;
+        }
+        
+        .event-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .event-info i {
+            font-size: 1.2rem;
+            margin-right: 10px;
+            color: #ff7e5f;
+            width: 20px;
+            text-align: center;
+        }
+        
+        .location-info {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        
+        .location-info i {
+            font-size: 1.2rem;
+            margin-right: 10px;
+            color: #ff7e5f;
+            width: 20px;
+            text-align: center;
+            margin-top: 3px;
+        }
+        
+        .map-container {
+            width: 100%;
+            height: 200px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .doa-text {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8rem;
+            text-align: center;
+            margin-bottom: 10px;
+            line-height: 1.8;
+            color: #333;
+        }
+        
+        .doa-translation {
+            text-align: center;
+            font-style: italic;
+            color: #555;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .couple-photo {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        
+        .photo-frame {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .photo-frame::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 126, 95, 0.2), rgba(254, 180, 123, 0.2));
+            z-index: 1;
+        }
+        
+        .request-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .request-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 1rem;
+            color: #333;
+        }
+        
+        .request-item i {
+            font-size: 1.2rem;
+            margin-right: 10px;
+            color: #ff7e5f;
+        }
+        
+        @media (max-width: 768px) {
+            .detail-title {
+                font-size: 3rem;
+            }
+            
+            .detail-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .arabic-text {
+                font-size: 1.5rem;
+            }
+            
+            .love-story {
+                font-size: 1rem;
+            }
+            
+            .person {
+                min-width: 100%;
+            }
+            
+            .photo-frame {
+                width: 250px;
+                height: 250px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -949,12 +1288,146 @@
         </div>
     </div>
 
+    <!-- Halaman Detail Undangan -->
+    <div class="detail-page" id="detailPage">
+        <div class="detail-header">
+            <button class="close-button" id="closeButton">
+                <i class="fas fa-times"></i>
+            </button>
+            <h1 class="detail-title">Jean & Dwi</h1>
+            <p class="detail-subtitle">Walimatul 'Urs</p>
+        </div>
+        
+        <div class="detail-content">
+            <!-- Ayat Al-Qur'an 1 -->
+            <div class="section" id="section1">
+                <h2 class="section-title">QS. Ar-Rum: 21</h2>
+                <p class="arabic-text">وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِّقَوْمٍ يَتَفَكَّرُونَ</p>
+                <p class="translation">"Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu istri-istri dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang berpikir."</p>
+            </div>
+            
+            <!-- Ayat Al-Qur'an 2 -->
+            <div class="section" id="section2">
+                <h2 class="section-title">QS. Al-Furqan: 74</h2>
+                <p class="arabic-text">وَالَّذِينَ يَقُولُونَ رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا وَذُرِّيَّاتِنَا قُرَّةَ أَعْيُنٍ وَاجْعَلْنَا لِلْمُتَّقِينَ إِمَامًا</p>
+                <p class="translation">"Dan orang-orang yang berkata: "Ya Tuhan kami, anugerahkanlah kepada kami istri-istri dan keturunan kami sebagai penyenang hati (kami), dan jadikanlah kami imam bagi orang-orang yang bertakwa."</p>
+            </div>
+            
+            <!-- Love Story -->
+            <div class="section" id="section3">
+                <h2 class="section-title">Our Love Story</h2>
+                <p class="love-story"><strong>Awal bulan Juni</strong>, dengan izin Allah, kami memulai langkah pertama menuju jalan yang diridhai-Nya. Bukan dengan janji manis, bukan pula dengan pertemuan tanpa arah, melainkan melalui <strong>ta'aruf</strong> — saling memperkenalkan diri dengan cara yang syar'i. Saling bertukar CV, bertanya jawab tentang visi misi hidup dan pernikahan serta hal-hal lain untuk mengenal dasar aqidah dan keimanan pada masing-masing dari kami.</p>
+                <p class="love-story"><strong>Akhir bulan Juni</strong>, Biidznillah Allah tuntun kami melangkah pada proses <strong>nadzor</strong>, memandang satu sama lain, mengenal bagaimana pribadi masing-masing dalam bincang jumpa bersama orang tua agar semakin meyakini untuk melangkah ke tahap berikutnya.</p>
+                <p class="love-story">Biidznillah, Alhamdulillah, dengan ridha Allah, kami sampai pada proses <strong>khitbah</strong>. Dengan perasaan haru penuh khidmat kami memohon dan berharap agar keputusan ini menjadi jalan kebaikan dunia - akhirat sesurga kelak.</p>
+                <p class="love-story">Biidznillah, dengan penuh syukur, akad yang kami jalani, walimah yang kami nanti, insyaaAllah akan kami bagi bahagia kami pada setiap hati dalam indah yang suci. <strong>Rabu, 8 Oktober 2025</strong>, semoga Allah jadikan pernikahan ini sebagai ladang ibadah yang penuh sakinah dengan indah mawaddah dan berlimpah rahmah. Aamiin Ya Rabbal 'Aalamin 🤲</p>
+            </div>
+            
+            <!-- Informasi Mempelai -->
+            <div class="section" id="section4">
+                <h2 class="section-title">Mempelai</h2>
+                <div class="info-card">
+                    <div class="couple-info">
+                        <div class="person">
+                            <h3 class="person-name">Jean Dwi Kustanto</h3>
+                            <p class="person-parents">Putra dari:</p>
+                            <p class="person-parents">Alm. Bapak Slamet Budiono & Ibu Kuswati</p>
+                        </div>
+                        <div class="person">
+                            <h3 class="person-name">Pujiana Dwi Kusumawati</h3>
+                            <p class="person-parents">Putri dari:</p>
+                            <p class="person-parents">Bapak Sudibyo & Ibu Siswati</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Informasi Acara -->
+            <div class="section" id="section5">
+                <h2 class="section-title">Walimatul 'Urs</h2>
+                <div class="info-card">
+                    <p class="info-content">Dengan memohon rachmat dan ridho Allah SWT, dengan hormat, kami mengundang Bapak/Ibu untuk hadir dalam acara walimatul `urs kami:</p>
+                    
+                    <div class="event-info">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>08 Oktober 2025</span>
+                    </div>
+                    
+                    <div class="event-info">
+                        <i class="fas fa-clock"></i>
+                        <span>10.00 - 17.00 (WIB)</span>
+                    </div>
+                    
+                    <div class="location-info">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <p>Kediaman mempelai wanita (Rumah Bapak Sudibyo)</p>
+                            <p>Jl. Raya Tempuran, Desa Tempuran, Kecamatan Bantaran, Kabupaten Probolinggo - Jawa Timur</p>
+                            <p>(Timur SMPN I Bantaran)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.5438439497327!2d113.22084331431885!3d-7.748342892562358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd9cbbf7c0c5a3d%3A0x8d6e3e2e4e4e4e4!2sSMPN%201%20Bantaran!5e0!3m2!1sid!2sid!4v1634567890123!5m2!1sid!2sid" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Doa -->
+            <div class="section" id="section6">
+                <h2 class="section-title">Doa Untuk Kami</h2>
+                <div class="info-card">
+                    <p class="info-content">Dengan hormat, kami mengharap doa baik kepada kami dari Bapak/ Ibu atas pernikahan kami</p>
+                    <p class="doa-text">بَارَكَ اللهُ لَكَ وَبَارَكَ عَلَيْكَ وَجَمَعَ بَيْنَكُمَا فِيْ خَيْرٍ</p>
+                    <p class="doa-translation">Semoga Allah memberi keberkahan kalian dan memberkahi atas kalian serta mengumpulkan kalian berdua dalam kebaikan</p>
+                </div>
+            </div>
+            
+            <!-- Foto Mempelai -->
+            <div class="section" id="section7">
+                <h2 class="section-title">Jean & Dwi</h2>
+                <div class="couple-photo">
+                    <div class="photo-frame">
+                        <img src="https://images.unsplash.com/photo-1511285560929-80b456fc8dbe?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Jean & Dwi">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Permohonan -->
+            <div class="section" id="section8">
+                <h2 class="section-title">Permohonan</h2>
+                <div class="info-card">
+                    <p class="info-content">Kepada hadirin yang kami hormati, mohon 🙏🏼 untuk:</p>
+                    <ul class="request-list">
+                        <li class="request-item">
+                            <i class="fas fa-handshake"></i>
+                            <span>Berjabat tangan hanya dengan mahramnya.</span>
+                        </li>
+                        <li class="request-item">
+                            <i class="fas fa-head-side-mask"></i>
+                            <span>Mengenakan Masker Jika Kurang Fit.</span>
+                        </li>
+                        <li class="request-item">
+                            <i class="fas fa-mosque"></i>
+                            <span>Saling mengingatkan waktu sholat.</span>
+                        </li>
+                        <li class="request-item">
+                            <i class="fas fa-utensils"></i>
+                            <span>Duduk ketika makan.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const starsContainer = document.getElementById('starsContainer');
             const particlesContainer = document.getElementById('particles');
             const openButton = document.getElementById('openButton');
             const guestNameElement = document.getElementById('guestName');
+            const detailPage = document.getElementById('detailPage');
+            const closeButton = document.getElementById('closeButton');
             
             // Deteksi perangkat mobile
             const isMobile = window.innerWidth <= 768;
@@ -1032,9 +1505,28 @@
                     this.style.transform = '';
                 }, 200);
                 
-                // Di sini bisa ditambahkan logika untuk membuka undangan
-                alert(`Undangan untuk ${guestName} akan segera dibuka!`);
+                // Buka halaman detail
+                setTimeout(() => {
+                    detailPage.classList.add('active');
+                    // Tampilkan animasi section satu per satu
+                    showSectionsSequentially();
+                }, 300);
             });
+            
+            // Menutup halaman detail
+            closeButton.addEventListener('click', function() {
+                detailPage.classList.remove('active');
+            });
+            
+            // Fungsi untuk menampilkan section satu per satu dengan animasi
+            function showSectionsSequentially() {
+                const sections = document.querySelectorAll('.section');
+                sections.forEach((section, index) => {
+                    setTimeout(() => {
+                        section.classList.add('visible');
+                    }, index * 200);
+                });
+            }
             
             // Mencegah zoom saat double tap di mobile
             let lastTouchEnd = 0;
