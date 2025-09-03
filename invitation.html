@@ -27,7 +27,7 @@
             width: 100%;
             height: 100%;
             background: linear-gradient(to bottom, #0a1929, #000814);
-            animation: sky-transition 15s infinite alternate;
+            animation: sky-transition 20s infinite alternate;
         }
         @keyframes sky-transition {
             0% { 
@@ -53,7 +53,7 @@
             width: 100%;
             height: 100%;
             pointer-events: none;
-            animation: fade-out 15s infinite alternate;
+            animation: fade-out 20s infinite alternate;
         }
         @keyframes fade-out {
             0%, 20% { opacity: 1; }
@@ -80,7 +80,7 @@
             top: 15%;
             right: 15%;
             box-shadow: 0 0 40px 10px rgba(255, 255, 255, 0.5);
-            animation: moon-movement 15s infinite alternate;
+            animation: moon-movement 20s infinite alternate;
             z-index: 4;
         }
         .moon::before {
@@ -123,7 +123,7 @@
             bottom: -70px;
             left: 20%;
             box-shadow: 0 0 60px 20px rgba(255, 235, 59, 0.7);
-            animation: sun-rise 15s infinite alternate;
+            animation: sun-rise 20s infinite alternate;
             z-index: 3;
         }
         @keyframes sun-rise {
@@ -151,7 +151,7 @@
             border-radius: 100px;
             opacity: 0;
             z-index: 2;
-            animation: cloud-fade-in 15s infinite alternate;
+            animation: cloud-fade-in 20s infinite alternate;
         }
         .cloud::before,
         .cloud::after {
@@ -169,7 +169,7 @@
             height: 30px;
             top: 20%;
             left: -80px;
-            animation: cloud-movement1 25s linear infinite, cloud-fade-in 15s infinite alternate;
+            animation: cloud-movement1 25s linear infinite, cloud-fade-in 20s infinite alternate;
         }
         .cloud1::before {
             width: 40px;
@@ -188,7 +188,7 @@
             height: 25px;
             top: 30%;
             left: -60px;
-            animation: cloud-movement2 30s linear infinite, cloud-fade-in 15s infinite alternate;
+            animation: cloud-movement2 30s linear infinite, cloud-fade-in 20s infinite alternate;
             animation-delay: 5s;
         }
         .cloud2::before {
@@ -208,7 +208,7 @@
             height: 35px;
             top: 15%;
             left: -100px;
-            animation: cloud-movement3 35s linear infinite, cloud-fade-in 15s infinite alternate;
+            animation: cloud-movement3 35s linear infinite, cloud-fade-in 20s infinite alternate;
             animation-delay: 10s;
         }
         .cloud3::before {
@@ -296,16 +296,89 @@
             margin-bottom: 20px;
             line-height: 1.6;
         }
-        .love-story {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #333;
-            text-align: justify;
-            margin-bottom: 20px;
+        
+        /* Timeline untuk Love Story */
+        .story-timeline {
+            position: relative;
+            margin-top: 20px;
         }
-        .love-story strong {
+
+        .story-timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 30px;
+            height: 100%;
+            width: 3px;
+            background: linear-gradient(to bottom, #d4af37, #f0e6c2);
+            border-radius: 3px;
+        }
+
+        .story-step {
+            position: relative;
+            margin-bottom: 40px;
+            padding-left: 80px;
+        }
+
+        .step-icon {
+            position: absolute;
+            left: 15px;
+            top: 5px;
+            width: 32px;
+            height: 32px;
+            background: #d4af37;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            box-shadow: 0 0 0 5px rgba(212, 175, 55, 0.2);
+            z-index: 1;
+        }
+
+        .step-icon i {
+            font-size: 16px;
+        }
+
+        .step-content {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .step-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .step-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
             color: #d4af37;
         }
+
+        .highlight {
+            font-weight: bold;
+            color: #d4af37;
+            position: relative;
+            display: inline-block;
+        }
+
+        .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background-color: rgba(212, 175, 55, 0.3);
+            border-radius: 2px;
+            z-index: -1;
+        }
+        
         .info-card {
             background: white;
             border-radius: 10px;
@@ -488,6 +561,56 @@
             width: 24px;
             text-align: center;
         }
+        
+        /* Countdown Timer */
+        .countdown-container {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .countdown-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .countdown {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .countdown-item {
+            background: linear-gradient(135deg, #d4af37, #f0e6c2);
+            color: white;
+            border-radius: 10px;
+            padding: 15px;
+            min-width: 80px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .countdown-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .countdown-value {
+            font-size: 1.8rem;
+            font-weight: bold;
+            display: block;
+        }
+        
+        .countdown-label {
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+        
         /* Musik player */
         .music-player {
             position: fixed;
@@ -500,6 +623,57 @@
         }
         
         .music-toggle {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .music-toggle:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
+        }
+        
+        .music-toggle i {
+            font-size: 1.5rem;
+        }
+        
+        .music-info {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            padding: 8px 15px;
+            color: white;
+            font-size: 0.9rem;
+            display: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .music-info.visible {
+            display: block;
+        }
+        
+        /* Share buttons */
+        .share-container {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 100;
+            display: flex;
+            gap: 10px;
+        }
+        
+        .share-button {
             width: 40px;
             height: 40px;
             border-radius: 50%;
@@ -512,30 +686,16 @@
             align-items: center;
             cursor: pointer;
             transition: all 0.3s ease;
+            text-decoration: none;
         }
         
-        .music-toggle:hover {
+        .share-button:hover {
             background: rgba(255, 255, 255, 0.3);
             transform: scale(1.1);
         }
         
-        .music-toggle i {
+        .share-button i {
             font-size: 1.2rem;
-        }
-        
-        .music-info {
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 20px;
-            padding: 5px 15px;
-            color: white;
-            font-size: 0.8rem;
-            display: none;
-        }
-        
-        .music-info.visible {
-            display: block;
         }
         
         /* Floating action button for mobile navigation */
@@ -609,6 +769,79 @@
             color: #d4af37;
         }
         
+        /* Animasi teks ketik */
+        .typewriter {
+            overflow: hidden;
+            border-right: 2px solid #d4af37;
+            white-space: nowrap;
+            animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #d4af37; }
+        }
+        
+        /* Animasi fade in untuk section */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .section.visible {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        /* Animasi parallax */
+        .parallax {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+        
+        /* Header undangan */
+        .invitation-header {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .invitation-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3rem;
+            color: #d4af37;
+            margin-bottom: 10px;
+        }
+        
+        .invitation-subtitle {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        .invitation-date {
+            font-size: 1.2rem;
+            color: #555;
+        }
+        
         @media (max-width: 768px) {
             .section-title {
                 font-size: 1.5rem;
@@ -647,6 +880,45 @@
             
             .map-container {
                 height: 250px;
+            }
+            
+            .share-container {
+                display: none;
+            }
+            
+            .invitation-title {
+                font-size: 2.5rem;
+            }
+            
+            .invitation-subtitle {
+                font-size: 1.3rem;
+            }
+            
+            .countdown-item {
+                min-width: 70px;
+                padding: 10px;
+            }
+            
+            .countdown-value {
+                font-size: 1.5rem;
+            }
+            
+            .story-step {
+                padding-left: 60px;
+            }
+            
+            .story-timeline::before {
+                left: 20px;
+            }
+            
+            .step-icon {
+                left: 5px;
+                width: 30px;
+                height: 30px;
+            }
+            
+            .step-title {
+                font-size: 1.3rem;
             }
         }
         
@@ -688,6 +960,41 @@
             .map-container {
                 height: 200px;
             }
+            
+            .invitation-title {
+                font-size: 2rem;
+            }
+            
+            .invitation-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .countdown-item {
+                min-width: 60px;
+                padding: 8px;
+            }
+            
+            .countdown-value {
+                font-size: 1.3rem;
+            }
+            
+            .story-step {
+                padding-left: 50px;
+            }
+            
+            .story-timeline::before {
+                left: 15px;
+            }
+            
+            .step-icon {
+                left: 0;
+                width: 30px;
+                height: 30px;
+            }
+            
+            .step-title {
+                font-size: 1.2rem;
+            }
         }
     </style>
 </head>
@@ -712,59 +1019,123 @@
     
     <div class="detail-page">
         <div class="detail-content">
+            <!-- Header Undangan -->            
+            <!-- Countdown Timer -->
+            <div class="countdown-container">
+                <h3 class="countdown-title">Menuju Hari Bahagia</h3>
+                <div class="countdown" id="countdown">
+                    <div class="countdown-item">
+                        <span class="countdown-value" id="days">0</span>
+                        <span class="countdown-label">Hari</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-value" id="hours">0</span>
+                        <span class="countdown-label">Jam</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-value" id="minutes">0</span>
+                        <span class="countdown-label">Menit</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-value" id="seconds">0</span>
+                        <span class="countdown-label">Detik</span>
+                    </div>
+                </div>
+            </div>
+            
             <!-- Ayat Al-Qur'an 1 -->
             <div class="section" id="section1">
-                <h2 class="section-title">QS. Ar-Rum 30: Ayat 21</h2>
+                
                 <p class="arabic-text">
                     وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُمْ مِنْ أَنْفُسِكُمْ أَزْوَاجًا لِتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُمْ مَوَدَّةً وَرَحْمَةً إِنَّ فِي ذَلِكَ لَآيَاتٍ لِقَوْمٍ يَتَفَكَّرُونَ
                 </p>
                 <p class="translation">
                     "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang. Sungguh, pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir."
                 </p>
+                <p class="section-title">QS. Ar-Rum 30: Ayat 21</p>
             </div>
             
             <!-- Ayat Al-Qur'an 2 -->
             <div class="section" id="section2">
-                <h2 class="section-title">QS. Furqan: 74</h2>
+               
                 <p class="arabic-text">
                     وَالَّذِينَ يَقُولُونَ رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا وَذُرِّيَّاتِنَا قُرَّةَ أَعْيُنٍ وَاجْعَلْنَا لِلْمُتَّقِينَ إِمَامًا
                 </p>
                 <p class="translation">
                     "Dan, orang-orang yang berkata, 'Wahai Tuhan kami, anugerahkanlah kepada kami penyejuk mata dari pasangan dan keturunan kami serta jadikanlah kami sebagai pemimpin bagi orang-orang yang bertakwa.'"
                 </p>
+                 <p>class="section-title">QS. Furqan: 74</p> 
             </div>
             
             <!-- Love Story -->
             <div class="section" id="section3">
                 <h2 class="section-title">Our Love Story</h2>
                 <div class="love-story">
-                    <p>Awal bulan Juni, dengan izin Allah, kami memulai langkah pertama menuju jalan yang diridhai-Nya. Bukan dengan janji manis, bukan pula dengan pertemuan tanpa arah, melainkan melalui ta'aruf — saling memperkenalkan diri dengan cara yang syar'i. Saling bertukar CV, bertanya jawab tentang visi misi hidup dan pernikahan serta hal-hal lain untuk mengenal dasar aqidah dan keimanan pada masing-masing dari kami.</p>
-                    <p>Akhir bulan Juni, Biidznillah Allah tuntun kami melangkah pada proses nadzor, memandang satu sama lain, mengenal bagaimana pribadi masing-masing dalam bincang jumpa bersama orang tua agar semakin meyakini untuk melangkah ke tahap berikutnya.</p>
-                    <p>Biidznillah, Alhamdulillah, dengan ridha Allah, kami sampai pada proses khitbah. Dengan perasaan haru penuh khidmat kami memohon dan berharap agar keputusan ini menjadi jalan kebaikan dunia - akhirat sesurga kelak.</p>
-                    <p>Biidznillah, dengan penuh syukur, akad yang kami jalani, walimah yang kami nanti, insyaaAllah akan kami bagi bahagia kami pada setiap hati dalam indah yang suci. Rabu, 8 Oktober 2025, semoga Allah jadikan pernikahan ini sebagai ladang ibadah yang penuh sakinah dengan indah mawaddah dan berlimpah rahmah. Aamiin Ya Rabbal 'Aalamin 🤲</p>
-                </div>
-            </div>
-            <div class="section" id="section4">
-             <p class="info-content">Dengan memohon rachmat dan ridho Allah SWT, dengan hormat, kami mengundang Bapak/Ibu untuk hadir dalam acara walimatul `urs kami:</p>
-                 </div>
-            <!-- Info Mempelai -->
-            <div class="section" id="section4">
-            
-                   
-                    <div class="couple-info">
-                        <div class="person">
-                            <h3 class="person-name">Jean Dwi Kustanto</h3>
-                            <p class="person-parents">Putra dari:<br>Alm. Bapak Slamet Budiono & Ibu Kuswati</p>
+                    <div class="story-timeline">
+                        <div class="story-step">
+                            <div class="step-icon">
+                                <i class="fas fa-hands-helping"></i>
+                            </div>
+                            <div class="step-content">
+                                <h3 class="step-title">Ta'aruf</h3>
+                                <p><span class="highlight">Awal bulan Juni</span>, dengan izin Allah, kami memulai langkah pertama menuju jalan yang diridhai-Nya. Bukan dengan janji manis, bukan pula dengan pertemuan tanpa arah, melainkan melalui <span class="highlight">ta'aruf</span> — saling memperkenalkan diri dengan cara yang syar'i. Saling bertukar CV, bertanya jawab tentang visi misi hidup dan pernikahan serta hal-hal lain untuk mengenal dasar aqidah dan keimanan pada masing-masing dari kami.</p>
+                            </div>
                         </div>
-                        <div class="person">
-                            <h3 class="person-name">Pujiana Dwi Kusumawati</h3>
-                            <p class="person-parents">Putri dari:<br>Bapak Sudibyo & Ibu Siswati</p>
+                        
+                        <div class="story-step">
+                            <div class="step-icon">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                            <div class="step-content">
+                                <h3 class="step-title">Nadzor</h3>
+                                <p><span class="highlight">Akhir bulan Juni</span>, Biidznillah Allah tuntun kami melangkah pada proses <span class="highlight">nadzor</span>, memandang satu sama lain, mengenal bagaimana pribadi masing-masing dalam bincang jumpa bersama orang tua agar semakin meyakini untuk melangkah ke tahap berikutnya.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="story-step">
+                            <div class="step-icon">
+                                <i class="fas fa-ring"></i>
+                            </div>
+                            <div class="step-content">
+                                <h3 class="step-title">Khitbah</h3>
+                                <p>Biidznillah, Alhamdulillah, dengan ridha Allah, kami sampai pada proses <span class="highlight">khitbah</span>. Dengan perasaan haru penuh khidmat kami memohon dan berharap agar keputusan ini menjadi jalan kebaikan dunia - akhirat sesurga kelak.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="story-step">
+                            <div class="step-icon">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div class="step-content">
+                                <h3 class="step-title">Akad & Walimah</h3>
+                                <p>Biidznillah, dengan penuh syukur, akad yang kami jalani, walimah yang kami nanti, insyaaAllah akan kami bagi bahagia kami pada setiap hati dalam indah yang suci. <span class="highlight">Rabu, 8 Oktober 2025</span>, semoga Allah jadikan pernikahan ini sebagai ladang ibadah yang penuh <span class="highlight">sakinah</span> dengan indah <span class="highlight">mawaddah</span> dan berlimpah <span class="highlight">rahmah</span>. Aamiin Ya Rabbal 'Aalamin 🤲</p>
+                            </div>
                         </div>
                     </div>
+                </div>
+            </div>
+            
+            <div class="section" id="section4">
+                <p class="info-content">Dengan memohon rachmat dan ridho Allah SWT, dengan hormat, kami mengundang Bapak/Ibu untuk hadir dalam acara walimatul `urs kami:</p>
+            </div>
+            
+            <!-- Info Mempelai -->
+            <div class="section" id="section5">
+                <h2 class="section-title">Mempelai</h2>
+                <div class="couple-info">
+                    <div class="person">
+                        <h3 class="person-name">Jean Dwi Kustanto</h3>
+                        <p class="person-parents">Putra dari:<br>Alm. Bapak Slamet Budiono & Ibu Kuswati</p>
+                    </div>
+                    <div class="person">
+                        <h3 class="person-name">Pujiana Dwi Kusumawati</h3>
+                        <p class="person-parents">Putri dari:<br>Bapak Sudibyo & Ibu Siswati</p>
+                    </div>
+                </div>
             </div>
             
             <!-- Info Acara -->
-            <div class="section" id="section5">
+            <div class="section" id="section6">
                 <h2 class="section-title">Detail Acara</h2>
                 <div class="info-card">
                     <div class="event-info">
@@ -804,7 +1175,7 @@
             </div>
             
             <!-- Doa -->
-            <div class="section" id="section6">
+            <div class="section" id="section7">
                 <div class="info-card">
                     <p class="info-content">Dengan hormat, kami mengharap doa baik kepada kami dari Bapak/ Ibu atas pernikahan kami</p>
                     
@@ -819,7 +1190,7 @@
             </div>
             
             <!-- Foto Mempelai -->
-            <div class="section" id="section7">
+            <div class="section" id="section8">
                 <h2 class="section-title">Mempelai</h2>
                 <div class="couple-photo">
                     <div class="photo-frame">
@@ -832,7 +1203,7 @@
             </div>
             
             <!-- Etika Selama Acara -->
-            <div class="section" id="section8">
+            <div class="section" id="section9">
                 <h2 class="section-title">Etika Selama Acara</h2>
                 <div class="info-card">
                     <p class="info-content">Kepada hadirin yang kami hormati, mohon untuk:</p>
@@ -860,6 +1231,19 @@
         </div>
     </div>
     
+    <!-- Share buttons -->
+    <div class="share-container">
+        <a href="https://wa.me/?text=Undangan%20Pernikahan%20Jean%20%26%20Dwi%20https://example.com" class="share-button" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://example.com" class="share-button" target="_blank">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://twitter.com/intent/tweet?url=https://example.com&text=Undangan%20Pernikahan%20Jean%20%26%20Dwi" class="share-button" target="_blank">
+            <i class="fab fa-twitter"></i>
+        </a>
+    </div>
+    
     <!-- Mobile Navigation -->
     <div class="fab-container">
         <div class="nav-menu" id="navMenu">
@@ -872,19 +1256,19 @@
             <a href="#section3" class="nav-item">
                 <i class="fas fa-heart"></i> Love Story
             </a>
-            <a href="#section4" class="nav-item">
+            <a href="#section5" class="nav-item">
                 <i class="fas fa-users"></i> Mempelai
             </a>
-            <a href="#section5" class="nav-item">
+            <a href="#section6" class="nav-item">
                 <i class="fas fa-calendar-alt"></i> Acara
             </a>
-            <a href="#section6" class="nav-item">
+            <a href="#section7" class="nav-item">
                 <i class="fas fa-hands"></i> Doa
             </a>
-            <a href="#section7" class="nav-item">
+            <a href="#section8" class="nav-item">
                 <i class="fas fa-camera"></i> Foto
             </a>
-            <a href="#section8" class="nav-item">
+            <a href="#section9" class="nav-item">
                 <i class="fas fa-list-ul"></i> Etika
             </a>
         </div>
@@ -906,7 +1290,7 @@
     <script>
         // Membuat bintang
         const starsContainer = document.getElementById('starsContainer');
-        const numberOfStars = 100;
+        const numberOfStars = 150;
         
         for (let i = 0; i < numberOfStars; i++) {
             const star = document.createElement('div');
@@ -951,6 +1335,34 @@
             observer.observe(section);
         });
         
+        // Countdown Timer
+        function updateCountdown() {
+            const weddingDate = new Date('October 8, 2025 10:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+            
+            // Hitung hari, jam, menit, detik
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            // Update tampilan countdown
+            document.getElementById('days').textContent = days;
+            document.getElementById('hours').textContent = hours;
+            document.getElementById('minutes').textContent = minutes;
+            document.getElementById('seconds').textContent = seconds;
+            
+            // Jika countdown sudah selesai
+            if (distance < 0) {
+                document.getElementById('countdown').innerHTML = '<div class="countdown-item"><span class="countdown-value">Hari Bahagia Telah Tiba!</span></div>';
+            }
+        }
+        
+        // Update countdown setiap detik
+        setInterval(updateCountdown, 1000);
+        updateCountdown(); // Panggil sekali saat halaman dimuat
+        
         // Musik player
         const bgMusic = document.getElementById('bgMusic');
         const musicToggle = document.getElementById('musicToggle');
@@ -991,6 +1403,9 @@
                     const navMenu = document.getElementById('navMenu');
                     if (navMenu.classList.contains('active')) {
                         navMenu.classList.remove('active');
+                        const icon = document.getElementById('fabToggle').querySelector('i');
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
                     }
                 }
             });
@@ -1032,6 +1447,54 @@
         };
         
         addStaggerAnimation();
+        
+        // Parallax effect for background elements
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector('.sky');
+            const speed = scrolled * 0.5;
+            
+            if (parallax) {
+                parallax.style.transform = `translateY(${speed}px)`;
+            }
+        });
+        
+        // Typewriter effect for invitation title
+        const typewriterElements = document.querySelectorAll('.typewriter');
+        typewriterElements.forEach(element => {
+            const text = element.textContent;
+            element.textContent = '';
+            let i = 0;
+            
+            function typeWriter() {
+                if (i < text.length) {
+                    element.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, 100);
+                }
+            }
+            
+            // Start typewriter effect after page load
+            setTimeout(typeWriter, 500);
+        });
+        
+        // Add animation to timeline steps
+        const timelineSteps = document.querySelectorAll('.story-step');
+        const timelineObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        timelineSteps.forEach(step => {
+            step.style.opacity = 0;
+            step.style.transform = 'translateY(20px)';
+            step.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            timelineObserver.observe(step);
+        });
     </script>
 </body>
 </html>
