@@ -13,15 +13,13 @@
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
             height: 100vh;
             overflow: hidden;
             font-family: 'Poppins', sans-serif;
             position: relative;
         }
-
-        /* Animasi transisi langit dari malam ke siang - lebih halus dan natural */
+        /* Animasi transisi langit dari malam ke siang - dipercepat */
         .sky {
             position: absolute;
             top: 0;
@@ -29,9 +27,8 @@
             width: 100%;
             height: 100%;
             background: linear-gradient(to bottom, #0a1929, #000814);
-            animation: sky-transition 15s infinite alternate;
+            animation: sky-transition 10s infinite alternate;
         }
-
         @keyframes sky-transition {
             0% { 
                 background: linear-gradient(to bottom, #0a1929, #000814);
@@ -49,7 +46,6 @@
                 background: linear-gradient(to bottom, #87CEEB, #B0E2FF);
             }
         }
-
         .stars-container {
             position: absolute;
             top: 0;
@@ -57,28 +53,24 @@
             width: 100%;
             height: 100%;
             pointer-events: none;
-            animation: fade-out 15s infinite alternate;
+            animation: fade-out 10s infinite alternate;
         }
-
         @keyframes fade-out {
             0%, 20% { opacity: 1; }
             50%, 100% { opacity: 0; }
         }
-
         .star {
             position: absolute;
             background-color: white;
             border-radius: 50%;
             animation: twinkle 3s infinite;
         }
-
         @keyframes twinkle {
             0% { opacity: 0.2; transform: scale(1); }
             50% { opacity: 1; transform: scale(1.2); }
             100% { opacity: 0.2; transform: scale(1); }
         }
-
-        /* Bulan - diperbaiki warna dan animasi */
+        /* Bulan - diperbaiki warna dan animasi - dipercepat */
         .moon {
             position: absolute;
             width: 80px;
@@ -88,10 +80,9 @@
             top: 15%;
             right: 15%;
             box-shadow: 0 0 40px 10px rgba(255, 255, 255, 0.5);
-            animation: moon-movement 15s infinite alternate;
+            animation: moon-movement 10s infinite alternate;
             z-index: 4;
         }
-
         .moon::before {
             content: '';
             position: absolute;
@@ -100,7 +91,6 @@
             border-radius: 50%;
             background: radial-gradient(circle at 30% 30%, #ffffff, #f5f5f5);
         }
-
         @keyframes moon-movement {
             0% { 
                 top: 15%;
@@ -123,8 +113,7 @@
                 opacity: 0;
             }
         }
-
-        /* Matahari terbit - diperbaiki warna dan animasi */
+        /* Matahari terbit - diperbaiki warna dan animasi - dipercepat */
         .sun {
             position: absolute;
             width: 70px;
@@ -134,10 +123,9 @@
             bottom: -70px;
             left: 20%;
             box-shadow: 0 0 60px 20px rgba(255, 235, 59, 0.7);
-            animation: sun-rise 15s infinite alternate;
+            animation: sun-rise 10s infinite alternate;
             z-index: 3;
         }
-
         @keyframes sun-rise {
             0% { 
                 bottom: -70px;
@@ -156,17 +144,15 @@
                 opacity: 1;
             }
         }
-
-        /* Awan putih untuk siang hari - diperbaiki warna dan animasi */
+        /* Awan putih untuk siang hari - diperbaiki warna dan animasi - dipercepat */
         .cloud {
             position: absolute;
             background-color: #ffffff;
             border-radius: 100px;
             opacity: 0;
             z-index: 2;
-            animation: cloud-fade-in 15s infinite alternate;
+            animation: cloud-fade-in 10s infinite alternate;
         }
-
         .cloud::before,
         .cloud::after {
             content: '';
@@ -174,95 +160,81 @@
             background-color: #ffffff;
             border-radius: 100px;
         }
-
         @keyframes cloud-fade-in {
             0%, 30% { opacity: 0; }
             60%, 100% { opacity: 0.8; }
         }
-
         .cloud1 {
             width: 80px;
             height: 30px;
             top: 20%;
             left: -80px;
-            animation: cloud-movement1 25s linear infinite, cloud-fade-in 15s infinite alternate;
+            animation: cloud-movement1 20s linear infinite, cloud-fade-in 10s infinite alternate;
         }
-
         .cloud1::before {
             width: 40px;
             height: 40px;
             top: -20px;
             left: 10px;
         }
-
         .cloud1::after {
             width: 50px;
             height: 30px;
             top: -15px;
             right: 10px;
         }
-
         .cloud2 {
             width: 60px;
             height: 25px;
             top: 30%;
             left: -60px;
-            animation: cloud-movement2 30s linear infinite, cloud-fade-in 15s infinite alternate;
+            animation: cloud-movement2 25s linear infinite, cloud-fade-in 10s infinite alternate;
             animation-delay: 5s;
         }
-
         .cloud2::before {
             width: 30px;
             height: 30px;
             top: -15px;
             left: 15px;
         }
-
         .cloud2::after {
             width: 40px;
             height: 25px;
             top: -10px;
             right: 15px;
         }
-
         .cloud3 {
             width: 100px;
             height: 35px;
             top: 15%;
             left: -100px;
-            animation: cloud-movement3 35s linear infinite, cloud-fade-in 15s infinite alternate;
+            animation: cloud-movement3 30s linear infinite, cloud-fade-in 10s infinite alternate;
             animation-delay: 10s;
         }
-
         .cloud3::before {
             width: 50px;
             height: 50px;
             top: -25px;
             left: 20px;
         }
-
         .cloud3::after {
             width: 60px;
             height: 35px;
             top: -15px;
             right: 20px;
         }
-
         @keyframes cloud-movement1 {
             0% { transform: translateX(0); }
             100% { transform: translateX(calc(100vw + 80px)); }
         }
-
         @keyframes cloud-movement2 {
             0% { transform: translateX(0); }
             100% { transform: translateX(calc(100vw + 60px)); }
         }
-
         @keyframes cloud-movement3 {
             0% { transform: translateX(0); }
             100% { transform: translateX(calc(100vw + 100px)); }
         }
-
         /* Partikel cahaya - dikurangi untuk mobile */
         .particles {
             position: absolute;
@@ -273,14 +245,12 @@
             pointer-events: none;
             z-index: 1;
         }
-
         .particle {
             position: absolute;
             background-color: rgba(255, 255, 255, 0.8);
             border-radius: 50%;
             animation: float-up 10s linear infinite;
         }
-
         @keyframes float-up {
             0% {
                 transform: translateY(100vh) scale(0);
@@ -297,7 +267,6 @@
                 opacity: 0;
             }
         }
-
         /* Konten Undangan */
         .invitation-container {
             position: relative;
@@ -310,14 +279,12 @@
             color: white;
             text-align: center;
             padding: 15px;
-            animation: text-color-change 15s infinite alternate;
+            animation: text-color-change 10s infinite alternate;
         }
-
         @keyframes text-color-change {
             0%, 40% { color: white; }
             100% { color: #0d47a1; }
         }
-
         /* Glassmorphism card dengan ornamen - disesuaikan untuk mobile */
         .glass-card {
             background: rgba(255, 255, 255, 0.15);
@@ -335,7 +302,6 @@
             position: relative;
             overflow: hidden;
         }
-
         /* Ornamen sudut - diperkecil untuk mobile */
         .ornament-corner {
             position: absolute;
@@ -344,30 +310,25 @@
             opacity: 0.8;
             z-index: 1;
         }
-
         .ornament-corner.top-left {
             top: 5px;
             left: 5px;
         }
-
         .ornament-corner.top-right {
             top: 5px;
             right: 5px;
             transform: rotate(90deg);
         }
-
         .ornament-corner.bottom-left {
             bottom: 5px;
             left: 5px;
             transform: rotate(270deg);
         }
-
         .ornament-corner.bottom-right {
             bottom: 5px;
             right: 5px;
             transform: rotate(180deg);
         }
-
         /* Islamic Ornament Pattern */
         .islamic-ornament {
             position: absolute;
@@ -375,7 +336,6 @@
             height: 100%;
             overflow: hidden;
         }
-
         .islamic-ornament::before {
             content: '';
             position: absolute;
@@ -389,7 +349,6 @@
             background-size: 20px 20px;
             background-position: 0 0, 10px 10px;
         }
-
         .islamic-ornament::after {
             content: '';
             position: absolute;
@@ -403,7 +362,6 @@
                 rgba(255, 255, 255, 0.2) 10px
             );
         }
-
         /* Islamic Geometric Pattern */
         .geometric-pattern {
             position: absolute;
@@ -411,7 +369,6 @@
             height: 100%;
             overflow: hidden;
         }
-
         .geometric-pattern::before {
             content: '';
             position: absolute;
@@ -427,7 +384,6 @@
             background-size: 20px 35px;
             background-position: 0 0, 0 0, 10px 18px, 10px 18px, 0 0, 10px 18px;
         }
-
         /* Ornamen floral - diperkecil untuk mobile */
         .floral-ornament {
             position: absolute;
@@ -436,19 +392,16 @@
             opacity: 0.6;
             z-index: 1;
         }
-
         .floral-ornament.top {
             top: -20px;
             left: 50%;
             transform: translateX(-50%);
         }
-
         .floral-ornament.bottom {
             bottom: -20px;
             left: 50%;
             transform: translateX(-50%) rotate(180deg);
         }
-
         .floral-ornament::before,
         .floral-ornament::after {
             content: '';
@@ -458,17 +411,14 @@
             border-radius: 50%;
             background: radial-gradient(circle, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.4));
         }
-
         .floral-ornament::before {
             top: 17.5px;
             left: 5px;
         }
-
         .floral-ornament::after {
             top: 17.5px;
             right: 5px;
         }
-
         .floral-ornament .center {
             position: absolute;
             width: 12px;
@@ -478,7 +428,6 @@
             top: 19px;
             left: 19px;
         }
-
         /* Garis hiasan */
         .decorative-line {
             position: relative;
@@ -489,7 +438,6 @@
             align-items: center;
             justify-content: center;
         }
-
         .decorative-line::before,
         .decorative-line::after {
             content: '';
@@ -497,7 +445,6 @@
             height: 1px;
             background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.7), transparent);
         }
-
         .decorative-line .dot {
             width: 4px;
             height: 4px;
@@ -505,7 +452,6 @@
             background-color: rgba(255, 255, 255, 0.7);
             margin: 0 10px;
         }
-
         @keyframes fadeInScale {
             from {
                 opacity: 0;
@@ -516,7 +462,6 @@
                 transform: scale(1);
             }
         }
-
         /* Bismillah dalam Bahasa Arab - menggunakan gambar */
         .bismillah {
             width: 200px;
@@ -530,7 +475,6 @@
             z-index: 2;
             object-fit: contain;
         }
-
         /* Divider */
         .divider {
             width: 100px;
@@ -541,7 +485,6 @@
             animation: fadeIn 1.5s ease forwards;
             animation-delay: 0.8s;
         }
-
         /* Judul Undangan - disesuaikan untuk mobile */
         .invitation-title {
             font-family: 'Playfair Display', serif;
@@ -557,7 +500,6 @@
             display: inline-block;
             z-index: 2;
         }
-
         .invitation-title::after {
             content: '';
             position: absolute;
@@ -568,11 +510,10 @@
             height: 1px;
             background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
         }
-
-        /* Nama Pasangan - disesuaikan untuk mobile dengan animasi premium */
+        /* Nama Pasangan - diperbesar ukurannya */
         .couple-names {
             font-family: 'Dancing Script', cursive;
-            font-size: 3.2rem;
+            font-size: 4.5rem;
             margin: 1.8rem 0;
             opacity: 0;
             animation: premiumEntrance 2s ease forwards, premiumGlow 4s infinite alternate;
@@ -588,7 +529,6 @@
             text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
             letter-spacing: 2px;
         }
-
         @keyframes premiumEntrance {
             0% {
                 opacity: 0;
@@ -606,7 +546,6 @@
                 filter: blur(0px);
             }
         }
-
         @keyframes premiumGlow {
             0% { 
                 text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.3);
@@ -621,11 +560,10 @@
                 transform: translateY(0px);
             }
         }
-
         .ampersand {
             display: inline-block;
             margin: 0 15px;
-            font-size: 2.5rem;
+            font-size: 3.5rem;
             animation: premiumRotate 6s infinite ease-in-out;
             vertical-align: middle;
             background: linear-gradient(45deg, #ffd700, #ffed4e);
@@ -633,7 +571,6 @@
             background-clip: text;
             color: transparent;
         }
-
         @keyframes premiumRotate {
             0% { transform: rotate(0deg) scale(1); }
             25% { transform: rotate(5deg) scale(1.1); }
@@ -641,7 +578,6 @@
             75% { transform: rotate(-5deg) scale(1.1); }
             100% { transform: rotate(0deg) scale(1); }
         }
-
         /* Ornamen kecil di sekitar nama - disesuaikan untuk mobile */
         .name-ornament {
             position: absolute;
@@ -650,19 +586,16 @@
             opacity: 0.6;
             z-index: 1;
         }
-
         .name-ornament.left {
             top: 50%;
             left: -25px;
             transform: translateY(-50%);
         }
-
         .name-ornament.right {
             top: 50%;
             right: -25px;
             transform: translateY(-50%) rotate(180deg);
         }
-
         .name-ornament::before,
         .name-ornament::after {
             content: '';
@@ -672,17 +605,14 @@
             border-radius: 50%;
             background: radial-gradient(circle, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.4));
         }
-
         .name-ornament::before {
             top: 6px;
             left: 0;
         }
-
         .name-ornament::after {
             top: 6px;
             right: 0;
         }
-
         .name-ornament .center {
             position: absolute;
             width: 6px;
@@ -692,7 +622,6 @@
             top: 7px;
             left: 7px;
         }
-
         /* Tamu Undangan - disesuaikan untuk mobile */
         .guest-label {
             font-size: 1rem;
@@ -705,7 +634,6 @@
             position: relative;
             z-index: 2;
         }
-
         /* Nama tamu yang diundang - font lebih besar */
         .guest-name {
             font-family: 'Dancing Script', cursive;
@@ -720,12 +648,10 @@
             font-weight: 700;
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
         }
-
         @keyframes nameGlow {
             0% { text-shadow: 0 0 5px rgba(255, 255, 255, 0.5); }
             100% { text-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6); }
         }
-
         /* Button Open Invitation - disesuaikan untuk mobile */
         .open-invitation {
             background: linear-gradient(45deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
@@ -751,7 +677,6 @@
             position: relative;
             z-index: 2;
         }
-
         .open-invitation::before {
             content: '';
             position: absolute;
@@ -762,22 +687,68 @@
             background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
             transition: left 0.5s;
         }
-
         .open-invitation:hover::before {
             left: 100%;
         }
-
         @keyframes buttonPulse {
             0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4); }
             100% { box-shadow: 0 0 0 10px rgba(255, 255, 255, 0); }
         }
-
         .open-invitation:hover {
             background: linear-gradient(45deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.2));
             transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
-
+        /* Countdown Timer - dipindahkan ke bawah button */
+        .countdown-container {
+            margin-top: 20px;
+            text-align: center;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+            opacity: 0;
+            animation: fadeInUp 1.5s ease forwards;
+            animation-delay: 2.8s;
+        }
+        
+        .countdown-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1rem;
+            margin-bottom: 10px;
+            color: white;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .countdown-item {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 8px;
+            min-width: 50px;
+            text-align: center;
+        }
+        
+        .countdown-value {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: white;
+            display: block;
+        }
+        
+        .countdown-label {
+            font-size: 0.7rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 3px;
+        }
         /* Animasi umum */
         @keyframes fadeInUp {
             from {
@@ -789,19 +760,18 @@
                 transform: translateY(0);
             }
         }
-
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
-
-        /* Media query untuk mobile */
+        /* Media query untuk mobile - dioptimalkan */
         @media (max-width: 768px) {
             /* Mengurangi kompleksitas animasi untuk mobile */
             .glass-card {
                 background: rgba(255, 255, 255, 0.2);
                 backdrop-filter: none;
                 -webkit-backdrop-filter: none;
+                padding: 20px 15px;
             }
             
             /* Mengurangi jumlah partikel untuk performa lebih baik */
@@ -811,49 +781,50 @@
             
             /* Mengurangi ukuran bulan dan matahari */
             .moon {
-                width: 60px;
-                height: 60px;
-            }
-            
-            .sun {
                 width: 50px;
                 height: 50px;
             }
             
-            /* Mengurangi ukuran awan */
-            .cloud1 {
-                width: 70px;
-                height: 25px;
-            }
-            
-            .cloud2 {
-                width: 50px;
-                height: 20px;
-            }
-            
-            .cloud3 {
-                width: 80px;
-                height: 30px;
-            }
-            
-            /* Menyesuaikan ukuran font nama tamu untuk mobile */
-            .guest-name {
-                font-size: 1.8rem;
-            }
-            
-            /* Menyesuaikan ukuran ornamen untuk mobile */
-            .ornament-corner {
+            .sun {
                 width: 40px;
                 height: 40px;
             }
             
-            /* Menyesuaikan ukuran nama pasangan untuk mobile */
+            /* Mengurangi ukuran awan */
+            .cloud1 {
+                width: 60px;
+                height: 20px;
+            }
+            
+            .cloud2 {
+                width: 45px;
+                height: 15px;
+            }
+            
+            .cloud3 {
+                width: 75px;
+                height: 25px;
+            }
+            
+            /* Menyesuaikan ukuran font nama tamu untuk mobile */
+            .guest-name {
+                font-size: 1.6rem;
+            }
+            
+            /* Menyesuaikan ukuran ornamen untuk mobile */
+            .ornament-corner {
+                width: 30px;
+                height: 30px;
+            }
+            
+            /* Menyesuaikan ukuran nama pasangan untuk mobile - tetap besar */
             .couple-names {
-                font-size: 2.5rem;
+                font-size: 3.5rem;
+                margin: 1.2rem 0;
             }
             
             .ampersand {
-                font-size: 2rem;
+                font-size: 2.8rem;
             }
             
             /* Menyesuaikan ukuran gambar Bismillah untuk mobile */
@@ -861,66 +832,85 @@
                 width: 150px;
                 height: 60px;
             }
+            
+            /* Menyesuaikan countdown untuk mobile */
+            .countdown-container {
+                padding: 10px;
+                margin-top: 15px;
+            }
+            
+            .countdown-title {
+                font-size: 0.9rem;
+            }
+            
+            .countdown {
+                gap: 5px;
+            }
+            
+            .countdown-item {
+                min-width: 40px;
+                padding: 5px;
+            }
+            
+            .countdown-value {
+                font-size: 1rem;
+            }
+            
+            .countdown-label {
+                font-size: 0.6rem;
+            }
+            
+            /* Menyesuaikan ukuran card untuk mobile */
+            .glass-card {
+                max-width: 95%;
+                width: 95%;
+            }
+            
+            /* Menyesuaikan ukuran tombol untuk mobile */
+            .open-invitation {
+                padding: 10px 25px;
+                font-size: 0.9rem;
+            }
+            
+            /* Menyesuaikan ukuran judul untuk mobile */
+            .invitation-title {
+                font-size: 1.2rem;
+            }
         }
         
-        /* Musik player */
-        .music-player {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 100;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .music-toggle {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .music-toggle:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: scale(1.1);
-        }
-        
-        .music-toggle i {
-            font-size: 1.2rem;
-        }
-        
-        .music-info {
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 20px;
-            padding: 5px 15px;
-            color: white;
-            font-size: 0.8rem;
-            display: none;
-        }
-        
-        .music-info.visible {
-            display: block;
+        /* Media query untuk mobile sangat kecil */
+        @media (max-width: 480px) {
+            /* Menyesuaikan ukuran nama pasangan untuk mobile sangat kecil */
+            .couple-names {
+                font-size: 2.8rem;
+            }
+            
+            .ampersand {
+                font-size: 2.2rem;
+            }
+            
+            /* Menyesuaikan ukuran font nama tamu untuk mobile sangat kecil */
+            .guest-name {
+                font-size: 1.4rem;
+            }
+            
+            /* Menyesuaikan countdown untuk mobile sangat kecil */
+            .countdown-item {
+                min-width: 35px;
+                padding: 4px;
+            }
+            
+            .countdown-value {
+                font-size: 0.9rem;
+            }
+            
+            .countdown-label {
+                font-size: 0.5rem;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Audio untuk musik latar -->
-    <audio id="bgMusic" loop>
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-        Browser Anda tidak mendukung tag audio.
-    </audio>
-    
     <div class="sky"></div>
     
     <div class="stars-container" id="starsContainer"></div>
@@ -935,28 +925,7 @@
     <div class="cloud cloud1"></div>
     <div class="cloud cloud2"></div>
     <div class="cloud cloud3"></div>
-    <!-- Countdown Timer -->
-            <div class="countdown-container">
-                <h3 class="countdown-title">Menuju Hari Bahagia</h3>
-                <div class="countdown" id="countdown">
-                    <div class="countdown-item">
-                        <span class="countdown-value" id="days">0</span>
-                        <span class="countdown-label">Hari</span>
-                    </div>
-                    <div class="countdown-item">
-                        <span class="countdown-value" id="hours">0</span>
-                        <span class="countdown-label">Jam</span>
-                    </div>
-                    <div class="countdown-item">
-                        <span class="countdown-value" id="minutes">0</span>
-                        <span class="countdown-label">Menit</span>
-                    </div>
-                    <div class="countdown-item">
-                        <span class="countdown-value" id="seconds">0</span>
-                        <span class="countdown-label">Detik</span>
-                    </div>
-                </div>
-            </div>
+    
     <div class="invitation-container">
         <div class="glass-card">
             <!-- Ornamen sudut dengan pola Islam -->
@@ -1019,13 +988,7 @@
                 Invitation Open
             </a>
             
-            <!-- Ornamen floral bawah -->
-            <div class="floral-ornament bottom">
-                <div class="center"></div>
-            </div>
-        </div>
-    </div>
-    <!-- Countdown Timer -->
+            <!-- Countdown Timer - dipindahkan ke bawah button -->
             <div class="countdown-container">
                 <h3 class="countdown-title">Menuju Hari Bahagia</h3>
                 <div class="countdown" id="countdown">
@@ -1047,23 +1010,20 @@
                     </div>
                 </div>
             </div>
-    <!-- Musik Player -->
-    <div class="music-player">
-        <div class="music-toggle" id="musicToggle">
-            <i class="fas fa-music"></i>
+            
+            <!-- Ornamen floral bawah -->
+            <div class="floral-ornament bottom">
+                <div class="center"></div>
+            </div>
         </div>
-        <div class="music-info" id="musicInfo">Music: On</div>
     </div>
-
+    
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const starsContainer = document.getElementById('starsContainer');
             const particlesContainer = document.getElementById('particles');
             const openButton = document.getElementById('openButton');
             const guestNameElement = document.getElementById('guestName');
-            const bgMusic = document.getElementById('bgMusic');
-            const musicToggle = document.getElementById('musicToggle');
-            const musicInfo = document.getElementById('musicInfo');
             
             // Deteksi perangkat mobile
             const isMobile = window.innerWidth <= 768;
@@ -1147,41 +1107,6 @@
                 }, 300);
             });
             
-            // Kontrol musik
-            let isPlaying = false;
-            
-            // Fungsi untuk memulai musik
-            function playMusic() {
-                bgMusic.play().then(() => {
-                    isPlaying = true;
-                    musicToggle.innerHTML = '<i class="fas fa-pause"></i>';
-                    musicInfo.textContent = 'Music: On';
-                    musicInfo.classList.add('visible');
-                }).catch(error => {
-                    console.log('Autoplay prevented:', error);
-                });
-            }
-            
-            // Fungsi untuk menjeda musik
-            function pauseMusic() {
-                bgMusic.pause();
-                isPlaying = false;
-                musicToggle.innerHTML = '<i class="fas fa-music"></i>';
-                musicInfo.textContent = 'Music: Off';
-            }
-            
-            // Toggle musik saat tombol diklik
-            musicToggle.addEventListener('click', function() {
-                if (isPlaying) {
-                    pauseMusic();
-                } else {
-                    playMusic();
-                }
-            });
-            
-            // Coba mulai musik saat halaman dimuat
-            playMusic();
-            
             // Mencegah zoom saat double tap di mobile
             let lastTouchEnd = 0;
             document.addEventListener('touchend', function(e) {
@@ -1191,6 +1116,35 @@
                 }
                 lastTouchEnd = now;
             }, false);
+            
+            // Countdown Timer
+            function updateCountdown() {
+                // Set tanggal pernikahan (8 Oktober 2025)
+                const weddingDate = new Date('October 8, 2025 10:00:00').getTime();
+                const now = new Date().getTime();
+                const distance = weddingDate - now;
+                
+                // Hitung hari, jam, menit, detik
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                
+                // Update tampilan countdown
+                document.getElementById('days').textContent = days;
+                document.getElementById('hours').textContent = hours;
+                document.getElementById('minutes').textContent = minutes;
+                document.getElementById('seconds').textContent = seconds;
+                
+                // Jika countdown sudah selesai
+                if (distance < 0) {
+                    document.getElementById('countdown').innerHTML = '<div class="countdown-item"><span class="countdown-value">Hari Bahagia Telah Tiba!</span></div>';
+                }
+            }
+            
+            // Update countdown setiap detik
+            setInterval(updateCountdown, 1000);
+            updateCountdown(); // Panggil sekali saat halaman dimuat
         });
     </script>
 </body>
