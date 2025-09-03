@@ -75,13 +75,13 @@
         /* Bulan */
         .moon {
             position: absolute;
-            width: 100px;
-            height: 100px;
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
             background-color: #f5f5f5;
             top: 15%;
             right: 15%;
-            box-shadow: 0 0 60px 20px rgba(255, 255, 255, 0.7);
+            box-shadow: 0 0 40px 10px rgba(255, 255, 255, 0.5);
             animation: moon-movement 30s infinite alternate;
             z-index: 4;
         }
@@ -116,28 +116,28 @@
         /* Matahari terbit */
         .sun {
             position: absolute;
-            width: 80px;
-            height: 80px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             background: radial-gradient(circle, #ffeb3b, #ffc107);
-            bottom: -80px;
+            bottom: -60px;
             left: 20%;
-            box-shadow: 0 0 80px 30px rgba(255, 235, 59, 0.8);
+            box-shadow: 0 0 40px 15px rgba(255, 235, 59, 0.7);
             animation: sun-rise 30s infinite alternate;
             z-index: 3;
         }
 
         @keyframes sun-rise {
             0% { 
-                bottom: -80px;
+                bottom: -60px;
                 opacity: 0;
             }
             50% { 
-                bottom: -40px;
+                bottom: -30px;
                 opacity: 0.5;
             }
             100% { 
-                bottom: 30%;
+                bottom: 25%;
                 opacity: 1;
             }
         }
@@ -150,7 +150,6 @@
             opacity: 0;
             z-index: 2;
             animation: cloud-fade-in 30s infinite alternate;
-            filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.1));
         }
 
         .cloud::before,
@@ -167,89 +166,89 @@
         }
 
         .cloud1 {
-            width: 100px;
-            height: 40px;
+            width: 80px;
+            height: 30px;
             top: 20%;
-            left: -100px;
+            left: -80px;
             animation: cloud-movement1 25s linear infinite, cloud-fade-in 30s infinite alternate;
         }
 
         .cloud1::before {
-            width: 50px;
-            height: 50px;
-            top: -25px;
+            width: 40px;
+            height: 40px;
+            top: -20px;
             left: 10px;
         }
 
         .cloud1::after {
-            width: 60px;
-            height: 40px;
+            width: 50px;
+            height: 30px;
             top: -15px;
             right: 10px;
         }
 
         .cloud2 {
-            width: 80px;
-            height: 35px;
+            width: 60px;
+            height: 25px;
             top: 30%;
-            left: -80px;
+            left: -60px;
             animation: cloud-movement2 30s linear infinite, cloud-fade-in 30s infinite alternate;
             animation-delay: 5s;
         }
 
         .cloud2::before {
-            width: 40px;
-            height: 40px;
-            top: -20px;
+            width: 30px;
+            height: 30px;
+            top: -15px;
             left: 15px;
         }
 
         .cloud2::after {
-            width: 50px;
-            height: 35px;
+            width: 40px;
+            height: 25px;
             top: -10px;
             right: 15px;
         }
 
         .cloud3 {
-            width: 120px;
-            height: 45px;
+            width: 100px;
+            height: 35px;
             top: 15%;
-            left: -120px;
+            left: -100px;
             animation: cloud-movement3 35s linear infinite, cloud-fade-in 30s infinite alternate;
             animation-delay: 10s;
         }
 
         .cloud3::before {
-            width: 60px;
-            height: 60px;
-            top: -30px;
+            width: 50px;
+            height: 50px;
+            top: -25px;
             left: 20px;
         }
 
         .cloud3::after {
-            width: 70px;
-            height: 45px;
+            width: 60px;
+            height: 35px;
             top: -15px;
             right: 20px;
         }
 
         @keyframes cloud-movement1 {
             0% { transform: translateX(0); }
-            100% { transform: translateX(calc(100vw + 100px)); }
+            100% { transform: translateX(calc(100vw + 80px)); }
         }
 
         @keyframes cloud-movement2 {
             0% { transform: translateX(0); }
-            100% { transform: translateX(calc(100vw + 80px)); }
+            100% { transform: translateX(calc(100vw + 60px)); }
         }
 
         @keyframes cloud-movement3 {
             0% { transform: translateX(0); }
-            100% { transform: translateX(calc(100vw + 120px)); }
+            100% { transform: translateX(calc(100vw + 100px)); }
         }
 
-        /* Partikel cahaya */
+        /* Partikel cahaya - dikurangi untuk mobile */
         .particles {
             position: absolute;
             top: 0;
@@ -295,7 +294,7 @@
             align-items: center;
             color: white;
             text-align: center;
-            padding: 20px;
+            padding: 15px;
             animation: text-color-change 30s infinite alternate;
         }
 
@@ -304,16 +303,16 @@
             100% { color: #0d47a1; }
         }
 
-        /* Glassmorphism card dengan ornamen */
+        /* Glassmorphism card dengan ornamen - disesuaikan untuk mobile */
         .glass-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border-radius: 15px;
             border: 1px solid rgba(255, 255, 255, 0.2);
             box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
-            padding: 50px 40px;
-            max-width: 600px;
+            padding: 30px 20px;
+            max-width: 90%;
             width: 90%;
             opacity: 0;
             animation: fadeInScale 1.5s ease forwards;
@@ -322,64 +321,64 @@
             overflow: hidden;
         }
 
-        /* Ornamen sudut */
+        /* Ornamen sudut - diperkecil untuk mobile */
         .ornament-corner {
             position: absolute;
-            width: 60px;
-            height: 60px;
+            width: 30px;
+            height: 30px;
             opacity: 0.7;
             z-index: 1;
         }
 
         .ornament-corner.top-left {
-            top: 10px;
-            left: 10px;
-            border-top: 3px solid rgba(255, 255, 255, 0.7);
-            border-left: 3px solid rgba(255, 255, 255, 0.7);
-            border-top-left-radius: 15px;
+            top: 5px;
+            left: 5px;
+            border-top: 2px solid rgba(255, 255, 255, 0.7);
+            border-left: 2px solid rgba(255, 255, 255, 0.7);
+            border-top-left-radius: 10px;
         }
 
         .ornament-corner.top-right {
-            top: 10px;
-            right: 10px;
-            border-top: 3px solid rgba(255, 255, 255, 0.7);
-            border-right: 3px solid rgba(255, 255, 255, 0.7);
-            border-top-right-radius: 15px;
+            top: 5px;
+            right: 5px;
+            border-top: 2px solid rgba(255, 255, 255, 0.7);
+            border-right: 2px solid rgba(255, 255, 255, 0.7);
+            border-top-right-radius: 10px;
         }
 
         .ornament-corner.bottom-left {
-            bottom: 10px;
-            left: 10px;
-            border-bottom: 3px solid rgba(255, 255, 255, 0.7);
-            border-left: 3px solid rgba(255, 255, 255, 0.7);
-            border-bottom-left-radius: 15px;
+            bottom: 5px;
+            left: 5px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.7);
+            border-left: 2px solid rgba(255, 255, 255, 0.7);
+            border-bottom-left-radius: 10px;
         }
 
         .ornament-corner.bottom-right {
-            bottom: 10px;
-            right: 10px;
-            border-bottom: 3px solid rgba(255, 255, 255, 0.7);
-            border-right: 3px solid rgba(255, 255, 255, 0.7);
-            border-bottom-right-radius: 15px;
+            bottom: 5px;
+            right: 5px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.7);
+            border-right: 2px solid rgba(255, 255, 255, 0.7);
+            border-bottom-right-radius: 10px;
         }
 
-        /* Ornamen floral */
+        /* Ornamen floral - diperkecil untuk mobile */
         .floral-ornament {
             position: absolute;
-            width: 80px;
-            height: 80px;
+            width: 50px;
+            height: 50px;
             opacity: 0.6;
             z-index: 1;
         }
 
         .floral-ornament.top {
-            top: -30px;
+            top: -20px;
             left: 50%;
             transform: translateX(-50%);
         }
 
         .floral-ornament.bottom {
-            bottom: -30px;
+            bottom: -20px;
             left: 50%;
             transform: translateX(-50%) rotate(180deg);
         }
@@ -388,38 +387,38 @@
         .floral-ornament::after {
             content: '';
             position: absolute;
-            width: 20px;
-            height: 20px;
+            width: 15px;
+            height: 15px;
             border-radius: 50%;
             background: radial-gradient(circle, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.4));
         }
 
         .floral-ornament::before {
-            top: 30px;
-            left: 10px;
+            top: 17.5px;
+            left: 5px;
         }
 
         .floral-ornament::after {
-            top: 30px;
-            right: 10px;
+            top: 17.5px;
+            right: 5px;
         }
 
         .floral-ornament .center {
             position: absolute;
-            width: 15px;
-            height: 15px;
+            width: 12px;
+            height: 12px;
             border-radius: 50%;
             background: radial-gradient(circle, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.5));
-            top: 32.5px;
-            left: 32.5px;
+            top: 19px;
+            left: 19px;
         }
 
         /* Garis hiasan */
         .decorative-line {
             position: relative;
             width: 100%;
-            height: 20px;
-            margin: 15px 0;
+            height: 15px;
+            margin: 10px 0;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -434,11 +433,11 @@
         }
 
         .decorative-line .dot {
-            width: 5px;
-            height: 5px;
+            width: 4px;
+            height: 4px;
             border-radius: 50%;
             background-color: rgba(255, 255, 255, 0.7);
-            margin: 0 15px;
+            margin: 0 10px;
         }
 
         @keyframes fadeInScale {
@@ -452,15 +451,15 @@
             }
         }
 
-        /* Bismillah dalam Bahasa Arab */
+        /* Bismillah dalam Bahasa Arab - disesuaikan untuk mobile */
         .bismillah {
             font-family: 'Great Vibes', cursive;
-            font-size: 2.8rem;
-            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
             opacity: 0;
             animation: fadeInUp 1.5s ease forwards;
             animation-delay: 0.5s;
-            text-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
             background: linear-gradient(45deg, #ffffff, #e0e0e0);
             -webkit-background-clip: text;
             background-clip: text;
@@ -471,22 +470,22 @@
 
         /* Divider */
         .divider {
-            width: 150px;
-            height: 2px;
+            width: 100px;
+            height: 1px;
             background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
-            margin: 1.5rem auto;
+            margin: 1rem auto;
             opacity: 0;
             animation: fadeIn 1.5s ease forwards;
             animation-delay: 0.8s;
         }
 
-        /* Judul Undangan */
+        /* Judul Undangan - disesuaikan untuk mobile */
         .invitation-title {
             font-family: 'Playfair Display', serif;
             font-weight: 700;
-            font-size: 2.2rem;
-            margin-bottom: 2rem;
-            letter-spacing: 5px;
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: 3px;
             opacity: 0;
             animation: fadeInUp 1.5s ease forwards;
             animation-delay: 1s;
@@ -499,19 +498,19 @@
         .invitation-title::after {
             content: '';
             position: absolute;
-            bottom: -10px;
+            bottom: -8px;
             left: 50%;
             transform: translateX(-50%);
-            width: 80px;
+            width: 60px;
             height: 1px;
             background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
         }
 
-        /* Nama Pasangan */
+        /* Nama Pasangan - disesuaikan untuk mobile */
         .couple-names {
             font-family: 'Dancing Script', cursive;
-            font-size: 5rem;
-            margin: 2rem 0;
+            font-size: 2.8rem;
+            margin: 1.5rem 0;
             opacity: 0;
             animation: fadeInUp 1.5s ease forwards, glow 3s infinite alternate;
             animation-delay: 1.5s;
@@ -522,13 +521,13 @@
 
         @keyframes glow {
             0% { text-shadow: 0 0 5px rgba(255, 255, 255, 0.5); }
-            100% { text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.6); }
+            100% { text-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6); }
         }
 
         .ampersand {
             display: inline-block;
-            margin: 0 20px;
-            font-size: 4rem;
+            margin: 0 15px;
+            font-size: 2.2rem;
             animation: rotate 4s infinite linear;
             vertical-align: middle;
         }
@@ -538,24 +537,24 @@
             100% { transform: rotate(360deg); }
         }
 
-        /* Ornamen kecil di sekitar nama */
+        /* Ornamen kecil di sekitar nama - disesuaikan untuk mobile */
         .name-ornament {
             position: absolute;
-            width: 30px;
-            height: 30px;
+            width: 20px;
+            height: 20px;
             opacity: 0.6;
             z-index: 1;
         }
 
         .name-ornament.left {
             top: 50%;
-            left: -40px;
+            left: -25px;
             transform: translateY(-50%);
         }
 
         .name-ornament.right {
             top: 50%;
-            right: -40px;
+            right: -25px;
             transform: translateY(-50%) rotate(180deg);
         }
 
@@ -563,36 +562,36 @@
         .name-ornament::after {
             content: '';
             position: absolute;
-            width: 10px;
-            height: 10px;
+            width: 8px;
+            height: 8px;
             border-radius: 50%;
             background: radial-gradient(circle, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.4));
         }
 
         .name-ornament::before {
-            top: 10px;
+            top: 6px;
             left: 0;
         }
 
         .name-ornament::after {
-            top: 10px;
+            top: 6px;
             right: 0;
         }
 
         .name-ornament .center {
             position: absolute;
-            width: 8px;
-            height: 8px;
+            width: 6px;
+            height: 6px;
             border-radius: 50%;
             background: radial-gradient(circle, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.5));
-            top: 11px;
-            left: 11px;
+            top: 7px;
+            left: 7px;
         }
 
-        /* Tamu Undangan */
+        /* Tamu Undangan - disesuaikan untuk mobile */
         .guest-text {
-            font-size: 1.3rem;
-            margin-bottom: 2.5rem;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
             opacity: 0;
             animation: fadeInUp 1.5s ease forwards;
             animation-delay: 2s;
@@ -602,24 +601,24 @@
             z-index: 2;
         }
 
-        /* Button Open Invitation */
+        /* Button Open Invitation - disesuaikan untuk mobile */
         .open-invitation {
             background: linear-gradient(45deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
-            border: 2px solid rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.5);
             color: white;
-            padding: 15px 40px;
-            font-size: 1.1rem;
+            padding: 10px 25px;
+            font-size: 0.9rem;
             border-radius: 50px;
             cursor: pointer;
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 8px;
             transition: all 0.4s ease;
             opacity: 0;
             animation: fadeInUp 1.5s ease forwards, buttonPulse 2.5s infinite alternate;
             animation-delay: 2.5s;
             text-decoration: none;
-            margin-top: 1rem;
+            margin-top: 0.5rem;
             font-weight: 500;
             letter-spacing: 1px;
             overflow: hidden;
@@ -644,20 +643,20 @@
 
         @keyframes buttonPulse {
             0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4); }
-            100% { box-shadow: 0 0 0 15px rgba(255, 255, 255, 0); }
+            100% { box-shadow: 0 0 0 10px rgba(255, 255, 255, 0); }
         }
 
         .open-invitation:hover {
             background: linear-gradient(45deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.2));
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
 
         /* Animasi umum */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(20px);
             }
             to {
                 opacity: 1;
@@ -670,121 +669,45 @@
             to { opacity: 1; }
         }
 
-        /* Optimasi untuk mobile */
+        /* Media query untuk mobile */
         @media (max-width: 768px) {
+            /* Mengurangi kompleksitas animasi untuk mobile */
             .glass-card {
-                padding: 40px 30px;
+                background: rgba(255, 255, 255, 0.2);
+                backdrop-filter: none;
+                -webkit-backdrop-filter: none;
             }
             
-            .bismillah {
-                font-size: 2.2rem;
+            /* Mengurangi jumlah partikel untuk performa lebih baik */
+            .particles {
+                display: none;
             }
             
-            .invitation-title {
-                font-size: 1.7rem;
-                letter-spacing: 3px;
-            }
-            
-            .couple-names {
-                font-size: 3.5rem;
-            }
-            
-            .ampersand {
-                font-size: 3rem;
-                margin: 0 15px;
-            }
-            
-            .guest-text {
-                font-size: 1.1rem;
-            }
-            
-            .open-invitation {
-                padding: 12px 30px;
-                font-size: 1rem;
-            }
-            
-            .ornament-corner {
-                width: 40px;
-                height: 40px;
-            }
-            
-            .floral-ornament {
+            /* Mengurangi ukuran bulan dan matahari */
+            .moon {
                 width: 60px;
                 height: 60px;
-            }
-            
-            .floral-ornament::before,
-            .floral-ornament::after {
-                width: 15px;
-                height: 15px;
-                top: 22.5px;
-            }
-            
-            .floral-ornament::before {
-                left: 7.5px;
-            }
-            
-            .floral-ornament::after {
-                right: 7.5px;
-            }
-            
-            .floral-ornament .center {
-                width: 12px;
-                height: 12px;
-                top: 24px;
-                left: 24px;
-            }
-            
-            .name-ornament {
-                width: 25px;
-                height: 25px;
-            }
-            
-            .name-ornament.left {
-                left: -30px;
-            }
-            
-            .name-ornament.right {
-                right: -30px;
-            }
-            
-            .name-ornament::before,
-            .name-ornament::after {
-                width: 8px;
-                height: 8px;
-                top: 8.5px;
-            }
-            
-            .name-ornament .center {
-                width: 6px;
-                height: 6px;
-                top: 9.5px;
-                left: 9.5px;
-            }
-            
-            .moon {
-                width: 70px;
-                height: 70px;
             }
             
             .sun {
-                width: 60px;
-                height: 60px;
+                width: 50px;
+                height: 50px;
             }
             
+            /* Mengurangi ukuran awan */
             .cloud1 {
-                width: 80px;
-                height: 30px;
-            }
-            
-            .cloud2 {
-                width: 60px;
+                width: 70px;
                 height: 25px;
             }
             
+            .cloud2 {
+                width: 50px;
+                height: 20px;
+            }
+            
             .cloud3 {
-                width: 90px;
-                height: 35px;
+                width: 80px;
+                height: 30px;
             }
         }
     </style>
@@ -869,9 +792,11 @@
             const particlesContainer = document.getElementById('particles');
             const openButton = document.getElementById('openButton');
             
-            // Jumlah bintang disesuaikan untuk mobile
+            // Deteksi perangkat mobile
             const isMobile = window.innerWidth <= 768;
-            const numberOfStars = isMobile ? 100 : 200;
+            
+            // Mengurangi jumlah bintang untuk mobile
+            const numberOfStars = isMobile ? 50 : 200;
             
             // Membuat bintang
             for (let i = 0; i < numberOfStars; i++) {
@@ -897,27 +822,29 @@
                 starsContainer.appendChild(star);
             }
             
-            // Membuat partikel cahaya
-            const numberOfParticles = isMobile ? 20 : 40;
-            for (let i = 0; i < numberOfParticles; i++) {
-                const particle = document.createElement('div');
-                particle.className = 'particle';
-                
-                // Ukuran partikel acak
-                const size = Math.random() * 4 + 1;
-                particle.style.width = `${size}px`;
-                particle.style.height = `${size}px`;
-                
-                // Posisi acak
-                particle.style.left = `${Math.random() * 100}%`;
-                
-                // Animasi delay acak
-                particle.style.animationDelay = `${Math.random() * 10}s`;
-                
-                // Durasi animasi bervariasi
-                particle.style.animationDuration = `${10 + Math.random() * 10}s`;
-                
-                particlesContainer.appendChild(particle);
+            // Membuat partikel cahaya hanya untuk desktop
+            if (!isMobile) {
+                const numberOfParticles = 30;
+                for (let i = 0; i < numberOfParticles; i++) {
+                    const particle = document.createElement('div');
+                    particle.className = 'particle';
+                    
+                    // Ukuran partikel acak
+                    const size = Math.random() * 3 + 1;
+                    particle.style.width = `${size}px`;
+                    particle.style.height = `${size}px`;
+                    
+                    // Posisi acak
+                    particle.style.left = `${Math.random() * 100}%`;
+                    
+                    // Animasi delay acak
+                    particle.style.animationDelay = `${Math.random() * 10}s`;
+                    
+                    // Durasi animasi bervariasi
+                    particle.style.animationDuration = `${10 + Math.random() * 10}s`;
+                    
+                    particlesContainer.appendChild(particle);
+                }
             }
             
             // Efek saat button diklik
