@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -14,14 +13,12 @@
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
             height: 100vh;
             overflow: hidden;
             font-family: 'Poppins', sans-serif;
             position: relative;
         }
-
         /* Animasi transisi langit dari malam ke siang - lebih halus dan natural */
         .sky {
             position: absolute;
@@ -32,7 +29,6 @@
             background: linear-gradient(to bottom, #0a1929, #000814);
             animation: sky-transition 15s infinite alternate;
         }
-
         @keyframes sky-transition {
             0% { 
                 background: linear-gradient(to bottom, #0a1929, #000814);
@@ -50,7 +46,6 @@
                 background: linear-gradient(to bottom, #87CEEB, #B0E2FF);
             }
         }
-
         .stars-container {
             position: absolute;
             top: 0;
@@ -60,25 +55,21 @@
             pointer-events: none;
             animation: fade-out 15s infinite alternate;
         }
-
         @keyframes fade-out {
             0%, 20% { opacity: 1; }
             50%, 100% { opacity: 0; }
         }
-
         .star {
             position: absolute;
             background-color: white;
             border-radius: 50%;
             animation: twinkle 3s infinite;
         }
-
         @keyframes twinkle {
             0% { opacity: 0.2; transform: scale(1); }
             50% { opacity: 1; transform: scale(1.2); }
             100% { opacity: 0.2; transform: scale(1); }
         }
-
         /* Bulan - diperbaiki warna dan animasi */
         .moon {
             position: absolute;
@@ -92,7 +83,6 @@
             animation: moon-movement 15s infinite alternate;
             z-index: 4;
         }
-
         .moon::before {
             content: '';
             position: absolute;
@@ -101,7 +91,6 @@
             border-radius: 50%;
             background: radial-gradient(circle at 30% 30%, #ffffff, #f5f5f5);
         }
-
         @keyframes moon-movement {
             0% { 
                 top: 15%;
@@ -124,7 +113,6 @@
                 opacity: 0;
             }
         }
-
         /* Matahari terbit - diperbaiki warna dan animasi */
         .sun {
             position: absolute;
@@ -138,7 +126,6 @@
             animation: sun-rise 15s infinite alternate;
             z-index: 3;
         }
-
         @keyframes sun-rise {
             0% { 
                 bottom: -70px;
@@ -157,7 +144,6 @@
                 opacity: 1;
             }
         }
-
         /* Awan putih untuk siang hari - diperbaiki warna dan animasi */
         .cloud {
             position: absolute;
@@ -167,7 +153,6 @@
             z-index: 2;
             animation: cloud-fade-in 15s infinite alternate;
         }
-
         .cloud::before,
         .cloud::after {
             content: '';
@@ -175,12 +160,10 @@
             background-color: #ffffff;
             border-radius: 100px;
         }
-
         @keyframes cloud-fade-in {
             0%, 30% { opacity: 0; }
             60%, 100% { opacity: 0.8; }
         }
-
         .cloud1 {
             width: 80px;
             height: 30px;
@@ -188,21 +171,18 @@
             left: -80px;
             animation: cloud-movement1 25s linear infinite, cloud-fade-in 15s infinite alternate;
         }
-
         .cloud1::before {
             width: 40px;
             height: 40px;
             top: -20px;
             left: 10px;
         }
-
         .cloud1::after {
             width: 50px;
             height: 30px;
             top: -15px;
             right: 10px;
         }
-
         .cloud2 {
             width: 60px;
             height: 25px;
@@ -211,21 +191,18 @@
             animation: cloud-movement2 30s linear infinite, cloud-fade-in 15s infinite alternate;
             animation-delay: 5s;
         }
-
         .cloud2::before {
             width: 30px;
             height: 30px;
             top: -15px;
             left: 15px;
         }
-
         .cloud2::after {
             width: 40px;
             height: 25px;
             top: -10px;
             right: 15px;
         }
-
         .cloud3 {
             width: 100px;
             height: 35px;
@@ -234,36 +211,30 @@
             animation: cloud-movement3 35s linear infinite, cloud-fade-in 15s infinite alternate;
             animation-delay: 10s;
         }
-
         .cloud3::before {
             width: 50px;
             height: 50px;
             top: -25px;
             left: 20px;
         }
-
         .cloud3::after {
             width: 60px;
             height: 35px;
             top: -15px;
             right: 20px;
         }
-
         @keyframes cloud-movement1 {
             0% { transform: translateX(0); }
             100% { transform: translateX(calc(100vw + 80px)); }
         }
-
         @keyframes cloud-movement2 {
             0% { transform: translateX(0); }
             100% { transform: translateX(calc(100vw + 60px)); }
         }
-
         @keyframes cloud-movement3 {
             0% { transform: translateX(0); }
             100% { transform: translateX(calc(100vw + 100px)); }
         }
-
         /* Partikel cahaya - dikurangi untuk mobile */
         .particles {
             position: absolute;
@@ -274,14 +245,12 @@
             pointer-events: none;
             z-index: 1;
         }
-
         .particle {
             position: absolute;
             background-color: rgba(255, 255, 255, 0.8);
             border-radius: 50%;
             animation: float-up 10s linear infinite;
         }
-
         @keyframes float-up {
             0% {
                 transform: translateY(100vh) scale(0);
@@ -298,7 +267,6 @@
                 opacity: 0;
             }
         }
-
         /* Halaman Detail Undangan */
         .detail-page {
             position: relative;
@@ -309,7 +277,6 @@
             backdrop-filter: blur(5px);
             -webkit-backdrop-filter: blur(5px);
         }
-
         .detail-header {
             position: relative;
             height: 50vh;
@@ -321,7 +288,6 @@
             text-align: center;
             overflow: hidden;
         }
-
         .detail-header::before {
             content: '';
             position: absolute;
@@ -334,7 +300,6 @@
             background-position: center;
             opacity: 0.3;
         }
-
         .detail-title {
             font-family: 'Dancing Script', cursive;
             font-size: 4rem;
@@ -343,7 +308,6 @@
             z-index: 2;
             text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
         }
-
         .detail-subtitle {
             font-family: 'Poppins', sans-serif;
             font-size: 1.5rem;
@@ -351,7 +315,6 @@
             position: relative;
             z-index: 2;
         }
-
         .back-button {
             position: absolute;
             top: 20px;
@@ -370,18 +333,15 @@
             z-index: 3;
             transition: all 0.3s ease;
         }
-
         .back-button:hover {
             background: rgba(255, 255, 255, 0.3);
             transform: rotate(90deg);
         }
-
         .detail-content {
             padding: 40px 20px;
             max-width: 800px;
             margin: 0 auto;
         }
-
         .section {
             margin-bottom: 40px;
             opacity: 0;
@@ -392,12 +352,10 @@
             padding: 25px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
-
         .section.visible {
             opacity: 1;
             transform: translateY(0);
         }
-
         .section-title {
             font-family: 'Playfair Display', serif;
             font-size: 2rem;
@@ -407,7 +365,6 @@
             display: inline-block;
             padding-bottom: 10px;
         }
-
         .section-title::after {
             content: '';
             position: absolute;
@@ -417,7 +374,6 @@
             height: 2px;
             background: linear-gradient(90deg, #ff7e5f, #feb47b);
         }
-
         .arabic-text {
             font-family: 'Poppins', sans-serif;
             font-size: 1.8rem;
@@ -426,14 +382,12 @@
             line-height: 1.8;
             color: #333;
         }
-
         .translation {
             font-style: italic;
             color: #555;
             margin-bottom: 20px;
             line-height: 1.6;
         }
-
         .love-story {
             font-size: 1.1rem;
             line-height: 1.8;
@@ -441,11 +395,9 @@
             text-align: justify;
             margin-bottom: 20px;
         }
-
         .love-story strong {
             color: #ff7e5f;
         }
-
         .info-card {
             background: white;
             border-radius: 10px;
@@ -453,27 +405,23 @@
             padding: 20px;
             margin-bottom: 20px;
         }
-
         .info-title {
             font-family: 'Playfair Display', serif;
             font-size: 1.5rem;
             margin-bottom: 15px;
             color: #333;
         }
-
         .info-content {
             font-size: 1rem;
             line-height: 1.6;
             color: #555;
         }
-
         .couple-info {
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
             margin-bottom: 20px;
         }
-
         .person {
             flex: 1;
             min-width: 250px;
@@ -483,19 +431,16 @@
             border-radius: 10px;
             background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
         }
-
         .person-name {
             font-family: 'Dancing Script', cursive;
             font-size: 2rem;
             margin-bottom: 10px;
             color: #333;
         }
-
         .person-parents {
             font-size: 0.9rem;
             color: #555;
         }
-
         .event-info {
             display: flex;
             align-items: center;
@@ -504,7 +449,6 @@
             border-radius: 8px;
             background: rgba(255, 126, 95, 0.1);
         }
-
         .event-info i {
             font-size: 1.2rem;
             margin-right: 15px;
@@ -512,7 +456,6 @@
             width: 24px;
             text-align: center;
         }
-
         .location-info {
             display: flex;
             align-items: flex-start;
@@ -521,7 +464,6 @@
             border-radius: 8px;
             background: rgba(255, 126, 95, 0.1);
         }
-
         .location-info i {
             font-size: 1.2rem;
             margin-right: 15px;
@@ -530,7 +472,6 @@
             text-align: center;
             margin-top: 3px;
         }
-
         .map-container {
             width: 100%;
             height: 300px;
@@ -539,13 +480,11 @@
             margin-bottom: 20px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
-
         .map-container iframe {
             width: 100%;
             height: 100%;
             border: none;
         }
-
         .doa-text {
             font-family: 'Poppins', sans-serif;
             font-size: 1.8rem;
@@ -554,7 +493,6 @@
             line-height: 1.8;
             color: #333;
         }
-
         .doa-translation {
             text-align: center;
             font-style: italic;
@@ -562,13 +500,11 @@
             margin-bottom: 20px;
             line-height: 1.6;
         }
-
         .couple-photo {
             display: flex;
             justify-content: center;
             margin-bottom: 30px;
         }
-
         .photo-frame {
             position: relative;
             width: 300px;
@@ -578,13 +514,11 @@
             border: 5px solid white;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
-
         .photo-frame img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
-
         .photo-frame::before {
             content: '';
             position: absolute;
@@ -595,12 +529,10 @@
             background: linear-gradient(135deg, rgba(255, 126, 95, 0.2), rgba(254, 180, 123, 0.2));
             z-index: 1;
         }
-
         .request-list {
             list-style: none;
             padding: 0;
         }
-
         .request-item {
             display: flex;
             align-items: center;
@@ -611,7 +543,6 @@
             border-radius: 8px;
             background: rgba(255, 126, 95, 0.1);
         }
-
         .request-item i {
             font-size: 1.2rem;
             margin-right: 15px;
@@ -619,7 +550,6 @@
             width: 24px;
             text-align: center;
         }
-
         /* Musik player */
         .music-player {
             position: fixed;
@@ -669,7 +599,6 @@
         .music-info.visible {
             display: block;
         }
-
         @media (max-width: 768px) {
             .detail-title {
                 font-size: 3rem;
@@ -729,7 +658,279 @@
     <div class="cloud cloud2"></div>
     <div class="cloud cloud3"></div>
     
+    <div class="detail-page">
+        
         <div class="detail-content">
             <!-- Ayat Al-Qur'an 1 -->
             <div class="section" id="section1">
-                <h2 class="section-title">QS. Ar
+                <h2 class="section-title">QS. Ar-Rum 30: Ayat 21</h2>
+                <p class="arabic-text">
+                    وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُمْ مِنْ أَنْفُسِكُمْ أَزْوَاجًا لِتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُمْ مَوَدَّةً وَرَحْمَةً إِنَّ فِي ذَلِكَ لَآيَاتٍ لِقَوْمٍ يَتَفَكَّرُونَ
+                </p>
+                <p class="translation">
+                    "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang. Sungguh, pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir."
+                </p>
+            </div>
+            
+            <!-- Ayat Al-Qur'an 2 -->
+            <div class="section" id="section2">
+                <h2 class="section-title">QS. Furqan: 74</h2>
+                <p class="arabic-text">
+                    وَالَّذِينَ يَقُولُونَ رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا وَذُرِّيَّاتِنَا قُرَّةَ أَعْيُنٍ وَاجْعَلْنَا لِلْمُتَّقِينَ إِمَامًا
+                </p>
+                <p class="translation">
+                    "Dan, orang-orang yang berkata, 'Wahai Tuhan kami, anugerahkanlah kepada kami penyejuk mata dari pasangan dan keturunan kami serta jadikanlah kami sebagai pemimpin bagi orang-orang yang bertakwa.'"
+                </p>
+            </div>
+            
+            <!-- Love Story -->
+            <div class="section" id="section3">
+                <h2 class="section-title">Our Love Story</h2>
+                <div class="love-story">
+                    <p>Awal bulan Juni, dengan izin Allah, kami memulai langkah pertama menuju jalan yang diridhai-Nya. Bukan dengan janji manis, bukan pula dengan pertemuan tanpa arah, melainkan melalui ta'aruf — saling memperkenalkan diri dengan cara yang syar'i. Saling bertukar CV, bertanya jawab tentang visi misi hidup dan pernikahan serta hal-hal lain untuk mengenal dasar aqidah dan keimanan pada masing-masing dari kami.</p>
+                    <p>Akhir bulan Juni, Biidznillah Allah tuntun kami melangkah pada proses nadzor, memandang satu sama lain, mengenal bagaimana pribadi masing-masing dalam bincang jumpa bersama orang tua agar semakin meyakini untuk melangkah ke tahap berikutnya.</p>
+                    <p>Biidznillah, Alhamdulillah, dengan ridha Allah, kami sampai pada proses khitbah. Dengan perasaan haru penuh khidmat kami memohon dan berharap agar keputusan ini menjadi jalan kebaikan dunia - akhirat sesurga kelak.</p>
+                    <p>Biidznillah, dengan penuh syukur, akad yang kami jalani, walimah yang kami nanti, insyaaAllah akan kami bagi bahagia kami pada setiap hati dalam indah yang suci. Rabu, 8 Oktober 2025, semoga Allah jadikan pernikahan ini sebagai ladang ibadah yang penuh sakinah dengan indah mawaddah dan berlimpah rahmah. Aamiin Ya Rabbal 'Aalamin 🤲</p>
+                </div>
+            </div>
+            
+            <!-- Info Mempelai -->
+            <div class="section" id="section4">
+                <h2 class="section-title">Mempelai</h2>
+                <div class="info-card">
+                    <p class="info-content">Dengan memohon rachmat dan ridho Allah SWT, dengan hormat, kami mengundang Bapak/Ibu untuk hadir dalam acara walimatul `urs kami:</p>
+                    
+                    <div class="couple-info">
+                        <div class="person">
+                            <h3 class="person-name">Jean Dwi Kustanto</h3>
+                            <p class="person-parents">Putra dari:<br>Alm. Bapak Slamet Budiono & Ibu Kuswati</p>
+                        </div>
+                        <div class="person">
+                            <h3 class="person-name">Pujiana Dwi Kusumawati</h3>
+                            <p class="person-parents">Putri dari:<br>Bapak Sudibyo & Ibu Siswati</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Info Acara -->
+            <div class="section" id="section5">
+                <h2 class="section-title">Detail Acara</h2>
+                <div class="info-card">
+                    <div class="event-info">
+                        <i class="fas fa-calendar-alt"></i>
+                        <div>
+                            <h3 class="info-title">Tanggal</h3>
+                            <p class="info-content">08 Oktober 2025</p>
+                        </div>
+                    </div>
+                    
+                    <div class="event-info">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h3 class="info-title">Waktu</h3>
+                            <p class="info-content">10.00 - 17.00 (WIB)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="location-info">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3 class="info-title">Lokasi</h3>
+                            <p class="info-content">Kediaman mempelai wanita (Rumah Bapak Sudibyo)<br>Jl. Raya Tempuran, Desa Tempuran<br>Kecamatan Bantaran<br>Kabupaten Probolinggo - Jawa Timur<br>(Timur SMPN I Bantaran)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.675575629684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7e9b9c0f9c7e9%3A0x8e6e9b9c0f9c7e9!2sWonoayu%2C%20Sidoarjo%2C%20East%20Java!5e0!3m2!1sen!2sid!4v1629234567890!5m2!1sen!2sid" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                    
+                    <div style="text-align: center;">
+                        <a href="https://maps.google.com/?q=Jl. Raya Tempuran, Desa Tempuran, Kecamatan Bantaran, Kabupaten Probolinggo" target="_blank" class="info-card" style="display: inline-block; background: linear-gradient(90deg, #ff7e5f, #feb47b); color: white; text-decoration: none; padding: 10px 20px; border-radius: 30px; font-weight: 600;">
+                            <i class="fas fa-directions"></i> Buka di Google Maps
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Doa -->
+            <div class="section" id="section6">
+                <h2 class="section-title">Doa Kami</h2>
+                <div class="info-card">
+                    <p class="info-content">Dengan hormat, kami mengharap doa baik kepada kami dari Bapak/ Ibu atas pernikahan kami</p>
+                    
+                    <p class="doa-text">
+                        بَارَكَ اللهُ لَكَ وَبَارَكَ عَلَيْكَ وَجَمَعَ بَيْنَكُمَا فِيْ خَيْرٍ
+                    </p>
+                    
+                    <p class="doa-translation">
+                        "Semoga Allah memberi keberkahan kalian dan memberkahi atas kalian serta mengumpulkan kalian berdua dalam kebaikan"
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Foto Mempelai -->
+            <div class="section" id="section7">
+                <h2 class="section-title">Mempelai</h2>
+                <div class="couple-photo">
+                    <div class="photo-frame">
+                        <img src="https://images.unsplash.com/photo-1511795409844-ef04b3b271e9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Jean & Dwi">
+                    </div>
+                </div>
+                <div style="text-align: center;">
+                    <h3 class="person-name">Jean & Dwi</h3>
+                </div>
+            </div>
+            
+            <!-- Etika Selama Acara -->
+            <div class="section" id="section8">
+                <h2 class="section-title">Etika Selama Acara</h2>
+                <div class="info-card">
+                    <p class="info-content">Kepada hadirin yang kami hormati, mohon untuk:</p>
+                    
+                    <ul class="request-list">
+                        <li class="request-item">
+                            <i class="fas fa-handshake"></i>
+                            <span>Berjabat tangan hanya dengan mahramnya.</span>
+                        </li>
+                        <li class="request-item">
+                            <i class="fas fa-head-side-mask"></i>
+                            <span>Mengenakan Masker Jika Kurang Fit.</span>
+                        </li>
+                        <li class="request-item">
+                            <i class="fas fa-mosque"></i>
+                            <span>Saling mengingatkan waktu sholat.</span>
+                        </li>
+                        <li class="request-item">
+                            <i class="fas fa-utensils"></i>
+                            <span>Duduk ketika makan.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Musik Player -->
+    <div class="music-player">
+        <div class="music-toggle" id="musicToggle">
+            <i class="fas fa-music" id="musicIcon"></i>
+        </div>
+        <div class="music-info" id="musicInfo">
+            Lagu Pernikahan
+        </div>
+    </div>
+    
+    <script>
+        // Membuat bintang
+        const starsContainer = document.getElementById('starsContainer');
+        const numberOfStars = 100;
+        
+        for (let i = 0; i < numberOfStars; i++) {
+            const star = document.createElement('div');
+            star.classList.add('star');
+            
+            // Ukuran bintang acak
+            const size = Math.random() * 3;
+            star.style.width = `${size}px`;
+            star.style.height = `${size}px`;
+            
+            // Posisi bintang acak
+            const posX = Math.random() * 100;
+            const posY = Math.random() * 100;
+            star.style.left = `${posX}%`;
+            star.style.top = `${posY}%`;
+            
+            // Animasi delay acak
+            const delay = Math.random() * 5;
+            star.style.animationDelay = `${delay}s`;
+            
+            starsContainer.appendChild(star);
+        }
+        
+        // Membuat partikel cahaya
+        const particlesContainer = document.getElementById('particles');
+        const numberOfParticles = 30;
+        
+        for (let i = 0; i < numberOfParticles; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            
+            // Ukuran partikel acak
+            const size = Math.random() * 5 + 2;
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+            
+            // Posisi partikel acak
+            const posX = Math.random() * 100;
+            particle.style.left = `${posX}%`;
+            
+            // Animasi delay acak
+            const delay = Math.random() * 10;
+            particle.style.animationDelay = `${delay}s`;
+            
+            particlesContainer.appendChild(particle);
+        }
+        
+        // Animasi untuk section saat di-scroll
+        const sections = document.querySelectorAll('.section');
+        
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+        
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+        
+        // Musik player
+        const bgMusic = document.getElementById('bgMusic');
+        const musicToggle = document.getElementById('musicToggle');
+        const musicIcon = document.getElementById('musicIcon');
+        const musicInfo = document.getElementById('musicInfo');
+        
+        let isPlaying = false;
+        
+        musicToggle.addEventListener('click', () => {
+            if (isPlaying) {
+                bgMusic.pause();
+                musicIcon.classList.remove('fa-pause');
+                musicIcon.classList.add('fa-music');
+                musicInfo.classList.remove('visible');
+            } else {
+                bgMusic.play().catch(e => {
+                    console.log("Autoplay prevented:", e);
+                });
+                musicIcon.classList.remove('fa-music');
+                musicIcon.classList.add('fa-pause');
+                musicInfo.classList.add('visible');
+            }
+            isPlaying = !isPlaying;
+        });
+        
+        // Smooth scrolling untuk anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
