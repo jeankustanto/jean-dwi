@@ -672,7 +672,7 @@
             font-size: 1.5rem;
         }
         
-        /* Mobile Navigation Menu */
+        /* Mobile Navigation Menu - DIPERBAIKI */
         .nav-menu {
             position: fixed;
             bottom: 80px;
@@ -685,10 +685,18 @@
             flex-direction: column;
             z-index: 99;
             min-width: 200px;
+            max-height: 70vh;
+            overflow-y: auto;
+            transform-origin: bottom left;
+            transform: scale(0.95);
+            opacity: 0;
+            transition: transform 0.3s ease, opacity 0.3s ease, display 0.3s ease;
         }
         
         .nav-menu.active {
             display: flex;
+            transform: scale(1);
+            opacity: 1;
         }
         
         .nav-item {
@@ -709,6 +717,8 @@
         .nav-item i {
             margin-right: 10px;
             color: #d4af37;
+            width: 20px;
+            text-align: center;
         }
         
         /* Animasi fade in untuk section */
@@ -788,6 +798,15 @@
             .step-title {
                 font-size: 1.3rem;
             }
+            
+            /* Perbaikan untuk navigasi mobile */
+            .nav-menu {
+                bottom: 80px;
+                left: 20px;
+                right: 20px;
+                min-width: auto;
+                max-height: 60vh;
+            }
         }
         
         @media (max-width: 480px) {
@@ -846,13 +865,31 @@
             .step-title {
                 font-size: 1.2rem;
             }
+            
+            /* Perbaikan untuk navigasi mobile di layar sangat kecil */
+            .nav-menu {
+                bottom: 70px;
+                left: 15px;
+                right: 15px;
+                padding: 8px;
+            }
+            
+            .nav-item {
+                padding: 10px 12px;
+                font-size: 0.9rem;
+            }
+            
+            .nav-item i {
+                margin-right: 8px;
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
 <body>
     <!-- Audio untuk musik latar -->
-    <audio id="bgMusic" loop>
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    <audio id="bgMusic" loop autoplay>
+        <source src="musik.mp3" type="audio/mpeg">
         Browser Anda tidak mendukung tag audio.
     </audio>
     
@@ -1111,7 +1148,7 @@
             <i class="fas fa-music" id="musicIcon"></i>
         </div>
         <div class="music-info" id="musicInfo">
-            Lagu Pernikahan
+            Musik
         </div>
     </div>
     
@@ -1163,7 +1200,7 @@
             observer.observe(section);
         });
         
-        // Musik player
+        // Musik player - PERBAIKAN AUTOPLAY
         const bgMusic = document.getElementById('bgMusic');
         const musicToggle = document.getElementById('musicToggle');
         const musicIcon = document.getElementById('musicIcon');
@@ -1171,6 +1208,34 @@
         
         let isPlaying = false;
         
+        // Fungsi untuk memutar musik otomatis saat halaman dimuat
+        function autoplayMusic() {
+            // Coba untuk memutar musik saat halaman dimuat
+            const playPromise = bgMusic.play();
+            
+            if (playPromise !== undefined) {
+                playPromise.then(_ => {
+                    // Autoplay berhasil
+                    isPlaying = true;
+                    musicIcon.classList.remove('fa-music');
+                    musicIcon.classList.add('fa-pause');
+                    musicInfo.classList.add('visible');
+                })
+                .catch(error => {
+                    // Autoplay diblokir browser
+                    console.log("Autoplay prevented:", error);
+                    isPlaying = false;
+                    musicIcon.classList.remove('fa-pause');
+                    musicIcon.classList.add('fa-music');
+                    musicInfo.classList.remove('visible');
+                });
+            }
+        }
+        
+        // Panggil fungsi autoplay saat halaman dimuat
+        window.addEventListener('load', autoplayMusic);
+        
+        // Fungsi untuk toggle musik
         musicToggle.addEventListener('click', () => {
             if (isPlaying) {
                 bgMusic.pause();
@@ -1179,7 +1244,7 @@
                 musicInfo.classList.remove('visible');
             } else {
                 bgMusic.play().catch(e => {
-                    console.log("Autoplay prevented:", e);
+                    console.log("Play prevented:", e);
                 });
                 musicIcon.classList.remove('fa-music');
                 musicIcon.classList.add('fa-pause');
@@ -1211,7 +1276,7 @@
             });
         });
         
-        // Mobile Navigation Toggle
+        // Mobile Navigation Toggle - PERBAIKAN
         const fabToggle = document.getElementById('fabToggle');
         const navMenu = document.getElementById('navMenu');
         
@@ -1229,14 +1294,23 @@
             }
         });
         
-        // Close menu when clicking outside
+        // Close menu when clicking outside - PERBAIKAN
         document.addEventListener('click', (e) => {
+            // Periksa apakah yang diklik bukan bagian dari menu atau tombol FAB
             if (!fabToggle.contains(e.target) && !navMenu.contains(e.target)) {
-                navMenu.classList.remove('active');
-                const icon = fabToggle.querySelector('i');
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
+                // Tutup menu jika sedang terbuka
+                if (navMenu.classList.contains('active')) {
+                    navMenu.classList.remove('active');
+                    const icon = fabToggle.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
             }
+        });
+        
+        // Mencegah menu tertutup saat mengklik di dalam menu
+        navMenu.addEventListener('click', (e) => {
+            e.stopPropagation();
         });
         
         // Add stagger animation to sections
