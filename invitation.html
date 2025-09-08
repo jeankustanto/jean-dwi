@@ -18,7 +18,41 @@
             font-family: 'Lato', sans-serif;
             position: relative;
             background-color: #f9f7f2;
+            /* Proteksi salin teks */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-touch-callout: none;
+            -khtml-user-select: none;
         }
+        
+        /* Proteksi khusus untuk gambar */
+        img {
+            -webkit-user-drag: none;
+            -khtml-user-drag: none;
+            -moz-user-drag: none;
+            -o-user-drag: none;
+            user-drag: none;
+            pointer-events: none;
+        }
+        
+        /* Proteksi untuk konten penting */
+        .protected {
+            position: relative;
+        }
+        
+        .protected::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            z-index: 10;
+        }
+        
         /* Animasi transisi langit dari malam ke siang - lebih halus dan natural */
         .sky {
             position: absolute;
@@ -259,6 +293,13 @@
             border-radius: 15px;
             padding: 25px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            /* Proteksi salin teks */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-touch-callout: none;
+            -khtml-user-select: none;
         }
         .section.visible {
             opacity: 1;
@@ -272,6 +313,13 @@
             position: relative;
             display: inline-block;
             padding-bottom: 10px;
+            /* Proteksi salin teks */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-touch-callout: none;
+            -khtml-user-select: none;
         }
         .section-title::after {
             content: '';
@@ -289,12 +337,26 @@
             margin-bottom: 10px;
             line-height: 1.8;
             color: #333;
+            /* Proteksi salin teks */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-touch-callout: none;
+            -khtml-user-select: none;
         }
         .translation {
             font-style: italic;
             color: #555;
             margin-bottom: 20px;
             line-height: 1.6;
+            /* Proteksi salin teks */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-touch-callout: none;
+            -khtml-user-select: none;
         }
         
         /* Timeline untuk Love Story */
@@ -341,6 +403,13 @@
             padding: 20px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            /* Proteksi salin teks */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-touch-callout: none;
+            -khtml-user-select: none;
         }
         .step-content:hover {
             transform: translateY(-5px);
@@ -351,12 +420,26 @@
             font-size: 1.5rem;
             margin-bottom: 10px;
             color: #d4af37;
+            /* Proteksi salin teks */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-touch-callout: none;
+            -khtml-user-select: none;
         }
         .highlight {
             font-weight: bold;
             color: #d4af37;
             position: relative;
             display: inline-block;
+            /* Proteksi salin teks */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-touch-callout: none;
+            -khtml-user-select: none;
         }
         .highlight::after {
             content: '';
@@ -376,17 +459,38 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             padding: 20px;
             margin-bottom: 20px;
+            /* Proteksi salin teks */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-touch-callout: none;
+            -khtml-user-select: none;
         }
         .info-title {
             font-family: 'Playfair Display', serif;
             font-size: 1.5rem;
             margin-bottom: 15px;
             color: #333;
+            /* Proteksi salin teks */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-touch-callout: none;
+            -khtml-user-select: none;
         }
         .info-content {
             font-size: 1rem;
             line-height: 1.6;
             color: #555;
+            /* Proteksi salin teks */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-touch-callout: none;
+            -khtml-user-select: none;
         }
         .couple-info {
             display: flex;
@@ -403,6 +507,13 @@
             border-radius: 10px;
             background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            /* Proteksi salin teks */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-touch-callout: none;
+            -khtml-user-select: none;
         }
         .person:hover {
             transform: translateY(-5px);
@@ -413,10 +524,24 @@
             font-size: 2rem;
             margin-bottom: 10px;
             color: #333;
+            /* Proteksi salin teks */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-touch-callout: none;
+            -khtml-user-select: none;
         }
         .person-parents {
             font-size: 0.9rem;
             color: #555;
+            /* Proteksi salin teks */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-touch-callout: none;
+            -khtml-user-select: none;
         }
         .event-info {
             display: flex;
@@ -426,6 +551,13 @@
             border-radius: 8px;
             background: rgba(212, 175, 55, 0.1);
             transition: transform 0.3s ease;
+            /* Proteksi salin teks */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-touch-callout: none;
+            -khtml-user-select: none;
         }
         .event-info:hover {
             transform: translateX(5px);
@@ -445,6 +577,13 @@
             border-radius: 8px;
             background: rgba(212, 175, 55, 0.1);
             transition: transform 0.3s ease;
+            /* Proteksi salin teks */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-touch-callout: none;
+            -khtml-user-select: none;
         }
         .location-info:hover {
             transform: translateX(5px);
@@ -465,6 +604,13 @@
             margin-bottom: 20px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
+            /* Proteksi salin teks */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-touch-callout: none;
+            -khtml-user-select: none;
         }
         .map-container:hover {
             transform: scale(1.02);
@@ -473,6 +619,13 @@
             width: 100%;
             height: 100%;
             border: none;
+            /* Proteksi salin teks */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-touch-callout: none;
+            -khtml-user-select: none;
         }
         .doa-text {
             font-family: 'Amiri Quran', serif;
@@ -481,6 +634,13 @@
             margin-bottom: 10px;
             line-height: 1.8;
             color: #333;
+            /* Proteksi salin teks */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-touch-callout: none;
+            -khtml-user-select: none;
         }
         .doa-translation {
             text-align: center;
@@ -488,6 +648,13 @@
             color: #555;
             margin-bottom: 20px;
             line-height: 1.6;
+            /* Proteksi salin teks */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-touch-callout: none;
+            -khtml-user-select: none;
         }
         .couple-photo {
             display: flex;
@@ -503,6 +670,13 @@
             border: 5px solid white;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            /* Proteksi salin teks */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-touch-callout: none;
+            -khtml-user-select: none;
         }
         .photo-frame:hover {
             transform: scale(1.05);
@@ -513,6 +687,13 @@
             height: 100%;
             object-fit: cover;
             transition: transform 0.5s ease;
+            /* Proteksi salin teks */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-touch-callout: none;
+            -khtml-user-select: none;
         }
         .photo-frame:hover img {
             transform: scale(1.1);
@@ -541,6 +722,13 @@
             border-radius: 8px;
             background: rgba(212, 175, 55, 0.1);
             transition: transform 0.3s ease;
+            /* Proteksi salin teks */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-touch-callout: none;
+            -khtml-user-select: none;
         }
         .request-item:hover {
             transform: translateX(5px);
@@ -873,7 +1061,7 @@
     <div class="detail-page">
         <div class="detail-content">
             <!-- Ayat Al-Qur'an 1 -->
-            <div class="section" id="section1">
+            <div class="section protected" id="section1">
                 <p class="arabic-text">
                     وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُمْ مِنْ أَنْفُسِكُمْ أَزْوَاجًا لِتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُمْ مَوَدَّةً وَرَحْمَةً إِنَّ فِي ذَلِكَ لَآيَاتٍ لِقَوْمٍ يَتَفَكَّرُونَ
                 </p>
@@ -884,7 +1072,7 @@
             </div>
             
             <!-- Ayat Al-Qur'an 2 -->
-            <div class="section" id="section2">
+            <div class="section protected" id="section2">
                 <p class="arabic-text">
                     وَالَّذِينَ يَقُولُونَ رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا وَذُرِّيَّاتِنَا قُرَّةَ أَعْيُنٍ وَاجْعَلْنَا لِلْمُتَّقِينَ إِمَامًا
                 </p>
@@ -895,7 +1083,7 @@
             </div>
             
             <!-- Love Story -->
-            <div class="section" id="section3">
+            <div class="section protected" id="section3">
                 <h2 class="section-title">Our Love Story</h2>
                 <div class="love-story">
                     <div class="story-timeline">
@@ -943,8 +1131,8 @@
             </div>
                     
             <!-- Info Mempelai -->
-            <div class="section" id="section5">
-                <div class="section" id="section4">
+            <div class="section protected" id="section5">
+                <div class="section protected" id="section4">
                 <p class="info-content">Dengan memohon rachmat dan ridho Allah SWT, dengan hormat, kami mengundang Bapak/Ibu/Saudara/Saudari untuk hadir dalam acara walimatul `urs kami:</p>
             </div>
                 <div class="couple-info">
@@ -960,7 +1148,7 @@
             </div>
             
             <!-- Info Acara -->
-            <div class="section" id="section6">
+            <div class="section protected" id="section6">
                 <h2 class="section-title">Detail Acara</h2>
                 <div class="info-card">
                     <div class="event-info">
@@ -1002,7 +1190,7 @@
             </div>
             
             <!-- Doa -->
-            <div class="section" id="section7">
+            <div class="section protected" id="section7">
                 <div class="info-card">
                     <p class="info-content">Dengan hormat, kami mengharap doa baik kepada kami dari Bapak/Ibu/Saudara/Saudari atas pernikahan kami</p>
                     
@@ -1017,11 +1205,11 @@
             </div>
             
             <!-- Foto Mempelai -->
-            <div class="section" id="section8">
+            <div class="section protected" id="section8">
                 <h2 class="section-title">Mempelai</h2>
                 <div class="couple-photo">
                     <div class="photo-frame">
-                        <img src="couple.png" alt="Jean & Dwi">
+                        <img src="couple.png" alt="Jean & Dwi" draggable="false">
                     </div>
                 </div>
                 <div style="text-align: center;">
@@ -1030,7 +1218,7 @@
             </div>
             
             <!-- Etika Selama Acara -->
-            <div class="section" id="section9">
+            <div class="section protected" id="section9">
                 <h2 class="section-title">Etika Selama Acara</h2>
                 <div class="info-card">
                     <p class="info-content">Kepada hadirin yang kami hormati, mohon untuk:</p>
@@ -1253,7 +1441,7 @@
                 // Tutup menu jika sedang terbuka
                 if (navMenu.classList.contains('active')) {
                     navMenu.classList.remove('active');
-                    const icon = fabToggle.querySelector('i');
+                    const icon = document.getElementById('fabToggle').querySelector('i');
                     icon.classList.remove('fa-times');
                     icon.classList.add('fa-bars');
                 }
@@ -1290,6 +1478,118 @@
             step.style.transform = 'translateY(20px)';
             step.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
             timelineObserver.observe(step);
+        });
+        
+        // Proteksi konten - mencegah klik kanan, seleksi teks, dan salin
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            return false;
+        });
+        
+        document.addEventListener('selectstart', function(e) {
+            e.preventDefault();
+            return false;
+        });
+        
+        document.addEventListener('dragstart', function(e) {
+            e.preventDefault();
+            return false;
+        });
+        
+        document.addEventListener('copy', function(e) {
+            e.preventDefault();
+            return false;
+        });
+        
+        document.addEventListener('cut', function(e) {
+            e.preventDefault();
+            return false;
+        });
+        
+        document.addEventListener('paste', function(e) {
+            e.preventDefault();
+            return false;
+        });
+        
+        // Proteksi khusus untuk gambar
+        document.querySelectorAll('img').forEach(img => {
+            img.addEventListener('contextmenu', function(e) {
+                e.preventDefault();
+                return false;
+            });
+            
+            img.addEventListener('dragstart', function(e) {
+                e.preventDefault();
+                return false;
+            });
+            
+            img.addEventListener('mousedown', function(e) {
+                e.preventDefault();
+                return false;
+            });
+        });
+        
+        // Proteksi khusus untuk teks Arab
+        document.querySelectorAll('.arabic-text, .doa-text').forEach(text => {
+            text.addEventListener('contextmenu', function(e) {
+                e.preventDefault();
+                return false;
+            });
+            
+            text.addEventListener('selectstart', function(e) {
+                e.preventDefault();
+                return false;
+            });
+            
+            text.addEventListener('copy', function(e) {
+                e.preventDefault();
+                return false;
+            });
+        });
+        
+        // Mencegah inspect element (dengan cara menonaktifkan F12, Ctrl+Shift+I, dll)
+        document.addEventListener('keydown', function(e) {
+            // F12
+            if (e.keyCode === 123) {
+                e.preventDefault();
+                return false;
+            }
+            
+            // Ctrl+Shift+I
+            if (e.ctrlKey && e.shiftKey && e.keyCode === 73) {
+                e.preventDefault();
+                return false;
+            }
+            
+            // Ctrl+Shift+J
+            if (e.ctrlKey && e.shiftKey && e.keyCode === 74) {
+                e.preventDefault();
+                return false;
+            }
+            
+            // Ctrl+U
+            if (e.ctrlKey && e.keyCode === 85) {
+                e.preventDefault();
+                return false;
+            }
+            
+            // Ctrl+S
+            if (e.ctrlKey && e.keyCode === 83) {
+                e.preventDefault();
+                return false;
+            }
+            
+            // Ctrl+A
+            if (e.ctrlKey && e.keyCode === 65) {
+                e.preventDefault();
+                return false;
+            }
+        });
+        
+        // Mencegah klik kanan pada seluruh dokumen
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            return false;
         });
     </script>
 </body>
