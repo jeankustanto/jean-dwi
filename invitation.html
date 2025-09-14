@@ -305,7 +305,7 @@
         .delay-700 { transition-delay: 700ms; }
         .delay-800 { transition-delay: 800ms; }
         
-        . {
+        .section {
             margin-bottom: 40px;
             background: rgba(255, 255, 255, 0.7);
             border-radius: 15px;
@@ -318,7 +318,7 @@
             -webkit-touch-callout: none;
             -khtml-user-select: none;
             /* PERUBAHAN: Menambahkan latar belakang gambar */
-            background-image: url('al-aqsa.png');
+            background-image: url('https://z-cdn-media.chatglm.cn/files/4c389aa9-d8cb-40b6-a603-688b8b68b589_al-aqsa.jpg?auth_key=1789362938-63f8bc275cb641da89ab4699df6e9ce6-0-0a4e4726ce1ddf7b9f1c3080959b6879');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -328,7 +328,7 @@
         }
         
         /* PERUBAHAN: Menambahkan overlay putih semi-transparan untuk kontras teks */
-        .::before {
+        .section::before {
             content: '';
             position: absolute;
             top: 0;
@@ -339,13 +339,13 @@
             z-index: 0;
         }
         
-        /* PERUBAHAN: Meningkatkan z-index konten  agar di atas overlay */
-        . > * {
+        /* PERUBAHAN: Meningkatkan z-index konten section agar di atas overlay */
+        .section > * {
             position: relative;
             z-index: 1;
         }
         
-        .-title {
+        .section-title {
             font-family: 'Playfair Display', serif;
             font-size: 2rem;
             margin-bottom: 20px;
@@ -360,7 +360,7 @@
             -webkit-touch-callout: none;
             -khtml-user-select: none;
         }
-        .-title::after {
+        .section-title::after {
             content: '';
             position: absolute;
             bottom: 0;
@@ -942,7 +942,7 @@
         }
         
         @media (max-width: 768px) {
-            .-title {
+            .section-title {
                 font-size: 1.5rem;
             }
             
@@ -968,7 +968,7 @@
                 padding: 20px 15px;
             }
             
-            . {
+            .section {
                 padding: 20px;
                 margin-bottom: 30px;
             }
@@ -1014,7 +1014,7 @@
         }
         
         @media (max-width: 480px) {
-            .-title {
+            .section-title {
                 font-size: 1.3rem;
             }
             
@@ -1043,7 +1043,7 @@
                 padding: 15px 10px;
             }
             
-            . {
+            .section {
                 padding: 15px;
                 margin-bottom: 25px;
             }
@@ -1112,8 +1112,8 @@
     <div class="detail-page">
         <div class="detail-content">
             <!-- Ayat Al-Qur'an 1 -->
-            <div class="" id="1">
-                <h2 class="-title animate fade-down">Ayat Al-Qur'an 1</h2>
+            <div class="section" id="section1">
+                <h2 class="section-title animate fade-down">Ayat Al-Qur'an 1</h2>
                 <p class="arabic-text animate zoom-in delay-100">
                     وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُمْ مِنْ أَنْفُسِكُمْ أَزْوَاجًا لِتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُمْ مَوَدَّةً وَرَحْمَةً إِنَّ فِي ذَلِكَ لَآيَاتٍ لِقَوْمٍ يَتَفَكَّرُونَ
                 </p>
@@ -1124,8 +1124,8 @@
             </div>
             
             <!-- Ayat Al-Qur'an 2 -->
-            <div class="" id="2">
-                <h2 class="-title animate fade-down">Ayat Al-Qur'an 2</h2>
+            <div class="section" id="section2">
+                <h2 class="section-title animate fade-down">Ayat Al-Qur'an 2</h2>
                 <p class="arabic-text animate zoom-in delay-100">
                     وَالَّذِينَ يَقُولُونَ رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا وَذُرِّيَّاتِنَا قُرَّةَ أَعْيُنٍ وَاجْعَلْنَا لِلْمُتَّقِينَ إِمَامًا
                 </p>
@@ -1136,8 +1136,8 @@
             </div>
             
             <!-- Love Story -->
-            <div class="" id="3">
-                <h2 class="-title animate fade-down">Our Love Story</h2>
+            <div class="section" id="section3">
+                <h2 class="section-title animate fade-down">Our Love Story</h2>
                 <div class="love-story">
                     <div class="story-timeline">
                         <div class="story-step animate fade-right delay-100" id="taaruf">
@@ -1191,9 +1191,9 @@
             </div>
                     
             <!-- Info Mempelai -->
-            <div class="" id="5">
-                <h2 class="-title animate fade-down">Info Mempelai</h2>
-                <div class="" id="4">
+            <div class="section" id="section5">
+                <h2 class="section-title animate fade-down">Info Mempelai</h2>
+                <div class="section" id="section4">
                 <p class="info-content animate fade-up delay-100">Dengan memohon rachmat dan ridho Allah SWT, dengan hormat, kami mengundang Bapak/Ibu/Ayah/Bunda/Ananda untuk hadir dalam acara walimatul `urs kami:</p>
             </div>
                 <div class="couple-info">
@@ -1209,8 +1209,8 @@
             </div>
             
             <!-- Info Acara -->
-            <div class="" id="6">
-                <h2 class="-title animate fade-down">Detail Acara</h2>
+            <div class="section" id="section6">
+                <h2 class="section-title animate fade-down">Detail Acara</h2>
                 <div class="info-card">
                     <div class="event-info animate fade-up delay-100" id="tanggal">
                         <i class="fas fa-calendar-alt"></i>
@@ -1247,7 +1247,7 @@
             </div>
             
             <!-- Doa -->
-            <div class="" id="7">
+            <div class="section" id="section7">
                 <div class="info-card">
                     <p class="info-content animate fade-up delay-100">Dengan hormat, kami mengharap doa baik kepada kami dari Bapak/Ibu/Saudara/Saudari atas pernikahan kami</p>
                     
@@ -1262,8 +1262,8 @@
             </div>
             
             <!-- Foto Mempelai -->
-            <div class="" id="8">
-                <h2 class="-title animate fade-down">Mempelai</h2>
+            <div class="section" id="section8">
+                <h2 class="section-title animate fade-down">Mempelai</h2>
                 <div class="couple-photo">
                     <div class="photo-frame animate zoom-in delay-100" id="foto">
                         <img src="couple.png" alt="Jean & Dwi" draggable="false">
@@ -1275,8 +1275,8 @@
             </div>
             
             <!-- Etika Selama Acara -->
-            <div class="" id="9">
-                <h2 class="-title animate fade-down">Etika Selama Acara</h2>
+            <div class="section" id="section9">
+                <h2 class="section-title animate fade-down">Etika Selama Acara</h2>
                 <div class="info-card">
                     <p class="info-content animate fade-up delay-100">Kepada hadirin yang kami hormati, mohon untuk:</p>
                     
@@ -1306,31 +1306,31 @@
     <!-- Mobile Navigation -->
     <div class="fab-container">
         <div class="nav-menu" id="navMenu">
-            <a href="#1" class="nav-item elementor-animation-shrink">
+            <a href="#section1" class="nav-item elementor-animation-shrink">
                 <i class="fas fa-book-quran"></i> Ayat 1
             </a>
-            <a href="#2" class="nav-item elementor-animation-shrink">
+            <a href="#section2" class="nav-item elementor-animation-shrink">
                 <i class="fas fa-book-quran"></i> Ayat 2
             </a>
-            <a href="#3" class="nav-item elementor-animation-shrink">
+            <a href="#section3" class="nav-item elementor-animation-shrink">
                 <i class="fas fa-heart"></i> Love Story
             </a>
-            <a href="#4" class="nav-item elementor-animation-shrink">
+            <a href="#section4" class="nav-item elementor-animation-shrink">
                 <i class="fas fa-envelope"></i> Undangan
             </a>
-            <a href="#5" class="nav-item elementor-animation-shrink">
+            <a href="#section5" class="nav-item elementor-animation-shrink">
                 <i class="fas fa-users"></i> Mempelai
             </a>
-            <a href="#6" class="nav-item elementor-animation-shrink">
+            <a href="#section6" class="nav-item elementor-animation-shrink">
                 <i class="fas fa-calendar-alt"></i> Acara
             </a>
-            <a href="#7" class="nav-item elementor-animation-shrink">
+            <a href="#section7" class="nav-item elementor-animation-shrink">
                 <i class="fas fa-hands"></i> Doa
             </a>
-            <a href="#8" class="nav-item elementor-animation-shrink">
+            <a href="#section8" class="nav-item elementor-animation-shrink">
                 <i class="fas fa-camera"></i> Foto
             </a>
-            <a href="#9" class="nav-item elementor-animation-shrink">
+            <a href="#section9" class="nav-item elementor-animation-shrink">
                 <i class="fas fa-list-ul"></i> Etika
             </a>
         </div>
@@ -1384,14 +1384,14 @@
             }
             
             init() {
-                // Menggunakan Inter Observer untuk performa yang lebih baik
+                // Menggunakan Intersection Observer untuk performa yang lebih baik
                 const options = {
                     root: null,
                     rootMargin: '0px',
                     threshold: 0.15
                 };
                 
-                const observer = new InterObserver((entries) => {
+                const observer = new IntersectionObserver((entries) => {
                     entries.forEach(entry => {
                         if (entry.isIntersecting) {
                             this.animateElement(entry.target);
