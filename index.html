@@ -764,14 +764,141 @@
             from { opacity: 0; }
             to { opacity: 1; }
         }
-        /* Media query untuk mobile - dioptimalkan */
-        @media (max-width: 768px) {
+        
+        /* Media query untuk mobile sangat kecil */
+        @media (max-width: 480px) {
+            /* Mengurangi kompleksitas animasi untuk mobile */
+            .glass-card {
+                background: rgba(255, 255, 255, 0.2);
+                backdrop-filter: none;
+                -webkit-backdrop-filter: none;
+                padding: 15px 10px;
+                max-width: 95%;
+                width: 95%;
+            }
+            
+            /* Menghilangkan partikel untuk performa lebih baik */
+            .particles {
+                display: none;
+            }
+            
+            /* Mengurangi ukuran bulan dan matahari */
+            .moon {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .sun {
+                width: 30px;
+                height: 30px;
+            }
+            
+            /* Mengurangi ukuran awan */
+            .cloud1 {
+                width: 50px;
+                height: 15px;
+            }
+            
+            .cloud2 {
+                width: 40px;
+                height: 12px;
+            }
+            
+            .cloud3 {
+                width: 60px;
+                height: 20px;
+            }
+            
+            /* Menyesuaikan ukuran font untuk mobile sangat kecil */
+            .guest-name {
+                font-size: 1.4rem;
+                margin-bottom: 1rem;
+            }
+            
+            /* Menyesuaikan ukuran ornamen untuk mobile sangat kecil */
+            .ornament-corner {
+                width: 25px;
+                height: 25px;
+            }
+            
+            /* Menyesuaikan ukuran nama pasangan untuk mobile sangat kecil */
+            .couple-names {
+                font-size: 2.8rem;
+                margin: 1rem 0;
+            }
+            
+            .ampersand {
+                font-size: 2.2rem;
+                margin: 0 8px;
+            }
+            
+            /* Menyesuaikan ukuran gambar Bismillah untuk mobile sangat kecil */
+            .bismillah {
+                width: 120px;
+                height: 50px;
+            }
+            
+            /* Menyesuaikan countdown untuk mobile sangat kecil */
+            .countdown-container {
+                padding: 8px;
+                margin-top: 12px;
+            }
+            
+            .countdown-title {
+                font-size: 0.8rem;
+            }
+            
+            .countdown {
+                gap: 5px;
+            }
+            
+            .countdown-item {
+                min-width: 35px;
+                padding: 4px;
+            }
+            
+            .countdown-value {
+                font-size: 0.9rem;
+            }
+            
+            .countdown-label {
+                font-size: 0.5rem;
+            }
+            
+            /* Menyesuaikan ukuran tombol untuk mobile sangat kecil */
+            .open-invitation {
+                padding: 8px 20px;
+                font-size: 0.8rem;
+            }
+            
+            /* Menyesuaikan ukuran judul untuk mobile sangat kecil */
+            .invitation-title {
+                font-size: 1rem;
+                margin-bottom: 1rem;
+            }
+            
+            /* Menyesuaikan guest label untuk mobile sangat kecil */
+            .guest-label {
+                font-size: 0.8rem;
+            }
+            
+            /* Menyesuaikan divider untuk mobile sangat kecil */
+            .divider {
+                width: 80px;
+                margin: 0.8rem auto;
+            }
+        }
+        
+        /* Media query untuk mobile kecil */
+        @media (min-width: 481px) and (max-width: 768px) {
             /* Mengurangi kompleksitas animasi untuk mobile */
             .glass-card {
                 background: rgba(255, 255, 255, 0.2);
                 backdrop-filter: none;
                 -webkit-backdrop-filter: none;
                 padding: 20px 15px;
+                max-width: 90%;
+                width: 90%;
             }
             
             /* Mengurangi jumlah partikel untuk performa lebih baik */
@@ -860,12 +987,6 @@
                 font-size: 0.6rem;
             }
             
-            /* Menyesuaikan ukuran card untuk mobile */
-            .glass-card {
-                max-width: 95%;
-                width: 95%;
-            }
-            
             /* Menyesuaikan ukuran tombol untuk mobile */
             .open-invitation {
                 padding: 10px 25px;
@@ -878,34 +999,490 @@
             }
         }
         
-        /* Media query untuk mobile sangat kecil */
-        @media (max-width: 480px) {
-            /* Menyesuaikan ukuran nama pasangan untuk mobile sangat kecil */
+        /* Media query untuk tablet */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            /* Menyesuaikan ukuran glass card untuk tablet */
+            .glass-card {
+                padding: 35px 25px;
+                max-width: 85%;
+                width: 85%;
+            }
+            
+            /* Menyesuaikan ukuran nama pasangan untuk tablet */
             .couple-names {
-                font-size: 2.8rem;
+                font-size: 5rem;
+                margin: 2rem 0;
             }
             
             .ampersand {
-                font-size: 2.2rem;
+                font-size: 4rem;
+                margin: 0 18px;
             }
             
-            /* Menyesuaikan ukuran font nama tamu untuk mobile sangat kecil */
+            /* Menyesuaikan ukuran nama tamu untuk tablet */
             .guest-name {
-                font-size: 1.4rem;
+                font-size: 2.5rem;
             }
             
-            /* Menyesuaikan countdown untuk mobile sangat kecil */
+            /* Menyesuaikan ukuran gambar Bismillah untuk tablet */
+            .bismillah {
+                width: 220px;
+                height: 90px;
+            }
+            
+            /* Menyesuaikan countdown untuk tablet */
+            .countdown-container {
+                padding: 18px;
+                margin-top: 25px;
+            }
+            
+            .countdown-title {
+                font-size: 1.1rem;
+            }
+            
+            .countdown {
+                gap: 15px;
+            }
+            
             .countdown-item {
-                min-width: 35px;
-                padding: 4px;
+                min-width: 60px;
+                padding: 10px;
             }
             
             .countdown-value {
-                font-size: 0.9rem;
+                font-size: 1.4rem;
             }
             
             .countdown-label {
-                font-size: 0.5rem;
+                font-size: 0.8rem;
+            }
+            
+            /* Menyesuaikan ukuran tombol untuk tablet */
+            .open-invitation {
+                padding: 14px 35px;
+                font-size: 1.1rem;
+            }
+            
+            /* Menyesuaikan ukuran judul untuk tablet */
+            .invitation-title {
+                font-size: 1.6rem;
+            }
+            
+            /* Menyesuaikan ukuran ornamen untuk tablet */
+            .ornament-corner {
+                width: 70px;
+                height: 70px;
+            }
+            
+            .floral-ornament {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .floral-ornament::before,
+            .floral-ornament::after {
+                width: 18px;
+                height: 18px;
+            }
+            
+            .floral-ornament::before {
+                top: 21px;
+                left: 6px;
+            }
+            
+            .floral-ornament::after {
+                top: 21px;
+                right: 6px;
+            }
+            
+            .floral-ornament .center {
+                width: 15px;
+                height: 15px;
+                top: 22.5px;
+                left: 22.5px;
+            }
+            
+            .name-ornament {
+                width: 25px;
+                height: 25px;
+            }
+            
+            .name-ornament.left {
+                left: -30px;
+            }
+            
+            .name-ornament.right {
+                right: -30px;
+            }
+            
+            .name-ornament::before,
+            .name-ornament::after {
+                width: 10px;
+                height: 10px;
+            }
+            
+            .name-ornament::before {
+                top: 7.5px;
+                left: 0;
+            }
+            
+            .name-ornament::after {
+                top: 7.5px;
+                right: 0;
+            }
+            
+            .name-ornament .center {
+                width: 8px;
+                height: 8px;
+                top: 8.5px;
+                left: 8.5px;
+            }
+        }
+        
+        /* Media query untuk desktop */
+        @media (min-width: 1025px) {
+            /* Menyesuaikan ukuran glass card untuk desktop */
+            .glass-card {
+                padding: 40px 30px;
+                max-width: 80%;
+                width: 80%;
+            }
+            
+            /* Menyesuaikan ukuran nama pasangan untuk desktop */
+            .couple-names {
+                font-size: 6rem;
+                margin: 2.5rem 0;
+            }
+            
+            .ampersand {
+                font-size: 4.5rem;
+                margin: 0 20px;
+            }
+            
+            /* Menyesuaikan ukuran nama tamu untuk desktop */
+            .guest-name {
+                font-size: 3rem;
+            }
+            
+            /* Menyesuaikan ukuran gambar Bismillah untuk desktop */
+            .bismillah {
+                width: 250px;
+                height: 100px;
+            }
+            
+            /* Menyesuaikan countdown untuk desktop */
+            .countdown-container {
+                padding: 20px;
+                margin-top: 30px;
+            }
+            
+            .countdown-title {
+                font-size: 1.2rem;
+            }
+            
+            .countdown {
+                gap: 20px;
+            }
+            
+            .countdown-item {
+                min-width: 70px;
+                padding: 12px;
+            }
+            
+            .countdown-value {
+                font-size: 1.6rem;
+            }
+            
+            .countdown-label {
+                font-size: 0.9rem;
+            }
+            
+            /* Menyesuaikan ukuran tombol untuk desktop */
+            .open-invitation {
+                padding: 16px 40px;
+                font-size: 1.2rem;
+            }
+            
+            /* Menyesuaikan ukuran judul untuk desktop */
+            .invitation-title {
+                font-size: 1.8rem;
+            }
+            
+            /* Menyesuaikan ukuran ornamen untuk desktop */
+            .ornament-corner {
+                width: 80px;
+                height: 80px;
+            }
+            
+            .floral-ornament {
+                width: 70px;
+                height: 70px;
+            }
+            
+            .floral-ornament::before,
+            .floral-ornament::after {
+                width: 20px;
+                height: 20px;
+            }
+            
+            .floral-ornament::before {
+                top: 25px;
+                left: 8px;
+            }
+            
+            .floral-ornament::after {
+                top: 25px;
+                right: 8px;
+            }
+            
+            .floral-ornament .center {
+                width: 18px;
+                height: 18px;
+                top: 26px;
+                left: 26px;
+            }
+            
+            .name-ornament {
+                width: 30px;
+                height: 30px;
+            }
+            
+            .name-ornament.left {
+                left: -35px;
+            }
+            
+            .name-ornament.right {
+                right: -35px;
+            }
+            
+            .name-ornament::before,
+            .name-ornament::after {
+                width: 12px;
+                height: 12px;
+            }
+            
+            .name-ornament::before {
+                top: 9px;
+                left: 0;
+            }
+            
+            .name-ornament::after {
+                top: 9px;
+                right: 0;
+            }
+            
+            .name-ornament .center {
+                width: 10px;
+                height: 10px;
+                top: 10px;
+                left: 10px;
+            }
+        }
+        
+        /* Media query untuk layar lebar (desktop besar) */
+        @media (min-width: 1440px) {
+            /* Menyesuaikan ukuran glass card untuk layar lebar */
+            .glass-card {
+                max-width: 70%;
+                width: 70%;
+            }
+            
+            /* Menyesuaikan ukuran nama pasangan untuk layar lebar */
+            .couple-names {
+                font-size: 7rem;
+            }
+            
+            .ampersand {
+                font-size: 5.5rem;
+            }
+            
+            /* Menyesuaikan ukuran nama tamu untuk layar lebar */
+            .guest-name {
+                font-size: 3.5rem;
+            }
+            
+            /* Menyesuaikan countdown untuk layar lebar */
+            .countdown-item {
+                min-width: 80px;
+                padding: 15px;
+            }
+            
+            .countdown-value {
+                font-size: 1.8rem;
+            }
+            
+            .countdown-label {
+                font-size: 1rem;
+            }
+        }
+        
+        /* Media query untuk orientasi landscape di mobile */
+        @media (max-width: 768px) and (orientation: landscape) {
+            /* Menyesuaikan tinggi container untuk landscape */
+            .invitation-container {
+                padding: 10px;
+            }
+            
+            /* Menyesuaikan ukuran glass card untuk landscape */
+            .glass-card {
+                padding: 15px 10px;
+                max-width: 95%;
+                width: 95%;
+            }
+            
+            /* Menyesuaikan ukuran nama pasangan untuk landscape */
+            .couple-names {
+                font-size: 2.5rem;
+                margin: 0.8rem 0;
+            }
+            
+            .ampersand {
+                font-size: 2rem;
+                margin: 0 5px;
+            }
+            
+            /* Menyesuaikan ukuran nama tamu untuk landscape */
+            .guest-name {
+                font-size: 1.2rem;
+                margin-bottom: 0.8rem;
+            }
+            
+            /* Menyesuaikan ukuran gambar Bismillah untuk landscape */
+            .bismillah {
+                width: 100px;
+                height: 40px;
+                margin-bottom: 0.5rem;
+            }
+            
+            /* Menyesuaikan countdown untuk landscape */
+            .countdown-container {
+                padding: 8px;
+                margin-top: 10px;
+            }
+            
+            .countdown-title {
+                font-size: 0.7rem;
+                margin-bottom: 5px;
+            }
+            
+            .countdown {
+                gap: 5px;
+            }
+            
+            .countdown-item {
+                min-width: 30px;
+                padding: 3px;
+            }
+            
+            .countdown-value {
+                font-size: 0.8rem;
+            }
+            
+            .countdown-label {
+                font-size: 0.4rem;
+            }
+            
+            /* Menyesuaikan ukuran tombol untuk landscape */
+            .open-invitation {
+                padding: 8px 20px;
+                font-size: 0.8rem;
+                margin-top: 0.8rem;
+            }
+            
+            /* Menyesuaikan ukuran judul untuk landscape */
+            .invitation-title {
+                font-size: 1rem;
+                margin-bottom: 0.8rem;
+            }
+            
+            /* Menyesuaikan guest label untuk landscape */
+            .guest-label {
+                font-size: 0.7rem;
+                margin-bottom: 0.3rem;
+            }
+            
+            /* Menyesuaikan divider untuk landscape */
+            .divider {
+                width: 60px;
+                margin: 0.5rem auto;
+            }
+            
+            /* Menyesuaikan ornamen untuk landscape */
+            .ornament-corner {
+                width: 20px;
+                height: 20px;
+            }
+            
+            .floral-ornament {
+                width: 30px;
+                height: 30px;
+            }
+            
+            .floral-ornament.top {
+                top: -10px;
+            }
+            
+            .floral-ornament.bottom {
+                bottom: -10px;
+            }
+            
+            .floral-ornament::before,
+            .floral-ornament::after {
+                width: 8px;
+                height: 8px;
+            }
+            
+            .floral-ornament::before {
+                top: 11px;
+                left: 3px;
+            }
+            
+            .floral-ornament::after {
+                top: 11px;
+                right: 3px;
+            }
+            
+            .floral-ornament .center {
+                width: 6px;
+                height: 6px;
+                top: 12px;
+                left: 12px;
+            }
+            
+            .name-ornament {
+                width: 15px;
+                height: 15px;
+            }
+            
+            .name-ornament.left {
+                left: -18px;
+            }
+            
+            .name-ornament.right {
+                right: -18px;
+            }
+            
+            .name-ornament::before,
+            .name-ornament::after {
+                width: 5px;
+                height: 5px;
+            }
+            
+            .name-ornament::before {
+                top: 5px;
+                left: 0;
+            }
+            
+            .name-ornament::after {
+                top: 5px;
+                right: 0;
+            }
+            
+            .name-ornament .center {
+                width: 4px;
+                height: 4px;
+                top: 5.5px;
+                left: 5.5px;
             }
         }
     </style>
@@ -1027,17 +1604,41 @@
             
             // Deteksi perangkat mobile
             const isMobile = window.innerWidth <= 768;
+            const isSmallMobile = window.innerWidth <= 480;
+            const isTablet = window.innerWidth > 768 && window.innerWidth <= 1024;
+            const isDesktop = window.innerWidth > 1024;
+            const isLargeDesktop = window.innerWidth >= 1440;
+            const isLandscape = window.innerWidth > window.innerHeight;
             
-            // Mengurangi jumlah bintang untuk mobile
-            const numberOfStars = isMobile ? 50 : 200;
+            // Mengatur jumlah bintang berdasarkan ukuran layar
+            let numberOfStars;
+            if (isSmallMobile) {
+                numberOfStars = 30;
+            } else if (isMobile) {
+                numberOfStars = 50;
+            } else if (isTablet) {
+                numberOfStars = 100;
+            } else {
+                numberOfStars = 200;
+            }
             
             // Membuat bintang
             for (let i = 0; i < numberOfStars; i++) {
                 const star = document.createElement('div');
                 star.className = 'star';
                 
-                // Ukuran bintang lebih kecil untuk mobile
-                const maxSize = isMobile ? 2 : 3;
+                // Ukuran bintang berdasarkan perangkat
+                let maxSize;
+                if (isSmallMobile) {
+                    maxSize = 1.5;
+                } else if (isMobile) {
+                    maxSize = 2;
+                } else if (isTablet) {
+                    maxSize = 2.5;
+                } else {
+                    maxSize = 3;
+                }
+                
                 const size = Math.random() * maxSize;
                 star.style.width = `${size}px`;
                 star.style.height = `${size}px`;
@@ -1057,7 +1658,17 @@
             
             // Membuat partikel cahaya hanya untuk desktop
             if (!isMobile) {
-                const numberOfParticles = 30;
+                let numberOfParticles;
+                if (isTablet) {
+                    numberOfParticles = 20;
+                } else if (isDesktop) {
+                    numberOfParticles = 30;
+                } else if (isLargeDesktop) {
+                    numberOfParticles = 40;
+                } else {
+                    numberOfParticles = 30;
+                }
+                
                 for (let i = 0; i < numberOfParticles; i++) {
                     const particle = document.createElement('div');
                     particle.className = 'particle';
@@ -1145,6 +1756,20 @@
             // Update countdown setiap detik
             setInterval(updateCountdown, 1000);
             updateCountdown(); // Panggil sekali saat halaman dimuat
+            
+            // Menangani perubahan orientasi layar
+            window.addEventListener('resize', function() {
+                // Deteksi ulang perangkat setelah resize
+                const newIsMobile = window.innerWidth <= 768;
+                const newIsLandscape = window.innerWidth > window.innerHeight;
+                
+                // Jika berubah dari portrait ke landscape atau sebaliknya
+                if ((isMobile && !newIsMobile) || (!isMobile && newIsMobile) || 
+                    (isLandscape && !newIsLandscape) || (!isLandscape && newIsLandscape)) {
+                    // Reload halaman untuk menerapkan style yang sesuai
+                    location.reload();
+                }
+            });
         });
     </script>
 </body>
