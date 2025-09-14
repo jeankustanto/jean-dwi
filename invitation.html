@@ -289,7 +289,7 @@
             opacity: 0;
             transform: translateY(20px);
             transition: all 0.8s ease;
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.7); /* DIUBAH: Lebih transparan */
             border-radius: 15px;
             padding: 25px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -320,15 +320,13 @@
             user-select: none;
             -webkit-touch-callout: none;
             -khtml-user-select: none;
+            opacity: 0;
+            animation-duration: 1s;
+            animation-fill-mode: both;
         }
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: linear-gradient(90deg, #d4af37, #f0e6c2);
+        .section-title.visible {
+            opacity: 1;
+            animation-name: fadeInDown;
         }
         .arabic-text {
             font-family: 'Amiri Quran', serif;
@@ -378,6 +376,13 @@
             position: relative;
             margin-bottom: 40px;
             padding-left: 80px;
+            opacity: 0;
+            animation-duration: 1s;
+            animation-fill-mode: both;
+        }
+        .story-step.visible {
+            opacity: 1;
+            animation-name: fadeInRight;
         }
         .step-icon {
             position: absolute;
@@ -398,7 +403,7 @@
             font-size: 16px;
         }
         .step-content {
-            background: white;
+            background: rgba(255, 255, 255, 0.7); /* DIUBAH: Lebih transparan */
             border-radius: 10px;
             padding: 20px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
@@ -454,7 +459,7 @@
         }
         
         .info-card {
-            background: white;
+            background: rgba(255, 255, 255, 0.7); /* DIUBAH: Lebih transparan */
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             padding: 20px;
@@ -505,7 +510,7 @@
             text-align: center;
             padding: 15px;
             border-radius: 10px;
-            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+            background: rgba(255, 255, 255, 0.5); /* DIUBAH: Lebih transparan */
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             /* Proteksi salin teks */
             -webkit-user-select: none;
@@ -514,6 +519,13 @@
             user-select: none;
             -webkit-touch-callout: none;
             -khtml-user-select: none;
+            opacity: 0;
+            animation-duration: 1s;
+            animation-fill-mode: both;
+        }
+        .person.visible {
+            opacity: 1;
+            animation-name: zoomIn;
         }
         .person:hover {
             transform: translateY(-5px);
@@ -558,6 +570,13 @@
             user-select: none;
             -webkit-touch-callout: none;
             -khtml-user-select: none;
+            opacity: 0;
+            animation-duration: 1s;
+            animation-fill-mode: both;
+        }
+        .event-info.visible {
+            opacity: 1;
+            animation-name: fadeInUp;
         }
         .event-info:hover {
             transform: translateX(5px);
@@ -584,6 +603,13 @@
             user-select: none;
             -webkit-touch-callout: none;
             -khtml-user-select: none;
+            opacity: 0;
+            animation-duration: 1s;
+            animation-fill-mode: both;
+        }
+        .location-info.visible {
+            opacity: 1;
+            animation-name: fadeInUp;
         }
         .location-info:hover {
             transform: translateX(5px);
@@ -611,6 +637,13 @@
             user-select: none;
             -webkit-touch-callout: none;
             -khtml-user-select: none;
+            opacity: 0;
+            animation-duration: 1s;
+            animation-fill-mode: both;
+        }
+        .map-container.visible {
+            opacity: 1;
+            animation-name: fadeInUp;
         }
         .map-container:hover {
             transform: scale(1.02);
@@ -667,7 +700,7 @@
             height: 300px;
             border-radius: 50%;
             overflow: hidden;
-            border: 5px solid white;
+            border: 5px solid rgba(255, 255, 255, 0.7); /* DIUBAH: Lebih transparan */
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             /* Proteksi salin teks */
@@ -677,6 +710,13 @@
             user-select: none;
             -webkit-touch-callout: none;
             -khtml-user-select: none;
+            opacity: 0;
+            animation-duration: 1s;
+            animation-fill-mode: both;
+        }
+        .photo-frame.visible {
+            opacity: 1;
+            animation-name: zoomIn;
         }
         .photo-frame:hover {
             transform: scale(1.05);
@@ -729,6 +769,13 @@
             user-select: none;
             -webkit-touch-callout: none;
             -khtml-user-select: none;
+            opacity: 0;
+            animation-duration: 1s;
+            animation-fill-mode: both;
+        }
+        .request-item.visible {
+            opacity: 1;
+            animation-name: fadeInRight;
         }
         .request-item:hover {
             transform: translateX(5px);
@@ -830,7 +877,7 @@
             position: fixed;
             bottom: 80px;
             left: 20px;
-            background: white;
+            background: rgba(255, 255, 255, 0.7); /* DIUBAH: Lebih transparan */
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             padding: 10px;
@@ -888,6 +935,70 @@
         
         .section.visible {
             animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        /* Animasi Tambahan */
+        .elementor-animation-shrink {
+            transition-duration: .3s;
+            transition-property: transform;
+        }
+        .elementor-animation-shrink:active, .elementor-animation-shrink:focus, .elementor-animation-shrink:hover {
+            transform: scale(.9);
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translate3d(0,-100%,0);
+            }
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+        .fadeInDown {
+            animation-name: fadeInDown;
+        }
+        
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translate3d(100%,0,0);
+            }
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+        .fadeInRight {
+            animation-name: fadeInRight;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translate3d(0,100%,0);
+            }
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+        .fadeInUp {
+            animation-name: fadeInUp;
+        }
+        
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale3d(.3,.3,.3);
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+        .zoomIn {
+            animation-name: zoomIn;
         }
         
         @media (max-width: 768px) {
@@ -1062,6 +1173,7 @@
         <div class="detail-content">
             <!-- Ayat Al-Qur'an 1 -->
             <div class="section protected" id="section1">
+                <h2 class="section-title">Ayat Al-Qur'an 1</h2>
                 <p class="arabic-text">
                     وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُمْ مِنْ أَنْفُسِكُمْ أَزْوَاجًا لِتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُمْ مَوَدَّةً وَرَحْمَةً إِنَّ فِي ذَلِكَ لَآيَاتٍ لِقَوْمٍ يَتَفَكَّرُونَ
                 </p>
@@ -1073,6 +1185,7 @@
             
             <!-- Ayat Al-Qur'an 2 -->
             <div class="section protected" id="section2">
+                <h2 class="section-title">Ayat Al-Qur'an 2</h2>
                 <p class="arabic-text">
                     وَالَّذِينَ يَقُولُونَ رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا وَذُرِّيَّاتِنَا قُرَّةَ أَعْيُنٍ وَاجْعَلْنَا لِلْمُتَّقِينَ إِمَامًا
                 </p>
@@ -1087,13 +1200,13 @@
                 <h2 class="section-title">Our Love Story</h2>
                 <div class="love-story">
                     <div class="story-timeline">
-                        <div class="story-step">
+                        <div class="story-step" id="taaruf">
                             <div class="step-icon">
                                 <i class="fas fa-hands-helping"></i>
                             </div>
                             <div class="step-content">
                                 <h3 class="step-title">Ta'aruf</h3>
-                                <p><span class="highlight"><p><span class="highlight">Awal bulan Juni</span>, 
+                                <p><span class="highlight">Awal bulan Juni</span>, 
                                     dengan izin Allah, kami memulai langkah pertama menuju jalan yang diridhai-Nya. 
                                     Bukan dengan janji manis, bukan pula dengan pertemuan tanpa arah, melainkan melalui 
                                     <span class="highlight">ta'aruf</span> 
@@ -1104,7 +1217,7 @@
                             </div>
                         </div>
                         
-                        <div class="story-step">
+                        <div class="story-step" id="nadzor">
                             <div class="step-icon">
                                 <i class="fas fa-eye"></i>
                             </div>
@@ -1114,7 +1227,7 @@
                             </div>
                         </div>
                         
-                        <div class="story-step">
+                        <div class="story-step" id="khitbah">
                             <div class="step-icon">
                                 <i class="fas fa-ring"></i>
                             </div>
@@ -1124,7 +1237,7 @@
                             </div>
                         </div>
                         
-                        <div class="story-step">
+                        <div class="story-step" id="akad">
                             <div class="step-icon">
                                 <i class="fas fa-heart"></i>
                             </div>
@@ -1139,15 +1252,16 @@
                     
             <!-- Info Mempelai -->
             <div class="section protected" id="section5">
+                <h2 class="section-title">Info Mempelai</h2>
                 <div class="section protected" id="section4">
                 <p class="info-content">Dengan memohon rachmat dan ridho Allah SWT, dengan hormat, kami mengundang Bapak/Ibu/Ayah/Bunda/Ananda untuk hadir dalam acara walimatul `urs kami:</p>
             </div>
                 <div class="couple-info">
-                    <div class="person">
+                    <div class="person" id="jean">
                         <h3 class="person-name">Jean Dwi Kustanto</h3>
                         <p class="person-parents">Putra dari:<br>Alm. Bapak Slamet Budiono & Ibu Kuswati</p>
                     </div>
-                    <div class="person">
+                    <div class="person" id="dwi">
                         <h3 class="person-name">Pujiana Dwi Kusumawati</h3>
                         <p class="person-parents">Putri dari:<br>Bapak Sudibyo & Ibu Siswati</p>
                     </div>
@@ -1158,7 +1272,7 @@
             <div class="section protected" id="section6">
                 <h2 class="section-title">Detail Acara</h2>
                 <div class="info-card">
-                    <div class="event-info">
+                    <div class="event-info" id="tanggal">
                         <i class="fas fa-calendar-alt"></i>
                         <div>
                             <h3 class="info-title">Tanggal</h3>
@@ -1166,7 +1280,7 @@
                         </div>
                     </div>
                     
-                    <div class="event-info">
+                    <div class="event-info" id="waktu">
                         <i class="fas fa-clock"></i>
                         <div>
                             <h3 class="info-title">Waktu</h3>
@@ -1174,25 +1288,23 @@
                         </div>
                     </div>
                     
-                    <div class="location-info">
+                    <div class="location-info" id="lokasi">
                         <i class="fas fa-map-marker-alt"></i>
                         <div>
                             <h3 class="info-title">Lokasi</h3>
                             <p class="info-content">Kediaman mempelai wanita (Rumah Bapak Sudibyo)<br>Jl. Raya Tempuran, Desa Tempuran<br>Kecamatan Bantaran<br>Kabupaten Probolinggo - Jawa Timur<br>(Timur SMPN I Bantaran)</p>
                         </div>
                     </div>
-                    <div class="map-container">
+                    <div class="map-container" id="map">
                         <!-- DIPERBAIKI: Mengganti iframe peta dengan URL yang baru -->
                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d494.05876646677325!2d113.17903009781251!3d-7.845763379034269!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sid!2sid!4v1757175426161!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                     <div style="text-align: center;">
-                        <a href="https://maps.google.com/?q=-7.8457332%2C113.1792614&z=17&hl=id" target="_blank" class="info-card" style="display: inline-block; background: linear-gradient(90deg, #d4af37, #f0e6c2); color: white; text-decoration: none; padding: 10px 20px; border-radius: 30px; font-weight: 600; transition: transform 0.3s ease;">
+                        <!-- PERBAIKAN: Button Buka di Google Maps -->
+                        <a href="https://maps.google.com/?q=-7.8457332%2C113.1792614&z=17&hl=id" target="_blank" class="info-card elementor-animation-shrink" style="display: inline-block; background: linear-gradient(90deg, #d4af37, #f0e6c2); color: white; text-decoration: none; padding: 10px 20px; border-radius: 30px; font-weight: 600;">
                             <i class="fas fa-directions"></i> Buka di Google Maps
                         </a>
                     </div>
-                </div>
-            </div>
-            
                 </div>
             </div>
             
@@ -1215,7 +1327,7 @@
             <div class="section protected" id="section8">
                 <h2 class="section-title">Mempelai</h2>
                 <div class="couple-photo">
-                    <div class="photo-frame">
+                    <div class="photo-frame" id="foto">
                         <img src="couple.png" alt="Jean & Dwi" draggable="false">
                     </div>
                 </div>
@@ -1231,19 +1343,19 @@
                     <p class="info-content">Kepada hadirin yang kami hormati, mohon untuk:</p>
                     
                     <ul class="request-list">
-                        <li class="request-item">
+                        <li class="request-item" id="etika1">
                             <i class="fas fa-handshake"></i>
                             <span>Berjabat tangan hanya dengan mahramnya.</span>
                         </li>
-                        <li class="request-item">
+                        <li class="request-item" id="etika2">
                             <i class="fas fa-head-side-mask"></i>
                             <span>Mengenakan Masker Jika Kurang Fit.</span>
                         </li>
-                        <li class="request-item">
+                        <li class="request-item" id="etika3">
                             <i class="fas fa-mosque"></i>
                             <span>Saling mengingatkan waktu sholat.</span>
                         </li>
-                        <li class="request-item">
+                        <li class="request-item" id="etika4">
                             <i class="fas fa-utensils"></i>
                             <span>Duduk ketika makan.</span>
                         </li>
@@ -1256,42 +1368,42 @@
     <!-- Mobile Navigation -->
     <div class="fab-container">
         <div class="nav-menu" id="navMenu">
-            <a href="#section1" class="nav-item">
+            <a href="#section1" class="nav-item elementor-animation-shrink">
                 <i class="fas fa-book-quran"></i> Ayat 1
             </a>
-            <a href="#section2" class="nav-item">
+            <a href="#section2" class="nav-item elementor-animation-shrink">
                 <i class="fas fa-book-quran"></i> Ayat 2
             </a>
-            <a href="#section3" class="nav-item">
+            <a href="#section3" class="nav-item elementor-animation-shrink">
                 <i class="fas fa-heart"></i> Love Story
             </a>
-            <a href="#section4" class="nav-item">
+            <a href="#section4" class="nav-item elementor-animation-shrink">
                 <i class="fas fa-envelope"></i> Undangan
             </a>
-            <a href="#section5" class="nav-item">
+            <a href="#section5" class="nav-item elementor-animation-shrink">
                 <i class="fas fa-users"></i> Mempelai
             </a>
-            <a href="#section6" class="nav-item">
+            <a href="#section6" class="nav-item elementor-animation-shrink">
                 <i class="fas fa-calendar-alt"></i> Acara
             </a>
-            <a href="#section7" class="nav-item">
+            <a href="#section7" class="nav-item elementor-animation-shrink">
                 <i class="fas fa-hands"></i> Doa
             </a>
-            <a href="#section8" class="nav-item">
+            <a href="#section8" class="nav-item elementor-animation-shrink">
                 <i class="fas fa-camera"></i> Foto
             </a>
-            <a href="#section9" class="nav-item">
+            <a href="#section9" class="nav-item elementor-animation-shrink">
                 <i class="fas fa-list-ul"></i> Etika
             </a>
         </div>
-        <div class="fab" id="fabToggle">
+        <div class="fab elementor-animation-shrink" id="fabToggle">
             <i class="fas fa-bars"></i>
         </div>
     </div>
     
     <!-- Musik Player -->
     <div class="music-player">
-        <div class="music-toggle" id="musicToggle">
+        <div class="music-toggle elementor-animation-shrink" id="musicToggle">
             <i class="fas fa-music" id="musicIcon"></i>
         </div>
         <div class="music-info" id="musicInfo">
@@ -1339,6 +1451,132 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
+                    
+                    // Animasi untuk judul section
+                    const sectionTitle = entry.target.querySelector('.section-title');
+                    if (sectionTitle) {
+                        sectionTitle.classList.add('visible');
+                    }
+                    
+                    // Animasi untuk elemen-elemen khusus dalam section
+                    // Section 1 - Ayat Al-Qur'an 1
+                    if (entry.target.id === 'section1') {
+                        const arabicText = entry.target.querySelector('.arabic-text');
+                        const translation = entry.target.querySelectorAll('.translation');
+                        
+                        if (arabicText) {
+                            arabicText.style.opacity = '0';
+                            arabicText.style.animationDuration = '1s';
+                            arabicText.style.animationFillMode = 'both';
+                            arabicText.style.animationName = 'zoomIn';
+                            
+                            setTimeout(() => {
+                                arabicText.style.opacity = '1';
+                            }, 100);
+                        }
+                        
+                        translation.forEach((el, index) => {
+                            el.style.opacity = '0';
+                            el.style.animationDuration = '1s';
+                            el.style.animationFillMode = 'both';
+                            el.style.animationName = 'zoomIn';
+                            el.style.animationDelay = `${0.3 + (index * 0.2)}s`;
+                            
+                            setTimeout(() => {
+                                el.style.opacity = '1';
+                            }, 300 + (index * 200));
+                        });
+                    }
+                    
+                    // Section 2 - Ayat Al-Qur'an 2
+                    if (entry.target.id === 'section2') {
+                        const arabicText = entry.target.querySelector('.arabic-text');
+                        const translation = entry.target.querySelectorAll('.translation');
+                        
+                        if (arabicText) {
+                            arabicText.style.opacity = '0';
+                            arabicText.style.animationDuration = '1s';
+                            arabicText.style.animationFillMode = 'both';
+                            arabicText.style.animationName = 'zoomIn';
+                            
+                            setTimeout(() => {
+                                arabicText.style.opacity = '1';
+                            }, 100);
+                        }
+                        
+                        translation.forEach((el, index) => {
+                            el.style.opacity = '0';
+                            el.style.animationDuration = '1s';
+                            el.style.animationFillMode = 'both';
+                            el.style.animationName = 'zoomIn';
+                            el.style.animationDelay = `${0.3 + (index * 0.2)}s`;
+                            
+                            setTimeout(() => {
+                                el.style.opacity = '1';
+                            }, 300 + (index * 200));
+                        });
+                    }
+                    
+                    // Section 3 - Love Story
+                    if (entry.target.id === 'section3') {
+                        const storySteps = entry.target.querySelectorAll('.story-step');
+                        
+                        storySteps.forEach((step, index) => {
+                            step.style.animationDelay = `${0.2 * index}s`;
+                            step.classList.add('visible');
+                        });
+                    }
+                    
+                    // Section 5 - Info Mempelai
+                    if (entry.target.id === 'section5') {
+                        const persons = entry.target.querySelectorAll('.person');
+                        
+                        persons.forEach((person, index) => {
+                            person.style.animationDelay = `${0.3 * index}s`;
+                            person.classList.add('visible');
+                        });
+                    }
+                    
+                    // Section 6 - Detail Acara
+                    if (entry.target.id === 'section6') {
+                        const eventInfo = entry.target.querySelectorAll('.event-info');
+                        const locationInfo = entry.target.querySelector('.location-info');
+                        const mapContainer = entry.target.querySelector('.map-container');
+                        
+                        eventInfo.forEach((info, index) => {
+                            info.style.animationDelay = `${0.2 * index}s`;
+                            info.classList.add('visible');
+                        });
+                        
+                        if (locationInfo) {
+                            locationInfo.style.animationDelay = '0.4s';
+                            locationInfo.classList.add('visible');
+                        }
+                        
+                        if (mapContainer) {
+                            mapContainer.style.animationDelay = '0.6s';
+                            mapContainer.classList.add('visible');
+                        }
+                    }
+                    
+                    // Section 8 - Foto Mempelai
+                    if (entry.target.id === 'section8') {
+                        const photoFrame = entry.target.querySelector('.photo-frame');
+                        
+                        if (photoFrame) {
+                            photoFrame.classList.add('visible');
+                        }
+                    }
+                    
+                    // Section 9 - Etika Selama Acara
+                    if (entry.target.id === 'section9') {
+                        const requestItems = entry.target.querySelectorAll('.request-item');
+                        
+                        requestItems.forEach((item, index) => {
+                            item.style.animationDelay = `${0.2 * index}s`;
+                            item.classList.add('visible');
+                        });
+                    }
                 }
             });
         }, observerOptions);
@@ -1468,24 +1706,6 @@
         };
         
         addStaggerAnimation();
-        
-        // Add animation to timeline steps
-        const timelineSteps = document.querySelectorAll('.story-step');
-        const timelineObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = 1;
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, { threshold: 0.1 });
-        
-        timelineSteps.forEach(step => {
-            step.style.opacity = 0;
-            step.style.transform = 'translateY(20px)';
-            step.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-            timelineObserver.observe(step);
-        });
         
         // Proteksi konten - mencegah klik kanan, seleksi teks, dan salin
         document.addEventListener('contextmenu', function(e) {
