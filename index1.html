@@ -18,10 +18,15 @@
         }
         
         :root {
-            /* Skema Warna - Palet Emas & Hitam Elegan */
+            /* Skema Warna - Palet Langit Malam & Emas Elegan */
             --primary-gold: #d4af37;
             --light-gold: #f0e68c;
             --dark-gold: #b8860b;
+            --moon-glow: #e6f0ff;
+            --star-light: #fffacd;
+            --night-sky: #0a1929;
+            --deep-blue: #1a237e;
+            --twilight: #4a5f8a;
             --cream: #f5f5dc;
             --off-white: #fafafa;
             --pure-white: #ffffff;
@@ -29,10 +34,11 @@
             --text-dark: #000000;
             --text-light: #333333;
             
-            /* Gradien Warna */
+            /* Gradien Warna Bertema Langit */
+            --sky-gradient: linear-gradient(135deg, var(--night-sky), var(--deep-blue), var(--twilight));
             --gold-gradient: linear-gradient(45deg, var(--primary-gold), var(--light-gold), var(--dark-gold));
             --sunset-gradient: linear-gradient(to bottom, #ff7e5f, #feb47b);
-            --sky-gradient: linear-gradient(to bottom, #87CEEB, #B0E2FF);
+            --dawn-gradient: linear-gradient(to bottom, #87CEEB, #B0E2FF);
             --night-gradient: linear-gradient(to bottom, #0a1929, #000814);
             
             /* Tipografi - Hierarki Font */
@@ -99,10 +105,10 @@
                 background: var(--sunset-gradient);
             }
             75% { 
-                background: var(--sky-gradient);
+                background: var(--dawn-gradient);
             }
             100% { 
-                background: var(--sky-gradient);
+                background: var(--dawn-gradient);
             }
         }
         
@@ -124,7 +130,7 @@
         
         .star {
             position: absolute;
-            background-color: var(--pure-white);
+            background-color: var(--star-light);
             border-radius: 50%;
             animation: twinkle 3s infinite;
         }
@@ -387,7 +393,7 @@
             overflow: hidden;
         }
         
-        /* Ornamen sudut - diperkecil untuk mobile */
+        /* Ornamen sudut bertema langit - diperkecil untuk mobile */
         .ornament-corner {
             position: absolute;
             width: 60px;
@@ -419,29 +425,29 @@
             transform: rotate(180deg);
         }
         
-        /* Islamic Ornament Pattern */
-        .islamic-ornament {
+        /* Ornamen Langit - Desain Profesional */
+        .sky-ornament {
             position: absolute;
             width: 100%;
             height: 100%;
             overflow: hidden;
         }
         
-        .islamic-ornament::before {
+        .sky-ornament::before {
             content: '';
             position: absolute;
-            width: 200%;
-            height: 200%;
-            top: -50%;
-            left: -50%;
+            width: 100%;
+            height: 100%;
             background-image: 
-                radial-gradient(circle at 25% 25%, transparent 20%, rgba(255, 255, 255, 0.3) 20.5%, rgba(255, 255, 255, 0.3) 21%, transparent 21.5%),
-                radial-gradient(circle at 75% 75%, transparent 20%, rgba(255, 255, 255, 0.3) 20.5%, rgba(255, 255, 255, 0.3) 21%, transparent 21.5%);
-            background-size: 20px 20px;
-            background-position: 0 0, 10px 10px;
+                radial-gradient(circle at 20% 20%, transparent 15%, rgba(212, 175, 55, 0.2) 15.5%, rgba(212, 175, 55, 0.2) 16%, transparent 16.5%),
+                radial-gradient(circle at 80% 80%, transparent 15%, rgba(212, 175, 55, 0.2) 15.5%, rgba(212, 175, 55, 0.2) 16%, transparent 16.5%),
+                radial-gradient(circle at 40% 40%, transparent 10%, rgba(255, 255, 255, 0.3) 10.5%, rgba(255, 255, 255, 0.3) 11%, transparent 11.5%),
+                radial-gradient(circle at 60% 60%, transparent 10%, rgba(255, 255, 255, 0.3) 10.5%, rgba(255, 255, 255, 0.3) 11%, transparent 11.5%);
+            background-size: 30px 30px;
+            background-position: 0 0, 15px 15px, 7px 7px, 22px 22px;
         }
         
-        .islamic-ornament::after {
+        .sky-ornament::after {
             content: '';
             position: absolute;
             width: 100%;
@@ -449,85 +455,175 @@
             background: repeating-linear-gradient(
                 45deg,
                 transparent,
-                transparent 5px,
-                rgba(255, 255, 255, 0.2) 5px,
-                rgba(255, 255, 255, 0.2) 10px
+                transparent 8px,
+                rgba(255, 255, 255, 0.1) 8px,
+                rgba(255, 255, 255, 0.1) 16px
             );
         }
         
-        /* Islamic Geometric Pattern */
-        .geometric-pattern {
+        /* Ornamen Bintang - Desain Profesional */
+        .star-ornament {
             position: absolute;
             width: 100%;
             height: 100%;
             overflow: hidden;
         }
         
-        .geometric-pattern::before {
+        .star-ornament::before {
             content: '';
             position: absolute;
             width: 100%;
             height: 100%;
             background-image: 
-                linear-gradient(30deg, rgba(255, 255, 255, 0.2) 12%, transparent 12.5%, transparent 87%, rgba(255, 255, 255, 0.2) 87.5%, rgba(255, 255, 255, 0.2)),
-                linear-gradient(150deg, rgba(255, 255, 255, 0.2) 12%, transparent 12.5%, transparent 87%, rgba(255, 255, 255, 0.2) 87.5%, rgba(255, 255, 255, 0.2)),
-                linear-gradient(30deg, rgba(255, 255, 255, 0.2) 12%, transparent 12.5%, transparent 87%, rgba(255, 255, 255, 0.2) 87.5%, rgba(255, 255, 255, 0.2)),
-                linear-gradient(150deg, rgba(255, 255, 255, 0.2) 12%, transparent 12.5%, transparent 87%, rgba(255, 255, 255, 0.2) 87.5%, rgba(255, 255, 255, 0.2)),
-                linear-gradient(60deg, rgba(255, 255, 255, 0.15) 25%, transparent 25.5%, transparent 75%, rgba(255, 255, 255, 0.15) 75%, rgba(255, 255, 255, 0.15)),
-                linear-gradient(60deg, rgba(255, 255, 255, 0.15) 25%, transparent 25.5%, transparent 75%, rgba(255, 255, 255, 0.15) 75%, rgba(255, 255, 255, 0.15));
-            background-size: 20px 35px;
-            background-position: 0 0, 0 0, 10px 18px, 10px 18px, 0 0, 10px 18px;
+                radial-gradient(circle at 25% 25%, transparent 8%, rgba(255, 255, 255, 0.4) 8.5%, rgba(255, 255, 255, 0.4) 9%, transparent 9.5%),
+                radial-gradient(circle at 75% 75%, transparent 8%, rgba(255, 255, 255, 0.4) 8.5%, rgba(255, 255, 255, 0.4) 9%, transparent 9.5%),
+                radial-gradient(circle at 50% 50%, transparent 5%, rgba(212, 175, 55, 0.3) 5.5%, rgba(212, 175, 55, 0.3) 6%, transparent 6.5%);
+            background-size: 25px 25px;
+            background-position: 0 0, 12px 12px, 6px 6px, 18px 18px;
         }
         
-        /* Ornamen floral - diperkecil untuk mobile */
-        .floral-ornament {
+        .star-ornament::after {
+            content: '';
             position: absolute;
-            width: 50px;
-            height: 50px;
-            opacity: 0.6;
-            z-index: 1;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                30deg,
+                transparent,
+                transparent 10px,
+                rgba(255, 255, 255, 0.1) 10px,
+                rgba(255, 255, 255, 0.1) 20px
+            );
         }
         
-        .floral-ornament.top {
+        /* Ornamen Bulan - Desain Profesional */
+        .moon-ornament {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        .moon-ornament::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 50% 50%, transparent 20%, rgba(230, 240, 255, 0.3) 20.5%, rgba(230, 240, 255, 0.3) 21%, transparent 21.5%),
+                radial-gradient(circle at 30% 30%, transparent 15%, rgba(230, 240, 255, 0.2) 15.5%, rgba(230, 240, 255, 0.2) 16%, transparent 16.5%),
+                radial-gradient(circle at 70% 70%, transparent 15%, rgba(230, 240, 255, 0.2) 15.5%, rgba(230, 240, 255, 0.2) 16%, transparent 16.5%);
+            background-size: 40px 40px;
+            background-position: 0 0, 20px 20px, 10px 10px, 30px 30px;
+        }
+        
+        .moon-ornament::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                60deg,
+                transparent,
+                transparent 12px,
+                rgba(230, 240, 255, 0.1) 12px,
+                rgba(230, 240, 255, 0.1) 24px
+            );
+        }
+        
+        /* Ornamen Awan - Desain Profesional */
+        .cloud-ornament {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        .cloud-ornament::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(ellipse at 20% 30%, transparent 25%, rgba(255, 255, 255, 0.2) 25.5%, rgba(255, 255, 255, 0.2) 26%, transparent 26.5%),
+                radial-gradient(ellipse at 80% 70%, transparent 25%, rgba(255, 255, 255, 0.2) 25.5%, rgba(255, 255, 255, 0.2) 26%, transparent 26.5%),
+                radial-gradient(ellipse at 50% 50%, transparent 15%, rgba(255, 255, 255, 0.15) 15.5%, rgba(255, 255, 255, 0.15) 16%, transparent 16.5%);
+            background-size: 60px 40px;
+            background-position: 0 0, 30px 20px, 15px 10px, 45px 30px;
+        }
+        
+        .cloud-ornament::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 15px,
+                rgba(255, 255, 255, 0.05) 15px,
+                rgba(255, 255, 255, 0.05) 30px
+            );
+        }
+        
+        /* Ornamen floral atas - diubah menjadi ornamen langit */
+        .sky-top-ornament {
+            position: absolute;
+            width: 80px;
+            height: 40px;
+            opacity: 0.7;
+            z-index: 1;
             top: -20px;
             left: 50%;
             transform: translateX(-50%);
         }
         
-        .floral-ornament.bottom {
+        .sky-top-ornament::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at center top, transparent 30%, rgba(212, 175, 55, 0.3) 30.5%, rgba(212, 175, 55, 0.3) 31%, transparent 31.5%);
+        }
+        
+        .sky-top-ornament::after {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--primary-gold), transparent);
+            top: 50%;
+            left: 20%;
+        }
+        
+        /* Ornamen bawah - diubah menjadi ornamen langit */
+        .sky-bottom-ornament {
+            position: absolute;
+            width: 80px;
+            height: 40px;
+            opacity: 0.7;
+            z-index: 1;
             bottom: -20px;
             left: 50%;
             transform: translateX(-50%) rotate(180deg);
         }
         
-        .floral-ornament::before,
-        .floral-ornament::after {
+        .sky-bottom-ornament::before {
             content: '';
             position: absolute;
-            width: 15px;
-            height: 15px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.4));
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at center top, transparent 30%, rgba(212, 175, 55, 0.3) 30.5%, rgba(212, 175, 55, 0.3) 31%, transparent 31.5%);
         }
         
-        .floral-ornament::before {
-            top: 17.5px;
-            left: 5px;
-        }
-        
-        .floral-ornament::after {
-            top: 17.5px;
-            right: 5px;
-        }
-        
-        .floral-ornament .center {
+        .sky-bottom-ornament::after {
+            content: '';
             position: absolute;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.5));
-            top: 19px;
-            left: 19px;
+            width: 60%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--primary-gold), transparent);
+            top: 50%;
+            left: 20%;
         }
         
         /* Garis hiasan dengan warna hitam dan shadow putih */
@@ -688,55 +784,43 @@
             100% { transform: rotate(0deg) scale(1); }
         }
         
-        /* Ornamen kecil di sekitar nama - disesuaikan untuk mobile */
+        /* Ornamen kecil di sekitar nama - diubah menjadi ornamen langit */
         .name-ornament {
             position: absolute;
-            width: 20px;
-            height: 20px;
-            opacity: 0.6;
+            width: 30px;
+            height: 30px;
+            opacity: 0.7;
             z-index: 1;
         }
         
         .name-ornament.left {
             top: 50%;
-            left: -25px;
+            left: -35px;
             transform: translateY(-50%);
         }
         
         .name-ornament.right {
             top: 50%;
-            right: -25px;
+            right: -35px;
             transform: translateY(-50%) rotate(180deg);
         }
         
-        .name-ornament::before,
+        .name-ornament::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, transparent 40%, rgba(212, 175, 55, 0.4) 40.5%, rgba(212, 175, 55, 0.4) 41%, transparent 41.5%);
+        }
+        
         .name-ornament::after {
             content: '';
             position: absolute;
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: radial-gradient(circle, var(--primary-gold), rgba(212, 175, 55, 0.4));
-        }
-        
-        .name-ornament::before {
-            top: 6px;
-            left: 0;
-        }
-        
-        .name-ornament::after {
-            top: 6px;
-            right: 0;
-        }
-        
-        .name-ornament .center {
-            position: absolute;
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: radial-gradient(circle, var(--primary-gold), rgba(212, 175, 55, 0.5));
-            top: 7px;
-            left: 7px;
+            width: 70%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--primary-gold), transparent);
+            top: 50%;
+            left: 15%;
         }
         
         /* Tamu Undangan - diubah menjadi hitam dengan shadow putih */
@@ -1110,24 +1194,22 @@
     
     <div class="invitation-container">
         <div class="glass-card">
-            <!-- Ornamen sudut dengan pola Islam -->
+            <!-- Ornamen sudut dengan tema langit -->
             <div class="ornament-corner top-left">
-                <div class="islamic-ornament"></div>
+                <div class="sky-ornament"></div>
             </div>
             <div class="ornament-corner top-right">
-                <div class="geometric-pattern"></div>
+                <div class="star-ornament"></div>
             </div>
             <div class="ornament-corner bottom-left">
-                <div class="geometric-pattern"></div>
+                <div class="moon-ornament"></div>
             </div>
             <div class="ornament-corner bottom-right">
-                <div class="islamic-ornament"></div>
+                <div class="cloud-ornament"></div>
             </div>
             
-            <!-- Ornamen floral atas -->
-            <div class="floral-ornament top">
-                <div class="center"></div>
-            </div>
+            <!-- Ornamen langit atas -->
+            <div class="sky-top-ornament"></div>
             
             <!-- Bismillah dalam Bahasa Arab menggunakan gambar -->
             <img src="https://z-cdn-media.chatglm.cn/files/b1305fa8-b625-47a5-bd0a-14a9ecb3b1db_pngwing.com.png?auth_key=1788448666-d8e06c4040774e7680221577d5901824-0-53cbb43785b5b1c3097e0998dd8c3fca" alt="Bismillah" class="bismillah">
@@ -1149,13 +1231,9 @@
             
             <!-- Nama Pasangan dengan ornamen -->
             <div class="couple-names">
-                <div class="name-ornament left">
-                    <div class="center"></div>
-                </div>
+                <div class="name-ornament left"></div>
                 Jean <span class="ampersand">&</span> Dwi
-                <div class="name-ornament right">
-                    <div class="center"></div>
-                </div>
+                <div class="name-ornament right"></div>
             </div>
             
             <!-- Label Tamu Undangan -->
@@ -1193,10 +1271,8 @@
                 </div>
             </div>
             
-            <!-- Ornamen floral bawah -->
-            <div class="floral-ornament bottom">
-                <div class="center"></div>
-            </div>
+            <!-- Ornamen langit bawah -->
+            <div class="sky-bottom-ornament"></div>
         </div>
     </div>
     
