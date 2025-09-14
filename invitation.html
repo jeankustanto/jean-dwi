@@ -317,32 +317,6 @@
             user-select: none;
             -webkit-touch-callout: none;
             -khtml-user-select: none;
-            /* PERUBAHAN: Menambahkan latar belakang gambar */
-            background-image: url('al-aqsa.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            position: relative;
-            /* PERUBAHAN: Menambahkan overlay untuk kontras teks */
-            overflow: hidden;
-        }
-        
-        /* PERUBAHAN: Menambahkan overlay putih semi-transparan untuk kontras teks */
-        .section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.85);
-            z-index: 0;
-        }
-        
-        /* PERUBAHAN: Meningkatkan z-index konten section agar di atas overlay */
-        .section > * {
-            position: relative;
-            z-index: 1;
         }
         
         .section-title {
@@ -412,7 +386,6 @@
             width: 3px;
             background: linear-gradient(to bottom, #d4af37, #f0e6c2);
             border-radius: 3px;
-            z-index: 1; /* PERBAIKAN: Meningkatkan z-index agar terlihat di atas overlay */
         }
         .story-step {
             position: relative;
@@ -432,13 +405,13 @@
             align-items: center;
             color: white;
             box-shadow: 0 0 0 5px rgba(212, 175, 55, 0.2);
-            z-index: 2; /* PERBAIKAN: Meningkatkan z-index agar terlihat di atas overlay */
+            z-index: 1;
         }
         .step-icon i {
             font-size: 16px;
         }
         .step-content {
-            background: rgba(255, 255, 255, 0.8); /* PERBAIKAN: Meningkatkan opacity untuk kontras */
+            background: rgba(255, 255, 255, 0.7);
             border-radius: 10px;
             padding: 20px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
@@ -449,8 +422,6 @@
             user-select: none;
             -webkit-touch-callout: none;
             -khtml-user-select: none;
-            position: relative;
-            z-index: 1; /* PERBAIKAN: Meningkatkan z-index agar terlihat di atas overlay */
         }
         .step-content:hover {
             transform: translateY(-5px);
@@ -493,7 +464,7 @@
         }
         
         .info-card {
-            background: rgba(255, 255, 255, 0.8); /* PERBAIKAN: Meningkatkan opacity untuk kontras */
+            background: rgba(255, 255, 255, 0.7);
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             padding: 20px;
@@ -504,8 +475,6 @@
             user-select: none;
             -webkit-touch-callout: none;
             -khtml-user-select: none;
-            position: relative;
-            z-index: 1; /* PERBAIKAN: Meningkatkan z-index agar terlihat di atas overlay */
         }
         
         .info-title {
@@ -547,7 +516,7 @@
             text-align: center;
             padding: 15px;
             border-radius: 10px;
-            background: rgba(255, 255, 255, 0.8); /* PERBAIKAN: Meningkatkan opacity untuk kontras */
+            background: rgba(255, 255, 255, 0.5);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             -webkit-user-select: none;
             -moz-user-select: none;
@@ -555,8 +524,6 @@
             user-select: none;
             -webkit-touch-callout: none;
             -khtml-user-select: none;
-            position: relative;
-            z-index: 1; /* PERBAIKAN: Meningkatkan z-index agar terlihat di atas overlay */
         }
         .person:hover {
             transform: translateY(-5px);
@@ -601,8 +568,6 @@
             user-select: none;
             -webkit-touch-callout: none;
             -khtml-user-select: none;
-            position: relative;
-            z-index: 1; /* PERBAIKAN: Meningkatkan z-index agar terlihat di atas overlay */
         }
         .event-info:hover {
             transform: translateX(5px);
@@ -630,8 +595,6 @@
             user-select: none;
             -webkit-touch-callout: none;
             -khtml-user-select: none;
-            position: relative;
-            z-index: 1; /* PERBAIKAN: Meningkatkan z-index agar terlihat di atas overlay */
         }
         .location-info:hover {
             transform: translateX(5px);
@@ -660,8 +623,6 @@
             user-select: none;
             -webkit-touch-callout: none;
             -khtml-user-select: none;
-            position: relative;
-            z-index: 1; /* PERBAIKAN: Meningkatkan z-index agar terlihat di atas overlay */
         }
         .map-container:hover {
             transform: scale(1.02);
@@ -720,7 +681,7 @@
             height: 300px;
             border-radius: 50%;
             overflow: hidden;
-            border: 5px solid rgba(255, 255, 255, 0.9); /* PERBAIKAN: Meningkatkan opacity untuk kontras */
+            border: 5px solid rgba(255, 255, 255, 0.7);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             -webkit-user-select: none;
@@ -729,7 +690,6 @@
             user-select: none;
             -webkit-touch-callout: none;
             -khtml-user-select: none;
-            z-index: 2; /* PERBAIKAN: Meningkatkan z-index agar terlihat di atas overlay */
         }
         .photo-frame:hover {
             transform: scale(1.05);
@@ -776,7 +736,7 @@
             color: #333;
             padding: 10px;
             border-radius: 8px;
-            background: rgba(212, 175, 55, 0.2); /* PERBAIKAN: Meningkatkan opacity untuk kontras */
+            background: rgba(212, 175, 55, 0.1);
             transition: transform 0.3s ease;
             -webkit-user-select: none;
             -moz-user-select: none;
@@ -784,8 +744,6 @@
             user-select: none;
             -webkit-touch-callout: none;
             -khtml-user-select: none;
-            position: relative;
-            z-index: 1; /* PERBAIKAN: Meningkatkan z-index agar terlihat di atas overlay */
         }
         .request-item:hover {
             transform: translateX(5px);
@@ -888,7 +846,7 @@
             position: fixed;
             bottom: 80px;
             left: 20px;
-            background: rgba(255, 255, 255, 0.9); /* PERBAIKAN: Meningkatkan opacity untuk kontras */
+            background: rgba(255, 255, 255, 0.7);
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             padding: 10px;
@@ -1344,4 +1302,330 @@
         <div class="music-toggle elementor-animation-shrink" id="musicToggle">
             <i class="fas fa-music" id="musicIcon"></i>
         </div>
-        <div class="music-info" id="
+        <div class="music-info" id="musicInfo">
+            Musik
+        </div>
+    </div>
+    
+    <script>
+        // Membuat bintang
+        const starsContainer = document.getElementById('starsContainer');
+        const numberOfStars = 150;
+        
+        for (let i = 0; i < numberOfStars; i++) {
+            const star = document.createElement('div');
+            star.classList.add('star');
+            
+            // Ukuran bintang acak
+            const size = Math.random() * 3;
+            star.style.width = `${size}px`;
+            star.style.height = `${size}px`;
+            
+            // Posisi bintang acak
+            const posX = Math.random() * 100;
+            const posY = Math.random() * 100;
+            star.style.left = `${posX}%`;
+            star.style.top = `${posY}%`;
+            
+            // Animasi delay acak
+            const delay = Math.random() * 5;
+            star.style.animationDelay = `${delay}s`;
+            
+            starsContainer.appendChild(star);
+        }
+        
+        // Sistem Animasi Scroll yang Profesional
+        class AnimationManager {
+            constructor() {
+                this.animatedElements = new Set();
+                this.init();
+            }
+            
+            init() {
+                // Menggunakan Intersection Observer untuk performa yang lebih baik
+                const options = {
+                    root: null,
+                    rootMargin: '0px',
+                    threshold: 0.15
+                };
+                
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            this.animateElement(entry.target);
+                        }
+                    });
+                }, options);
+                
+                // Mengamati semua elemen dengan class 'animate'
+                document.querySelectorAll('.animate').forEach(el => {
+                    observer.observe(el);
+                });
+            }
+            
+            animateElement(element) {
+                // Cek apakah elemen sudah dianimasikan
+                if (this.animatedElements.has(element)) {
+                    return;
+                }
+                
+                // Tandai elemen sebagai sudah dianimasikan
+                this.animatedElements.add(element);
+                
+                // Tambahkan class 'animated' untuk memicu animasi
+                element.classList.add('animated');
+                
+                // Jika elemen memiliki animasi bertingkat (stagger), animasi child elements
+                this.animateChildren(element);
+            }
+            
+            animateChildren(parent) {
+                // Cari child elements dengan class 'animate' yang memiliki delay
+                const children = parent.querySelectorAll('.animate');
+                
+                children.forEach((child, index) => {
+                    // Hanya animasi jika belum dianimasikan
+                    if (!this.animatedElements.has(child)) {
+                        this.animatedElements.add(child);
+                        
+                        // Gunakan setTimeout untuk memastikan transition-delay diterapkan
+                        setTimeout(() => {
+                            child.classList.add('animated');
+                        }, 50); // Delay kecil untuk memastikan CSS diaplikasikan
+                    }
+                });
+            }
+        }
+        
+        // Inisialisasi AnimationManager saat DOM ready
+        document.addEventListener('DOMContentLoaded', () => {
+            new AnimationManager();
+        });
+        
+        // Musik player
+        const bgMusic = document.getElementById('bgMusic');
+        const musicToggle = document.getElementById('musicToggle');
+        const musicIcon = document.getElementById('musicIcon');
+        const musicInfo = document.getElementById('musicInfo');
+        
+        let isPlaying = false;
+        
+        // Fungsi untuk memutar musik otomatis saat halaman dimuat
+        function autoplayMusic() {
+            // Coba untuk memutar musik saat halaman dimuat
+            const playPromise = bgMusic.play();
+            
+            if (playPromise !== undefined) {
+                playPromise.then(_ => {
+                    // Autoplay berhasil
+                    isPlaying = true;
+                    musicIcon.classList.remove('fa-music');
+                    musicIcon.classList.add('fa-pause');
+                    musicInfo.classList.add('visible');
+                })
+                .catch(error => {
+                    // Autoplay diblokir browser
+                    console.log("Autoplay prevented:", error);
+                    isPlaying = false;
+                    musicIcon.classList.remove('fa-pause');
+                    musicIcon.classList.add('fa-music');
+                    musicInfo.classList.remove('visible');
+                });
+            }
+        }
+        
+        // Panggil fungsi autoplay saat halaman dimuat
+        window.addEventListener('load', autoplayMusic);
+        
+        // Fungsi untuk toggle musik
+        musicToggle.addEventListener('click', () => {
+            if (isPlaying) {
+                bgMusic.pause();
+                musicIcon.classList.remove('fa-pause');
+                musicIcon.classList.add('fa-music');
+                musicInfo.classList.remove('visible');
+            } else {
+                bgMusic.play().catch(e => {
+                    console.log("Play prevented:", e);
+                });
+                musicIcon.classList.remove('fa-music');
+                musicIcon.classList.add('fa-pause');
+                musicInfo.classList.add('visible');
+            }
+            isPlaying = !isPlaying;
+        });
+        
+        // Smooth scrolling untuk anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    
+                    // Close mobile menu if open
+                    const navMenu = document.getElementById('navMenu');
+                    if (navMenu.classList.contains('active')) {
+                        navMenu.classList.remove('active');
+                        const icon = document.getElementById('fabToggle').querySelector('i');
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                }
+            });
+        });
+        
+        // Mobile Navigation Toggle
+        const fabToggle = document.getElementById('fabToggle');
+        const navMenu = document.getElementById('navMenu');
+        
+        fabToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            
+            // Change icon based on menu state
+            const icon = fabToggle.querySelector('i');
+            if (navMenu.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            // Periksa apakah yang diklik bukan bagian dari menu atau tombol FAB
+            if (!fabToggle.contains(e.target) && !navMenu.contains(e.target)) {
+                // Tutup menu jika sedang terbuka
+                if (navMenu.classList.contains('active')) {
+                    navMenu.classList.remove('active');
+                    const icon = document.getElementById('fabToggle').querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            }
+        });
+        
+        // Mencegah menu tertutup saat mengklik di dalam menu
+        navMenu.addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
+        
+        // Proteksi konten - mencegah klik kanan, seleksi teks, dan salin
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            return false;
+        });
+        
+        document.addEventListener('selectstart', function(e) {
+            e.preventDefault();
+            return false;
+        });
+        
+        document.addEventListener('dragstart', function(e) {
+            e.preventDefault();
+            return false;
+        });
+        
+        document.addEventListener('copy', function(e) {
+            e.preventDefault();
+            return false;
+        });
+        
+        document.addEventListener('cut', function(e) {
+            e.preventDefault();
+            return false;
+        });
+        
+        document.addEventListener('paste', function(e) {
+            e.preventDefault();
+            return false;
+        });
+        
+        // Proteksi khusus untuk gambar
+        document.querySelectorAll('img').forEach(img => {
+            img.addEventListener('contextmenu', function(e) {
+                e.preventDefault();
+                return false;
+            });
+            
+            img.addEventListener('dragstart', function(e) {
+                e.preventDefault();
+                return false;
+            });
+            
+            img.addEventListener('mousedown', function(e) {
+                e.preventDefault();
+                return false;
+            });
+        });
+        
+        // Proteksi khusus untuk teks Arab
+        document.querySelectorAll('.arabic-text, .doa-text').forEach(text => {
+            text.addEventListener('contextmenu', function(e) {
+                e.preventDefault();
+                return false;
+            });
+            
+            text.addEventListener('selectstart', function(e) {
+                e.preventDefault();
+                return false;
+            });
+            
+            text.addEventListener('copy', function(e) {
+                e.preventDefault();
+                return false;
+            });
+        });
+        
+        // Mencegah inspect element (dengan cara menonaktifkan F12, Ctrl+Shift+I, dll)
+        document.addEventListener('keydown', function(e) {
+            // F12
+            if (e.keyCode === 123) {
+                e.preventDefault();
+                return false;
+            }
+            
+            // Ctrl+Shift+I
+            if (e.ctrlKey && e.shiftKey && e.keyCode === 73) {
+                e.preventDefault();
+                return false;
+            }
+            
+            // Ctrl+Shift+J
+            if (e.ctrlKey && e.shiftKey && e.keyCode === 74) {
+                e.preventDefault();
+                return false;
+            }
+            
+            // Ctrl+U
+            if (e.ctrlKey && e.keyCode === 85) {
+                e.preventDefault();
+                return false;
+            }
+            
+            // Ctrl+S
+            if (e.ctrlKey && e.keyCode === 83) {
+                e.preventDefault();
+                return false;
+            }
+            
+            // Ctrl+A
+            if (e.ctrlKey && e.keyCode === 65) {
+                e.preventDefault();
+                return false;
+            }
+        });
+        
+        // Mencegah klik kanan pada seluruh dokumen
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            return false;
+        });
+    </script>
+</body>
+</html>
