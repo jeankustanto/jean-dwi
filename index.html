@@ -306,16 +306,18 @@
             flex-direction: column;
             align-items: center;
             margin-bottom: 20px; /* Tambahkan margin bawah untuk memastikan ada ruang */
-            /* Tambahkan latar belakang gambar Al-Aqsa */
+            /* Tambahkan latar belakang gambar Al-Aqsa dengan properti yang lebih jelas */
             background-image: url('al-aqsa.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            /* Tambahkan overlay untuk memastikan teks terbaca */
+            background-attachment: scroll; /* Ubah dari fixed ke scroll untuk mobile */
+            /* Tambahkan fallback background color */
+            background-color: rgba(0, 0, 0, 0.3);
             position: relative;
         }
         
-        /* Overlay untuk latar belakang gambar */
+        /* Overlay untuk latar belakang gambar - kurangi opacity agar gambar terlihat */
         .glass-card::before {
             content: '';
             position: absolute;
@@ -323,7 +325,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.5); /* Overlay gelap untuk kontras teks */
+            background: rgba(0, 0, 0, 0.3); /* Kurangi opacity overlay dari 0.5 menjadi 0.3 */
             z-index: -1;
         }
         
@@ -729,7 +731,7 @@
             margin-top: 30px;
             text-align: center;
             padding: 20px;
-            background: rgba(0, 0, 0, 0.3); /* Sesuaikan background untuk kontras dengan gambar */
+            background: rgba(0, 0, 0, 0.4); /* Tambah opacity untuk kontras yang lebih baik */
             backdrop-filter: blur(5px);
             -webkit-backdrop-filter: blur(5px);
             border-radius: 15px;
@@ -803,6 +805,12 @@
                 padding: 20px 15px;
                 max-width: 95%;
                 width: 95%;
+                /* Pastikan gambar latar belakang terlihat di mobile */
+                background-image: url('al-aqsa.jpg');
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-attachment: scroll;
             }
             
             /* Menghilangkan partikel untuk performa lebih baik */
@@ -937,6 +945,12 @@
                 padding: 30px 20px;
                 max-width: 90%;
                 width: 90%;
+                /* Pastikan gambar latar belakang terlihat di mobile */
+                background-image: url('al-aqsa.jpg');
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-attachment: scroll;
             }
             
             /* Mengurangi jumlah partikel untuk performa lebih baik */
@@ -1050,6 +1064,12 @@
                 padding: 40px 30px;
                 max-width: 85%;
                 width: 85%;
+                /* Pastikan gambar latar belakang terlihat di tablet */
+                background-image: url('al-aqsa.jpg');
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-attachment: scroll;
             }
             
             /* Menyesuaikan ukuran nama pasangan untuk tablet */
@@ -1196,6 +1216,12 @@
                 padding: 50px 40px;
                 max-width: 80%;
                 width: 80%;
+                /* Pastikan gambar latar belakang terlihat di desktop */
+                background-image: url('al-aqsa.jpg');
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-attachment: scroll;
             }
             
             /* Menyesuaikan ukuran nama pasangan untuk desktop */
@@ -1342,6 +1368,12 @@
                 max-width: 70%;
                 width: 70%;
                 padding: 60px 50px;
+                /* Pastikan gambar latar belakang terlihat di layar lebar */
+                background-image: url('al-aqsa.jpg');
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-attachment: scroll;
             }
             
             /* Menyesuaikan ukuran nama pasangan untuk layar lebar */
@@ -1402,6 +1434,12 @@
                 max-width: 95%;
                 width: 95%;
                 margin-bottom: 15px;
+                /* Pastikan gambar latar belakang terlihat di landscape */
+                background-image: url('al-aqsa.jpg');
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-attachment: scroll;
             }
             
             /* Menyesuaikan ukuran nama pasangan untuk landscape */
@@ -1861,6 +1899,22 @@
                     location.reload();
                 }
             });
+            
+            // Cek apakah gambar latar belakang berhasil dimuat
+            const glassCard = document.querySelector('.glass-card');
+            const img = new Image();
+            img.src = 'al-aqsa.jpg';
+            
+            img.onload = function() {
+                console.log('Gambar Al-Aqsa berhasil dimuat');
+            };
+            
+            img.onerror = function() {
+                console.error('Gambar Al-Aqsa gagal dimuat. Pastikan file gambar ada di folder yang sama dengan file HTML.');
+                // Jika gambar gagal dimuat, gunakan background warna sebagai fallback
+                glassCard.style.backgroundImage = 'none';
+                glassCard.style.backgroundColor = 'rgba(0, 0, 0, 0.3)';
+            };
         });
     </script>
 </body>
