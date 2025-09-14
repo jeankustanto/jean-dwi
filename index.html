@@ -306,7 +306,27 @@
             flex-direction: column;
             align-items: center;
             margin-bottom: 20px; /* Tambahkan margin bawah untuk memastikan ada ruang */
+            /* Tambahkan latar belakang gambar Al-Aqsa */
+            background-image: url('al-aqsa.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            /* Tambahkan overlay untuk memastikan teks terbaca */
+            position: relative;
         }
+        
+        /* Overlay untuk latar belakang gambar */
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Overlay gelap untuk kontras teks */
+            z-index: -1;
+        }
+        
         /* Ornamen sudut - diperkecil untuk mobile */
         .ornament-corner {
             position: absolute;
@@ -709,7 +729,7 @@
             margin-top: 30px;
             text-align: center;
             padding: 20px;
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(0, 0, 0, 0.3); /* Sesuaikan background untuk kontras dengan gambar */
             backdrop-filter: blur(5px);
             -webkit-backdrop-filter: blur(5px);
             border-radius: 15px;
