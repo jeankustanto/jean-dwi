@@ -28,7 +28,6 @@
             height: 100%;
             background: linear-gradient(to bottom, #0a1929, #000814);
             animation: sky-transition 10s infinite alternate;
-            z-index: 1;
         }
         @keyframes sky-transition {
             0% { 
@@ -55,7 +54,6 @@
             height: 100%;
             pointer-events: none;
             animation: fade-out 10s infinite alternate;
-            z-index: 2;
         }
         @keyframes fade-out {
             0%, 20% { opacity: 1; }
@@ -308,34 +306,7 @@
             flex-direction: column;
             align-items: center;
             margin-bottom: 20px; /* Tambahkan margin bawah untuk memastikan ada ruang */
-            /* Tambahkan latar belakang gambar Al-Aqsa dengan efek transparan */
-            background-image: url('al-aqsa.jpg');
-            background-size: contain;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: scroll;
-            /* Tambahkan efek transparan putih */
-            background-color: rgba(255, 255, 255, 0.1);
-            /* Gunakan blend mode untuk mencampurkan dengan background */
-            mix-blend-mode: screen;
-            /* Atur opacity untuk membuatnya semi-transparan */
-            opacity: 0.9;
-            position: relative;
         }
-        
-        /* Overlay untuk latar belakang gambar - buat lebih transparan */
-        .glass-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.1); /* Ubah menjadi putih transparan */
-            z-index: -1;
-            mix-blend-mode: overlay; /* Tambahkan blend mode */
-        }
-        
         /* Ornamen sudut - diperkecil untuk mobile */
         .ornament-corner {
             position: absolute;
@@ -738,7 +709,7 @@
             margin-top: 30px;
             text-align: center;
             padding: 20px;
-            background: rgba(255, 255, 255, 0.2); /* Ubah menjadi putih transparan */
+            background: rgba(255, 255, 255, 0.15);
             backdrop-filter: blur(5px);
             -webkit-backdrop-filter: blur(5px);
             border-radius: 15px;
@@ -812,14 +783,6 @@
                 padding: 20px 15px;
                 max-width: 95%;
                 width: 95%;
-                /* Pastikan gambar latar belakang terlihat di mobile */
-                background-image: url('al-aqsa.jpg');
-                background-size: contain;
-                background-position: center;
-                background-repeat: no-repeat;
-                background-attachment: scroll;
-                mix-blend-mode: screen;
-                opacity: 0.9;
             }
             
             /* Menghilangkan partikel untuk performa lebih baik */
@@ -954,14 +917,6 @@
                 padding: 30px 20px;
                 max-width: 90%;
                 width: 90%;
-                /* Pastikan gambar latar belakang terlihat di mobile */
-                background-image: url('al-aqsa.jpg');
-                background-size: contain;
-                background-position: center;
-                background-repeat: no-repeat;
-                background-attachment: scroll;
-                mix-blend-mode: screen;
-                opacity: 0.9;
             }
             
             /* Mengurangi jumlah partikel untuk performa lebih baik */
@@ -1075,14 +1030,6 @@
                 padding: 40px 30px;
                 max-width: 85%;
                 width: 85%;
-                /* Pastikan gambar latar belakang terlihat di tablet */
-                background-image: url('al-aqsa.jpg');
-                background-size: contain;
-                background-position: center;
-                background-repeat: no-repeat;
-                background-attachment: scroll;
-                mix-blend-mode: screen;
-                opacity: 0.9;
             }
             
             /* Menyesuaikan ukuran nama pasangan untuk tablet */
@@ -1229,14 +1176,6 @@
                 padding: 50px 40px;
                 max-width: 80%;
                 width: 80%;
-                /* Pastikan gambar latar belakang terlihat di desktop */
-                background-image: url('al-aqsa.jpg');
-                background-size: contain;
-                background-position: center;
-                background-repeat: no-repeat;
-                background-attachment: scroll;
-                mix-blend-mode: screen;
-                opacity: 0.9;
             }
             
             /* Menyesuaikan ukuran nama pasangan untuk desktop */
@@ -1383,14 +1322,6 @@
                 max-width: 70%;
                 width: 70%;
                 padding: 60px 50px;
-                /* Pastikan gambar latar belakang terlihat di layar lebar */
-                background-image: url('al-aqsa.jpg');
-                background-size: contain;
-                background-position: center;
-                background-repeat: no-repeat;
-                background-attachment: scroll;
-                mix-blend-mode: screen;
-                opacity: 0.9;
             }
             
             /* Menyesuaikan ukuran nama pasangan untuk layar lebar */
@@ -1451,14 +1382,6 @@
                 max-width: 95%;
                 width: 95%;
                 margin-bottom: 15px;
-                /* Pastikan gambar latar belakang terlihat di landscape */
-                background-image: url('al-aqsa.jpg');
-                background-size: contain;
-                background-position: center;
-                background-repeat: no-repeat;
-                background-attachment: scroll;
-                mix-blend-mode: screen;
-                opacity: 0.9;
             }
             
             /* Menyesuaikan ukuran nama pasangan untuk landscape */
@@ -1918,22 +1841,6 @@
                     location.reload();
                 }
             });
-            
-            // Cek apakah gambar latar belakang berhasil dimuat
-            const glassCard = document.querySelector('.glass-card');
-            const img = new Image();
-            img.src = 'al-aqsa.jpg';
-            
-            img.onload = function() {
-                console.log('Gambar Al-Aqsa berhasil dimuat');
-            };
-            
-            img.onerror = function() {
-                console.error('Gambar Al-Aqsa gagal dimuat. Pastikan file gambar ada di folder yang sama dengan file HTML.');
-                // Jika gambar gagal dimuat, gunakan background warna sebagai fallback
-                glassCard.style.backgroundImage = 'none';
-                glassCard.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
-            };
         });
     </script>
 </body>
