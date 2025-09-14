@@ -280,7 +280,7 @@
             text-align: center;
             padding: 20px;
             animation: text-color-change 10s infinite alternate;
-            min-height: 600px;
+            overflow-y: auto; /* Tambahkan scroll vertikal jika konten terlalu panjang */
         }
         @keyframes text-color-change {
             0%, 40% { color: white; }
@@ -305,6 +305,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            margin-bottom: 20px; /* Tambahkan margin bawah untuk memastikan ada ruang */
         }
         /* Ornamen sudut - diperkecil untuk mobile */
         .ornament-corner {
@@ -679,7 +680,7 @@
             letter-spacing: 1px;
             overflow: hidden;
             position: relative;
-            z-index: 2;
+            z-index: 10; /* Tambah z-index lebih tinggi */
         }
         .open-invitation::before {
             content: '';
@@ -719,6 +720,7 @@
             animation-delay: 2.8s;
             width: 100%;
             max-width: 400px;
+            z-index: 10; /* Tambah z-index lebih tinggi */
         }
         
         .countdown-title {
@@ -1371,7 +1373,7 @@
             /* Menyesuaikan tinggi container untuk landscape */
             .invitation-container {
                 padding: 15px;
-                min-height: 400px;
+                overflow-y: auto; /* Tambahkan scroll untuk landscape */
             }
             
             /* Menyesuaikan ukuran glass card untuk landscape */
@@ -1379,6 +1381,7 @@
                 padding: 15px 10px;
                 max-width: 95%;
                 width: 95%;
+                margin-bottom: 15px;
             }
             
             /* Menyesuaikan ukuran nama pasangan untuk landscape */
@@ -1540,6 +1543,17 @@
                 height: 4px;
                 top: 5.5px;
                 left: 5.5px;
+            }
+        }
+        
+        /* Perbaikan khusus untuk desktop dengan layar tinggi */
+        @media (min-height: 900px) {
+            .invitation-container {
+                justify-content: center; /* Pastikan konten tetap di tengah */
+            }
+            
+            .glass-card {
+                margin-bottom: 40px; /* Tambah ruang lebih banyak di bawah */
             }
         }
     </style>
