@@ -38,6 +38,60 @@
             z-index: 1;
         }
         
+        /* Canvas untuk animasi hujan bintang */
+        #starCanvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            pointer-events: none;
+        }
+        
+        /* Ornamen lampu kiri atas */
+        .ornament-left {
+            position: absolute;
+            top: 0;
+            left: 10px;
+            width: 80px;
+            height: auto;
+            z-index: 4;
+            opacity: 0;
+            animation: fadeIn 1.5s ease forwards, swing 4s ease-in-out infinite;
+            animation-delay: 0.5s;
+            transform-origin: top center;
+        }
+        
+        /* Ornamen lampu kanan atas */
+        .ornament-right {
+            position: absolute;
+            top: 0;
+            right: 10px;
+            width: 80px;
+            height: auto;
+            z-index: 4;
+            opacity: 0;
+            animation: fadeIn 1.5s ease forwards, swingReverse 4s ease-in-out infinite;
+            animation-delay: 0.5s;
+            transform-origin: top center;
+            transform: scaleX(-1); /* Membalik gambar untuk simetri */
+        }
+        
+        /* Animasi ayunan untuk ornamen kiri */
+        @keyframes swing {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(3deg); }
+            75% { transform: rotate(-3deg); }
+        }
+        
+        /* Animasi ayunan untuk ornamen kanan (arah berlawanan) */
+        @keyframes swingReverse {
+            0%, 100% { transform: scaleX(-1) rotate(0deg); }
+            25% { transform: scaleX(-1) rotate(-3deg); }
+            75% { transform: scaleX(-1) rotate(3deg); }
+        }
+        
         /* Overlay untuk memastikan teks terbaca */
         .overlay {
             position: absolute;
@@ -46,7 +100,22 @@
             width: 100%;
             height: 100%;
             background: rgba(0, 0, 0, 0.2);
-            z-index: 2;
+            z-index: 5;
+        }
+        
+        /* Bismillah di bagian atas halaman */
+        .top-bismillah {
+            position: relative;
+            z-index: 10;
+            width: 150px;
+            height: 60px;
+            margin-top: 40px; /* Menambahkan margin atas untuk menggeser ke bawah */
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: fadeIn 1.5s ease forwards;
+            animation-delay: 0.3s;
+            filter: brightness(0) invert(1) drop-shadow(0 0 10px rgba(255, 255, 255, 0.7));
+            object-fit: contain;
         }
         
         /* Konten undangan */
@@ -55,30 +124,34 @@
             z-index: 10;
             text-align: center;
             padding: 20px;
-            max-width: 90%;
-            width: 400px;
+            max-width: 95%;
+            width: 95%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         
         /* Wrapper untuk Bismillah sampai Countdown dengan background putih transparan */
         .content-wrapper {
             background: rgba(66, 116, 143, 0.15);
             border-radius: 15px;
-            padding: 30px;
-            margin-bottom: 20px;
-            opacity: 0;
-            animation: fadeIn 1.5s ease forwards;
-            animation-delay: 0.3s;
-        }
-        
-        /* Bismillah dalam Bahasa Arab - menggunakan gambar */
-        .bismillah {
-            width: 200px;
-            height: 80px;
+            padding: 20px 15px;
             margin-bottom: 20px;
             opacity: 0;
             animation: fadeIn 1.5s ease forwards;
             animation-delay: 0.5s;
-            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.7));
+            width: 100%;
+        }
+        
+        /* Bismillah dalam Bahasa Arab - menggunakan gambar */
+        .bismillah {
+            width: 120px;
+            height: 50px;
+            margin-bottom: 15px;
+            opacity: 0;
+            animation: fadeIn 1.5s ease forwards;
+            animation-delay: 0.7s;
+            filter: brightness(0) invert(1) drop-shadow(0 0 10px rgba(255, 255, 255, 0.7));
             object-fit: contain;
         }
         
@@ -111,23 +184,23 @@
         .invitation-title {
             font-family: 'Playfair Display', serif;
             font-weight: 700;
-            font-size: 1.4rem;
-            margin-bottom: 20px;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
             letter-spacing: 3px;
             opacity: 0;
             animation: fadeIn 1.5s ease forwards;
-            animation-delay: 1s;
+            animation-delay: 1.2s;
             text-transform: uppercase;
         }
         
         /* Nama Pasangan */
         .couple-names {
             font-family: 'Dancing Script', cursive;
-            font-size: 4.5rem;
-            margin: 50px 0; /* Jarak yang lebih luas */
+            font-size: 2.8rem;
+            margin: 30px 0; /* Jarak yang lebih luas */
             opacity: 0;
             animation: fadeIn 1.5s ease forwards;
-            animation-delay: 1.5s;
+            animation-delay: 1.7s;
             line-height: 1.2;
             font-weight: 700;
             background: linear-gradient(45deg, #ffffff, #f0f0f0);
@@ -140,8 +213,8 @@
         
         .ampersand {
             display: inline-block;
-            margin: 0 15px;
-            font-size: 3.5rem;
+            margin: 0 8px;
+            font-size: 2.2rem;
             background: linear-gradient(45deg, #ffd700, #ffed4e);
             -webkit-background-clip: text;
             background-clip: text;
@@ -150,11 +223,11 @@
         
         /* Tamu Undangan */
         .guest-label {
-            font-size: 1rem;
-            margin-bottom: 10px;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
             opacity: 0;
             animation: fadeIn 1.5s ease forwards;
-            animation-delay: 2s;
+            animation-delay: 2.2s;
             font-weight: 300;
             letter-spacing: 1px;
         }
@@ -162,11 +235,11 @@
         /* Nama tamu yang diundang */
         .guest-name {
             font-family: 'Dancing Script', cursive;
-            font-size: 2rem;
-            margin-bottom: 25px;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
             opacity: 0;
             animation: fadeIn 1.5s ease forwards;
-            animation-delay: 2.2s;
+            animation-delay: 2.4s;
             line-height: 1.2;
             font-weight: 700;
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
@@ -177,8 +250,8 @@
             background: rgba(17, 39, 63, 0.2);
             border: 1px solid rgba(255, 255, 255, 0.5);
             color: white;
-            padding: 14px 35px;
-            font-size: 1rem;
+            padding: 12px 25px;
+            font-size: 0.9rem;
             border-radius: 50px;
             cursor: pointer;
             display: inline-flex;
@@ -188,9 +261,9 @@
             transition: all 0.4s ease;
             opacity: 0;
             animation: fadeIn 1.5s ease forwards;
-            animation-delay: 2.5s;
+            animation-delay: 2.7s;
             text-decoration: none;
-            margin-top: 15px;
+            margin-top: 10px;
             font-weight: 500;
             letter-spacing: 1px;
         }
@@ -203,22 +276,22 @@
         
         /* Countdown Timer */
         .countdown-container {
-            margin-top: 30px;
+            margin-top: 20px;
             text-align: center;
-            padding: 20px;
+            padding: 15px;
             background: rgba(17, 39, 63, 0.4);
             border-radius: 15px;
             opacity: 0;
             animation: fadeIn 1.5s ease forwards;
-            animation-delay: 2.8s;
+            animation-delay: 3s;
             width: 100%;
-            max-width: 400px;
+            max-width: 100%;
         }
         
         .countdown-title {
             font-family: 'Playfair Display', serif;
-            font-size: 1rem;
-            margin-bottom: 15px;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
             color: white;
             text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
         }
@@ -226,26 +299,26 @@
         .countdown {
             display: flex;
             justify-content: center;
-            gap: 15px;
+            gap: 10px;
         }
         
         .countdown-item {
             background: rgba(255, 255, 255, 0.1);
             border-radius: 8px;
-            padding: 10px;
-            min-width: 60px;
+            padding: 8px;
+            min-width: 50px;
             text-align: center;
         }
         
         .countdown-value {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             font-weight: bold;
             color: white;
             display: block;
         }
         
         .countdown-label {
-            font-size: 0.8rem;
+            font-size: 0.7rem;
             color: rgba(255, 255, 255, 0.8);
             margin-top: 5px;
         }
@@ -255,431 +328,29 @@
             from { opacity: 0; }
             to { opacity: 1; }
         }
-        
-        /* Media query untuk mobile sangat kecil */
-        @media (max-width: 480px) {
-            .content {
-                width: 95%;
-            }
-            
-            .content-wrapper {
-                padding: 20px 15px;
-            }
-            
-            .guest-name {
-                font-size: 1.4rem;
-                margin-bottom: 15px;
-            }
-            
-            .couple-names {
-                font-size: 2.8rem;
-                margin: 30px 0; /* Jarak yang lebih luas untuk mobile */
-            }
-            
-            .ampersand {
-                font-size: 2.2rem;
-                margin: 0 8px;
-            }
-            
-            .bismillah {
-                width: 120px;
-                height: 50px;
-                margin-bottom: 15px;
-            }
-            
-            .countdown-container {
-                padding: 15px;
-                margin-top: 20px;
-                max-width: 100%;
-            }
-            
-            .countdown-title {
-                font-size: 0.9rem;
-                margin-bottom: 10px;
-            }
-            
-            .countdown {
-                gap: 10px;
-            }
-            
-            .countdown-item {
-                min-width: 50px;
-                padding: 8px;
-            }
-            
-            .countdown-value {
-                font-size: 1.2rem;
-            }
-            
-            .countdown-label {
-                font-size: 0.7rem;
-            }
-            
-            .open-invitation {
-                padding: 12px 25px;
-                font-size: 0.9rem;
-                margin-top: 10px;
-            }
-            
-            .invitation-title {
-                font-size: 1.1rem;
-                margin-bottom: 15px;
-            }
-            
-            .guest-label {
-                font-size: 0.9rem;
-                margin-bottom: 8px;
-            }
-        }
-        
-        /* Media query untuk mobile kecil */
-        @media (min-width: 481px) and (max-width: 768px) {
-            .content {
-                width: 90%;
-            }
-            
-            .content-wrapper {
-                padding: 25px 20px;
-            }
-            
-            .guest-name {
-                font-size: 1.8rem;
-                margin-bottom: 20px;
-            }
-            
-            .couple-names {
-                font-size: 3.5rem;
-                margin: 40px 0; /* Jarak yang lebih luas untuk mobile */
-            }
-            
-            .ampersand {
-                font-size: 2.8rem;
-            }
-            
-            .bismillah {
-                width: 150px;
-                height: 60px;
-                margin-bottom: 15px;
-            }
-            
-            .countdown-container {
-                padding: 15px;
-                margin-top: 25px;
-                max-width: 90%;
-            }
-            
-            .countdown-title {
-                font-size: 0.95rem;
-                margin-bottom: 12px;
-            }
-            
-            .countdown {
-                gap: 12px;
-            }
-            
-            .countdown-item {
-                min-width: 55px;
-                padding: 8px;
-            }
-            
-            .countdown-value {
-                font-size: 1.3rem;
-            }
-            
-            .countdown-label {
-                font-size: 0.75rem;
-            }
-            
-            .open-invitation {
-                padding: 13px 30px;
-                font-size: 0.95rem;
-                margin-top: 12px;
-            }
-            
-            .invitation-title {
-                font-size: 1.3rem;
-                margin-bottom: 18px;
-            }
-        }
-        
-        /* Media query untuk tablet */
-        @media (min-width: 769px) and (max-width: 1024px) {
-            .content {
-                width: 85%;
-            }
-            
-            .content-wrapper {
-                padding: 35px 30px;
-            }
-            
-            .couple-names {
-                font-size: 5rem;
-                margin: 60px 0; /* Jarak yang lebih luas untuk tablet */
-            }
-            
-            .ampersand {
-                font-size: 4rem;
-                margin: 0 18px;
-            }
-            
-            .guest-name {
-                font-size: 2.5rem;
-                margin-bottom: 30px;
-            }
-            
-            .bismillah {
-                width: 220px;
-                height: 90px;
-                margin-bottom: 25px;
-            }
-            
-            .countdown-container {
-                padding: 20px;
-                margin-top: 35px;
-                max-width: 450px;
-            }
-            
-            .countdown-title {
-                font-size: 1.1rem;
-                margin-bottom: 18px;
-            }
-            
-            .countdown {
-                gap: 18px;
-            }
-            
-            .countdown-item {
-                min-width: 70px;
-                padding: 12px;
-            }
-            
-            .countdown-value {
-                font-size: 1.5rem;
-            }
-            
-            .countdown-label {
-                font-size: 0.85rem;
-            }
-            
-            .open-invitation {
-                padding: 16px 38px;
-                font-size: 1.1rem;
-                margin-top: 20px;
-            }
-            
-            .invitation-title {
-                font-size: 1.6rem;
-                margin-bottom: 25px;
-            }
-        }
-        
-        /* Media query untuk desktop */
-        @media (min-width: 1025px) {
-            .content {
-                width: 400px;
-            }
-            
-            .content-wrapper {
-                padding: 30px;
-            }
-            
-            .couple-names {
-                font-size: 4.5rem;
-                margin: 50px 0; /* Jarak yang lebih luas untuk desktop */
-            }
-            
-            .ampersand {
-                font-size: 3.5rem;
-                margin: 0 15px;
-            }
-            
-            .guest-name {
-                font-size: 2rem;
-                margin-bottom: 25px;
-            }
-            
-            .bismillah {
-                width: 200px;
-                height: 80px;
-                margin-bottom: 20px;
-            }
-            
-            .countdown-container {
-                padding: 20px;
-                margin-top: 30px;
-                max-width: 400px;
-            }
-            
-            .countdown-title {
-                font-size: 1rem;
-                margin-bottom: 15px;
-            }
-            
-            .countdown {
-                gap: 15px;
-            }
-            
-            .countdown-item {
-                min-width: 60px;
-                padding: 10px;
-            }
-            
-            .countdown-value {
-                font-size: 1.4rem;
-            }
-            
-            .countdown-label {
-                font-size: 0.8rem;
-            }
-            
-            .open-invitation {
-                padding: 14px 35px;
-                font-size: 1rem;
-                margin-top: 15px;
-            }
-            
-            .invitation-title {
-                font-size: 1.4rem;
-                margin-bottom: 20px;
-            }
-        }
-        
-        /* Media query untuk layar lebar (desktop besar) */
-        @media (min-width: 1440px) {
-            .content {
-                width: 400px;
-            }
-            
-            .content-wrapper {
-                padding: 30px;
-            }
-            
-            .couple-names {
-                font-size: 4.5rem;
-                margin: 50px 0; /* Jarak yang lebih luas untuk desktop besar */
-            }
-            
-            .ampersand {
-                font-size: 3.5rem;
-            }
-            
-            .guest-name {
-                font-size: 2rem;
-                margin-bottom: 25px;
-            }
-            
-            .countdown-container {
-                padding: 20px;
-                margin-top: 30px;
-                max-width: 400px;
-            }
-            
-            .countdown-item {
-                min-width: 60px;
-                padding: 10px;
-            }
-            
-            .countdown-value {
-                font-size: 1.4rem;
-            }
-            
-            .countdown-label {
-                font-size: 0.8rem;
-            }
-            
-            .open-invitation {
-                padding: 14px 35px;
-                font-size: 1rem;
-                margin-top: 15px;
-            }
-        }
-        
-        /* Media query untuk orientasi landscape di mobile */
-        @media (max-width: 768px) and (orientation: landscape) {
-            .content {
-                width: 95%;
-            }
-            
-            .content-wrapper {
-                padding: 15px 10px;
-            }
-            
-            .couple-names {
-                font-size: 2.5rem;
-                margin: 30px 0; /* Jarak yang lebih luas untuk landscape */
-            }
-            
-            .ampersand {
-                font-size: 2rem;
-                margin: 0 5px;
-            }
-            
-            .guest-name {
-                font-size: 1.2rem;
-                margin-bottom: 10px;
-            }
-            
-            .bismillah {
-                width: 100px;
-                height: 40px;
-                margin-bottom: 10px;
-            }
-            
-            .countdown-container {
-                padding: 10px;
-                margin-top: 15px;
-                max-width: 100%;
-            }
-            
-            .countdown-title {
-                font-size: 0.8rem;
-                margin-bottom: 8px;
-            }
-            
-            .countdown {
-                gap: 8px;
-            }
-            
-            .countdown-item {
-                min-width: 45px;
-                padding: 5px;
-            }
-            
-            .countdown-value {
-                font-size: 1rem;
-            }
-            
-            .countdown-label {
-                font-size: 0.6rem;
-            }
-            
-            .open-invitation {
-                padding: 10px 20px;
-                font-size: 0.8rem;
-                margin-top: 10px;
-            }
-            
-            .invitation-title {
-                font-size: 1rem;
-                margin-bottom: 10px;
-            }
-            
-            .guest-label {
-                font-size: 0.8rem;
-                margin-bottom: 5px;
-            }
-        }
     </style>
 </head>
 <body>
     <!-- Latar belakang menggunakan gambar masjid -->
     <div class="background"></div>
     
+    <!-- Canvas untuk animasi hujan bintang -->
+    <canvas id="starCanvas"></canvas>
+    
+    <!-- Ornamen lampu kiri atas -->
+    <img src="https://z-cdn-media.chatglm.cn/files/f8e545ae-b329-4534-9dd3-ca2635ad58e0_ornamen-lampu.png?auth_key=1789374877-921c7708a1154a4985379ebfb25005f1-0-ec562172fad77c0a2d6305bc6e989d06" alt="Ornamen Lampu" class="ornament-left">
+    
+    <!-- Ornamen lampu kanan atas -->
+    <img src="https://z-cdn-media.chatglm.cn/files/f8e545ae-b329-4534-9dd3-ca2635ad58e0_ornamen-lampu.png?auth_key=1789374877-921c7708a1154a4985379ebfb25005f1-0-ec562172fad77c0a2d6305bc6e989d06" alt="Ornamen Lampu" class="ornament-right">
+    
     <!-- Overlay untuk memastikan teks terbaca -->
     <div class="overlay"></div>
     
     <!-- Konten undangan -->
     <div class="content">
+        <!-- Bismillah di bagian atas halaman -->
+        <img src="https://z-cdn-media.chatglm.cn/files/b1305fa8-b625-47a5-bd0a-14a9ecb3b1db_pngwing.com.png?auth_key=1788448666-d8e06c4040774e7680221577d5901824-0-53cbb43785b5b1c3097e0998dd8c3fca" alt="Bismillah" class="top-bismillah">
+        
         <!-- Wrapper untuk Bismillah sampai Countdown dengan background putih transparan -->
         <div class="content-wrapper">
             <!-- Bismillah dalam Bahasa Arab menggunakan gambar -->
@@ -810,6 +481,110 @@
             // Update countdown setiap detik
             setInterval(updateCountdown, 1000);
             updateCountdown(); // Panggil sekali saat halaman dimuat
+            
+            // Animasi Hujan Bintang
+            const canvas = document.getElementById('starCanvas');
+            const ctx = canvas.getContext('2d');
+            
+            // Set ukuran canvas
+            function resizeCanvas() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+            
+            resizeCanvas();
+            window.addEventListener('resize', resizeCanvas);
+            
+            // Warna bintang sesuai permintaan rgb(67, 118, 145)
+            const starColor = 'rgb(67, 118, 145)';
+            
+            // Array untuk menyimpan bintang
+            const stars = [];
+            const starCount = 100;
+            
+            // Kelas untuk bintang
+            class Star {
+                constructor() {
+                    this.reset();
+                }
+                
+                reset() {
+                    this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * canvas.height - canvas.height;
+                    this.size = Math.random() * 3 + 1;
+                    this.speed = Math.random() * 3 + 1;
+                    this.opacity = Math.random() * 0.5 + 0.5;
+                    this.angle = Math.random() * Math.PI / 4 - Math.PI / 8; // Sudut untuk efek bergerak miring
+                }
+                
+                update() {
+                    this.y += this.speed;
+                    this.x += Math.sin(this.angle) * this.speed;
+                    
+                    // Reset bintang jika sudah keluar dari layar
+                    if (this.y > canvas.height || this.x < 0 || this.x > canvas.width) {
+                        this.reset();
+                        this.y = -10;
+                    }
+                }
+                
+                draw() {
+                    ctx.save();
+                    ctx.globalAlpha = this.opacity;
+                    ctx.fillStyle = starColor;
+                    ctx.beginPath();
+                    
+                    // Menggambar bentuk bintang
+                    const spikes = 5;
+                    const outerRadius = this.size;
+                    const innerRadius = this.size / 2;
+                    
+                    let rot = Math.PI / 2 * 3;
+                    let x = this.x;
+                    let y = this.y;
+                    let step = Math.PI / spikes;
+                    
+                    ctx.beginPath();
+                    ctx.moveTo(this.x, this.y - outerRadius);
+                    
+                    for (let i = 0; i < spikes; i++) {
+                        x = this.x + Math.cos(rot) * outerRadius;
+                        y = this.y + Math.sin(rot) * outerRadius;
+                        ctx.lineTo(x, y);
+                        rot += step;
+                        
+                        x = this.x + Math.cos(rot) * innerRadius;
+                        y = this.y + Math.sin(rot) * innerRadius;
+                        ctx.lineTo(x, y);
+                        rot += step;
+                    }
+                    
+                    ctx.lineTo(this.x, this.y - outerRadius);
+                    ctx.closePath();
+                    ctx.fill();
+                    ctx.restore();
+                }
+            }
+            
+            // Membuat bintang
+            for (let i = 0; i < starCount; i++) {
+                stars.push(new Star());
+            }
+            
+            // Fungsi animasi
+            function animateStars() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                
+                stars.forEach(star => {
+                    star.update();
+                    star.draw();
+                });
+                
+                requestAnimationFrame(animateStars);
+            }
+            
+            // Memulai animasi
+            animateStars();
         });
     </script>
 </body>
