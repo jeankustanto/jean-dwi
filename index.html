@@ -267,10 +267,10 @@
                 opacity: 0;
             }
         }
-        /* Konten Undangan */
+        /* Konten Undangan - diperbaiki tata letak */
         .invitation-container {
             position: relative;
-            z-index: 100;
+            z-index: 10;
             height: 100vh;
             display: flex;
             flex-direction: column;
@@ -278,8 +278,9 @@
             align-items: center;
             color: white;
             text-align: center;
-            padding: 15px;
+            padding: 20px;
             animation: text-color-change 10s infinite alternate;
+            min-height: 600px;
         }
         @keyframes text-color-change {
             0%, 40% { color: white; }
@@ -293,7 +294,7 @@
             border-radius: 15px;
             border: 1px solid rgba(255, 255, 255, 0.2);
             box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
-            padding: 30px 20px;
+            padding: 40px 30px;
             max-width: 90%;
             width: 90%;
             opacity: 0;
@@ -301,6 +302,9 @@
             animation-delay: 0.3s;
             position: relative;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         /* Ornamen sudut - diperkecil untuk mobile */
         .ornament-corner {
@@ -393,12 +397,12 @@
             z-index: 1;
         }
         .floral-ornament.top {
-            top: -20px;
+            top: -25px;
             left: 50%;
             transform: translateX(-50%);
         }
         .floral-ornament.bottom {
-            bottom: -20px;
+            bottom: -25px;
             left: 50%;
             transform: translateX(-50%) rotate(180deg);
         }
@@ -433,7 +437,7 @@
             position: relative;
             width: 100%;
             height: 15px;
-            margin: 10px 0;
+            margin: 15px 0;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -466,7 +470,7 @@
         .bismillah {
             width: 200px;
             height: 80px;
-            margin-bottom: 1rem;
+            margin-bottom: 20px;
             opacity: 0;
             animation: fadeInUp 1.5s ease forwards;
             animation-delay: 0.5s;
@@ -480,7 +484,7 @@
             width: 100px;
             height: 1px;
             background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
-            margin: 1rem auto;
+            margin: 15px auto;
             opacity: 0;
             animation: fadeIn 1.5s ease forwards;
             animation-delay: 0.8s;
@@ -490,7 +494,7 @@
             font-family: 'Playfair Display', serif;
             font-weight: 700;
             font-size: 1.4rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 20px;
             letter-spacing: 3px;
             opacity: 0;
             animation: fadeInUp 1.5s ease forwards;
@@ -514,7 +518,7 @@
         .couple-names {
             font-family: 'Dancing Script', cursive;
             font-size: 4.5rem;
-            margin: 1.8rem 0;
+            margin: 25px 0;
             opacity: 0;
             animation: premiumEntrance 2s ease forwards, premiumGlow 4s infinite alternate;
             animation-delay: 1.5s;
@@ -625,7 +629,7 @@
         /* Tamu Undangan - disesuaikan untuk mobile */
         .guest-label {
             font-size: 1rem;
-            margin-bottom: 0.5rem;
+            margin-bottom: 10px;
             opacity: 0;
             animation: fadeInUp 1.5s ease forwards;
             animation-delay: 2s;
@@ -638,7 +642,7 @@
         .guest-name {
             font-family: 'Dancing Script', cursive;
             font-size: 2rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 25px;
             opacity: 0;
             animation: fadeInUp 1.5s ease forwards, nameGlow 3s infinite alternate;
             animation-delay: 2.2s;
@@ -657,7 +661,7 @@
             background: linear-gradient(45deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
             border: 1px solid rgba(255, 255, 255, 0.5);
             color: white;
-            padding: 12px 30px;
+            padding: 14px 35px;
             font-size: 1rem;
             border-radius: 50px;
             cursor: pointer;
@@ -670,7 +674,7 @@
             animation: fadeInUp 1.5s ease forwards, buttonPulse 2.5s infinite alternate;
             animation-delay: 2.5s;
             text-decoration: none;
-            margin-top: 1rem;
+            margin-top: 15px;
             font-weight: 500;
             letter-spacing: 1px;
             overflow: hidden;
@@ -701,9 +705,9 @@
         }
         /* Countdown Timer - dipindahkan ke bawah button */
         .countdown-container {
-            margin-top: 20px;
+            margin-top: 30px;
             text-align: center;
-            padding: 15px;
+            padding: 20px;
             background: rgba(255, 255, 255, 0.15);
             backdrop-filter: blur(5px);
             -webkit-backdrop-filter: blur(5px);
@@ -713,12 +717,14 @@
             opacity: 0;
             animation: fadeInUp 1.5s ease forwards;
             animation-delay: 2.8s;
+            width: 100%;
+            max-width: 400px;
         }
         
         .countdown-title {
             font-family: 'Playfair Display', serif;
             font-size: 1rem;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             color: white;
             text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
         }
@@ -726,28 +732,28 @@
         .countdown {
             display: flex;
             justify-content: center;
-            gap: 10px;
+            gap: 15px;
         }
         
         .countdown-item {
             background: rgba(255, 255, 255, 0.2);
             border-radius: 8px;
-            padding: 8px;
-            min-width: 50px;
+            padding: 10px;
+            min-width: 60px;
             text-align: center;
         }
         
         .countdown-value {
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             font-weight: bold;
             color: white;
             display: block;
         }
         
         .countdown-label {
-            font-size: 0.7rem;
+            font-size: 0.8rem;
             color: rgba(255, 255, 255, 0.8);
-            margin-top: 3px;
+            margin-top: 5px;
         }
         /* Animasi umum */
         @keyframes fadeInUp {
@@ -772,7 +778,7 @@
                 background: rgba(255, 255, 255, 0.2);
                 backdrop-filter: none;
                 -webkit-backdrop-filter: none;
-                padding: 15px 10px;
+                padding: 20px 15px;
                 max-width: 95%;
                 width: 95%;
             }
@@ -812,7 +818,7 @@
             /* Menyesuaikan ukuran font untuk mobile sangat kecil */
             .guest-name {
                 font-size: 1.4rem;
-                margin-bottom: 1rem;
+                margin-bottom: 15px;
             }
             
             /* Menyesuaikan ukuran ornamen untuk mobile sangat kecil */
@@ -824,7 +830,7 @@
             /* Menyesuaikan ukuran nama pasangan untuk mobile sangat kecil */
             .couple-names {
                 font-size: 2.8rem;
-                margin: 1rem 0;
+                margin: 15px 0;
             }
             
             .ampersand {
@@ -836,56 +842,66 @@
             .bismillah {
                 width: 120px;
                 height: 50px;
+                margin-bottom: 15px;
             }
             
             /* Menyesuaikan countdown untuk mobile sangat kecil */
             .countdown-container {
-                padding: 8px;
-                margin-top: 12px;
+                padding: 15px;
+                margin-top: 20px;
+                max-width: 100%;
             }
             
             .countdown-title {
-                font-size: 0.8rem;
+                font-size: 0.9rem;
+                margin-bottom: 10px;
             }
             
             .countdown {
-                gap: 5px;
+                gap: 10px;
             }
             
             .countdown-item {
-                min-width: 35px;
-                padding: 4px;
+                min-width: 50px;
+                padding: 8px;
             }
             
             .countdown-value {
-                font-size: 0.9rem;
+                font-size: 1.2rem;
             }
             
             .countdown-label {
-                font-size: 0.5rem;
+                font-size: 0.7rem;
             }
             
             /* Menyesuaikan ukuran tombol untuk mobile sangat kecil */
             .open-invitation {
-                padding: 8px 20px;
-                font-size: 0.8rem;
+                padding: 12px 25px;
+                font-size: 0.9rem;
+                margin-top: 10px;
             }
             
             /* Menyesuaikan ukuran judul untuk mobile sangat kecil */
             .invitation-title {
-                font-size: 1rem;
-                margin-bottom: 1rem;
+                font-size: 1.1rem;
+                margin-bottom: 15px;
             }
             
             /* Menyesuaikan guest label untuk mobile sangat kecil */
             .guest-label {
-                font-size: 0.8rem;
+                font-size: 0.9rem;
+                margin-bottom: 8px;
             }
             
             /* Menyesuaikan divider untuk mobile sangat kecil */
             .divider {
                 width: 80px;
-                margin: 0.8rem auto;
+                margin: 10px auto;
+            }
+            
+            /* Menyesuaikan decorative line untuk mobile sangat kecil */
+            .decorative-line {
+                margin: 10px 0;
             }
         }
         
@@ -896,7 +912,7 @@
                 background: rgba(255, 255, 255, 0.2);
                 backdrop-filter: none;
                 -webkit-backdrop-filter: none;
-                padding: 20px 15px;
+                padding: 30px 20px;
                 max-width: 90%;
                 width: 90%;
             }
@@ -935,7 +951,8 @@
             
             /* Menyesuaikan ukuran font nama tamu untuk mobile */
             .guest-name {
-                font-size: 1.6rem;
+                font-size: 1.8rem;
+                margin-bottom: 20px;
             }
             
             /* Menyesuaikan ukuran ornamen untuk mobile */
@@ -947,7 +964,7 @@
             /* Menyesuaikan ukuran nama pasangan untuk mobile - tetap besar */
             .couple-names {
                 font-size: 3.5rem;
-                margin: 1.2rem 0;
+                margin: 20px 0;
             }
             
             .ampersand {
@@ -958,44 +975,49 @@
             .bismillah {
                 width: 150px;
                 height: 60px;
+                margin-bottom: 15px;
             }
             
             /* Menyesuaikan countdown untuk mobile */
             .countdown-container {
-                padding: 10px;
-                margin-top: 15px;
+                padding: 15px;
+                margin-top: 25px;
+                max-width: 90%;
             }
             
             .countdown-title {
-                font-size: 0.9rem;
+                font-size: 0.95rem;
+                margin-bottom: 12px;
             }
             
             .countdown {
-                gap: 5px;
+                gap: 12px;
             }
             
             .countdown-item {
-                min-width: 40px;
-                padding: 5px;
+                min-width: 55px;
+                padding: 8px;
             }
             
             .countdown-value {
-                font-size: 1rem;
+                font-size: 1.3rem;
             }
             
             .countdown-label {
-                font-size: 0.6rem;
+                font-size: 0.75rem;
             }
             
             /* Menyesuaikan ukuran tombol untuk mobile */
             .open-invitation {
-                padding: 10px 25px;
-                font-size: 0.9rem;
+                padding: 13px 30px;
+                font-size: 0.95rem;
+                margin-top: 12px;
             }
             
             /* Menyesuaikan ukuran judul untuk mobile */
             .invitation-title {
-                font-size: 1.2rem;
+                font-size: 1.3rem;
+                margin-bottom: 18px;
             }
         }
         
@@ -1003,7 +1025,7 @@
         @media (min-width: 769px) and (max-width: 1024px) {
             /* Menyesuaikan ukuran glass card untuk tablet */
             .glass-card {
-                padding: 35px 25px;
+                padding: 40px 30px;
                 max-width: 85%;
                 width: 85%;
             }
@@ -1011,7 +1033,7 @@
             /* Menyesuaikan ukuran nama pasangan untuk tablet */
             .couple-names {
                 font-size: 5rem;
-                margin: 2rem 0;
+                margin: 30px 0;
             }
             
             .ampersand {
@@ -1022,50 +1044,56 @@
             /* Menyesuaikan ukuran nama tamu untuk tablet */
             .guest-name {
                 font-size: 2.5rem;
+                margin-bottom: 30px;
             }
             
             /* Menyesuaikan ukuran gambar Bismillah untuk tablet */
             .bismillah {
                 width: 220px;
                 height: 90px;
+                margin-bottom: 25px;
             }
             
             /* Menyesuaikan countdown untuk tablet */
             .countdown-container {
-                padding: 18px;
-                margin-top: 25px;
+                padding: 20px;
+                margin-top: 35px;
+                max-width: 450px;
             }
             
             .countdown-title {
                 font-size: 1.1rem;
+                margin-bottom: 18px;
             }
             
             .countdown {
-                gap: 15px;
+                gap: 18px;
             }
             
             .countdown-item {
-                min-width: 60px;
-                padding: 10px;
+                min-width: 70px;
+                padding: 12px;
             }
             
             .countdown-value {
-                font-size: 1.4rem;
+                font-size: 1.5rem;
             }
             
             .countdown-label {
-                font-size: 0.8rem;
+                font-size: 0.85rem;
             }
             
             /* Menyesuaikan ukuran tombol untuk tablet */
             .open-invitation {
-                padding: 14px 35px;
+                padding: 16px 38px;
                 font-size: 1.1rem;
+                margin-top: 20px;
             }
             
             /* Menyesuaikan ukuran judul untuk tablet */
             .invitation-title {
                 font-size: 1.6rem;
+                margin-bottom: 25px;
             }
             
             /* Menyesuaikan ukuran ornamen untuk tablet */
@@ -1143,7 +1171,7 @@
         @media (min-width: 1025px) {
             /* Menyesuaikan ukuran glass card untuk desktop */
             .glass-card {
-                padding: 40px 30px;
+                padding: 50px 40px;
                 max-width: 80%;
                 width: 80%;
             }
@@ -1151,7 +1179,7 @@
             /* Menyesuaikan ukuran nama pasangan untuk desktop */
             .couple-names {
                 font-size: 6rem;
-                margin: 2.5rem 0;
+                margin: 35px 0;
             }
             
             .ampersand {
@@ -1162,22 +1190,26 @@
             /* Menyesuaikan ukuran nama tamu untuk desktop */
             .guest-name {
                 font-size: 3rem;
+                margin-bottom: 35px;
             }
             
             /* Menyesuaikan ukuran gambar Bismillah untuk desktop */
             .bismillah {
                 width: 250px;
                 height: 100px;
+                margin-bottom: 30px;
             }
             
             /* Menyesuaikan countdown untuk desktop */
             .countdown-container {
-                padding: 20px;
-                margin-top: 30px;
+                padding: 25px;
+                margin-top: 40px;
+                max-width: 500px;
             }
             
             .countdown-title {
                 font-size: 1.2rem;
+                margin-bottom: 20px;
             }
             
             .countdown {
@@ -1185,12 +1217,12 @@
             }
             
             .countdown-item {
-                min-width: 70px;
-                padding: 12px;
+                min-width: 80px;
+                padding: 15px;
             }
             
             .countdown-value {
-                font-size: 1.6rem;
+                font-size: 1.8rem;
             }
             
             .countdown-label {
@@ -1199,13 +1231,15 @@
             
             /* Menyesuaikan ukuran tombol untuk desktop */
             .open-invitation {
-                padding: 16px 40px;
+                padding: 18px 45px;
                 font-size: 1.2rem;
+                margin-top: 25px;
             }
             
             /* Menyesuaikan ukuran judul untuk desktop */
             .invitation-title {
                 font-size: 1.8rem;
+                margin-bottom: 30px;
             }
             
             /* Menyesuaikan ukuran ornamen untuk desktop */
@@ -1285,11 +1319,13 @@
             .glass-card {
                 max-width: 70%;
                 width: 70%;
+                padding: 60px 50px;
             }
             
             /* Menyesuaikan ukuran nama pasangan untuk layar lebar */
             .couple-names {
                 font-size: 7rem;
+                margin: 40px 0;
             }
             
             .ampersand {
@@ -1299,20 +1335,34 @@
             /* Menyesuaikan ukuran nama tamu untuk layar lebar */
             .guest-name {
                 font-size: 3.5rem;
+                margin-bottom: 40px;
             }
             
             /* Menyesuaikan countdown untuk layar lebar */
+            .countdown-container {
+                padding: 30px;
+                margin-top: 50px;
+                max-width: 550px;
+            }
+            
             .countdown-item {
-                min-width: 80px;
-                padding: 15px;
+                min-width: 90px;
+                padding: 18px;
             }
             
             .countdown-value {
-                font-size: 1.8rem;
+                font-size: 2rem;
             }
             
             .countdown-label {
                 font-size: 1rem;
+            }
+            
+            /* Menyesuaikan ukuran tombol untuk layar lebar */
+            .open-invitation {
+                padding: 20px 50px;
+                font-size: 1.3rem;
+                margin-top: 30px;
             }
         }
         
@@ -1320,7 +1370,8 @@
         @media (max-width: 768px) and (orientation: landscape) {
             /* Menyesuaikan tinggi container untuk landscape */
             .invitation-container {
-                padding: 10px;
+                padding: 15px;
+                min-height: 400px;
             }
             
             /* Menyesuaikan ukuran glass card untuk landscape */
@@ -1333,7 +1384,7 @@
             /* Menyesuaikan ukuran nama pasangan untuk landscape */
             .couple-names {
                 font-size: 2.5rem;
-                margin: 0.8rem 0;
+                margin: 10px 0;
             }
             
             .ampersand {
@@ -1344,67 +1395,73 @@
             /* Menyesuaikan ukuran nama tamu untuk landscape */
             .guest-name {
                 font-size: 1.2rem;
-                margin-bottom: 0.8rem;
+                margin-bottom: 10px;
             }
             
             /* Menyesuaikan ukuran gambar Bismillah untuk landscape */
             .bismillah {
                 width: 100px;
                 height: 40px;
-                margin-bottom: 0.5rem;
+                margin-bottom: 10px;
             }
             
             /* Menyesuaikan countdown untuk landscape */
             .countdown-container {
-                padding: 8px;
-                margin-top: 10px;
+                padding: 10px;
+                margin-top: 15px;
+                max-width: 100%;
             }
             
             .countdown-title {
-                font-size: 0.7rem;
-                margin-bottom: 5px;
+                font-size: 0.8rem;
+                margin-bottom: 8px;
             }
             
             .countdown {
-                gap: 5px;
+                gap: 8px;
             }
             
             .countdown-item {
-                min-width: 30px;
-                padding: 3px;
+                min-width: 45px;
+                padding: 5px;
             }
             
             .countdown-value {
-                font-size: 0.8rem;
+                font-size: 1rem;
             }
             
             .countdown-label {
-                font-size: 0.4rem;
+                font-size: 0.6rem;
             }
             
             /* Menyesuaikan ukuran tombol untuk landscape */
             .open-invitation {
-                padding: 8px 20px;
+                padding: 10px 20px;
                 font-size: 0.8rem;
-                margin-top: 0.8rem;
+                margin-top: 10px;
             }
             
             /* Menyesuaikan ukuran judul untuk landscape */
             .invitation-title {
                 font-size: 1rem;
-                margin-bottom: 0.8rem;
+                margin-bottom: 10px;
             }
             
             /* Menyesuaikan guest label untuk landscape */
             .guest-label {
-                font-size: 0.7rem;
-                margin-bottom: 0.3rem;
+                font-size: 0.8rem;
+                margin-bottom: 5px;
             }
             
             /* Menyesuaikan divider untuk landscape */
             .divider {
                 width: 60px;
-                margin: 0.5rem auto;
+                margin: 8px auto;
+            }
+            
+            /* Menyesuaikan decorative line untuk landscape */
+            .decorative-line {
+                margin: 8px 0;
             }
             
             /* Menyesuaikan ornamen untuk landscape */
@@ -1419,11 +1476,11 @@
             }
             
             .floral-ornament.top {
-                top: -10px;
+                top: -15px;
             }
             
             .floral-ornament.bottom {
-                bottom: -10px;
+                bottom: -15px;
             }
             
             .floral-ornament::before,
