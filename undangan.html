@@ -6,7 +6,7 @@
     <title>Undangan Pernikahan Jean & Dwi</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@700&family=Amiri+Quran:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Montserrat:wght@300;400;600;700&family=Amiri+Quran:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -53,21 +53,21 @@
         }
         
         .invitation-container {
-            background: rgba(255, 255, 255, 0.1); /* Diubah menjadi transparan putih */
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 16px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             padding: 20px 15px;
             text-align: center;
             width: 100%;
             backdrop-filter: blur(3px);
-            border: 1px solid rgba(255, 255, 255, 0.2); /* Border transparan putih */
+            border: 1px solid rgba(255, 255, 255, 0.2);
             position: relative;
             overflow: hidden;
             max-height: 90vh;
             overflow-y: auto;
         }
         
-        /* Frame transparan dengan efek glassmorphism - Diubah */
+        /* Frame transparan dengan efek glassmorphism */
         .invitation-container::before {
             content: '';
             position: absolute;
@@ -75,13 +75,13 @@
             left: -1px;
             right: -1px;
             bottom: -1px;
-            background: linear-gradient(45deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.2)); /* Diubah menjadi transparan putih */
+            background: linear-gradient(45deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.2));
             border-radius: 16px;
             z-index: -1;
             opacity: 0.6;
         }
         
-        /* Efek cahaya pada frame - Diubah */
+        /* Efek cahaya pada frame */
         .invitation-container::after {
             content: '';
             position: absolute;
@@ -89,7 +89,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 70%); /* Diubah menjadi transparan putih */
+            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 70%);
             border-radius: 16px;
             z-index: -1;
         }
@@ -113,9 +113,9 @@
             background: rgba(255, 215, 0, 0.7);
         }
         
-        /* Frame untuk setiap section - Diubah menjadi transparan putih */
+        /* Frame untuk setiap section */
         .section-frame {
-            background: rgba(255, 255, 255, 0.1); /* Diubah menjadi transparan putih */
+            background: rgba(255, 255, 255, 0.1);
             border: 2px solid rgba(255, 215, 0, 0.6);
             border-radius: 12px;
             padding: 15px;
@@ -124,7 +124,7 @@
             overflow: hidden;
         }
         
-        /* Efek sudut frame - Diubah */
+        /* Efek sudut frame */
         .section-frame::before,
         .section-frame::after {
             content: '';
@@ -212,16 +212,16 @@
         /* Undangan Text - Diperkecil */
         .invitation-text {
             font-family: 'Montserrat', sans-serif;
-            font-size: 0.85rem; /* Diperkecil dari 1rem menjadi 0.85rem */
+            font-size: 0.85rem;
             color: #e0f0ff;
-            margin: 15px 0; /* Margin dikurangi */
+            margin: 15px 0;
             line-height: 1.5;
             text-shadow: 0 0 8px rgba(0, 0, 0, 0.5), 0 0 4px rgba(150, 180, 255, 0.3);
             padding: 0 10px;
             font-style: italic;
         }
         
-        /* Event details - Font lebih besar */
+        /* Event details */
         .event-details {
             margin: 20px 0;
             text-align: left;
@@ -230,7 +230,7 @@
         .event-item {
             margin-bottom: 20px;
             padding: 15px;
-            background: rgba(255, 255, 255, 0.05); /* Diubah menjadi transparan putih */
+            background: rgba(255, 255, 255, 0.05);
             border-radius: 10px;
             border: 1px solid rgba(255, 215, 0, 0.3);
         }
@@ -263,49 +263,7 @@
             color: #d0e8ff;
         }
         
-        .map-container {
-            margin: 15px 0;
-            border-radius: 10px;
-            overflow: hidden;
-            height: 150px;
-            position: relative;
-        }
-        
-        .map-placeholder {
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.1); /* Diubah menjadi transparan putih */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #d0e8ff;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.9rem;
-        }
-        
-        .map-btn {
-            background: linear-gradient(45deg, rgba(25, 118, 210, 0.6), rgba(66, 165, 245, 0.6));
-            color: white;
-            border: 1px solid rgba(255, 215, 0, 0.5);
-            padding: 8px 15px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            border-radius: 20px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            margin-top: 10px;
-        }
-        
-        .map-btn:hover {
-            background: linear-gradient(45deg, rgba(21, 101, 192, 0.7), rgba(30, 136, 229, 0.7));
-            border-color: rgba(255, 215, 0, 0.7);
-            transform: translateY(-2px);
-        }
-        
-        /* Love story timeline - Font lebih besar */
+        /* Love story timeline - Diubah formatnya */
         .timeline {
             position: relative;
             margin: 20px 0;
@@ -356,6 +314,14 @@
             color: #e0f0ff;
             margin-bottom: 8px;
             text-shadow: 0 0 8px rgba(0, 0, 0, 0.5), 0 0 4px rgba(150, 180, 255, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .timeline-title i {
+            color: #f9f295;
+            font-size: 1.2rem;
         }
         
         .timeline-content {
@@ -366,7 +332,7 @@
             text-align: left;
         }
         
-        /* Countdown Timer - Diubah */
+        /* Countdown Timer */
         .countdown-container {
             margin: 20px 0;
             text-align: center;
@@ -388,7 +354,7 @@
         }
         
         .countdown-item {
-            background: rgba(255, 255, 255, 0.1); /* Diubah menjadi transparan putih */
+            background: rgba(255, 255, 255, 0.1);
             border: 1px solid rgba(255, 215, 0, 0.5);
             border-radius: 8px;
             padding: 10px;
@@ -433,7 +399,7 @@
             transform: translateY(-2px);
         }
         
-        /* RSVP Section - Diubah */
+        /* RSVP Section - Judul diubah */
         .rsvp-container {
             margin: 20px 0;
             text-align: left;
@@ -459,7 +425,7 @@
         }
         
         .form-input, .form-select, .form-textarea {
-            background: rgba(255, 255, 255, 0.1); /* Diubah menjadi transparan putih */
+            background: rgba(255, 255, 255, 0.1);
             border: 1px solid rgba(255, 215, 0, 0.3);
             border-radius: 8px;
             padding: 10px;
@@ -498,7 +464,7 @@
             transform: translateY(-2px);
         }
         
-        /* Amplop Digital - Diubah */
+        /* Amplop Digital */
         .digital-envelope {
             margin: 20px 0;
             text-align: center;
@@ -540,14 +506,14 @@
             transform: translateY(-2px);
         }
         
-        /* Form Ucapan & Doa - Diubah */
+        /* Form Ucapan & Doa */
         .wishes-form {
             display: flex;
             flex-direction: column;
             gap: 15px;
         }
         
-        /* Thank You Section - Diubah */
+        /* Thank You Section */
         .thank-you-container {
             margin: 20px 0;
             text-align: center;
@@ -575,7 +541,7 @@
             border-radius: 50%;
             border: 2px solid rgba(255, 215, 0, 0.7);
             overflow: hidden;
-            background: rgba(255, 255, 255, 0.1); /* Diubah menjadi transparan putih */
+            background: rgba(255, 255, 255, 0.1);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -593,7 +559,7 @@
             text-shadow: 0 0 8px rgba(0, 0, 0, 0.5), 0 0 4px rgba(249, 242, 149, 0.3);
         }
         
-        /* Etika section - Font lebih besar */
+        /* Etika section */
         .etika-container {
             margin: 20px 0;
             text-align: left;
@@ -619,7 +585,7 @@
             line-height: 1.4;
         }
         
-        /* Design Mempelai - Arch Frame - Diubah */
+        /* Design Mempelai - Arch Frame */
         .mempelai-container {
             display: flex;
             flex-direction: column;
@@ -637,7 +603,7 @@
             width: 180px;
             height: 180px;
             margin: 0 auto 15px;
-            background: rgba(255, 255, 255, 0.1); /* Diubah menjadi transparan putih */
+            background: rgba(255, 255, 255, 0.1);
             border: 2px solid rgba(255, 215, 0, 0.6);
             border-radius: 50% 50% 0 0 / 60% 60% 0 0;
             overflow: hidden;
@@ -653,7 +619,7 @@
             left: -10px;
             right: -10px;
             height: 20px;
-            background: rgba(255, 255, 255, 0.1); /* Diubah menjadi transparan putih */
+            background: rgba(255, 255, 255, 0.1);
             border: 2px solid rgba(255, 215, 0, 0.6);
             border-bottom: none;
             border-radius: 50% 50% 0 0 / 100% 100% 0 0;
@@ -695,13 +661,13 @@
             margin-bottom: 3px;
         }
         
-        /* Guest name container - Diubah */
+        /* Guest name container */
         .guest-name-container {
             margin: 20px 0 10px;
             padding: 10px;
             border: 1px solid rgba(255, 215, 0, 0.4);
             border-radius: 10px;
-            background: rgba(255, 255, 255, 0.05); /* Diubah menjadi transparan putih */
+            background: rgba(255, 255, 255, 0.05);
         }
         
         .guest-label {
@@ -716,6 +682,28 @@
             font-size: 1.5rem;
             color: #f9f295;
             text-shadow: 0 0 8px rgba(0, 0, 0, 0.5), 0 0 4px rgba(249, 242, 149, 0.3);
+        }
+        
+        /* Doa dengan gaya yang sama */
+        .closing-verse {
+            font-family: 'Amiri Quran', serif;
+            font-size: 1.1rem;
+            color: #f0f7ff;
+            margin: 25px 0 15px;
+            line-height: 1.6;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.7), 0 0 5px rgba(100, 120, 255, 0.3);
+            text-align: center;
+        }
+        
+        .closing-translation {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            color: #e0f0ff;
+            margin-bottom: 5px;
+            line-height: 1.4;
+            text-shadow: 0 0 8px rgba(0, 0, 0, 0.5), 0 0 4px rgba(150, 180, 255, 0.3);
+            text-align: center;
+            font-style: italic;
         }
         
         /* Floating buttons */
@@ -753,12 +741,12 @@
             font-size: 1.2rem;
         }
         
-        /* Menu Dropdown - Diubah */
+        /* Menu Dropdown */
         .menu-dropdown {
             position: fixed;
             bottom: 70px;
             left: 20px;
-            background: rgba(255, 255, 255, 0.1); /* Diubah menjadi transparan putih */
+            background: rgba(255, 255, 255, 0.1);
             border: 2px solid rgba(255, 215, 0, 0.6);
             border-radius: 10px;
             padding: 10px;
@@ -985,7 +973,7 @@
         }
         
         /* Perbaikan Konsistensi Border Radius */
-        .section-frame, .event-item, .map-container, .guest-name-container {
+        .section-frame, .event-item, .guest-name-container {
             border-radius: 12px;
         }
         
@@ -1036,7 +1024,6 @@
                 </div>
                 
                 <!-- 2. Info Mempelai - Dengan Design Arch Frame -->
-                <h2 class="section-title" id="info-mempelai">Mempelai</h2>
                 <div class="section-frame">
                     <div class="mempelai-container">
                         <!-- Mempelai Pria -->
@@ -1047,9 +1034,7 @@
                             <div class="mempelai-name">Jean Dwi Kustanto</div>
                             <div class="mempelai-title">PUTRA DARI</div>
                             <div class="parents-info">
-                                <div>Alm. Bapak Slamet Budiono</div>
-                                <div>&</div>
-                                <div>Ibu Kuswati</div>
+                                <div>Bapak Slamet Budiono (alm) & Ibu Kuswati</div>
                             </div>
                         </div>
                         
@@ -1061,9 +1046,7 @@
                             <div class="mempelai-name">Pujiana Dwi Kusumawati</div>
                             <div class="mempelai-title">PUTRI DARI</div>
                             <div class="parents-info">
-                                <div>Bapak Sudibyo</div>
-                                <div>&</div>
-                                <div>Ibu Siswati</div>
+                                <div>Bapak Sudibyo & Ibu Siswati</div>
                             </div>
                         </div>
                     </div>
@@ -1103,7 +1086,7 @@
                     Dengan memohon rachmat dan ridho Allah SWT, dengan hormat, kami mengundang Bapak/Ibu/Ayah/Bunda/Ananda untuk hadir dalam acara walimatul 'urs kami:
                 </div>
                 
-                <!-- 5. Akad Nikah -->
+                <!-- 5. Akad Nikah - TANPA PETA -->
                 <h2 class="section-title" id="akad-nikah">Akad Nikah</h2>
                 <div class="section-frame">
                     <div class="event-details">
@@ -1124,23 +1107,11 @@
                                 <i class="fas fa-location-arrow"></i>
                                 <div class="event-text">Jl. Raya Tempuran, Desa Tempuran, Kecamatan Bantaran, Kabupaten Probolinggo - Jawa Timur (Timur SMPN I Bantaran)</div>
                             </div>
-                            
-                            <div class="map-container">
-                                <div class="map-placeholder">
-                                    <i class="fas fa-map-marked-alt"></i> Peta Lokasi
-                                </div>
-                            </div>
-                            
-                            <div style="text-align: center;">
-                                <button class="map-btn" onclick="openGoogleMaps()">
-                                    <i class="fas fa-map"></i> Buka di Google Maps
-                                </button>
-                            </div>
                         </div>
                     </div>
                 </div>
                 
-                <!-- 6. Walimatul Urs -->
+                <!-- 6. Walimatul Urs - TANPA PETA -->
                 <h2 class="section-title" id="walimatul-urs">Walimatul 'Urs</h2>
                 <div class="section-frame">
                     <div class="event-details">
@@ -1161,24 +1132,12 @@
                                 <i class="fas fa-location-arrow"></i>
                                 <div class="event-text">Jl. Raya Tempuran, Desa Tempuran, Kecamatan Bantaran, Kabupaten Probolinggo - Jawa Timur (Timur SMPN I Bantaran)</div>
                             </div>
-                            
-                            <div class="map-container">
-                                <div class="map-placeholder">
-                                    <i class="fas fa-map-marked-alt"></i> Peta Lokasi
-                                </div>
-                            </div>
-                            
-                            <div style="text-align: center;">
-                                <button class="map-btn" onclick="openGoogleMaps()">
-                                    <i class="fas fa-map"></i> Buka di Google Maps
-                                </button>
-                            </div>
                         </div>
                     </div>
                 </div>
                 
-                <!-- 7. RSVP -->
-                <h2 class="section-title" id="rsvp">RSVP</h2>
+                <!-- 7. RSVP - JUDUL DIUBAH -->
+                <h2 class="section-title" id="rsvp">Mengonfirmasi Kehadiran</h2>
                 <div class="section-frame">
                     <div class="rsvp-container">
                         <form class="rsvp-form" onsubmit="submitRSVP(event)">
@@ -1207,19 +1166,22 @@
                                 <textarea id="message" class="form-textarea" placeholder="Tulis pesan Anda di sini"></textarea>
                             </div>
                             
-                            <button type="submit" class="form-btn">Kirim RSVP</button>
+                            <button type="submit" class="form-btn">Kirim Konfirmasi</button>
                         </form>
                     </div>
                 </div>
                 
-                <!-- 8. Love Story -->
+                <!-- 8. Love Story - FORMAT DIUBAH DAN DITAMBAHKAN ICON -->
                 <h2 class="section-title" id="love-story">Love Story</h2>
                 <div class="section-frame">
                     <div class="timeline">
                         <div class="timeline-item">
                             <div class="timeline-dot"></div>
                             <div class="timeline-date">Awal bulan Juni</div>
-                            <div class="timeline-title">Ta'aruf</div>
+                            <div class="timeline-title">
+                                <i class="fas fa-hand-hold-heart"></i>
+                                Ta'aruf
+                            </div>
                             <div class="timeline-content">
                                 Dengan izin Allah, kami memulai langkah pertama menuju jalan yang diridhai-Nya. Bukan dengan janji manis, bukan pula dengan pertemuan tanpa arah, melainkan melalui ta'aruf dengan perantara yang insyaaAllah amanah. Kami saling memperkenalkan diri dengan cara yang syar'i, saling bertukar CV, bertanya jawab tentang visi misi hidup dan pernikahan serta hal-hal lain yang kami rasa kami perlu tahu dan mengerti.
                             </div>
@@ -1228,7 +1190,10 @@
                         <div class="timeline-item">
                             <div class="timeline-dot"></div>
                             <div class="timeline-date">Akhir bulan Juni</div>
-                            <div class="timeline-title">Nadzor</div>
+                            <div class="timeline-title">
+                                <i class="fas fa-eye"></i>
+                                Nadzor
+                            </div>
                             <div class="timeline-content">
                                 Biidznillah Allah tuntun kami melangkah pada proses nadzor, memandang satu sama lain, mengenal bagaimana pribadi masing-masing dalam bincang jumpa bersama orang tua agar semakin meyakini untuk melangkah ke tahap berikutnya.
                             </div>
@@ -1237,7 +1202,10 @@
                         <div class="timeline-item">
                             <div class="timeline-dot"></div>
                             <div class="timeline-date">Biidznillah</div>
-                            <div class="timeline-title">Khitbah</div>
+                            <div class="timeline-title">
+                                <i class="fas fa-ring"></i>
+                                Khitbah
+                            </div>
                             <div class="timeline-content">
                                 Alhamdulillah, dengan ridha Allah, kami sampai pada proses khitbah. Dengan perasaan haru penuh khidmat kami memohon dan berharap agar keputusan ini menjadi jalan kebaikan dunia - akhirat sesurga kelak.
                             </div>
@@ -1246,7 +1214,10 @@
                         <div class="timeline-item">
                             <div class="timeline-dot"></div>
                             <div class="timeline-date">08 Oktober 2025</div>
-                            <div class="timeline-title">Akad & Walimah</div>
+                            <div class="timeline-title">
+                                <i class="fas fa-mosque"></i>
+                                Akad & Walimah
+                            </div>
                             <div class="timeline-content">
                                 Biidznillah, dengan penuh syukur, akad yang kami jalani, walimah yang kami nanti, insyaaAllah akan kami bagi bahagia kami pada setiap hati dalam indah yang suci. Rabu, 8 Oktober 2025, semoga Allah jadikan pernikahan ini sebagai ladang ibadah yang penuh sakinah dengan indah mawaddah dan berlimpah rahmah. Aamiin Ya Rabbal 'Aalamin 🤲
                             </div>
@@ -1378,7 +1349,7 @@
             <i class="fas fa-utensils"></i> Walimatul 'Urs
         </div>
         <div class="menu-item" onclick="scrollToSection('rsvp')">
-            <i class="fas fa-check-circle"></i> RSVP
+            <i class="fas fa-check-circle"></i> Konfirmasi Kehadiran
         </div>
         <div class="menu-item" onclick="scrollToSection('love-story')">
             <i class="fas fa-heart"></i> Love Story
@@ -1541,7 +1512,7 @@
             const message = document.getElementById('message').value;
             
             // Di sini Anda bisa mengirim data ke server atau menampilkan notifikasi
-            alert(`Terima kasih ${name}! RSVP Anda telah diterima. Status: ${attendance}, Jumlah tamu: ${guests}`);
+            alert(`Terima kasih ${name}! Konfirmasi kehadiran Anda telah diterima. Status: ${attendance}, Jumlah tamu: ${guests}`);
             
             // Reset form
             event.target.reset();
