@@ -17,7 +17,7 @@
         
         body {
             font-family: 'Montserrat', sans-serif;
-            background-image: url('https://z-cdn-media.chatglm.cn/files/1d159fa4-11bc-494a-bf5b-8399963c7543/download%20%282%29.jpg?auth_key=1789383404-7af756b0d26f411bb14047789516b0fe-0-65efec6b4d5fdea700062463080cc87a');
+            background-image: url('https://z-cdn-media.chatglm.cn/files/1d159fa4-11bc-494a-bf5b-8399963c7543_download%20%282%29.jpg?auth_key=1789383404-7af756b0d26f411bb14047789516b0fe-0-65efec6b4d5fdea700062463080cc87a');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -53,21 +53,21 @@
         }
         
         .invitation-container {
-            background: rgba(15, 20, 35, 0.3);
+            background: rgba(255, 255, 255, 0.1); /* Diubah menjadi transparan putih */
             border-radius: 16px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             padding: 20px 15px;
             text-align: center;
             width: 100%;
             backdrop-filter: blur(3px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2); /* Border transparan putih */
             position: relative;
             overflow: hidden;
             max-height: 90vh;
             overflow-y: auto;
         }
         
-        /* Frame transparan dengan efek glassmorphism */
+        /* Frame transparan dengan efek glassmorphism - Diubah */
         .invitation-container::before {
             content: '';
             position: absolute;
@@ -75,13 +75,13 @@
             left: -1px;
             right: -1px;
             bottom: -1px;
-            background: linear-gradient(45deg, rgba(100, 120, 200, 0.2), rgba(150, 180, 255, 0.2), rgba(100, 120, 200, 0.2));
+            background: linear-gradient(45deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.2)); /* Diubah menjadi transparan putih */
             border-radius: 16px;
             z-index: -1;
             opacity: 0.6;
         }
         
-        /* Efek cahaya pada frame */
+        /* Efek cahaya pada frame - Diubah */
         .invitation-container::after {
             content: '';
             position: absolute;
@@ -89,7 +89,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
+            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 70%); /* Diubah menjadi transparan putih */
             border-radius: 16px;
             z-index: -1;
         }
@@ -113,9 +113,9 @@
             background: rgba(255, 215, 0, 0.7);
         }
         
-        /* Frame untuk setiap section - Sesuai dengan gambar */
+        /* Frame untuk setiap section - Diubah menjadi transparan putih */
         .section-frame {
-            background: rgba(15, 20, 35, 0.4);
+            background: rgba(255, 255, 255, 0.1); /* Diubah menjadi transparan putih */
             border: 2px solid rgba(255, 215, 0, 0.6);
             border-radius: 12px;
             padding: 15px;
@@ -124,7 +124,7 @@
             overflow: hidden;
         }
         
-        /* Efek sudut frame - Sesuai dengan gambar */
+        /* Efek sudut frame - Diubah */
         .section-frame::before,
         .section-frame::after {
             content: '';
@@ -230,7 +230,7 @@
         .event-item {
             margin-bottom: 20px;
             padding: 15px;
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.05); /* Diubah menjadi transparan putih */
             border-radius: 10px;
             border: 1px solid rgba(255, 215, 0, 0.3);
         }
@@ -274,7 +274,7 @@
         .map-placeholder {
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.1); /* Diubah menjadi transparan putih */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -366,7 +366,7 @@
             text-align: left;
         }
         
-        /* Countdown Timer */
+        /* Countdown Timer - Diubah */
         .countdown-container {
             margin: 20px 0;
             text-align: center;
@@ -388,7 +388,7 @@
         }
         
         .countdown-item {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.1); /* Diubah menjadi transparan putih */
             border: 1px solid rgba(255, 215, 0, 0.5);
             border-radius: 8px;
             padding: 10px;
@@ -433,7 +433,7 @@
             transform: translateY(-2px);
         }
         
-        /* RSVP Section */
+        /* RSVP Section - Diubah */
         .rsvp-container {
             margin: 20px 0;
             text-align: left;
@@ -459,7 +459,7 @@
         }
         
         .form-input, .form-select, .form-textarea {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.1); /* Diubah menjadi transparan putih */
             border: 1px solid rgba(255, 215, 0, 0.3);
             border-radius: 8px;
             padding: 10px;
@@ -498,7 +498,7 @@
             transform: translateY(-2px);
         }
         
-        /* Amplop Digital */
+        /* Amplop Digital - Diubah */
         .digital-envelope {
             margin: 20px 0;
             text-align: center;
@@ -540,14 +540,14 @@
             transform: translateY(-2px);
         }
         
-        /* Form Ucapan & Doa */
+        /* Form Ucapan & Doa - Diubah */
         .wishes-form {
             display: flex;
             flex-direction: column;
             gap: 15px;
         }
         
-        /* Thank You Section */
+        /* Thank You Section - Diubah */
         .thank-you-container {
             margin: 20px 0;
             text-align: center;
@@ -575,7 +575,7 @@
             border-radius: 50%;
             border: 2px solid rgba(255, 215, 0, 0.7);
             overflow: hidden;
-            background: #333;
+            background: rgba(255, 255, 255, 0.1); /* Diubah menjadi transparan putih */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -587,6 +587,131 @@
         }
         
         .footer-names {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5rem;
+            color: #f9f295;
+            text-shadow: 0 0 8px rgba(0, 0, 0, 0.5), 0 0 4px rgba(249, 242, 149, 0.3);
+        }
+        
+        /* Etika section - Font lebih besar */
+        .etika-container {
+            margin: 20px 0;
+            text-align: left;
+        }
+        
+        .etika-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+        
+        .etika-item i {
+            color: #f9f295;
+            margin-right: 10px;
+            margin-top: 3px;
+            font-size: 0.9rem;
+        }
+        
+        .etika-text {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            color: #d0e8ff;
+            line-height: 1.4;
+        }
+        
+        /* Design Mempelai - Arch Frame - Diubah */
+        .mempelai-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin: 20px 0;
+        }
+        
+        .mempelai-item {
+            position: relative;
+            text-align: center;
+        }
+        
+        .arch-frame {
+            position: relative;
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 15px;
+            background: rgba(255, 255, 255, 0.1); /* Diubah menjadi transparan putih */
+            border: 2px solid rgba(255, 215, 0, 0.6);
+            border-radius: 50% 50% 0 0 / 60% 60% 0 0;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .arch-frame::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.1); /* Diubah menjadi transparan putih */
+            border: 2px solid rgba(255, 215, 0, 0.6);
+            border-bottom: none;
+            border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+        }
+        
+        .mempelai-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid rgba(255, 215, 0, 0.4);
+        }
+        
+        .mempelai-name {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8rem;
+            color: #f9f295;
+            margin-bottom: 5px;
+            text-shadow: 0 0 8px rgba(0, 0, 0, 0.5), 0 0 4px rgba(249, 242, 149, 0.3);
+        }
+        
+        .mempelai-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #e0f0ff;
+            margin-bottom: 10px;
+        }
+        
+        .parents-info {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            color: #d0e8ff;
+            line-height: 1.4;
+        }
+        
+        .parents-label {
+            font-weight: 600;
+            margin-bottom: 3px;
+        }
+        
+        /* Guest name container - Diubah */
+        .guest-name-container {
+            margin: 20px 0 10px;
+            padding: 10px;
+            border: 1px solid rgba(255, 215, 0, 0.4);
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.05); /* Diubah menjadi transparan putih */
+        }
+        
+        .guest-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            color: #e0f0ff;
+            margin-bottom: 5px;
+        }
+        
+        .guest-name {
             font-family: 'Dancing Script', cursive;
             font-size: 1.5rem;
             color: #f9f295;
@@ -628,12 +753,12 @@
             font-size: 1.2rem;
         }
         
-        /* Menu Dropdown */
+        /* Menu Dropdown - Diubah */
         .menu-dropdown {
             position: fixed;
             bottom: 70px;
             left: 20px;
-            background: rgba(15, 20, 35, 0.9);
+            background: rgba(255, 255, 255, 0.1); /* Diubah menjadi transparan putih */
             border: 2px solid rgba(255, 215, 0, 0.6);
             border-radius: 10px;
             padding: 10px;
@@ -732,82 +857,6 @@
             }
         }
         
-        /* Design Mempelai - Arch Frame */
-        .mempelai-container {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-            margin: 20px 0;
-        }
-        
-        .mempelai-item {
-            position: relative;
-            text-align: center;
-        }
-        
-        .arch-frame {
-            position: relative;
-            width: 180px;
-            height: 180px;
-            margin: 0 auto 15px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 2px solid rgba(255, 215, 0, 0.6);
-            border-radius: 50% 50% 0 0 / 60% 60% 0 0;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .arch-frame::before {
-            content: '';
-            position: absolute;
-            top: -10px;
-            left: -10px;
-            right: -10px;
-            height: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 2px solid rgba(255, 215, 0, 0.6);
-            border-bottom: none;
-            border-radius: 50% 50% 0 0 / 100% 100% 0 0;
-        }
-        
-        .mempelai-image {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid rgba(255, 215, 0, 0.4);
-        }
-        
-        .mempelai-name {
-            font-family: 'Dancing Script', cursive;
-            font-size: 1.8rem;
-            color: #f9f295;
-            margin-bottom: 5px;
-            text-shadow: 0 0 8px rgba(0, 0, 0, 0.5), 0 0 4px rgba(249, 242, 149, 0.3);
-        }
-        
-        .mempelai-title {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1rem;
-            font-weight: 600;
-            color: #e0f0ff;
-            margin-bottom: 10px;
-        }
-        
-        .parents-info {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.85rem;
-            color: #d0e8ff;
-            line-height: 1.4;
-        }
-        
-        .parents-label {
-            font-weight: 600;
-            margin-bottom: 3px;
-        }
-        
         /* Responsive Design */
         @media (max-width: 380px) {
             .invitation-wrapper {
@@ -883,6 +932,11 @@
                 font-size: 0.8rem;
                 margin: 12px 0;
                 line-height: 1.4;
+            }
+            
+            /* Etika text for mobile */
+            .etika-text {
+                font-size: 0.8rem;
             }
             
             /* Countdown adjustments */
@@ -982,6 +1036,7 @@
                 </div>
                 
                 <!-- 2. Info Mempelai - Dengan Design Arch Frame -->
+                <h2 class="section-title" id="info-mempelai">Mempelai</h2>
                 <div class="section-frame">
                     <div class="mempelai-container">
                         <!-- Mempelai Pria -->
@@ -992,7 +1047,9 @@
                             <div class="mempelai-name">Jean Dwi Kustanto</div>
                             <div class="mempelai-title">PUTRA DARI</div>
                             <div class="parents-info">
-                                <div>Alm. Bapak Slamet Budiono & Ibu Kuswati</div>
+                                <div>Alm. Bapak Slamet Budiono</div>
+                                <div>&</div>
+                                <div>Ibu Kuswati</div>
                             </div>
                         </div>
                         
@@ -1004,7 +1061,9 @@
                             <div class="mempelai-name">Pujiana Dwi Kusumawati</div>
                             <div class="mempelai-title">PUTRI DARI</div>
                             <div class="parents-info">
-                                <div>Bapak Sudibyo & Ibu Siswati</div>
+                                <div>Bapak Sudibyo</div>
+                                <div>&</div>
+                                <div>Ibu Siswati</div>
                             </div>
                         </div>
                     </div>
@@ -1250,7 +1309,30 @@
                     </div>
                 </div>
                 
-                <!-- 12. Terimakasih -->
+                <!-- 12. Etika Selama Acara -->
+                <h2 class="section-title" id="etika-acara">Etika Selama Acara</h2>
+                <div class="section-frame">
+                    <div class="etika-container">
+                        <div class="etika-item">
+                            <i class="fas fa-handshake"></i>
+                            <div class="etika-text">Berjabat tangan hanya dengan mahramnya.</div>
+                        </div>
+                        <div class="etika-item">
+                            <i class="fas fa-head-side-mask"></i>
+                            <div class="etika-text">Mengenakan Masker Jika Kurang Fit.</div>
+                        </div>
+                        <div class="etika-item">
+                            <i class="fas fa-mosque"></i>
+                            <div class="etika-text">Saling mengingatkan waktu sholat.</div>
+                        </div>
+                        <div class="etika-item">
+                            <i class="fas fa-chair"></i>
+                            <div class="etika-text">Duduk ketika makan.</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 13. Terimakasih -->
                 <h2 class="section-title" id="terimakasih">Terima Kasih</h2>
                 <div class="section-frame">
                     <div class="thank-you-container">
@@ -1309,6 +1391,9 @@
         </div>
         <div class="menu-item" onclick="scrollToSection('ucapan-doa')">
             <i class="fas fa-comment-alt"></i> Ucapan & Doa
+        </div>
+        <div class="menu-item" onclick="scrollToSection('etika-acara')">
+            <i class="fas fa-mosque"></i> Etika Acara
         </div>
         <div class="menu-item" onclick="scrollToSection('terimakasih')">
             <i class="fas fa-heart"></i> Terima Kasih
