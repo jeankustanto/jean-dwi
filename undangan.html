@@ -18,12 +18,12 @@
     
     <style>
         :root {
-            --primary-color: #f9f295; /* Warna font QS. Ar-Rum 30: Ayat 21 */
+            --primary-color: #ffcc4d; /* Warna emas yang diperbarui */
             --secondary-color: #e0f0ff;
             --text-color: #d0e8ff;
             --bg-overlay: rgba(0, 0, 0, 0.3);
             --card-bg: rgba(255, 255, 255, 0.1);
-            --border-color: #f9f295; /* Warna border sesuai font QS. Ar-Rum 30: Ayat 21 */
+            --border-color: #ffcc4d; /* Warna border yang diperbarui */
         }
         
         * {
@@ -88,12 +88,12 @@
         }
         
         .invitation-container::-webkit-scrollbar-thumb {
-            background: rgba(255, 215, 0, 0.5);
+            background: rgba(255, 204, 77, 0.5);
             border-radius: 10px;
         }
         
         .invitation-container::-webkit-scrollbar-thumb:hover {
-            background: rgba(255, 215, 0, 0.7);
+            background: rgba(255, 204, 77, 0.7);
         }
         
         .section-frame {
@@ -174,7 +174,7 @@
             color: var(--primary-color);
             margin: 20px 0 15px;
             letter-spacing: 1px;
-            text-shadow: 0 0 10px rgba(0, 0, 0, 0.5), 0 0 6px rgba(249, 242, 149, 0.3);
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.5), 0 0 6px rgba(255, 204, 77, 0.3);
             position: relative;
             display: block;
             text-align: center;
@@ -188,7 +188,7 @@
             left: 10%;
             width: 80%;
             height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.7), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 204, 77, 0.7), transparent);
         }
         
         .invitation-text {
@@ -220,7 +220,7 @@
             font-size: 1.5rem;
             color: var(--primary-color);
             margin-bottom: 10px;
-            text-shadow: 0 0 8px rgba(0, 0, 0, 0.5), 0 0 4px rgba(249, 242, 149, 0.3);
+            text-shadow: 0 0 8px rgba(0, 0, 0, 0.5), 0 0 4px rgba(255, 204, 77, 0.3);
         }
         
         .event-info {
@@ -253,7 +253,7 @@
             font-size: 1.8rem;
             color: var(--primary-color);
             margin-bottom: 15px;
-            text-shadow: 0 0 10px rgba(0, 0, 0, 0.5), 0 0 6px rgba(249, 242, 149, 0.3);
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.5), 0 0 6px rgba(255, 204, 77, 0.3);
         }
         
         .countdown {
@@ -304,8 +304,8 @@
         }
         
         .btn-custom:hover {
-            background-color: #e8df7e;
-            border-color: #e8df7e;
+            background-color: #e6b83d;
+            border-color: #e6b83d;
             transform: translateY(-2px);
             color: #1f3c5d;
         }
@@ -323,7 +323,7 @@
         .form-control-custom:focus {
             outline: none;
             border-color: var(--primary-color);
-            box-shadow: 0 0 5px rgba(249, 242, 149, 0.3);
+            box-shadow: 0 0 5px rgba(255, 204, 77, 0.3);
             background-color: rgba(255, 255, 255, 0.15);
             color: var(--secondary-color);
         }
@@ -395,7 +395,7 @@
             font-size: 1.8rem;
             color: var(--primary-color);
             margin-bottom: 15px;
-            text-shadow: 0 0 10px rgba(0, 0, 0, 0.5), 0 0 6px rgba(249, 242, 149, 0.3);
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.5), 0 0 6px rgba(255, 204, 77, 0.3);
         }
         
         .bride-groom-footer {
@@ -422,7 +422,7 @@
             font-family: 'Dancing Script', cursive;
             font-size: 1.5rem;
             color: var(--primary-color);
-            text-shadow: 0 0 8px rgba(0, 0, 0, 0.5), 0 0 4px rgba(249, 242, 149, 0.3);
+            text-shadow: 0 0 8px rgba(0, 0, 0, 0.5), 0 0 4px rgba(255, 204, 77, 0.3);
         }
         
         .etika-container {
@@ -506,14 +506,15 @@
             box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
         }
         
-        /* Bingkai Foto */
+        /* Bingkai Foto - DIPERBAIKI */
         .photo-frame {
             position: relative;
             height: 280px;
             overflow: hidden;
             display: flex;
             justify-content: center;
-            align-items: flex-end;
+            align-items: center;
+            background: var(--card-bg);
         }
         
         .arch-shape {
@@ -542,18 +543,32 @@
             z-index: 2;
         }
         
+        .arch-border-bottom {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 40px;
+            border-left: 2px solid var(--border-color);
+            border-right: 2px solid var(--border-color);
+            border-bottom: 2px solid var(--border-color);
+            border-radius: 0 0 15px 15px;
+            z-index: 2;
+        }
+        
         .mempelai-photo {
             width: 85%;
             height: auto;
             object-fit: cover;
-            border-radius: 8px 8px 0 0;
+            border-radius: 10px;
             z-index: 0;
-            transform: translateY(15%);
             transition: transform 0.5s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
         
         .mempelai-card:hover .mempelai-photo {
-            transform: translateY(10%) scale(1.02);
+            transform: scale(1.05);
         }
         
         /* Informasi Mempelai */
@@ -602,13 +617,13 @@
             border-radius: 20px;
             text-decoration: none;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 10px rgba(249, 242, 149, 0.3);
+            box-shadow: 0 4px 10px rgba(255, 204, 77, 0.3);
         }
         
         .instagram-btn:hover {
-            background-color: #e8df7e;
+            background-color: #e6b83d;
             transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(249, 242, 149, 0.4);
+            box-shadow: 0 6px 15px rgba(255, 204, 77, 0.4);
             color: #1f3c5d;
         }
         
@@ -631,7 +646,7 @@
             font-family: 'Dancing Script', cursive;
             font-size: 1.5rem;
             color: var(--primary-color);
-            text-shadow: 0 0 8px rgba(0, 0, 0, 0.5), 0 0 4px rgba(249, 242, 149, 0.3);
+            text-shadow: 0 0 8px rgba(0, 0, 0, 0.5), 0 0 4px rgba(255, 204, 77, 0.3);
         }
         
         .closing-verse {
@@ -724,7 +739,7 @@
         }
         
         .menu-item:hover {
-            background: rgba(255, 215, 0, 0.2);
+            background: rgba(255, 204, 77, 0.2);
         }
         
         .menu-item i {
@@ -839,7 +854,7 @@
             align-items: center;
             justify-content: center;
             z-index: 2;
-            box-shadow: 0 0 10px rgba(249, 242, 149, 0.3);
+            box-shadow: 0 0 10px rgba(255, 204, 77, 0.3);
         }
         
         .step-icon i {
@@ -852,7 +867,7 @@
             font-size: 1.5rem;
             color: var(--primary-color);
             margin-bottom: 10px;
-            text-shadow: 0 0 8px rgba(0, 0, 0, 0.5), 0 0 4px rgba(249, 242, 149, 0.3);
+            text-shadow: 0 0 8px rgba(0, 0, 0, 0.5), 0 0 4px rgba(255, 204, 77, 0.3);
         }
         
         .step-content p {
@@ -1159,6 +1174,7 @@
                         <div class="photo-frame">
                             <div class="arch-shape"></div>
                             <div class="arch-border"></div>
+                            <div class="arch-border-bottom"></div>
                             <img src="images/pengantin-pria.png" alt="Jean Dwi Kustanto" class="mempelai-photo">
                         </div>
                         <div class="mempelai-info">
@@ -1179,6 +1195,7 @@
                         <div class="photo-frame">
                             <div class="arch-shape"></div>
                             <div class="arch-border"></div>
+                            <div class="arch-border-bottom"></div>
                             <img src="images/pengantin-wanita.png" alt="Pujiana Dwi Kusumawati" class="mempelai-photo">
                         </div>
                         <div class="mempelai-info">
