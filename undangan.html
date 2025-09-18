@@ -179,6 +179,8 @@
             display: block;
             text-align: center;
             width: 100%;
+            opacity: 0;
+            animation: fadeInDown 0.8s ease forwards;
         }
         
         .section-title::after {
@@ -213,6 +215,8 @@
             background: rgba(255, 255, 255, 0.05);
             border-radius: 10px;
             border: 1px solid var(--border-color);
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
         }
         
         .event-title {
@@ -310,7 +314,7 @@
         .btn-custom:hover {
             background-color: #e6b83d;
             border-color: #e6b83d;
-            transform: translateY(-2px);
+            transform: scale(0.9);
             color: #1f3c5d;
         }
         
@@ -411,6 +415,29 @@
         .thank-you-container {
             margin: 20px 0;
             text-align: center;
+            position: relative;
+            background-image: url('images/cover-couple.png');
+            background-size: cover;
+            background-position: center;
+            border-radius: 12px;
+            padding: 30px;
+            overflow: hidden;
+        }
+        
+        .thank-you-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+        }
+        
+        .thank-you-content {
+            position: relative;
+            z-index: 2;
         }
         
         .thank-you-title {
@@ -522,6 +549,8 @@
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
             overflow: hidden;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0;
+            animation: zoomIn 0.8s ease forwards;
         }
         
         .mempelai-card:hover {
@@ -607,6 +636,9 @@
             margin-bottom: 10px;
             text-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
             line-height: 1;
+            opacity: 0;
+            animation: zoomIn 0.8s ease forwards;
+            animation-delay: 0.3s;
         }
         
         .mempelai-title {
@@ -625,6 +657,9 @@
             color: var(--text-color);
             margin-bottom: 20px;
             line-height: 1.5;
+            opacity: 0;
+            animation: zoomIn 0.8s ease forwards;
+            animation-delay: 0.5s;
         }
         
         /* Tombol Instagram */
@@ -649,7 +684,7 @@
         
         .instagram-btn:hover {
             background-color: #e6b83d;
-            transform: translateY(-2px);
+            transform: scale(0.9);
             box-shadow: 0 6px 15px rgba(255, 204, 77, 0.4);
             color: #1f3c5d;
         }
@@ -724,7 +759,7 @@
         
         .floating-btn:hover {
             background: rgba(21, 101, 192, 0.8);
-            transform: scale(1.1);
+            transform: scale(0.9);
         }
         
         .floating-btn i {
@@ -767,6 +802,7 @@
         
         .menu-item:hover {
             background: rgba(255, 204, 77, 0.2);
+            transform: scale(0.95);
         }
         
         .menu-item i {
@@ -861,6 +897,8 @@
             border: 1px solid var(--border-color);
             padding: 20px;
             transition: all 0.3s ease;
+            opacity: 0;
+            animation: fadeInRight 0.8s ease forwards;
         }
         
         .story-step:hover {
@@ -948,6 +986,85 @@
         
         .delay-400 {
             transition-delay: 0.4s;
+        }
+        
+        /* Animasi shrink effect */
+        .elementor-animation-shrink {
+            transition-duration: .3s;
+            transition-property: transform;
+        }
+        
+        .elementor-animation-shrink:active, 
+        .elementor-animation-shrink:focus, 
+        .elementor-animation-shrink:hover {
+            transform: scale(.9);
+        }
+        
+        /* Animasi fadeInDown */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translate3d(0,-100%,0);
+            }
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        .fadeInDown {
+            animation-name: fadeInDown;
+        }
+        
+        /* Animasi fadeInRight */
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translate3d(100%,0,0);
+            }
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        .fadeInRight {
+            animation-name: fadeInRight;
+        }
+        
+        /* Animasi fadeInUp */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translate3d(0,100%,0);
+            }
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        .fadeInUp {
+            animation-name: fadeInUp;
+        }
+        
+        /* Animasi zoomIn */
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale3d(.3,.3,.3);
+            }
+            50% {
+                opacity: 1;
+            }
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        .zoomIn {
+            animation-name: zoomIn;
         }
         
         /* Media query untuk tampilan responsif */
@@ -1218,7 +1335,7 @@
                                 Bapak Slamet Budiono (alm)<br>
                                 & Ibu Kuswati
                             </div>
-                            <a href="https://instagram.com/jeandk" class="instagram-btn">
+                            <a href="https://instagram.com/jeandk" class="instagram-btn elementor-animation-shrink">
                                 <i class="fab fa-instagram"></i> @jeandk
                             </a>
                         </div>
@@ -1239,7 +1356,7 @@
                                 Bapak Sudibyo<br>
                                 & Ibu Siswati
                             </div>
-                            <a href="https://www.instagram.com/abdurrahmansstore" class="instagram-btn">
+                            <a href="https://www.instagram.com/abdurrahmansstore" class="instagram-btn elementor-animation-shrink">
                                 <i class="fab fa-instagram"></i>@abdurrahmansstore
                             </a>
                         </div>
@@ -1248,8 +1365,9 @@
             </div>
             
             <!-- 3. Countdown -->
-            <h2 class="section-title" id="cooldown">Menuju Hari Yang Dinanti</h2>
+            
             <div class="section-frame">
+                <h2 class="section-title" id="cooldown">Menuju Hari Yang Dinanti</h2>
                 <div class="countdown-container">
                     <div class="countdown" id="countdown">
                         <div class="countdown-item">
@@ -1270,7 +1388,7 @@
                         </div>
                     </div>
                     
-                    <button class="btn btn-custom" onclick="saveToCalendar()">
+                    <button class="btn btn-custom elementor-animation-shrink" onclick="saveToCalendar()">
                         <i class="fas fa-calendar-alt"></i> Simpan Acara
                     </button>
                 </div>
@@ -1282,8 +1400,9 @@
             </div>
             
             <!-- 5. Akad Nikah -->
-            <h2 class="section-title" id="akad-nikah">Akad Nikah</h2>
+            
             <div class="section-frame">
+                <h2 class="section-title" id="akad-nikah">Akad Nikah</h2>
                 <div class="event-details">
                     <div class="event-item">
                         <div class="event-info">
@@ -1303,7 +1422,7 @@
                             <div class="event-text">Jl. Raya Tempuran, Desa Tempuran, Kecamatan Bantaran, Kabupaten Probolinggo - Jawa Timur (Timur SMPN I Bantaran)</div>
                         </div>
                         <div class="mt-3">
-                            <a href="https://maps.app.goo.gl/sCyuqmGEeyo4UxWo9" target="_blank" class="btn btn-custom">
+                            <a href="https://maps.app.goo.gl/sCyuqmGEeyo4UxWo9" target="_blank" class="btn btn-custom elementor-animation-shrink">
                                 📍 Lihat Lokasi
                             </a>
                         </div>
@@ -1312,8 +1431,9 @@
             </div>
             
             <!-- 6. Walimatul Urs -->
-            <h2 class="section-title" id="walimatul-urs">Walimatul 'Urs</h2>
+            
             <div class="section-frame">
+                <h2 class="section-title" id="walimatul-urs">Walimatul 'Urs</h2>
                 <div class="event-details">
                     <div class="event-item">
                         <div class="event-info">
@@ -1333,7 +1453,7 @@
                             <div class="event-text">Jl. Raya Tempuran, Desa Tempuran, Kecamatan Bantaran, Kabupaten Probolinggo - Jawa Timur (Timur SMPN I Bantaran)</div>
                         </div>
                         <div class="mt-3">
-                            <a href="https://maps.app.goo.gl/sCyuqmGEeyo4UxWo9" target="_blank" class="btn btn-custom">
+                            <a href="https://maps.app.goo.gl/sCyuqmGEeyo4UxWo9" target="_blank" class="btn btn-custom elementor-animation-shrink">
                                 📍 Lihat Lokasi
                             </a>
                         </div>
@@ -1342,8 +1462,9 @@
             </div>
             
             <!-- 7. RSVP -->
-            <h2 class="section-title" id="rsvp">Konfirmasi Kehadiran</h2>
+            
             <div class="section-frame">
+                <h2 class="section-title" id="rsvp">Konfirmasi Kehadiran</h2>
                 <div class="rsvp-container">
                     <form class="rsvp-form" onsubmit="submitRSVP(event)">
                         <div class="mb-3">
@@ -1371,14 +1492,15 @@
                             <textarea class="form-control form-control-custom" id="message" rows="3" placeholder="Tulis pesan Anda di sini"></textarea>
                         </div>
                         
-                        <button type="submit" class="btn btn-custom w-100">Kirim Konfirmasi</button>
+                        <button type="submit" class="btn btn-custom w-100 elementor-animation-shrink">Kirim Konfirmasi</button>
                     </form>
                 </div>
             </div>
             
             <!-- 8. Love Story - DIPERBAIKI -->
-            <h2 class="section-title" id="love-story">Love Story</h2>
+            
             <div class="section-frame">
+                <h2 class="section-title" id="love-story">Love Story</h2>
                 <div class="love-story">
                     <div class="story-timeline">
                         <div class="story-step animate fade-right delay-100" id="taaruf">
@@ -1432,8 +1554,9 @@
             </div>
             
             <!-- 9. Amplop Digital -->
-            <h2 class="section-title" id="amplop-digital">Amplop Digital</h2>
+            
             <div class="section-frame">
+                <h2 class="section-title" id="amplop-digital">Amplop Digital</h2>
                 <div class="digital-envelope">
                     <div class="envelope-text">
                         Bagi Bapak/Ibu/Saudara/Saudari yang ingin memberikan hadiah, dapat melalui amplop digital berikut:
@@ -1446,19 +1569,19 @@
                         </div>
                         <div class="account-number">7189985597</div>
                         <div class="bank-details">A/n Pujiana Dwi Kusumawati</div>
-                        <button class="btn btn-sm btn-custom" onclick="copyToClipboard('121512521313')">
+                        <button class="btn btn-sm btn-custom elementor-animation-shrink" onclick="copyToClipboard('121512521313')">
                             <i class="fas fa-copy"></i> Salin
                         </button>
                     </div>
                     
-                    <!-- Bank BCA -->
+                    <!-- dompet Digital OVO -->
                     <div class="bank-account">
                         <div class="bank-name">
                             <i class="fas fa-university"></i> OVO
                         </div>
                         <div class="account-number">085746706929</div>
                         <div class="bank-details">A/n Pujiana Dwi Kusumawati</div>
-                        <button class="btn btn-sm btn-custom" onclick="copyToClipboard('1234567890')">
+                        <button class="btn btn-sm btn-custom elementor-animation-shrink" onclick="copyToClipboard('1234567890')">
                             <i class="fas fa-copy"></i> Salin
                         </button>
                     </div>
@@ -1467,6 +1590,7 @@
             
             <!-- 10. Barakallahu laka wa baarakaa alaika wa jamaa bainakumaa fii khoir -->
             <div class="section-frame">
+                <h2 class="section-title" id="cooldown">Do'a Pengantin</h2>
                 <div class="closing-verse">
                     بَارَكَ اللهُ لَكُما وَبَارَكَ عَلَيْكُما وَجَمَعَ بَيْنَكُمَا فِي خَيْرٍ
                 </div>
@@ -1476,8 +1600,9 @@
             </div>
             
             <!-- 11. Form Ucapan & Doa -->
-            <h2 class="section-title" id="ucapan-doa">Ucapan & Doa</h2>
+            
             <div class="section-frame">
+                <h2 class="section-title" id="ucapan-doa">Ucapan & Doa</h2>
                 <div class="rsvp-container">
                     <form class="wishes-form" onsubmit="submitWish(event)">
                         <div class="mb-3">
@@ -1498,14 +1623,15 @@
                             </select>
                         </div>
                         
-                        <button type="submit" class="btn btn-custom w-100">Kirim Ucapan</button>
+                        <button type="submit" class="btn btn-custom w-100 elementor-animation-shrink">Kirim Ucapan</button>
                     </form>
                 </div>
             </div>
             
             <!-- 12. Etika Selama Acara -->
-            <h2 class="section-title" id="etika-acara">Etika Selama Acara</h2>
+            
             <div class="section-frame">
+                <h2 class="section-title" id="etika-acara">Etika Selama Acara</h2>
                 <div class="etika-container">
                     <div class="etika-item">
                         <i class="fas fa-handshake"></i>
@@ -1527,32 +1653,26 @@
             </div>
             
             <!-- 13. Terimakasih -->
-            <h2 class="section-title" id="terimakasih">Terima Kasih</h2>
+            
             <div class="section-frame">
                 <div class="thank-you-container">
-                    <div class="guest-name-container">
-                        <div class="guest-label">Dengan hormat, kami mengharap doa baik kepada kami dari:</div>
-                        <div class="guest-name" id="guestName">Bapak/Ibu/Saudara/Saudari</div>
-                    </div>
+                    <div class="thank-you-content">
+                        <div class="guest-label">Menjadi sebuah kebahagiana bagi kami apabila Bapak/Ibu/Saudara/Saudari berkenan hadir dalam hari bahagia kami. Terima kasih atas segala ucapan, do'a, dan perhatian yang diberikan.</div>
                     
-                    <div class="closing-verse">
-                        جَزَاكُمُ اللهُ خَيْرًا
-                    </div>
-                    <div class="closing-translation">
-                        "Semoga Allah membalas kalian dengan kebaikan"
+                        <div class="closing-verse">
+                            جَزَاكُمُ اللهُ خَيْرًا
+                        </div>
+                        <div class="closing-translation">
+                            "Semoga Allah membalas kalian dengan kebaikan"
+                        </div>
+                        <div class="bride-groom-footer">
+                            <div class="footer-names">Jean & Dwi Beserta Keluarga</div>
+                        </div>
                     </div>
                 </div>
             </div>
             
             <!-- Foto pasangan pengantin -->
-            <div class="text-center mt-4">
-                <div class="footer-profile-image mx-auto">
-                    <i class="fas fa-user"></i>
-                </div>
-                <div class="bride-groom-footer">
-                    <div class="footer-names">Jean & Dwi sekeluarga</div>
-                </div>
-            </div>
         </div>
     </div>
 
