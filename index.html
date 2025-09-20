@@ -183,13 +183,16 @@
             right: 30%;
         }
         
-        /* Mengubah font untuk nama pasangan menjadi font lokal Auntie */
+        /* Mengubah font untuk nama pasangan menjadi font lokal Auntie dengan spacing yang diatur */
         .couple-name {
             font-family: 'Auntie', cursive; /* Menggunakan font lokal Auntie */
-            font-size: 2rem; /* Menyesuaikan ukuran untuk font Auntie */
-            margin: 5px 0 20px;
-            letter-spacing: 3.5px; /* Menyesuaikan spacing untuk font Auntie */
+            font-size: 3.8rem; /* Ukuran font yang lebih besar */
+            margin: 8px 0 20px; /* Margin atas dan bawah yang lebih besar */
+            padding: 5px 0; /* Padding tambahan untuk ruang vertikal */
+            letter-spacing: 1px; /* Jarak antar huruf yang disesuaikan */
+            word-spacing: 8px; /* Jarak antar kata (Jean dan Dwi) */
             font-weight: normal; /* Font lokal biasanya tidak perlu weight tinggi */
+            line-height: 1.2; /* Tinggi baris untuk memberikan ruang vertikal */
             background: linear-gradient(90deg, #d4af37, #f9f295, #d4af37, #f9f295, #d4af37);
             background-size: 300% 300%;
             -webkit-background-clip: text;
@@ -199,6 +202,8 @@
             opacity: 0;
             animation: shimmer 3s infinite linear, zoomIn 1.2s ease-out 0.9s forwards;
             transform-origin: center;
+            display: inline-block; /* Memungkinkan margin dan padding bekerja dengan baik */
+            position: relative; /* Untuk positioning yang lebih baik */
         }
         
         @keyframes shimmer {
@@ -218,7 +223,7 @@
             width: 85%;
             height: 1px;
             background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.7), transparent);
-            margin: 0 auto 18px;
+            margin: 0 auto 25px; /* Margin bawah yang lebih besar */
             position: relative;
             opacity: 0;
             animation: fadeIn 1s ease-out 1.2s forwards;
@@ -246,7 +251,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 12px;
+            margin-bottom: 15px; /* Margin bawah yang sedikit lebih besar */
             opacity: 0;
             animation: fadeInUp 1s ease-out 1.4s forwards;
         }
@@ -295,7 +300,7 @@
         
         /* Container untuk greeting dan guest name dengan frame */
         .guest-info-container {
-            margin-bottom: 20px;
+            margin-bottom: 25px; /* Margin bawah yang lebih besar */
             position: relative;
             padding: 12px 8px;
             border: 1px solid rgba(255, 215, 0, 0.4);
@@ -516,7 +521,9 @@
             }
             
             .couple-name {
-                font-size: 3rem; /* Menyesuaikan ukuran font untuk layar kecil */
+                font-size: 3.2rem; /* Menyesuaikan ukuran font untuk layar kecil */
+                word-spacing: 5px; /* Menyesuaikan jarak antar kata untuk layar kecil */
+                letter-spacing: 0.5px; /* Menyesuaikan jarak antar huruf untuk layar kecil */
             }
             
             .date-day, .date-year {
