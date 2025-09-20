@@ -14,10 +14,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* Mendefinisikan font lokal Auntie-BWzGn */
+        /* Import font Engagement */
         @font-face {
-            font-family: 'Auntie';
-            src: url('Auntie-BWzGn.otf') format('opentype');
+            font-family: 'Engagement';
+            src: url('https://dl.dafont.com/dl/?f=engagement') format('woff2'),
+                 url('https://dl.dafont.com/dl/?f=engagement') format('woff');
             font-weight: normal;
             font-style: normal;
             font-display: swap;
@@ -70,6 +71,8 @@
         /* Menggunakan card Bootstrap untuk frame */
         .invitation-card {
             background: rgba(15, 20, 35, 0.2);
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             backdrop-filter: blur(2px);
             border: 1px solid rgba(255, 255, 255, 0.08);
             position: relative;
@@ -183,16 +186,12 @@
             right: 30%;
         }
         
-        /* Mengubah font untuk nama pasangan menjadi font lokal Auntie dengan spacing yang diatur */
         .couple-name {
-            font-family: 'Auntie', cursive; /* Menggunakan font lokal Auntie */
-            font-size: 3.8rem; /* Ukuran font yang lebih besar */
-            margin: 8px 0 8px; /* Margin atas dan bawah yang lebih besar */
-            padding: 5px 0; /* Padding tambahan untuk ruang vertikal */
-            letter-spacing: 0.7px; /* Jarak antar huruf yang disesuaikan */
-            word-spacing: 8px; /* Jarak antar kata (Jean dan Dwi) */
-            font-weight: normal; /* Font lokal biasanya tidak perlu weight tinggi */
-            line-height: 1.2; /* Tinggi baris untuk memberikan ruang vertikal */
+            font-family: 'Engagement', cursive; /* Diubah ke font Engagement */
+            font-size: 3.5rem; /* Diperbesar sedikit untuk font Engagement */
+            margin: 5px 0 12px;
+            letter-spacing: 2px;
+            font-weight: normal; /* Diubah karena font Engagement tidak memiliki bold */
             background: linear-gradient(90deg, #d4af37, #f9f295, #d4af37, #f9f295, #d4af37);
             background-size: 300% 300%;
             -webkit-background-clip: text;
@@ -202,8 +201,7 @@
             opacity: 0;
             animation: shimmer 3s infinite linear, zoomIn 1.2s ease-out 0.9s forwards;
             transform-origin: center;
-            display: inline-block; /* Memungkinkan margin dan padding bekerja dengan baik */
-            position: relative; /* Untuk positioning yang lebih baik */
+            line-height: 1.1; /* Disesuaikan untuk font Engagement */
         }
         
         @keyframes shimmer {
@@ -223,7 +221,7 @@
             width: 85%;
             height: 1px;
             background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.7), transparent);
-            margin: 0 auto 25px; /* Margin bawah yang lebih besar */
+            margin: 0 auto 18px;
             position: relative;
             opacity: 0;
             animation: fadeIn 1s ease-out 1.2s forwards;
@@ -251,7 +249,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 15px; /* Margin bawah yang sedikit lebih besar */
+            margin-bottom: 12px;
             opacity: 0;
             animation: fadeInUp 1s ease-out 1.4s forwards;
         }
@@ -300,7 +298,7 @@
         
         /* Container untuk greeting dan guest name dengan frame */
         .guest-info-container {
-            margin-bottom: 25px; /* Margin bawah yang lebih besar */
+            margin-bottom: 20px;
             position: relative;
             padding: 12px 8px;
             border: 1px solid rgba(255, 215, 0, 0.4);
@@ -351,11 +349,12 @@
         
         /* Nama tamu */
         .guest-name {
-            font-family: 'Dancing Script', cursive;
-            font-size: 1.6rem;
+            font-family: 'Engagement', cursive; /* Diubah ke font Engagement */
+            font-size: 2rem; /* Disesuaikan untuk font Engagement */
             color: #f9f295;
-            font-weight: 700;
+            font-weight: normal; /* Diubah karena font Engagement tidak memiliki bold */
             text-shadow: 0 0 10px rgba(0, 0, 0, 0.5), 0 0 6px rgba(249, 242, 149, 0.3);
+            line-height: 1.2; /* Disesuaikan untuk font Engagement */
         }
         
         /* Menggunakan class Bootstrap untuk button */
@@ -521,9 +520,7 @@
             }
             
             .couple-name {
-                font-size: 3.2rem; /* Menyesuaikan ukuran font untuk layar kecil */
-                word-spacing: 5px; /* Menyesuaikan jarak antar kata untuk layar kecil */
-                letter-spacing: 0.5px; /* Menyesuaikan jarak antar huruf untuk layar kecil */
+                font-size: 3rem; /* Disesuaikan untuk layar kecil */
             }
             
             .date-day, .date-year {
@@ -535,7 +532,7 @@
             }
             
             .guest-name {
-                font-size: 1.4rem;
+                font-size: 1.8rem; /* Disesuaikan untuk layar kecil */
             }
             
             .open-btn {
@@ -551,8 +548,8 @@
     
     <div class="invitation-wrapper">
         <!-- Menggunakan card Bootstrap untuk frame -->
-        <div class="card invitation-card border-0 shadow">
-            <div class="card-body text-center p-4">
+        <div class="card invitation-card">
+            <div class="card-body text-center">
                 <img src="https://z-cdn-media.chatglm.cn/files/e31066f0-4f90-4773-ad8f-ff2d2090d88b_pngwing.com.png?auth_key=1789383759-ba90c1d714b74fd394a7b19427ae1241-0-c25d7e7f31bbb376fd8da759c7c067a4" alt="Bismillah" class="bismillah-img">
                 <div class="bismillah-decoration"></div>
                 <h1 class="wedding-title">The Wedding Of</h1>
