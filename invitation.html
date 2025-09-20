@@ -434,6 +434,51 @@
             margin-bottom: 10px;
             word-break: break-all;
         }
+
+        .section-frame-thank-you {
+            background-image: url('images/cover-couple.png');
+            background-size: cover; /* Membuat gambar menutupi seluruh area */
+            background-position: center; /* Memposisikan gambar di tengah */
+            background-repeat: no-repeat; /* Mencegah pengulangan gambar */
+            /*background: var(--card-bg); */
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(4px);
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        .section-frame-thank-you::before,
+        .section-frame-thank-you::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-color: var(--border-color);
+            border-style: solid;
+            border-width: 0;
+            z-index: 1;
+        }
+        
+        .section-frame-thank-you::before {
+            top: -2px;
+            left: -2px;
+            border-top-width: 2px;
+            border-left-width: 2px;
+            border-top-left-radius: 12px;
+        }
+        
+        .section-frame-thank-you::after {
+            bottom: -2px;
+            right: -2px;
+            border-bottom-width: 2px;
+            border-right-width: 2px;
+            border-bottom-right-radius: 12px;
+        }
         
        .thank-you-container {
             margin: 20px 0;
@@ -442,6 +487,7 @@
             min-height: 300px; /* Menambahkan tinggi minimum */
             border-radius: 10px;
             overflow: hidden; /* Memastikan tidak ada overflow */
+            
         }
         
         .thank-you-bg {
@@ -450,10 +496,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('images/cover-couple.png');
-            background-size: cover; /* Membuat gambar menutupi seluruh area */
-            background-position: center; /* Memposisikan gambar di tengah */
-            background-repeat: no-repeat; /* Mencegah pengulangan gambar */
+            
             border-radius: 10px;
             z-index: 1;
         }
@@ -1711,7 +1754,7 @@
             
             <!-- 13. Terimakasih -->
             
-            <div class="section-frame">
+            <div class="section-frame-thank-you ">
                 <div class="thank-you-container">
                     <div class="thank-you-bg"></div>
                     <div class="thank-you-overlay"></div>
