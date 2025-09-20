@@ -4,11 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Undangan Pernikahan Jean & Dwi</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts - Menambahkan font Merriweather dan Engagement -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Montserrat:wght@300;400;600;700&family=Amiri+Quran:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&family=Dancing+Script:wght@400;700&family=Montserrat:wght@300;400;600;700&family=Amiri+Quran:wght@400;700&family=Merriweather:wght@400;700&family=Engagement&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
+        :root {
+            --primary-color: #ffcc4d; /* Warna emas yang diperbarui */
+            --secondary-color: #e0f0ff;
+            --text-color: #d0e8ff;
+            --bg-overlay: rgba(0, 0, 0, 0.3);
+            --card-bg: rgba(255, 255, 255, 0.1);
+            --border-color: #ffcc4d; /* Warna border yang diperbarui */
+        }
+        
         * {
             margin: 0;
             padding: 0;
@@ -25,6 +42,7 @@
             min-height: 100vh;
             overflow-x: hidden;
             position: relative;
+            color: var(--secondary-color);
         }
         
         body::before {
@@ -34,7 +52,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.3);
+            background: var(--bg-overlay);
             z-index: 1;
         }
         
@@ -47,7 +65,7 @@
             padding: 15px;
             position: relative;
             z-index: 2;
-            max-width: 400px;
+            max-width: 500px;
             margin: 0 auto;
             padding-top: 20px;
         }
@@ -70,23 +88,25 @@
         }
         
         .invitation-container::-webkit-scrollbar-thumb {
-            background: rgba(255, 215, 0, 0.5);
+            background: rgba(255, 204, 77, 0.5);
             border-radius: 10px;
         }
         
         .invitation-container::-webkit-scrollbar-thumb:hover {
-            background: rgba(255, 215, 0, 0.7);
+            background: rgba(255, 204, 77, 0.7);
         }
         
         .section-frame {
-            background: rgba(255, 255, 255, 0.1);
-            border: 2px solid rgba(255, 215, 0, 0.6);
+            background: var(--card-bg);
+            border: 2px solid var(--border-color);
             border-radius: 12px;
             padding: 15px;
             margin-bottom: 20px;
             position: relative;
             overflow: hidden;
             backdrop-filter: blur(4px);
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
         }
         
         .section-frame::before,
@@ -95,7 +115,7 @@
             position: absolute;
             width: 20px;
             height: 20px;
-            border-color: rgba(255, 215, 0, 0.8);
+            border-color: var(--border-color);
             border-style: solid;
             border-width: 0;
             z-index: 1;
@@ -120,45 +140,57 @@
         .opening-verse {
             font-family: 'Amiri Quran', serif;
             font-size: 0.8rem;
-            color: #f0f7ff;
+            color: var(--secondary-color);
             margin-bottom: 12px;
             line-height: 1.6;
             text-shadow: 0 0 10px rgba(0, 0, 0, 0.7), 0 0 5px rgba(100, 120, 255, 0.3);
             text-align: right;
             padding: 0 10px;
+            opacity: 0;
+            animation: zoomIn 0.8s ease forwards;
         }
         
         .verse-translation {
             font-family: 'Montserrat', sans-serif;
             font-size: 0.7rem;
-            color: #e0f0ff;
+            color: var(--secondary-color);
             margin-bottom: 8px;
             line-height: 1.4;
             text-shadow: 0 0 8px rgba(0, 0, 0, 0.5), 0 0 4px rgba(150, 180, 255, 0.3);
             text-align: left;
             font-style: italic;
             padding: 0 10px;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+            animation-delay: 0.2s;
         }
         
         .verse-source {
             font-family: 'Montserrat', sans-serif;
             font-size: 0.8rem;
-            color: #f9f295;
+            color: var(--primary-color);
             margin-bottom: 15px;
             text-align: right;
             font-weight: 600;
             padding: 0 10px;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+            animation-delay: 0.4s;
         }
         
         .section-title {
-            font-family: 'Dancing Script', cursive;
-            font-size: 1.5rem;
-            color: #f9f295;
+            font-family: 'Merriweather', serif; /* Diubah ke Merriweather */
+            font-size: 1.8rem;
+            color: var(--primary-color);
             margin: 20px 0 15px;
             letter-spacing: 1px;
-            text-shadow: 0 0 10px rgba(0, 0, 0, 0.5), 0 0 6px rgba(249, 242, 149, 0.3);
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.5), 0 0 6px rgba(255, 204, 77, 0.3);
             position: relative;
-            display: inline-block;
+            display: block;
+            text-align: center;
+            width: 100%;
+            opacity: 0;
+            animation: fadeInDown 0.8s ease forwards;
         }
         
         .section-title::after {
@@ -168,18 +200,20 @@
             left: 10%;
             width: 80%;
             height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.7), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 204, 77, 0.7), transparent);
         }
         
         .invitation-text {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Merriweather', serif; /* Diubah ke Merriweather */
             font-size: 1rem;
-            color: #e0f0ff;
+            color: var(--secondary-color);
             margin: 15px 0;
             line-height: 1.5;
             text-shadow: 0 0 8px rgba(0, 0, 0, 0.5), 0 0 4px rgba(150, 180, 255, 0.3);
             padding: 0 10px;
             font-style: italic;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
         }
         
         .event-details {
@@ -192,25 +226,21 @@
             padding: 15px;
             background: rgba(255, 255, 255, 0.05);
             border-radius: 10px;
-            border: 1px solid rgba(255, 215, 0, 0.3);
-        }
-        
-        .event-title {
-            font-family: 'Dancing Script', cursive;
-            font-size: 1.5rem;
-            color: #f9f295;
-            margin-bottom: 10px;
-            text-shadow: 0 0 8px rgba(0, 0, 0, 0.5), 0 0 4px rgba(249, 242, 149, 0.3);
+            border: 1px solid var(--border-color);
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
         }
         
         .event-info {
             display: flex;
             align-items: center;
             margin-bottom: 8px;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
         }
         
         .event-info i {
-            color: #f9f295;
+            color: var(--primary-color);
             margin-right: 10px;
             width: 20px;
             text-align: center;
@@ -218,9 +248,9 @@
         }
         
         .event-text {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Merriweather', serif; /* Diubah ke Merriweather */
             font-size: 0.9rem;
-            color: #d0e8ff;
+            color: var(--text-color);
         }
         
         .countdown-container {
@@ -231,9 +261,11 @@
         .countdown-title {
             font-family: 'Dancing Script', cursive;
             font-size: 1.8rem;
-            color: #f9f295;
+            color: var(--primary-color);
             margin-bottom: 15px;
-            text-shadow: 0 0 10px rgba(0, 0, 0, 0.5), 0 0 6px rgba(249, 242, 149, 0.3);
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.5), 0 0 6px rgba(255, 204, 77, 0.3);
+            opacity: 0;
+            animation: fadeInDown 0.8s ease forwards;
         }
         
         .countdown {
@@ -244,35 +276,38 @@
         }
         
         .countdown-item {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 215, 0, 0.5);
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
             border-radius: 8px;
             padding: 10px;
             min-width: 60px;
             text-align: center;
+            opacity: 0;
+            animation: zoomIn 0.8s ease forwards;
         }
         
         .countdown-value {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Merriweather', serif; /* Diubah ke Merriweather */
             font-size: 1.5rem;
             font-weight: 700;
-            color: #f9f295;
+            color: var(--primary-color);
             display: block;
         }
         
         .countdown-label {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Merriweather', serif; /* Diubah ke Merriweather */
             font-size: 0.75rem;
-            color: #e0f0ff;
+            color: var(--secondary-color);
             margin-top: 5px;
         }
         
-        .save-date-btn {
-            background: linear-gradient(45deg, rgba(25, 118, 210, 0.6), rgba(66, 165, 245, 0.6));
-            color: white;
-            border: 1px solid rgba(255, 215, 0, 0.5);
-            padding: 10px 20px;
-            font-size: 0.9rem;
+        /* Custom CSS untuk semua tombol */
+        .btn-custom {
+            background-color: var(--primary-color);
+            color: #1f3c5d;
+            border: 1px solid var(--primary-color);
+            padding: 0.25rem 0.75rem;
+            font-size: 0.8rem;
             font-weight: 500;
             border-radius: 20px;
             cursor: pointer;
@@ -281,76 +316,69 @@
             align-items: center;
             gap: 8px;
             margin-top: 10px;
+            line-height: 1.5;
+            height: auto;
+            min-height: 32px;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+            font-family: 'Merriweather', serif; /* Diubah ke Merriweather */
         }
         
-        .save-date-btn:hover {
-            background: linear-gradient(45deg, rgba(21, 101, 192, 0.7), rgba(30, 136, 229, 0.7));
-            border-color: rgba(255, 215, 0, 0.7);
-            transform: translateY(-2px);
+        .btn-custom:hover {
+            background-color: #e6b83d;
+            border-color: #e6b83d;
+            transform: scale(0.9);
+            color: #1f3c5d;
         }
         
-        .rsvp-container {
-            margin: 20px 0;
-            text-align: left;
+        /* Override semua ukuran tombol Bootstrap */
+        .btn {
+            padding: 0.25rem 0.75rem;
+            font-size: 0.8rem;
+            line-height: 1.5;
+            border-radius: 20px;
+            min-height: 32px;
+            height: auto;
+            font-family: 'Merriweather', serif; /* Diubah ke Merriweather */
         }
         
-        .rsvp-form {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
+        .btn-sm {
+            padding: 0.25rem 0.75rem;
+            font-size: 0.8rem;
+            line-height: 1.5;
+            border-radius: 20px;
+            min-height: 32px;
+            height: auto;
+            font-family: 'Merriweather', serif; /* Diubah ke Merriweather */
         }
         
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-        }
-        
-        .form-label {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.9rem;
-            color: #f9f295;
-            font-weight: 600;
-        }
-        
-        .form-input, .form-select, .form-textarea {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 215, 0, 0.3);
+        .form-control-custom {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
             border-radius: 8px;
             padding: 10px;
-            color: #e0f0ff;
-            font-family: 'Montserrat', sans-serif;
+            color: var(--secondary-color);
+            font-family: 'Merriweather', serif; /* Diubah ke Merriweather */
             font-size: 0.8rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
         }
         
-        .form-input:focus, .form-select:focus, .form-textarea:focus {
+        .form-control-custom:focus {
             outline: none;
-            border-color: rgba(255, 215, 0, 0.7);
-            box-shadow: 0 0 5px rgba(255, 215, 0, 0.3);
+            border-color: var(--primary-color);
+            box-shadow: 0 0 5px rgba(255, 204, 77, 0.3);
+            background-color: rgba(255, 255, 255, 0.15);
+            color: var(--secondary-color);
         }
         
-        .form-textarea {
-            resize: vertical;
-            min-height: 80px;
-        }
-        
-        .form-btn {
-            background: linear-gradient(45deg, rgba(25, 118, 210, 0.6), rgba(66, 165, 245, 0.6));
-            color: white;
-            border: 1px solid rgba(255, 215, 0, 0.5);
-            padding: 10px 20px;
+        .form-label-custom {
+            font-family: 'Merriweather', serif; /* Diubah ke Merriweather */
             font-size: 0.9rem;
-            font-weight: 500;
-            border-radius: 20px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            align-self: center;
-        }
-        
-        .form-btn:hover {
-            background: linear-gradient(45deg, rgba(21, 101, 192, 0.7), rgba(30, 136, 229, 0.7));
-            border-color: rgba(255, 215, 0, 0.7);
-            transform: translateY(-2px);
+            color: var(--primary-color);
+            font-weight: 600;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
         }
         
         .digital-envelope {
@@ -359,33 +387,13 @@
         }
         
         .envelope-text {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Merriweather', serif; /* Diubah ke Merriweather */
             font-size: 0.9rem;
-            color: #e0f0ff;
+            color: var(--secondary-color);
             margin-bottom: 15px;
             line-height: 1.5;
-        }
-        
-        .envelope-btn {
-            background: linear-gradient(45deg, rgba(25, 118, 210, 0.6), rgba(66, 165, 245, 0.6));
-            color: white;
-            border: 1px solid rgba(255, 215, 0, 0.5);
-            padding: 10px 20px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            border-radius: 20px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 20px;
-        }
-        
-        .envelope-btn:hover {
-            background: linear-gradient(45deg, rgba(21, 101, 192, 0.7), rgba(30, 136, 229, 0.7));
-            border-color: rgba(255, 215, 0, 0.7);
-            transform: translateY(-2px);
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
         }
         
         .bank-account {
@@ -393,15 +401,17 @@
             border-radius: 10px;
             padding: 15px;
             margin-bottom: 15px;
-            border: 1px solid rgba(255, 215, 0, 0.3);
+            border: 1px solid var(--border-color);
             text-align: left;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
         }
         
         .bank-name {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Merriweather', serif; /* Diubah ke Merriweather */
             font-size: 1rem;
             font-weight: 600;
-            color: #f9f295;
+            color: var(--primary-color);
             margin-bottom: 8px;
             display: flex;
             align-items: center;
@@ -409,60 +419,64 @@
         }
         
         .bank-details {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Merriweather', serif; /* Diubah ke Merriweather */
             font-size: 0.9rem;
-            color: #d0e8ff;
+            color: var(--text-color);
             margin-bottom: 10px;
             line-height: 1.4;
         }
         
         .account-number {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Merriweather', serif; /* Diubah ke Merriweather */
             font-size: 1rem;
             font-weight: 600;
-            color: #f9f295;
+            color: var(--primary-color);
             margin-bottom: 10px;
             word-break: break-all;
-        }
-        
-        .copy-btn {
-            background: linear-gradient(45deg, rgba(25, 118, 210, 0.6), rgba(66, 165, 245, 0.6));
-            color: white;
-            border: 1px solid rgba(255, 215, 0, 0.5);
-            padding: 8px 15px;
-            font-size: 0.8rem;
-            font-weight: 500;
-            border-radius: 15px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-        }
-        
-        .copy-btn:hover {
-            background: linear-gradient(45deg, rgba(21, 101, 192, 0.7), rgba(30, 136, 229, 0.7));
-            border-color: rgba(255, 215, 0, 0.7);
-            transform: translateY(-2px);
-        }
-        
-        .wishes-form {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
         }
         
         .thank-you-container {
             margin: 20px 0;
             text-align: center;
+            position: relative;
+        }
+        
+        .thank-you-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('images/cover-couple.png');
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            z-index: 1;
+        }
+        
+        .thank-you-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            z-index: 2;
+        }
+        
+        .thank-you-content {
+            position: relative;
+            z-index: 3;
+            padding: 30px 20px;
         }
         
         .thank-you-title {
             font-family: 'Dancing Script', cursive;
             font-size: 1.8rem;
-            color: #f9f295;
+            color: var(--primary-color);
             margin-bottom: 15px;
-            text-shadow: 0 0 10px rgba(0, 0, 0, 0.5), 0 0 6px rgba(249, 242, 149, 0.3);
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.5), 0 0 6px rgba(255, 204, 77, 0.3);
         }
         
         .bride-groom-footer {
@@ -477,7 +491,7 @@
             width: 80px;
             height: 80px;
             border-radius: 50%;
-            border: 2px solid rgba(255, 215, 0, 0.7);
+            border: 2px solid var(--border-color);
             overflow: hidden;
             background: rgba(255, 255, 255, 0.1);
             display: flex;
@@ -486,10 +500,10 @@
         }
                 
         .footer-names {
-            font-family: 'Dancing Script', cursive;
+            font-family: 'Engagement', cursive; /* Diubah ke Engagement */
             font-size: 1.5rem;
-            color: #f9f295;
-            text-shadow: 0 0 8px rgba(0, 0, 0, 0.5), 0 0 4px rgba(249, 242, 149, 0.3);
+            color: var(--primary-color);
+            text-shadow: 0 0 8px rgba(0, 0, 0, 0.5), 0 0 4px rgba(255, 204, 77, 0.3);
         }
         
         .etika-container {
@@ -501,140 +515,267 @@
             display: flex;
             align-items: flex-start;
             margin-bottom: 10px;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
         }
         
         .etika-item i {
-            color: #f9f295;
+            color: var(--primary-color);
             margin-right: 10px;
             margin-top: 3px;
             font-size: 0.9rem;
         }
         
         .etika-text {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Merriweather', serif; /* Diubah ke Merriweather */
             font-size: 0.85rem;
-            color: #d0e8ff;
+            color: var(--text-color);
             line-height: 1.4;
         }
         
-        /* Gaya untuk mempelai dengan frame arch */
+        /* CSS Khusus untuk Bagian Mempelai */
+        .mempelai-section {
+            position: relative;
+            margin: 40px 0;
+            padding: 20px 0;
+        }
+        
+        /* Ornamen Dekoratif */
+        .ornamen {
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.4;
+            z-index: 1;
+        }
+        
+        .ornamen-kiri {
+            top: -20px;
+            left: -20px;
+            background-image: url('images/ornamen-kiri.png');
+        }
+        
+        .ornamen-kanan {
+            top: -20px;
+            right: -20px;
+            background-image: url('images/ornamen-kanan.png');
+            transform: scaleX(-1);
+        }
+        
+        /* Container untuk Mempelai */
         .mempelai-container {
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-columns: 1fr;
             gap: 30px;
-            margin: 0px 0;
+            position: relative;
+            z-index: 2;
         }
         
+        /* Kartu Mempelai */
         .mempelai-card {
-            position: relative;
-            text-align: center;
-        }
-        
-        .arch-frame {
-            width: 200px;
-            height: 240px;
-            background: rgba(255, 255, 255, 0.1);
-            margin: 0 auto 20px;
-            border: 4px solid rgba(255, 215, 0, 0.6);
-            border-radius: 100px 100px 0 0;
-            position: relative;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(8px);
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
             overflow: hidden;
-            backdrop-filter: blur(4px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0;
+            animation: zoomIn 0.8s ease forwards;
         }
         
-        .arch-frame img {
+        .mempelai-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Bingkai Foto - DIPERBAIKI */
+        .photo-frame {
+            position: relative;
+            height: 280px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: var(--card-bg);
+        }
+        
+        .arch-shape {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, 
+                rgba(255, 255, 255, 0.05) 0%, 
+                rgba(255, 255, 255, 0.02) 70%, 
+                transparent 100%);
+            z-index: 1;
+        }
+        
+        .arch-border {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 85%;
+            border: 2px solid var(--border-color);
+            border-bottom: none;
+            border-radius: 100% 100% 0 0;
+            z-index: 2;
+        }
+        
+        .arch-border-bottom {
             position: absolute;
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 240px;
+            width: 80%;
+            height: 40px;
+            border-left: 2px solid var(--border-color);
+            border-right: 2px solid var(--border-color);
+            border-bottom: 2px solid var(--border-color);
+            border-radius: 0 0 15px 15px;
+            z-index: 2;
+        }
+        
+        .mempelai-photo {
+            width: 85%;
             height: auto;
             object-fit: cover;
+            border-radius: 10px;
+            z-index: 0;
+            transition: transform 0.5s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .mempelai-card:hover .mempelai-photo {
+            transform: scale(1.05);
+        }
+        
+        /* Informasi Mempelai */
+        .mempelai-info {
+            padding: 25px 20px;
+            text-align: center;
         }
         
         .mempelai-name {
-            font-family: 'Dancing Script', cursive;
-            font-size: 1.8rem;
-            color: #f9f295;
-            margin-bottom: 5px;
-            text-shadow: 0 0 8px rgba(0, 0, 0, 0.5), 0 0 4px rgba(249, 242, 149, 0.3);
+            font-family: 'Engagement', cursive; /* Diubah ke Engagement */
+            font-size: 2.8rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            text-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+            line-height: 1;
+            opacity: 0;
+            animation: zoomIn 0.8s ease forwards;
+            animation-delay: 0.3s;
         }
         
         .mempelai-title {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1rem;
-            font-weight: 600;
-            color: #e0f0ff;
-            margin-bottom: 10px;
+            font-family: 'Merriweather', serif; /* Diubah ke Merriweather */
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-color);
+            text-transform: lowercase;
             letter-spacing: 1px;
+            margin-bottom: 12px;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+            animation-delay: 0.2s;
         }
         
         .parents-info {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.85rem;
-            color: #d0e8ff;
-            line-height: 1.4;
-            margin-bottom: 12px;
+            font-family: 'Merriweather', serif; /* Diubah ke Merriweather */
+            font-size: 0.95rem;
+            color: var(--text-color);
+            margin-bottom: 20px;
+            line-height: 1.5;
+            opacity: 0;
+            animation: zoomIn 0.8s ease forwards;
+            animation-delay: 0.5s;
         }
         
+        /* Tombol Instagram */
         .instagram-btn {
-            background: rgba(255, 215, 0, 0.6);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: var(--primary-color);
             color: #1f3c5d;
-            padding: 6px 15px;
-            font-size: 0.85rem;
-            border-radius: 10px;
+            font-family: 'Merriweather', serif; /* Diubah ke Merriweather */
+            font-weight: 500;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
             text-decoration: none;
-            display: inline-block;
-            font-weight: bold;
             transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(255, 204, 77, 0.3);
+            font-size: 0.8rem;
+            line-height: 1.5;
+            min-height: 32px;
+            height: auto;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+            animation-delay: 0.7s;
         }
         
         .instagram-btn:hover {
-            background: rgba(255, 215, 0, 0.8);
-            transform: translateY(-2px);
+            background-color: #e6b83d;
+            transform: scale(0.9);
+            box-shadow: 0 6px 15px rgba(255, 204, 77, 0.4);
+            color: #1f3c5d;
         }
         
         .guest-name-container {
             margin: 20px 0 10px;
             padding: 10px;
-            border: 1px solid rgba(255, 215, 0, 0.4);
+            border: 1px solid var(--border-color);
             border-radius: 10px;
             background: rgba(255, 255, 255, 0.05);
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
         }
         
         .guest-label {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Merriweather', serif; /* Diubah ke Merriweather */
             font-size: 0.85rem;
-            color: #e0f0ff;
+            color: var(--secondary-color);
             margin-bottom: 5px;
         }
         
         .guest-name {
-            font-family: 'Dancing Script', cursive;
+            font-family: 'Engagement', cursive; /* Diubah ke Engagement */
             font-size: 1.5rem;
-            color: #f9f295;
-            text-shadow: 0 0 8px rgba(0, 0, 0, 0.5), 0 0 4px rgba(249, 242, 149, 0.3);
+            color: var(--primary-color);
+            text-shadow: 0 0 8px rgba(0, 0, 0, 0.5), 0 0 4px rgba(255, 204, 77, 0.3);
         }
         
         .closing-verse {
             font-family: 'Amiri Quran', serif;
             font-size: 1.1rem;
-            color: #f0f7ff;
+            color: var(--secondary-color);
             margin: 25px 0 15px;
             line-height: 1.6;
             text-shadow: 0 0 10px rgba(0, 0, 0, 0.7), 0 0 5px rgba(100, 120, 255, 0.3);
             text-align: center;
+            opacity: 0;
+            animation: zoomIn 0.8s ease forwards;
         }
         
         .closing-translation {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Merriweather', serif; /* Diubah ke Merriweather */
             font-size: 0.85rem;
-            color: #e0f0ff;
+            color: var(--secondary-color);
             margin-bottom: 5px;
             line-height: 1.4;
             text-shadow: 0 0 8px rgba(0, 0, 0, 0.5), 0 0 4px rgba(150, 180, 255, 0.3);
             text-align: center;
             font-style: italic;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+            animation-delay: 0.2s;
         }
         
         .floating-buttons {
@@ -653,7 +794,7 @@
             border-radius: 50%;
             background: rgba(25, 118, 210, 0.7);
             color: white;
-            border: 1px solid rgba(255, 215, 0, 0.5);
+            border: 1px solid var(--primary-color);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -664,7 +805,7 @@
         
         .floating-btn:hover {
             background: rgba(21, 101, 192, 0.8);
-            transform: scale(1.1);
+            transform: scale(0.9);
         }
         
         .floating-btn i {
@@ -676,7 +817,7 @@
             bottom: 70px;
             left: 20px;
             background: rgba(255, 255, 255, 0.1);
-            border: 2px solid rgba(255, 215, 0, 0.6);
+            border: 2px solid var(--border-color);
             border-radius: 10px;
             padding: 10px;
             display: none;
@@ -695,8 +836,8 @@
         .menu-item {
             padding: 8px 12px;
             border-radius: 6px;
-            color: #e0f0ff;
-            font-family: 'Montserrat', sans-serif;
+            color: var(--secondary-color);
+            font-family: 'Merriweather', serif; /* Diubah ke Merriweather */
             font-size: 0.9rem;
             cursor: pointer;
             transition: all 0.2s ease;
@@ -706,11 +847,12 @@
         }
         
         .menu-item:hover {
-            background: rgba(255, 215, 0, 0.2);
+            background: rgba(255, 204, 77, 0.2);
+            transform: scale(0.95);
         }
         
         .menu-item i {
-            color: #f9f295;
+            color: var(--primary-color);
             font-size: 1rem;
         }
         
@@ -773,35 +915,36 @@
             }
         }
         
-        /* Love Story Styles */
+        /* Love Story Styles - DIPERBAIKI */
         .love-story {
             margin-top: 20px;
         }
         
         .story-timeline {
             position: relative;
-            padding-left: 20px;
+            padding-left: 40px;
         }
         
         .story-timeline::before {
             content: '';
             position: absolute;
             top: 0;
-            left: 0;
+            left: 15px;
             width: 2px;
             height: 100%;
-            background: linear-gradient(to bottom, transparent, rgba(255, 215, 0, 0.7), transparent);
+            background: linear-gradient(to bottom, transparent, var(--primary-color), transparent);
         }
         
         .story-step {
             position: relative;
             margin-bottom: 30px;
-            padding-left: 30px;
             background: rgba(255, 255, 255, 0.05);
             border-radius: 10px;
-            border: 1px solid rgba(255, 215, 0, 0.3);
-            padding: 15px;
+            border: 1px solid var(--border-color);
+            padding: 20px;
             transition: all 0.3s ease;
+            opacity: 0;
+            animation: fadeInRight 0.8s ease forwards;
         }
         
         .story-step:hover {
@@ -809,55 +952,45 @@
             transform: translateX(5px);
         }
         
-        .story-step::before {
-            content: '';
-            position: absolute;
-            left: -9px;
-            top: 20px;
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            background: #f9f295;
-            box-shadow: 0 0 10px rgba(249, 242, 149, 0.5);
-        }
-        
         .step-icon {
             position: absolute;
-            left: -30px;
-            top: 15px;
+            left: -25px;
+            top: 20px;
             width: 30px;
             height: 30px;
             background: rgba(255, 255, 255, 0.1);
+            border: 2px solid var(--primary-color);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 1px solid rgba(255, 215, 0, 0.5);
+            z-index: 2;
+            box-shadow: 0 0 10px rgba(255, 204, 77, 0.3);
         }
         
         .step-icon i {
-            color: #f9f295;
+            color: var(--primary-color);
             font-size: 1rem;
         }
         
         .step-title {
             font-family: 'Dancing Script', cursive;
             font-size: 1.5rem;
-            color: #f9f295;
+            color: var(--primary-color);
             margin-bottom: 10px;
-            text-shadow: 0 0 8px rgba(0, 0, 0, 0.5), 0 0 4px rgba(249, 242, 149, 0.3);
+            text-shadow: 0 0 8px rgba(0, 0, 0, 0.5), 0 0 4px rgba(255, 204, 77, 0.3);
         }
         
         .step-content p {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Merriweather', serif; /* Diubah ke Merriweather */
             font-size: 0.9rem;
-            color: #d0e8ff;
+            color: var(--text-color);
             line-height: 1.5;
             text-align: left;
         }
         
         .highlight {
-            color: #f9f295;
+            color: var(--primary-color);
             font-weight: 600;
         }
         
@@ -901,7 +1034,87 @@
             transition-delay: 0.4s;
         }
         
-        @media (max-width: 380px) {
+        /* Animasi shrink effect */
+        .elementor-animation-shrink {
+            transition-duration: .3s;
+            transition-property: transform;
+        }
+        
+        .elementor-animation-shrink:active, 
+        .elementor-animation-shrink:focus, 
+        .elementor-animation-shrink:hover {
+            transform: scale(.9);
+        }
+        
+        /* Animasi fadeInDown */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translate3d(0,-100%,0);
+            }
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        .fadeInDown {
+            animation-name: fadeInDown;
+        }
+        
+        /* Animasi fadeInRight */
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translate3d(100%,0,0);
+            }
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        .fadeInRight {
+            animation-name: fadeInRight;
+        }
+        
+        /* Animasi fadeInUp */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translate3d(0,100%,0);
+            }
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        .fadeInUp {
+            animation-name: fadeInUp;
+        }
+        
+        /* Animasi zoomIn */
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale3d(.3,.3,.3);
+            }
+            50% {
+                opacity: 1;
+            }
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        .zoomIn {
+            animation-name: zoomIn;
+        }
+        
+        /* Media query untuk tampilan responsif */
+        @media (max-width: 576px) {
             .invitation-wrapper {
                 padding: 10px;
                 padding-top: 15px;
@@ -913,20 +1126,28 @@
             }
             
             .section-title {
-                font-size: 1rem;
+                font-size: 1.5rem;
             }
             
-            .arch-frame {
-                width: 160px;
-                height: 200px;
-            }
-            
-            .arch-frame img {
-                width: 130px;
+            .photo-frame {
+                height: 240px;
             }
             
             .mempelai-name {
-                font-size: 1.6rem;
+                font-size: 2.2rem;
+            }
+            
+            .mempelai-title {
+                font-size: 0.8rem;
+            }
+            
+            .parents-info {
+                font-size: 0.85rem;
+            }
+            
+            .instagram-btn {
+                font-size: 0.8rem;
+                padding: 0.25rem 0.75rem;
             }
             
             .step-title {
@@ -971,7 +1192,7 @@
             }
             
             .invitation-text {
-                font-size: 0.7rem;
+                font-size: 0.9rem;
                 margin: 12px 0;
                 line-height: 1.4;
             }
@@ -992,6 +1213,118 @@
             .countdown-label {
                 font-size: 0.7rem;
             }
+            
+            /* Responsif untuk Love Story */
+            .story-timeline {
+                padding-left: 35px;
+            }
+            
+            .story-timeline::before {
+                left: 12px;
+            }
+            
+            .step-icon {
+                left: -20px;
+                width: 24px;
+                height: 24px;
+                top: 15px;
+            }
+            
+            .step-icon i {
+                font-size: 0.9rem;
+            }
+            
+            .story-step {
+                padding: 15px;
+                margin-bottom: 25px;
+            }
+            
+            /* Responsif untuk ornamen */
+            .ornamen {
+                width: 100px;
+                height: 100px;
+            }
+            
+            /* Responsif untuk tombol di mobile */
+            .btn-custom, .btn, .btn-sm, .instagram-btn {
+                font-size: 0.75rem;
+                padding: 0.2rem 0.6rem;
+                min-height: 30px;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .mempelai-container {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .ornamen {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .mempelai-name {
+                font-size: 2.5rem;
+            }
+        }
+        
+        /* Animasi untuk mempelai card */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .mempelai-card {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .mempelai-card:nth-child(2) {
+            animation-delay: 0.3s;
+            opacity: 0;
+        }
+        
+        /* Toast Notification */
+        .toast-container {
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            z-index: 1050;
+        }
+        
+        .custom-toast {
+            background-color: var(--primary-color);
+            color: #1f3c5d;
+            border: 1px solid var(--primary-color);
+            border-radius: 8px;
+            padding: 12px 20px;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            display: flex;
+            align-items: center;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.3s, transform 0.3s;
+        }
+        
+        .custom-toast.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .toast-icon {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .toast-message {
+            font-family: 'Merriweather', serif; /* Diubah ke Merriweather */
+            font-size: 0.9rem;
         }
     </style>
 </head>
@@ -1024,40 +1357,63 @@
                 </div>
             </div>
             
-            <!-- 2. Info Mempelai -->
-            <div class="section-frame">
+            <!-- 2. Info Mempelai - DIPERBAIKI -->
+            <div class="mempelai-section">
+                <!-- Ornamen Dekoratif -->
+                <div class="ornamen ornamen-kiri"></div>
+                <div class="ornamen ornamen-kanan"></div>
+                
+                <h2 class="section-title">Mempelai</h2>
+                
                 <div class="mempelai-container">
                     <!-- Mempelai Pria -->
                     <div class="mempelai-card">
-                        <div class="arch-frame">
-                            <img src="images/pengantin-pria.png" alt="Jean Dwi Kustanto">
+                        <div class="photo-frame">
+                            <div class="arch-shape"></div>
+                            <div class="arch-border"></div>
+                            <div class="arch-border-bottom"></div>
+                            <img src="images/pengantin-pria.png" alt="Jean Dwi Kustanto" class="mempelai-photo">
                         </div>
-                        <div class="mempelai-name">Jean Dwi Kustanto</div>
-                        <div class="mempelai-title">PUTRA DARI</div>
-                        <div class="parents-info">
-                            Bapak Slamet Budiono (alm) & Ibu Kuswati
+                        <div class="mempelai-info">
+                            <h3 class="mempelai-name">Jean Dwi Kustanto</h3>
+                            <div class="mempelai-title">Putra dari</div>
+                            <div class="parents-info">
+                                Bapak Slamet Budiono (alm)<br>
+                                & Ibu Kuswati
+                            </div>
+                            <a href="https://instagram.com/jeandk" class="instagram-btn elementor-animation-shrink">
+                                <i class="fab fa-instagram"></i> @jeandk
+                            </a>
                         </div>
-                        <a href="https://instagram.com/jeandk" class="instagram-btn">@jeandk</a>
                     </div>
                     
                     <!-- Mempelai Wanita -->
                     <div class="mempelai-card">
-                        <div class="arch-frame">
-                            <img src="images/pengantin-wanita.png" alt="Pujiana Dwi Kusumawati">
+                        <div class="photo-frame">
+                            <div class="arch-shape"></div>
+                            <div class="arch-border"></div>
+                            <div class="arch-border-bottom"></div>
+                            <img src="images/pengantin-wanita.png" alt="Pujiana Dwi Kusumawati" class="mempelai-photo">
                         </div>
-                        <div class="mempelai-name">Pujiana Dwi Kusumawati</div>
-                        <div class="mempelai-title">PUTRI DARI</div>
-                        <div class="parents-info">
-                            Bapak Sudibyo & Ibu Siswati
+                        <div class="mempelai-info">
+                            <h3 class="mempelai-name">Pujiana Dwi Kusumawati</h3>
+                            <div class="mempelai-title">Putri dari</div>
+                            <div class="parents-info">
+                                Bapak Sudibyo<br>
+                                & Ibu Siswati
+                            </div>
+                            <a href="https://www.instagram.com/abdurrahmansstore" class="instagram-btn elementor-animation-shrink">
+                                <i class="fab fa-instagram"></i>@abdurrahmansstore
+                            </a>
                         </div>
-                        <a href="https://instagram.com/pujianadk" class="instagram-btn">@pujianadk</a>
                     </div>
                 </div>
             </div>
             
             <!-- 3. Countdown -->
-            <h2 class="section-title" id="cooldown">Menuju Hari Yang Dinanti</h2>
+            
             <div class="section-frame">
+                <h2 class="section-title" id="cooldown">Menuju Hari Yang Dinanti</h2>
                 <div class="countdown-container">
                     <div class="countdown" id="countdown">
                         <div class="countdown-item">
@@ -1078,20 +1434,23 @@
                         </div>
                     </div>
                     
-                    <button class="save-date-btn" onclick="saveToCalendar()">
+                    <button class="btn btn-custom elementor-animation-shrink" onclick="saveToCalendar()">
                         <i class="fas fa-calendar-alt"></i> Simpan Acara
                     </button>
                 </div>
             </div>
             
             <!-- 4. Teks undangan -->
-            <div class="invitation-text">
-                Dengan memohon rachmat dan ridho Allah SWT, dengan hormat, kami mengundang Bapak/Ibu/Ayah/Bunda/Ananda untuk hadir dalam acara walimatul 'urs kami:
+            <div class="section-frame">
+                <div class="invitation-text">
+                    Dengan memohon rachmat dan ridho Allah SWT, dengan hormat, kami mengundang Bapak/Ibu/Ayah/Bunda/Ananda untuk hadir dalam acara walimatul 'urs kami:
+                </div>
             </div>
             
             <!-- 5. Akad Nikah -->
-            <h2 class="section-title" id="akad-nikah">Akad Nikah</h2>
+            
             <div class="section-frame">
+                <h2 class="section-title" id="akad-nikah">Akad Nikah</h2>
                 <div class="event-details">
                     <div class="event-item">
                         <div class="event-info">
@@ -1110,13 +1469,19 @@
                             <i class="fas fa-location-arrow"></i>
                             <div class="event-text">Jl. Raya Tempuran, Desa Tempuran, Kecamatan Bantaran, Kabupaten Probolinggo - Jawa Timur (Timur SMPN I Bantaran)</div>
                         </div>
+                        <div class="mt-3">
+                            <a href="https://maps.app.goo.gl/sCyuqmGEeyo4UxWo9" target="_blank" class="btn btn-custom elementor-animation-shrink">
+                                📍 Lihat Lokasi
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
             
             <!-- 6. Walimatul Urs -->
-            <h2 class="section-title" id="walimatul-urs">Walimatul 'Urs</h2>
+            
             <div class="section-frame">
+                <h2 class="section-title" id="walimatul-urs">Walimatul 'Urs</h2>
                 <div class="event-details">
                     <div class="event-item">
                         <div class="event-info">
@@ -1135,23 +1500,29 @@
                             <i class="fas fa-location-arrow"></i>
                             <div class="event-text">Jl. Raya Tempuran, Desa Tempuran, Kecamatan Bantaran, Kabupaten Probolinggo - Jawa Timur (Timur SMPN I Bantaran)</div>
                         </div>
+                        <div class="mt-3">
+                            <a href="https://maps.app.goo.gl/sCyuqmGEeyo4UxWo9" target="_blank" class="btn btn-custom elementor-animation-shrink">
+                                📍 Lihat Lokasi
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
             
             <!-- 7. RSVP -->
-            <h2 class="section-title" id="rsvp">Konfirmasi Kehadiran</h2>
+            
             <div class="section-frame">
+                <h2 class="section-title" id="rsvp">Konfirmasi Kehadiran</h2>
                 <div class="rsvp-container">
                     <form class="rsvp-form" onsubmit="submitRSVP(event)">
-                        <div class="form-group">
-                            <label class="form-label" for="name">Nama Lengkap</label>
-                            <input type="text" id="name" class="form-input" placeholder="Nama Anda" required>
+                        <div class="mb-3">
+                            <label for="name" class="form-label form-label-custom">Nama Lengkap</label>
+                            <input type="text" class="form-control form-control-custom" id="name" placeholder="Nama Anda" required>
                         </div>
                         
-                        <div class="form-group">
-                            <label class="form-label" for="attendance">Kehadiran</label>
-                            <select id="attendance" class="form-select" required>
+                        <div class="mb-3">
+                            <label for="attendance" class="form-label form-label-custom">Kehadiran</label>
+                            <select class="form-select form-control-custom" id="attendance" required>
                                 <option value="">Pilih Kehadiran</option>
                                 <option value="hadir">Hadir</option>
                                 <option value="tidak-hadir">Tidak Hadir</option>
@@ -1159,24 +1530,25 @@
                             </select>
                         </div>
                         
-                        <div class="form-group">
-                            <label class="form-label" for="guests">Jumlah Tamu</label>
-                            <input type="number" id="guests" class="form-input" min="1" max="5" placeholder="1" required>
+                        <div class="mb-3">
+                            <label for="guests" class="form-label form-label-custom">Jumlah Tamu</label>
+                            <input type="number" class="form-control form-control-custom" id="guests" min="1" max="5" placeholder="1" required>
                         </div>
                         
-                        <div class="form-group">
-                            <label class="form-label" for="message">Pesan (Opsional)</label>
-                            <textarea id="message" class="form-textarea" placeholder="Tulis pesan Anda di sini"></textarea>
+                        <div class="mb-3">
+                            <label for="message" class="form-label form-label-custom">Pesan (Opsional)</label>
+                            <textarea class="form-control form-control-custom" id="message" rows="3" placeholder="Tulis pesan Anda di sini"></textarea>
                         </div>
                         
-                        <button type="submit" class="form-btn">Kirim Konfirmasi</button>
+                        <button type="submit" class="btn btn-custom w-100 elementor-animation-shrink">Kirim Konfirmasi</button>
                     </form>
                 </div>
             </div>
             
-            <!-- 8. Love Story -->
-            <h2 class="section-title" id="love-story">Love Story</h2>
+            <!-- 8. Love Story - DIPERBAIKI -->
+            
             <div class="section-frame">
+                <h2 class="section-title" id="love-story">Love Story</h2>
                 <div class="love-story">
                     <div class="story-timeline">
                         <div class="story-step animate fade-right delay-100" id="taaruf">
@@ -1230,8 +1602,9 @@
             </div>
             
             <!-- 9. Amplop Digital -->
-            <h2 class="section-title" id="amplop-digital">Amplop Digital</h2>
+            
             <div class="section-frame">
+                <h2 class="section-title" id="amplop-digital">Amplop Digital</h2>
                 <div class="digital-envelope">
                     <div class="envelope-text">
                         Bagi Bapak/Ibu/Saudara/Saudari yang ingin memberikan hadiah, dapat melalui amplop digital berikut:
@@ -1242,21 +1615,21 @@
                         <div class="bank-name">
                             <i class="fas fa-university"></i> Bank BSI
                         </div>
-                        <div class="account-number">121512521313</div>
+                        <div class="account-number">7189985597</div>
                         <div class="bank-details">A/n Pujiana Dwi Kusumawati</div>
-                        <button class="copy-btn" onclick="copyToClipboard('121512521313')">
+                        <button class="btn btn-sm btn-custom elementor-animation-shrink" onclick="copyToClipboard('7189985597')">
                             <i class="fas fa-copy"></i> Salin
                         </button>
                     </div>
                     
-                    <!-- Bank BCA -->
+                    <!-- dompet Digital OVO -->
                     <div class="bank-account">
                         <div class="bank-name">
-                            <i class="fas fa-university"></i> Bank BCA
+                            <i class="fas fa-wallet"></i> OVO
                         </div>
-                        <div class="account-number">1234567890</div>
-                        <div class="bank-details">A/n Jean Dwi Kustanto</div>
-                        <button class="copy-btn" onclick="copyToClipboard('1234567890')">
+                        <div class="account-number">085746706929</div>
+                        <div class="bank-details">A/n Pujiana Dwi Kusumawati</div>
+                        <button class="btn btn-sm btn-custom elementor-animation-shrink" onclick="copyToClipboard('085746706929')">
                             <i class="fas fa-copy"></i> Salin
                         </button>
                     </div>
@@ -1265,6 +1638,7 @@
             
             <!-- 10. Barakallahu laka wa baarakaa alaika wa jamaa bainakumaa fii khoir -->
             <div class="section-frame">
+                <h2 class="section-title" id="cooldown">Do'a Pengantin</h2>
                 <div class="closing-verse">
                     بَارَكَ اللهُ لَكُما وَبَارَكَ عَلَيْكُما وَجَمَعَ بَيْنَكُمَا فِي خَيْرٍ
                 </div>
@@ -1274,36 +1648,38 @@
             </div>
             
             <!-- 11. Form Ucapan & Doa -->
-            <h2 class="section-title" id="ucapan-doa">Ucapan & Doa</h2>
+            
             <div class="section-frame">
+                <h2 class="section-title" id="ucapan-doa">Ucapan & Doa</h2>
                 <div class="rsvp-container">
                     <form class="wishes-form" onsubmit="submitWish(event)">
-                        <div class="form-group">
-                            <label class="form-label" for="wish-name">Nama</label>
-                            <input type="text" id="wish-name" class="form-input" placeholder="Nama Anda" required>
+                        <div class="mb-3">
+                            <label for="wish-name" class="form-label form-label-custom">Nama</label>
+                            <input type="text" class="form-control form-control-custom" id="wish-name" placeholder="Nama Anda" required>
                         </div>
                         
-                        <div class="form-group">
-                            <label class="form-label" for="wish-message">Ucapan & Doa</label>
-                            <textarea id="wish-message" class="form-textarea" placeholder="Tulis ucapan dan doa Anda di sini" required></textarea>
+                        <div class="mb-3">
+                            <label for="wish-message" class="form-label form-label-custom">Ucapan & Doa</label>
+                            <textarea class="form-control form-control-custom" id="wish-message" rows="3" placeholder="Tulis ucapan dan doa Anda di sini" required></textarea>
                         </div>
                         
-                        <div class="form-group">
-                            <label class="form-label" for="wish-privacy">Privasi</label>
-                            <select id="wish-privacy" class="form-select">
+                        <div class="mb-3">
+                            <label for="wish-privacy" class="form-label form-label-custom">Privasi</label>
+                            <select class="form-select form-control-custom" id="wish-privacy">
                                 <option value="public">Publik</option>
                                 <option value="private">Privat (Hanya untuk mempelai)</option>
                             </select>
                         </div>
                         
-                        <button type="submit" class="form-btn">Kirim Ucapan</button>
+                        <button type="submit" class="btn btn-custom w-100 elementor-animation-shrink">Kirim Ucapan</button>
                     </form>
                 </div>
             </div>
             
             <!-- 12. Etika Selama Acara -->
-            <h2 class="section-title" id="etika-acara">Etika Selama Acara</h2>
+            
             <div class="section-frame">
+                <h2 class="section-title" id="etika-acara">Etika Selama Acara</h2>
                 <div class="etika-container">
                     <div class="etika-item">
                         <i class="fas fa-handshake"></i>
@@ -1325,36 +1701,34 @@
             </div>
             
             <!-- 13. Terimakasih -->
-            <h2 class="section-title" id="terimakasih">Terima Kasih</h2>
+            
             <div class="section-frame">
                 <div class="thank-you-container">
-                    <div class="guest-name-container">
-                        <div class="guest-label">Dengan hormat, kami mengharap doa baik kepada kami dari:</div>
-                        <div class="guest-name" id="guestName">Bapak/Ibu/Saudara/Saudari</div>
-                    </div>
-                    
-                    <div class="closing-verse">
-                        بَارَكَ اللهُ لَكُما وَبَارَكَ عَلَيْكُما وَجَمَعَ بَيْنَكُمَا فِي خَيْرٍ
-                    </div>
-                    <div class="closing-translation">
-                        "Semoga Allah memberi keberkahan kalian dan memberkahi atas kalian serta mengumpulkan kalian berdua dalam kebaikan"
-                    </div>
-                    
-                    <div class="footer-profile-image">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    
-                    <div class="bride-groom-footer">
-                        <div class="footer-names">Jean & Dwi</div>
+                    <div class="thank-you-bg"></div>
+                    <div class="thank-you-overlay"></div>
+                    <div class="thank-you-content">
+                        <div class="guest-label">Menjadi sebuah kebahagiana bagi kami apabila Bapak/Ibu/Saudara/Saudari berkenan hadir dalam hari bahagia kami. Terima kasih atas segala ucapan, do'a, dan perhatian yang diberikan.</div>
+                        
+                        <div class="closing-verse">
+                            جَزَاكُمُ اللهُ خَيْرًا
+                        </div>
+                        <div class="closing-translation">
+                            "Semoga Allah membalas kalian dengan kebaikan"
+                        </div>
+                        <div class="bride-groom-footer">
+                            <div class="footer-names">Jean & Dwi Beserta Keluarga</div>
+                        </div>
                     </div>
                 </div>
             </div>
+            
+            <!-- Foto pasangan pengantin -->
         </div>
     </div>
-    
+
     <!-- Menu Dropdown -->
     <div class="menu-dropdown" id="menuDropdown">
-        <div class="menu-item" onclick="scrollToSection('info-mempelai')">
+        <div class="menu-item" onclick="scrollToSection('mempelai-section')">
             <i class="fas fa-user-friends"></i> Mempelai
         </div>
         <div class="menu-item" onclick="scrollToSection('cooldown')">
@@ -1385,7 +1759,11 @@
             <i class="fas fa-heart"></i> Terima Kasih
         </div>
     </div>
-    
+    <!-- Audio player (tidak terlihat di layar) -->
+    <audio id="backgroundMusic" loop>
+      <source src="musik.mp3" type="audio/mpeg">
+      Browser Anda tidak mendukung elemen audio.
+    </audio>
     <!-- Floating buttons -->
     <div class="floating-buttons">
         <div class="floating-btn" onclick="toggleMenu()">
@@ -1395,6 +1773,12 @@
             <i class="fas fa-music" id="musicIcon"></i>
         </div>
     </div>
+    
+    <!-- Toast Container -->
+    <div class="toast-container"></div>
+    
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
     <script>
         // Fungsi untuk mendapatkan parameter dari URL
@@ -1453,7 +1837,7 @@
             } else {
                 audio.play().catch(e => {
                     console.log("Autoplay prevented:", e);
-                    alert("Silakan klik tombol musik lagi untuk memutar musik");
+                    showToast("Silakan klik tombol musik lagi untuk memutar musik", "info");
                 });
                 musicIcon.classList.remove('fa-music');
                 musicIcon.classList.add('fa-pause');
@@ -1464,17 +1848,43 @@
         // Fungsi untuk menyalin nomor rekening ke clipboard
         function copyToClipboard(text) {
             navigator.clipboard.writeText(text).then(() => {
-                // Tampilkan notifikasi bahwa nomor rekening telah disalin
-                const originalText = event.target.innerHTML;
-                event.target.innerHTML = '<i class="fas fa-check"></i> Tersalin';
-                
-                setTimeout(() => {
-                    event.target.innerHTML = originalText;
-                }, 2000);
+                showToast("Nomor rekening berhasil disalin", "success");
             }).catch(err => {
                 console.error('Gagal menyalin teks: ', err);
-                alert('Gagal menyalin nomor rekening. Silakan salin secara manual.');
+                showToast('Gagal menyalin nomor rekening. Silakan salin secara manual.', "error");
             });
+        }
+        
+        // Fungsi untuk menampilkan toast notification
+        function showToast(message, type = "info") {
+            const toastContainer = document.querySelector('.toast-container');
+            
+            const toast = document.createElement('div');
+            toast.className = 'custom-toast';
+            
+            let iconClass = 'fa-info-circle';
+            if (type === 'success') iconClass = 'fa-check-circle';
+            if (type === 'error') iconClass = 'fa-exclamation-circle';
+            
+            toast.innerHTML = `
+                <i class="fas ${iconClass} toast-icon"></i>
+                <div class="toast-message">${message}</div>
+            `;
+            
+            toastContainer.appendChild(toast);
+            
+            // Trigger animation
+            setTimeout(() => {
+                toast.classList.add('show');
+            }, 10);
+            
+            // Remove toast after 3 seconds
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => {
+                    toastContainer.removeChild(toast);
+                }, 300);
+            }, 3000);
         }
         
         // Countdown Timer
@@ -1537,7 +1947,7 @@
             const message = document.getElementById('message').value;
             
             // Di sini Anda bisa mengirim data ke server atau menampilkan notifikasi
-            alert(`Terima kasih ${name}! Konfirmasi kehadiran Anda telah diterima. Status: ${attendance}, Jumlah tamu: ${guests}`);
+            showToast(`Terima kasih ${name}! Konfirmasi kehadiran Anda telah diterima. Status: ${attendance}, Jumlah tamu: ${guests}`, "success");
             
             // Reset form
             event.target.reset();
@@ -1552,7 +1962,7 @@
             const privacy = document.getElementById('wish-privacy').value;
             
             // Di sini Anda bisa mengirim data ke server atau menampilkan notifikasi
-            alert(`Terima kasih ${name}! Ucapan & doa Anda telah terkirim.`);
+            showToast(`Terima kasih ${name}! Ucapan & doa Anda telah terkirim.`, "success");
             
             // Reset form
             event.target.reset();
