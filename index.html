@@ -10,20 +10,11 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <!-- Menambahkan font Engagement dari Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Engagement&family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* Import font Engagement */
-        @font-face {
-            font-family: 'Engagement';
-            src: url('https://dl.dafont.com/dl/?f=engagement') format('woff2'),
-                 url('https://dl.dafont.com/dl/?f=engagement') format('woff');
-            font-weight: normal;
-            font-style: normal;
-            font-display: swap;
-        }
-        
         * {
             margin: 0;
             padding: 0;
@@ -187,11 +178,11 @@
         }
         
         .couple-name {
-            font-family: 'Engagement', cursive; /* Diubah ke font Engagement */
-            font-size: 3.5rem; /* Diperbesar sedikit untuk font Engagement */
+            font-family: 'Engagement', cursive; /* Diubah ke font Engagement dari Google Fonts */
+            font-size: 4rem; /* Diperbesar untuk font Engagement */
             margin: 5px 0 12px;
             letter-spacing: 2px;
-            font-weight: normal; /* Diubah karena font Engagement tidak memiliki bold */
+            font-weight: 400; /* Engagement hanya memiliki regular weight */
             background: linear-gradient(90deg, #d4af37, #f9f295, #d4af37, #f9f295, #d4af37);
             background-size: 300% 300%;
             -webkit-background-clip: text;
@@ -349,10 +340,10 @@
         
         /* Nama tamu */
         .guest-name {
-            font-family: 'Engagement', cursive; /* Diubah ke font Engagement */
-            font-size: 2rem; /* Disesuaikan untuk font Engagement */
+            font-family: 'Engagement', cursive; /* Diubah ke font Engagement dari Google Fonts */
+            font-size: 2.2rem; /* Disesuaikan untuk font Engagement */
             color: #f9f295;
-            font-weight: normal; /* Diubah karena font Engagement tidak memiliki bold */
+            font-weight: 400; /* Engagement hanya memiliki regular weight */
             text-shadow: 0 0 10px rgba(0, 0, 0, 0.5), 0 0 6px rgba(249, 242, 149, 0.3);
             line-height: 1.2; /* Disesuaikan untuk font Engagement */
         }
@@ -520,7 +511,7 @@
             }
             
             .couple-name {
-                font-size: 3rem; /* Disesuaikan untuk layar kecil */
+                font-size: 3.2rem; /* Disesuaikan untuk layar kecil */
             }
             
             .date-day, .date-year {
@@ -532,7 +523,7 @@
             }
             
             .guest-name {
-                font-size: 1.8rem; /* Disesuaikan untuk layar kecil */
+                font-size: 1.9rem; /* Disesuaikan untuk layar kecil */
             }
             
             .open-btn {
