@@ -1765,6 +1765,7 @@
         // Variabel untuk musik
         let isPlaying = false;
         const audio = document.getElementById('backgroundMusic');
+        let autoplayAttempted = false;
         
         // Fungsi untuk toggle musik
         function toggleMusic() {
@@ -1778,38 +1779,48 @@
                 musicButton.classList.remove('playing');
                 isPlaying = false;
             } else {
-                // Coba putar audio
-                const playPromise = audio.play();
-                
-                if (playPromise !== undefined) {
-                    playPromise.then(_ => {
-                        // Pemutaran berhasil
-                        musicIcon.classList.remove('fa-music');
-                        musicIcon.classList.add('fa-pause');
-                        musicButton.classList.add('playing');
-                        isPlaying = true;
-                    })
-                    .catch(error => {
-                        // Pemutaran gagal (biasanya karena browser memblokir autoplay)
-                        console.log("Autoplay prevented:", error);
-                        showToast("Silakan klik tombol musik lagi untuk memutar musik", "info");
-                        
-                        // Tambahkan event listener untuk interaksi pertama pengguna
-                        document.addEventListener('click', function enableAudio() {
-                            audio.play().then(() => {
-                                musicIcon.classList.remove('fa-music');
-                                musicIcon.classList.add('fa-pause');
-                                musicButton.classList.add('playing');
-                                isPlaying = true;
-                                showToast("Musik sedang diputar", "success");
-                            }).catch(e => {
-                                showToast("Tidak dapat memutar musik. Periksa file musik Anda.", "error");
-                            });
-                            document.removeEventListener('click', enableAudio);
-                        }, { once: true });
-                    });
-                }
+                playAudio();
             }
+        }
+        
+        // Fungsi untuk memutar audio
+        function playAudio() {
+            const musicIcon = document.getElementById('musicIcon');
+            const musicButton = document.getElementById('musicButton');
+            
+            // Coba putar audio
+            const playPromise = audio.play();
+            
+            if (playPromise !== undefined) {
+                playPromise.then(_ => {
+                    // Pemutaran berhasil
+                    musicIcon.classList.remove('fa-music');
+                    musicIcon.classList.add('fa-pause');
+                    musicButton.classList.add('playing');
+                    isPlaying = true;
+                })
+                .catch(error => {
+                    // Pemutaran gagal (biasanya karena browser memblokir autoplay)
+                    console.log("Autoplay prevented:", error);
+                    
+                    if (!autoplayAttempted) {
+                        showToast("Klik tombol musik untuk memulai musik latar", "info");
+                        autoplayAttempted = true;
+                    }
+                });
+            }
+        }
+        
+        // Fungsi untuk mencoba autoplay saat halaman dimuat
+        function attemptAutoplay() {
+            // Set volume awal (0.5 = 50%)
+            audio.volume = 0.5;
+            
+            // Coba memuat audio
+            audio.load();
+            
+            // Coba autoplay
+            playAudio();
         }
         
         // Fungsi untuk menyalin nomor rekening ke clipboard
@@ -2006,10 +2017,9 @@
         // Inisialisasi animasi
         initAnimations();
         
-        // Inisialisasi audio
+        // Inisialisasi audio dengan autoplay
         window.addEventListener('load', () => {
-            // Set volume awal (0.5 = 50%)
-            audio.volume = 0.5;
+            attemptAutoplay();
             
             // Tambahkan event listener untuk menangani error
             audio.addEventListener('error', (e) => {
@@ -2017,8 +2027,21 @@
                 showToast("Tidak dapat memuat file musik. Periksa file musik Anda.", "error");
             });
             
-            // Coba memuat audio
-            audio.load();
+            // Tambahkan event listener untuk interaksi pertama pengguna
+            document.addEventListener('click', function enableAudio() {
+                if (!isPlaying) {
+                    playAudio();
+                }
+                document.removeEventListener('click', enableAudio);
+            }, { once: true });
+            
+            // Tambahkan event listener untuk scroll
+            document.addEventListener('scroll', function enableAudioOnScroll() {
+                if (!isPlaying) {
+                    playAudio();
+                }
+                document.removeEventListener('scroll', enableAudioOnScroll);
+            }, { once: true });
         });
         
         // Tutup menu dropdown saat klik di luar
