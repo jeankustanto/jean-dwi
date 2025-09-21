@@ -773,6 +773,24 @@
             font-size: 1.2rem;
         }
         
+        .floating-btn.playing {
+            background: rgba(255, 204, 77, 0.8);
+            border-color: #fff;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(255, 204, 77, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(255, 204, 77, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(255, 204, 77, 0);
+            }
+        }
+        
         .menu-dropdown {
             position: fixed;
             bottom: 70px;
@@ -1706,7 +1724,7 @@
     
     <!-- Audio player (tidak terlihat di layar) -->
     <audio id="backgroundMusic" loop>
-      <source src="musik.mp3" type="audio/mp3">
+      <source src="music.mp3" type="audio/mp3">
       Browser Anda tidak mendukung elemen audio.
     </audio>
     
@@ -1715,7 +1733,7 @@
         <div class="floating-btn" onclick="toggleMenu()">
             <i class="fas fa-bars"></i>
         </div>
-        <div class="floating-btn" onclick="toggleMusic()">
+        <div class="floating-btn" id="musicButton" onclick="toggleMusic()">
             <i class="fas fa-music" id="musicIcon"></i>
         </div>
     </div>
@@ -1746,32 +1764,51 @@
         
         // Variabel untuk musik
         let isPlaying = false;
-        let audio = null;
+        const audio = document.getElementById('backgroundMusic');
         
         // Fungsi untuk toggle musik
         function toggleMusic() {
             const musicIcon = document.getElementById('musicIcon');
-            
-            if (!audio) {
-                // Buat elemen audio
-                audio = new Audio();
-                audio.src = "music.mp3"; // Ganti dengan URL musik Anda
-                audio.loop = true;
-            }
+            const musicButton = document.getElementById('musicButton');
             
             if (isPlaying) {
                 audio.pause();
                 musicIcon.classList.remove('fa-pause');
                 musicIcon.classList.add('fa-music');
+                musicButton.classList.remove('playing');
                 isPlaying = false;
             } else {
-                audio.play().catch(e => {
-                    console.log("Autoplay prevented:", e);
-                    showToast("Silakan klik tombol musik lagi untuk memutar musik", "info");
-                });
-                musicIcon.classList.remove('fa-music');
-                musicIcon.classList.add('fa-pause');
-                isPlaying = true;
+                // Coba putar audio
+                const playPromise = audio.play();
+                
+                if (playPromise !== undefined) {
+                    playPromise.then(_ => {
+                        // Pemutaran berhasil
+                        musicIcon.classList.remove('fa-music');
+                        musicIcon.classList.add('fa-pause');
+                        musicButton.classList.add('playing');
+                        isPlaying = true;
+                    })
+                    .catch(error => {
+                        // Pemutaran gagal (biasanya karena browser memblokir autoplay)
+                        console.log("Autoplay prevented:", error);
+                        showToast("Silakan klik tombol musik lagi untuk memutar musik", "info");
+                        
+                        // Tambahkan event listener untuk interaksi pertama pengguna
+                        document.addEventListener('click', function enableAudio() {
+                            audio.play().then(() => {
+                                musicIcon.classList.remove('fa-music');
+                                musicIcon.classList.add('fa-pause');
+                                musicButton.classList.add('playing');
+                                isPlaying = true;
+                                showToast("Musik sedang diputar", "success");
+                            }).catch(e => {
+                                showToast("Tidak dapat memutar musik. Periksa file musik Anda.", "error");
+                            });
+                            document.removeEventListener('click', enableAudio);
+                        }, { once: true });
+                    });
+                }
             }
         }
         
@@ -1969,16 +2006,19 @@
         // Inisialisasi animasi
         initAnimations();
         
-        // Coba autoplay musik saat halaman dimuat
+        // Inisialisasi audio
         window.addEventListener('load', () => {
-            // Kebanyakan browser mencegah autoplay tanpa interaksi pengguna
-            // Jadi kita coba setelah interaksi pertama
-            document.addEventListener('click', function initAudio() {
-                if (!isPlaying && audio) {
-                    audio.play().catch(e => console.log("Autoplay prevented:", e));
-                }
-                document.removeEventListener('click', initAudio);
-            }, { once: true });
+            // Set volume awal (0.5 = 50%)
+            audio.volume = 0.5;
+            
+            // Tambahkan event listener untuk menangani error
+            audio.addEventListener('error', (e) => {
+                console.error("Error loading audio:", e);
+                showToast("Tidak dapat memuat file musik. Periksa file musik Anda.", "error");
+            });
+            
+            // Coba memuat audio
+            audio.load();
         });
         
         // Tutup menu dropdown saat klik di luar
