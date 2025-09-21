@@ -8,22 +8,22 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
-    <!-- Google Fonts -->
+    <!-- Google Fonts - Hanya font yang digunakan -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&family=Dancing+Script:wght@400;700&family=Montserrat:wght@300;400;600;700&family=Amiri+Quran:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Montserrat:wght@300;400;600;700&family=Amiri+Quran:wght@400;700&family=Merriweather:wght@400;700&family=Engagement&display=swap" rel="stylesheet">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
-            --primary-color: #ffcc4d; /* Warna emas yang diperbarui */
+            --primary-color: #ffcc4d;
             --secondary-color: #e0f0ff;
             --text-color: #d0e8ff;
             --bg-overlay: rgba(0, 0, 0, 0.3);
             --card-bg: rgba(255, 255, 255, 0.1);
-            --border-color: #ffcc4d; /* Warna border yang diperbarui */
+            --border-color: #ffcc4d;
         }
         
         * {
@@ -179,7 +179,7 @@
         }
         
         .section-title {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Merriweather', serif;
             font-size: 1.8rem;
             color: var(--primary-color);
             margin: 20px 0 15px;
@@ -204,7 +204,7 @@
         }
         
         .invitation-text {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Merriweather', serif;
             font-size: 1rem;
             color: var(--secondary-color);
             margin: 15px 0;
@@ -248,7 +248,7 @@
         }
         
         .event-text {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Merriweather', serif;
             font-size: 0.9rem;
             color: var(--text-color);
         }
@@ -287,7 +287,7 @@
         }
         
         .countdown-value {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Merriweather', serif;
             font-size: 1.5rem;
             font-weight: 700;
             color: var(--primary-color);
@@ -295,13 +295,12 @@
         }
         
         .countdown-label {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Merriweather', serif;
             font-size: 0.75rem;
             color: var(--secondary-color);
             margin-top: 5px;
         }
         
-        /* Custom CSS untuk semua tombol */
         .btn-custom {
             background-color: var(--primary-color);
             color: #1f3c5d;
@@ -321,6 +320,7 @@
             min-height: 32px;
             opacity: 0;
             animation: fadeInUp 0.8s ease forwards;
+            font-family: 'Merriweather', serif;
         }
         
         .btn-custom:hover {
@@ -330,7 +330,6 @@
             color: #1f3c5d;
         }
         
-        /* Override semua ukuran tombol Bootstrap */
         .btn {
             padding: 0.25rem 0.75rem;
             font-size: 0.8rem;
@@ -338,6 +337,7 @@
             border-radius: 20px;
             min-height: 32px;
             height: auto;
+            font-family: 'Merriweather', serif;
         }
         
         .btn-sm {
@@ -347,6 +347,7 @@
             border-radius: 20px;
             min-height: 32px;
             height: auto;
+            font-family: 'Merriweather', serif;
         }
         
         .form-control-custom {
@@ -355,7 +356,7 @@
             border-radius: 8px;
             padding: 10px;
             color: var(--secondary-color);
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Merriweather', serif;
             font-size: 0.8rem;
             opacity: 0;
             animation: fadeInUp 0.8s ease forwards;
@@ -370,7 +371,7 @@
         }
         
         .form-label-custom {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Merriweather', serif;
             font-size: 0.9rem;
             color: var(--primary-color);
             font-weight: 600;
@@ -384,7 +385,7 @@
         }
         
         .envelope-text {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Merriweather', serif;
             font-size: 0.9rem;
             color: var(--secondary-color);
             margin-bottom: 15px;
@@ -405,7 +406,7 @@
         }
         
         .bank-name {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Merriweather', serif;
             font-size: 1rem;
             font-weight: 600;
             color: var(--primary-color);
@@ -416,7 +417,7 @@
         }
         
         .bank-details {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Merriweather', serif;
             font-size: 0.9rem;
             color: var(--text-color);
             margin-bottom: 10px;
@@ -424,18 +425,66 @@
         }
         
         .account-number {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Merriweather', serif;
             font-size: 1rem;
             font-weight: 600;
             color: var(--primary-color);
             margin-bottom: 10px;
             word-break: break-all;
         }
+
+        .section-frame-thank-you {
+            background-image: url('images/cover-couple.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(4px);
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+        }
         
-        .thank-you-container {
+        .section-frame-thank-you::before,
+        .section-frame-thank-you::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-color: var(--border-color);
+            border-style: solid;
+            border-width: 0;
+            z-index: 1;
+        }
+        
+        .section-frame-thank-you::before {
+            top: -2px;
+            left: -2px;
+            border-top-width: 2px;
+            border-left-width: 2px;
+            border-top-left-radius: 12px;
+        }
+        
+        .section-frame-thank-you::after {
+            bottom: -2px;
+            right: -2px;
+            border-bottom-width: 2px;
+            border-right-width: 2px;
+            border-bottom-right-radius: 12px;
+        }
+        
+       .thank-you-container {
+           background: rgba(0, 0, 0, 0.5);
             margin: 20px 0;
             text-align: center;
             position: relative;
+            min-height: 300px;
+            border-radius: 10px;
+            overflow: hidden;
         }
         
         .thank-you-bg {
@@ -444,20 +493,17 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('images/cover-couple.png');
-            background-size: cover;
-            background-position: center;
             border-radius: 10px;
             z-index: 1;
         }
-        
+
         .thank-you-overlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.6);
+            background: rgba(255, 255, 255, 0);
             border-radius: 10px;
             z-index: 2;
         }
@@ -465,7 +511,12 @@
         .thank-you-content {
             position: relative;
             z-index: 3;
-            padding: 30px 20px;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 300px;
         }
         
         .thank-you-title {
@@ -497,7 +548,7 @@
         }
                 
         .footer-names {
-            font-family: 'Dancing Script', cursive;
+            font-family: 'Engagement', cursive;
             font-size: 1.5rem;
             color: var(--primary-color);
             text-shadow: 0 0 8px rgba(0, 0, 0, 0.5), 0 0 4px rgba(255, 204, 77, 0.3);
@@ -524,63 +575,31 @@
         }
         
         .etika-text {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Merriweather', serif;
             font-size: 0.85rem;
             color: var(--text-color);
             line-height: 1.4;
         }
         
-        /* CSS Khusus untuk Bagian Mempelai */
-        .mempelai-section {
-            position: relative;
-            margin: 40px 0;
-            padding: 20px 0;
+        /* ============ MEMPELAI CARD STYLING - REVISI ============ */
+        .mempelai-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            margin-bottom: 40px;
         }
         
-        /* Ornamen Dekoratif */
-        .ornamen {
-            position: absolute;
-            width: 120px;
-            height: 120px;
-            background-size: contain;
-            background-repeat: no-repeat;
-            opacity: 0.4;
-            z-index: 1;
-        }
-        
-        .ornamen-kiri {
-            top: -20px;
-            left: -20px;
-            background-image: url('images/ornamen-kiri.png');
-        }
-        
-        .ornamen-kanan {
-            top: -20px;
-            right: -20px;
-            background-image: url('images/ornamen-kanan.png');
-            transform: scaleX(-1);
-        }
-        
-        /* Container untuk Mempelai */
-        .mempelai-container {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 30px;
-            position: relative;
-            z-index: 2;
-        }
-        
-        /* Kartu Mempelai */
         .mempelai-card {
-            background: rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(8px);
-            border-radius: 16px;
-            border: 1px solid var(--border-color);
+            border: 2px solid var(--border-color);
+            border-radius: 120px 120px 0 0;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
             overflow: hidden;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             opacity: 0;
             animation: zoomIn 0.8s ease forwards;
+            position: relative;
         }
         
         .mempelai-card:hover {
@@ -588,79 +607,22 @@
             box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
         }
         
-        /* Bingkai Foto - DIPERBAIKI */
-        .photo-frame {
-            position: relative;
-            height: 280px;
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: var(--card-bg);
-        }
-        
-        .arch-shape {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, 
-                rgba(255, 255, 255, 0.05) 0%, 
-                rgba(255, 255, 255, 0.02) 70%, 
-                transparent 100%);
-            z-index: 1;
-        }
-        
-        .arch-border {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80%;
-            height: 85%;
-            border: 2px solid var(--border-color);
-            border-bottom: none;
-            border-radius: 100% 100% 0 0;
-            z-index: 2;
-        }
-        
-        .arch-border-bottom {
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80%;
-            height: 40px;
-            border-left: 2px solid var(--border-color);
-            border-right: 2px solid var(--border-color);
-            border-bottom: 2px solid var(--border-color);
-            border-radius: 0 0 15px 15px;
-            z-index: 2;
-        }
-        
         .mempelai-photo {
-            width: 85%;
-            height: auto;
+            width: 100%;
+            height: 300px;
             object-fit: cover;
-            border-radius: 10px;
-            z-index: 0;
-            transition: transform 0.5s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            display: block;
         }
         
-        .mempelai-card:hover .mempelai-photo {
-            transform: scale(1.05);
-        }
-        
-        /* Informasi Mempelai */
         .mempelai-info {
-            padding: 25px 20px;
+            padding: 20px;
             text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(8px);
         }
         
         .mempelai-name {
-            font-family: 'Great Vibes', cursive;
+            font-family: 'Engagement', cursive;
             font-size: 2.8rem;
             color: var(--primary-color);
             margin-bottom: 10px;
@@ -672,10 +634,10 @@
         }
         
         .mempelai-title {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Merriweather', serif;
             font-size: 0.9rem;
             font-weight: 500;
-            color: var(--text-color);
+            color: #1f3c5d;
             text-transform: lowercase;
             letter-spacing: 1px;
             margin-bottom: 12px;
@@ -685,24 +647,26 @@
         }
         
         .parents-info {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Merriweather', serif;
             font-size: 0.95rem;
-            color: var(--text-color);
+            color: white;
             margin-bottom: 20px;
             line-height: 1.5;
             opacity: 0;
             animation: zoomIn 0.8s ease forwards;
             animation-delay: 0.5s;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 10px;
+            border-radius: 8px;
         }
         
-        /* Tombol Instagram */
         .instagram-btn {
             display: inline-flex;
             align-items: center;
             gap: 8px;
             background-color: var(--primary-color);
             color: #1f3c5d;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Merriweather', serif;
             font-weight: 500;
             padding: 0.25rem 0.75rem;
             border-radius: 20px;
@@ -736,14 +700,14 @@
         }
         
         .guest-label {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Merriweather', serif;
             font-size: 0.85rem;
             color: var(--secondary-color);
             margin-bottom: 5px;
         }
         
         .guest-name {
-            font-family: 'Dancing Script', cursive;
+            font-family: 'Engagement', cursive;
             font-size: 1.5rem;
             color: var(--primary-color);
             text-shadow: 0 0 8px rgba(0, 0, 0, 0.5), 0 0 4px rgba(255, 204, 77, 0.3);
@@ -762,7 +726,7 @@
         }
         
         .closing-translation {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Merriweather', serif;
             font-size: 0.85rem;
             color: var(--secondary-color);
             margin-bottom: 5px;
@@ -809,6 +773,24 @@
             font-size: 1.2rem;
         }
         
+        .floating-btn.playing {
+            background: rgba(255, 204, 77, 0.8);
+            border-color: #fff;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(255, 204, 77, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(255, 204, 77, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(255, 204, 77, 0);
+            }
+        }
+        
         .menu-dropdown {
             position: fixed;
             bottom: 70px;
@@ -834,7 +816,7 @@
             padding: 8px 12px;
             border-radius: 6px;
             color: var(--secondary-color);
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Merriweather', serif;
             font-size: 0.9rem;
             cursor: pointer;
             transition: all 0.2s ease;
@@ -912,7 +894,6 @@
             }
         }
         
-        /* Love Story Styles - DIPERBAIKI */
         .love-story {
             margin-top: 20px;
         }
@@ -979,7 +960,7 @@
         }
         
         .step-content p {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Merriweather', serif;
             font-size: 0.9rem;
             color: var(--text-color);
             line-height: 1.5;
@@ -991,7 +972,6 @@
             font-weight: 600;
         }
         
-        /* Animation Classes */
         .animate {
             opacity: 0;
             transition: opacity 0.5s ease, transform 0.5s ease;
@@ -1031,7 +1011,6 @@
             transition-delay: 0.4s;
         }
         
-        /* Animasi shrink effect */
         .elementor-animation-shrink {
             transition-duration: .3s;
             transition-property: transform;
@@ -1043,7 +1022,6 @@
             transform: scale(.9);
         }
         
-        /* Animasi fadeInDown */
         @keyframes fadeInDown {
             from {
                 opacity: 0;
@@ -1059,7 +1037,6 @@
             animation-name: fadeInDown;
         }
         
-        /* Animasi fadeInRight */
         @keyframes fadeInRight {
             from {
                 opacity: 0;
@@ -1075,7 +1052,6 @@
             animation-name: fadeInRight;
         }
         
-        /* Animasi fadeInUp */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -1091,7 +1067,6 @@
             animation-name: fadeInUp;
         }
         
-        /* Animasi zoomIn */
         @keyframes zoomIn {
             from {
                 opacity: 0;
@@ -1110,7 +1085,44 @@
             animation-name: zoomIn;
         }
         
-        /* Media query untuk tampilan responsif */
+        .toast-container {
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            z-index: 1050;
+        }
+        
+        .custom-toast {
+            background-color: var(--primary-color);
+            color: #1f3c5d;
+            border: 1px solid var(--primary-color);
+            border-radius: 8px;
+            padding: 12px 20px;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            display: flex;
+            align-items: center;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.3s, transform 0.3s;
+        }
+        
+        .custom-toast.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .toast-icon {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .toast-message {
+            font-family: 'Merriweather', serif;
+            font-size: 0.9rem;
+        }
+        
+        /* ============ MEDIA QUERIES ============ */
         @media (max-width: 576px) {
             .invitation-wrapper {
                 padding: 10px;
@@ -1126,8 +1138,8 @@
                 font-size: 1.5rem;
             }
             
-            .photo-frame {
-                height: 240px;
+            .mempelai-photo {
+                height: 250px;
             }
             
             .mempelai-name {
@@ -1211,7 +1223,6 @@
                 font-size: 0.7rem;
             }
             
-            /* Responsif untuk Love Story */
             .story-timeline {
                 padding-left: 35px;
             }
@@ -1236,28 +1247,41 @@
                 margin-bottom: 25px;
             }
             
-            /* Responsif untuk ornamen */
-            .ornamen {
-                width: 100px;
-                height: 100px;
-            }
-            
-            /* Responsif untuk tombol di mobile */
             .btn-custom, .btn, .btn-sm, .instagram-btn {
                 font-size: 0.75rem;
                 padding: 0.2rem 0.6rem;
                 min-height: 30px;
             }
+            
+            /* Adjust border-radius for smaller screens */
+            .mempelai-card {
+                border-radius: 80px 80px 0 0;
+            }
+        }
+        
+        @media (min-width: 577px) and (max-width: 767px) {
+            .mempelai-photo {
+                height: 350px;
+            }
+            
+            /* Adjust border-radius for medium screens */
+            .mempelai-card {
+                border-radius: 100px 100px 0 0;
+            }
         }
         
         @media (min-width: 768px) {
-            .mempelai-container {
-                grid-template-columns: 1fr 1fr;
+            .mempelai-wrapper {
+                flex-direction: row;
+                justify-content: space-between;
             }
             
-            .ornamen {
-                width: 150px;
-                height: 150px;
+            .mempelai-card {
+                width: 48%;
+            }
+            
+            .mempelai-photo {
+                height: 400px;
             }
             
             .mempelai-name {
@@ -1265,7 +1289,17 @@
             }
         }
         
-        /* Animasi untuk mempelai card */
+        @media (min-width: 992px) {
+            .mempelai-photo {
+                height: 450px;
+            }
+            
+            /* Full border-radius for large screens */
+            .mempelai-card {
+                border-radius: 120px 120px 0 0;
+            }
+        }
+        
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -1284,44 +1318,6 @@
         .mempelai-card:nth-child(2) {
             animation-delay: 0.3s;
             opacity: 0;
-        }
-        
-        /* Toast Notification */
-        .toast-container {
-            position: fixed;
-            bottom: 80px;
-            right: 20px;
-            z-index: 1050;
-        }
-        
-        .custom-toast {
-            background-color: var(--primary-color);
-            color: #1f3c5d;
-            border: 1px solid var(--primary-color);
-            border-radius: 8px;
-            padding: 12px 20px;
-            margin-bottom: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-            display: flex;
-            align-items: center;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.3s, transform 0.3s;
-        }
-        
-        .custom-toast.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .toast-icon {
-            margin-right: 10px;
-            font-size: 1.2rem;
-        }
-        
-        .toast-message {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.9rem;
         }
     </style>
 </head>
@@ -1354,61 +1350,40 @@
                 </div>
             </div>
             
-            <!-- 2. Info Mempelai - DIPERBAIKI -->
-            <div class="mempelai-section">
-                <!-- Ornamen Dekoratif -->
-                <div class="ornamen ornamen-kiri"></div>
-                <div class="ornamen ornamen-kanan"></div>
-                
-                <h2 class="section-title">Mempelai</h2>
-                
-                <div class="mempelai-container">
-                    <!-- Mempelai Pria -->
-                    <div class="mempelai-card">
-                        <div class="photo-frame">
-                            <div class="arch-shape"></div>
-                            <div class="arch-border"></div>
-                            <div class="arch-border-bottom"></div>
-                            <img src="images/pengantin-pria.png" alt="Jean Dwi Kustanto" class="mempelai-photo">
+            <!-- 2. Info Mempelai - REVISI -->
+            <div class="mempelai-wrapper">
+                <!-- Mempelai Pria -->
+                <div class="mempelai-card">
+                    <img src="images/pengantin-pria.png" alt="Foto Mempelai Pria" class="mempelai-photo">
+                    <div class="mempelai-info">
+                        <h3 class="mempelai-name">Jean Dwi Kustanto</h3>
+                        <p class="mempelai-title">Putra Dari</p>
+                        <div class="parents-info">
+                            Bapak Slamet Budiono (alm) & Ibu Kuswati
                         </div>
-                        <div class="mempelai-info">
-                            <h3 class="mempelai-name">Jean Dwi Kustanto</h3>
-                            <div class="mempelai-title">Putra dari</div>
-                            <div class="parents-info">
-                                Bapak Slamet Budiono (alm)<br>
-                                & Ibu Kuswati
-                            </div>
-                            <a href="https://instagram.com/jeandk" class="instagram-btn elementor-animation-shrink">
-                                <i class="fab fa-instagram"></i> @jeandk
-                            </a>
-                        </div>
+                        <a href="https://instagram.com/jean_dk" class="instagram-btn">
+                            <i class="fab fa-instagram"></i> @jean_dk
+                        </a>
                     </div>
-                    
-                    <!-- Mempelai Wanita -->
-                    <div class="mempelai-card">
-                        <div class="photo-frame">
-                            <div class="arch-shape"></div>
-                            <div class="arch-border"></div>
-                            <div class="arch-border-bottom"></div>
-                            <img src="images/pengantin-wanita.png" alt="Pujiana Dwi Kusumawati" class="mempelai-photo">
+                </div>
+                
+                <!-- Mempelai Wanita -->
+                <div class="mempelai-card">
+                    <img src="images/pengantin-wanita.png" alt="Foto Mempelai Wanita" class="mempelai-photo">
+                    <div class="mempelai-info">
+                        <h3 class="mempelai-name">Pujiana Dwi Kusumawati</h3>
+                        <p class="mempelai-title">Putri Dari</p>
+                        <div class="parents-info">
+                            Bapak Sudibyo & Ibu Siswati
                         </div>
-                        <div class="mempelai-info">
-                            <h3 class="mempelai-name">Pujiana Dwi Kusumawati</h3>
-                            <div class="mempelai-title">Putri dari</div>
-                            <div class="parents-info">
-                                Bapak Sudibyo<br>
-                                & Ibu Siswati
-                            </div>
-                            <a href="https://www.instagram.com/abdurrahmansstore" class="instagram-btn elementor-animation-shrink">
-                                <i class="fab fa-instagram"></i>@abdurrahmansstore
-                            </a>
-                        </div>
+                        <a href="https://instagram.com/pujiana" class="instagram-btn">
+                            <i class="fab fa-instagram"></i> @pujiana
+                        </a>
                     </div>
                 </div>
             </div>
             
             <!-- 3. Countdown -->
-            
             <div class="section-frame">
                 <h2 class="section-title" id="cooldown">Menuju Hari Yang Dinanti</h2>
                 <div class="countdown-container">
@@ -1445,7 +1420,6 @@
             </div>
             
             <!-- 5. Akad Nikah -->
-            
             <div class="section-frame">
                 <h2 class="section-title" id="akad-nikah">Akad Nikah</h2>
                 <div class="event-details">
@@ -1476,7 +1450,6 @@
             </div>
             
             <!-- 6. Walimatul Urs -->
-            
             <div class="section-frame">
                 <h2 class="section-title" id="walimatul-urs">Walimatul 'Urs</h2>
                 <div class="event-details">
@@ -1507,7 +1480,6 @@
             </div>
             
             <!-- 7. RSVP -->
-            
             <div class="section-frame">
                 <h2 class="section-title" id="rsvp">Konfirmasi Kehadiran</h2>
                 <div class="rsvp-container">
@@ -1542,8 +1514,7 @@
                 </div>
             </div>
             
-            <!-- 8. Love Story - DIPERBAIKI -->
-            
+            <!-- 8. Love Story -->
             <div class="section-frame">
                 <h2 class="section-title" id="love-story">Love Story</h2>
                 <div class="love-story">
@@ -1599,7 +1570,6 @@
             </div>
             
             <!-- 9. Amplop Digital -->
-            
             <div class="section-frame">
                 <h2 class="section-title" id="amplop-digital">Amplop Digital</h2>
                 <div class="digital-envelope">
@@ -1635,7 +1605,7 @@
             
             <!-- 10. Barakallahu laka wa baarakaa alaika wa jamaa bainakumaa fii khoir -->
             <div class="section-frame">
-                <h2 class="section-title" id="cooldown">Do'a Pengantin</h2>
+                <h2 class="section-title" id="doa-pengantin">Do'a Pengantin</h2>
                 <div class="closing-verse">
                     بَارَكَ اللهُ لَكُما وَبَارَكَ عَلَيْكُما وَجَمَعَ بَيْنَكُمَا فِي خَيْرٍ
                 </div>
@@ -1645,7 +1615,6 @@
             </div>
             
             <!-- 11. Form Ucapan & Doa -->
-            
             <div class="section-frame">
                 <h2 class="section-title" id="ucapan-doa">Ucapan & Doa</h2>
                 <div class="rsvp-container">
@@ -1674,7 +1643,6 @@
             </div>
             
             <!-- 12. Etika Selama Acara -->
-            
             <div class="section-frame">
                 <h2 class="section-title" id="etika-acara">Etika Selama Acara</h2>
                 <div class="etika-container">
@@ -1698,14 +1666,14 @@
             </div>
             
             <!-- 13. Terimakasih -->
-            
-            <div class="section-frame">
+            <div class="section-frame-thank-you">
                 <div class="thank-you-container">
                     <div class="thank-you-bg"></div>
                     <div class="thank-you-overlay"></div>
                     <div class="thank-you-content">
-                        <div class="guest-label">Menjadi sebuah kebahagiana bagi kami apabila Bapak/Ibu/Saudara/Saudari berkenan hadir dalam hari bahagia kami. Terima kasih atas segala ucapan, do'a, dan perhatian yang diberikan.</div>
-                        
+                        <div class="guest-label">
+                            Menjadi sebuah kebahagiana bagi kami apabila Bapak/Ibu/Saudara/Saudari berkenan hadir dalam hari bahagia kami. Terima kasih atas segala ucapan, do'a, dan perhatian yang diberikan.
+                        </div>
                         <div class="closing-verse">
                             جَزَاكُمُ اللهُ خَيْرًا
                         </div>
@@ -1713,21 +1681,18 @@
                             "Semoga Allah membalas kalian dengan kebaikan"
                         </div>
                         <div class="bride-groom-footer">
-                            <div class="footer-names">Jean & Dwi Beserta Keluarga</div>
+                            <div class="footer-names">
+                                Jean & Dwi Beserta Keluarga
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            
-            <!-- Foto pasangan pengantin -->
         </div>
     </div>
 
-    <!-- Menu Dropdown -->
+    <!-- Menu Dropdown Navigasi -->
     <div class="menu-dropdown" id="menuDropdown">
-        <div class="menu-item" onclick="scrollToSection('mempelai-section')">
-            <i class="fas fa-user-friends"></i> Mempelai
-        </div>
         <div class="menu-item" onclick="scrollToSection('cooldown')">
             <i class="fas fa-clock"></i> Countdown
         </div>
@@ -1752,21 +1717,23 @@
         <div class="menu-item" onclick="scrollToSection('etika-acara')">
             <i class="fas fa-mosque"></i> Etika Acara
         </div>
-        <div class="menu-item" onclick="scrollToSection('terimakasih')">
+        <div class="menu-item" onclick="scrollToSection('section-frame-thank-you')">
             <i class="fas fa-heart"></i> Terima Kasih
         </div>
     </div>
+    
     <!-- Audio player (tidak terlihat di layar) -->
     <audio id="backgroundMusic" loop>
-      <source src="musik.mp3" type="audio/mpeg">
+      <source src="musik.mp3" type="audio/mp3">
       Browser Anda tidak mendukung elemen audio.
     </audio>
+    
     <!-- Floating buttons -->
     <div class="floating-buttons">
         <div class="floating-btn" onclick="toggleMenu()">
             <i class="fas fa-bars"></i>
         </div>
-        <div class="floating-btn" onclick="toggleMusic()">
+        <div class="floating-btn" id="musicButton" onclick="toggleMusic()">
             <i class="fas fa-music" id="musicIcon"></i>
         </div>
     </div>
@@ -1778,22 +1745,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
     <script>
-        // Fungsi untuk mendapatkan parameter dari URL
-        function getUrlParameter(name) {
-            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
-            const regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
-            const results = regex.exec(location.search);
-            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
-        }
-        
-        // Mendapatkan nama tamu dari parameter URL
-        const guestName = getUrlParameter('to');
-        
-        // Jika ada nama tamu, tampilkan di halaman
-        if (guestName) {
-            document.getElementById('guestName').textContent = guestName;
-        }
-        
         // Fungsi untuk toggle menu
         function toggleMenu() {
             const menuDropdown = document.getElementById('menuDropdown');
@@ -1813,33 +1764,63 @@
         
         // Variabel untuk musik
         let isPlaying = false;
-        let audio = null;
+        const audio = document.getElementById('backgroundMusic');
+        let autoplayAttempted = false;
         
         // Fungsi untuk toggle musik
         function toggleMusic() {
             const musicIcon = document.getElementById('musicIcon');
-            
-            if (!audio) {
-                // Buat elemen audio
-                audio = new Audio();
-                audio.src = "https://example.com/wedding-music.mp3"; // Ganti dengan URL musik Anda
-                audio.loop = true;
-            }
+            const musicButton = document.getElementById('musicButton');
             
             if (isPlaying) {
                 audio.pause();
                 musicIcon.classList.remove('fa-pause');
                 musicIcon.classList.add('fa-music');
+                musicButton.classList.remove('playing');
                 isPlaying = false;
             } else {
-                audio.play().catch(e => {
-                    console.log("Autoplay prevented:", e);
-                    showToast("Silakan klik tombol musik lagi untuk memutar musik", "info");
-                });
-                musicIcon.classList.remove('fa-music');
-                musicIcon.classList.add('fa-pause');
-                isPlaying = true;
+                playAudio();
             }
+        }
+        
+        // Fungsi untuk memutar audio
+        function playAudio() {
+            const musicIcon = document.getElementById('musicIcon');
+            const musicButton = document.getElementById('musicButton');
+            
+            // Coba putar audio
+            const playPromise = audio.play();
+            
+            if (playPromise !== undefined) {
+                playPromise.then(_ => {
+                    // Pemutaran berhasil
+                    musicIcon.classList.remove('fa-music');
+                    musicIcon.classList.add('fa-pause');
+                    musicButton.classList.add('playing');
+                    isPlaying = true;
+                })
+                .catch(error => {
+                    // Pemutaran gagal (biasanya karena browser memblokir autoplay)
+                    console.log("Autoplay prevented:", error);
+                    
+                    if (!autoplayAttempted) {
+                        showToast("Klik tombol musik untuk memulai musik latar", "info");
+                        autoplayAttempted = true;
+                    }
+                });
+            }
+        }
+        
+        // Fungsi untuk mencoba autoplay saat halaman dimuat
+        function attemptAutoplay() {
+            // Set volume awal (0.5 = 50%)
+            audio.volume = 0.5;
+            
+            // Coba memuat audio
+            audio.load();
+            
+            // Coba autoplay
+            playAudio();
         }
         
         // Fungsi untuk menyalin nomor rekening ke clipboard
@@ -2036,15 +2017,30 @@
         // Inisialisasi animasi
         initAnimations();
         
-        // Coba autoplay musik saat halaman dimuat
+        // Inisialisasi audio dengan autoplay
         window.addEventListener('load', () => {
-            // Kebanyakan browser mencegah autoplay tanpa interaksi pengguna
-            // Jadi kita coba setelah interaksi pertama
-            document.addEventListener('click', function initAudio() {
-                if (!isPlaying && audio) {
-                    audio.play().catch(e => console.log("Autoplay prevented:", e));
+            attemptAutoplay();
+            
+            // Tambahkan event listener untuk menangani error
+            audio.addEventListener('error', (e) => {
+                console.error("Error loading audio:", e);
+                showToast("Tidak dapat memuat file musik. Periksa file musik Anda.", "error");
+            });
+            
+            // Tambahkan event listener untuk interaksi pertama pengguna
+            document.addEventListener('click', function enableAudio() {
+                if (!isPlaying) {
+                    playAudio();
                 }
-                document.removeEventListener('click', initAudio);
+                document.removeEventListener('click', enableAudio);
+            }, { once: true });
+            
+            // Tambahkan event listener untuk scroll
+            document.addEventListener('scroll', function enableAudioOnScroll() {
+                if (!isPlaying) {
+                    playAudio();
+                }
+                document.removeEventListener('scroll', enableAudioOnScroll);
             }, { once: true });
         });
         
@@ -2061,4 +2057,3 @@
     </script>
 </body>
 </html>
-
