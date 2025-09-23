@@ -1123,6 +1123,86 @@
             font-size: 0.9rem;
         }
         
+        /* ============ WISHES DISPLAY STYLING ============ */
+        .wishes-container {
+            max-height: 400px;
+            overflow-y: auto;
+            padding-right: 10px;
+            margin-top: 20px;
+        }
+        
+        .wishes-container::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .wishes-container::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+        
+        .wishes-container::-webkit-scrollbar-thumb {
+            background: rgba(255, 204, 77, 0.5);
+            border-radius: 10px;
+        }
+        
+        .wishes-container::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 204, 77, 0.7);
+        }
+        
+        .wish-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            padding: 15px;
+            margin-bottom: 15px;
+            opacity: 0;
+            animation: fadeInUp 0.5s ease forwards;
+        }
+        
+        .wish-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .wish-name {
+            font-family: 'Merriweather', serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin: 0;
+        }
+        
+        .wish-date {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75rem;
+            color: var(--secondary-color);
+            opacity: 0.7;
+        }
+        
+        .wish-message {
+            font-family: 'Merriweather', serif;
+            font-size: 0.9rem;
+            color: var(--text-color);
+            margin: 0;
+            line-height: 1.5;
+        }
+        
+        .wish-privacy {
+            display: inline-block;
+            margin-top: 8px;
+            font-size: 0.75rem;
+            color: var(--primary-color);
+        }
+        
+        .no-wishes {
+            text-align: center;
+            padding: 20px;
+            color: var(--secondary-color);
+            font-style: italic;
+        }
+        
         /* ============ MEDIA QUERIES ============ */
         @media (max-width: 576px) {
             .invitation-wrapper {
@@ -1267,6 +1347,10 @@
             
             .ornamen-container {
                 margin-bottom: 15px;
+            }
+            
+            .wishes-container {
+                max-height: 300px;
             }
         }
         
@@ -1672,6 +1756,14 @@
                         </div>
                         <button type="submit" class="btn btn-custom w-100 elementor-animation-shrink">Kirim Ucapan</button>
                     </form>
+                    
+                    <!-- Area untuk menampilkan ucapan -->
+                    <div class="mt-4">
+                        <h3 class="section-title" style="font-size: 1.4rem;">Ucapan & Doa dari Tamu</h3>
+                        <div id="wishes-container" class="wishes-container">
+                            <!-- Ucapan akan ditampilkan di sini -->
+                        </div>
+                    </div>
                 </div>
             </div>
             
@@ -1974,11 +2066,77 @@
             const message = document.getElementById('wish-message').value;
             const privacy = document.getElementById('wish-privacy').value;
             
-            // Di sini Anda bisa mengirim data ke server atau menampilkan notifikasi
-            showToast(`Terima kasih ${name}! Ucapan & doa Anda telah terkirim.`, "success");
+            // Buat objek ucapan
+            const wish = {
+                name: name,
+                message: message,
+                privacy: privacy,
+                timestamp: new Date().toISOString()
+            };
+            
+            // Ambil ucapan yang sudah ada dari localStorage
+            let wishes = JSON.parse(localStorage.getItem('weddingWishes')) || [];
+            
+            // Tambahkan ucapan baru ke array
+            wishes.unshift(wish); // unshift agar ucapan terbaru muncul di atas
+            
+            // Simpan kembali ke localStorage
+            localStorage.setItem('weddingWishes', JSON.stringify(wishes));
+            
+            // Tampilkan ucapan
+            displayWishes();
             
             // Reset form
             event.target.reset();
+            
+            // Tampilkan notifikasi
+            showToast(`Terima kasih ${name}! Ucapan & doa Anda telah terkirim.`, "success");
+        }
+        
+        // Fungsi untuk menampilkan ucapan
+        function displayWishes() {
+            const wishesContainer = document.getElementById('wishes-container');
+            
+            // Ambil ucapan dari localStorage
+            const wishes = JSON.parse(localStorage.getItem('weddingWishes')) || [];
+            
+            // Kosongkan container
+            wishesContainer.innerHTML = '';
+            
+            // Jika tidak ada ucapan
+            if (wishes.length === 0) {
+                wishesContainer.innerHTML = '<div class="no-wishes">Belum ada ucapan. Jadilah yang pertama memberikan ucapan!</div>';
+                return;
+            }
+            
+            // Tampilkan setiap ucapan
+            wishes.forEach((wish, index) => {
+                // Format tanggal
+                const date = new Date(wish.timestamp);
+                const formattedDate = date.toLocaleDateString('id-ID', { 
+                    day: 'numeric', 
+                    month: 'long', 
+                    year: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit'
+                });
+                
+                // Buat elemen untuk ucapan
+                const wishElement = document.createElement('div');
+                wishElement.className = 'wish-item';
+                wishElement.style.animationDelay = `${index * 0.1}s`;
+                
+                wishElement.innerHTML = `
+                    <div class="wish-header">
+                        <h5 class="wish-name">${wish.name}</h5>
+                        <span class="wish-date">${formattedDate}</span>
+                    </div>
+                    <p class="wish-message">${wish.message}</p>
+                    ${wish.privacy === 'private' ? '<span class="wish-privacy"><i class="fas fa-lock"></i> Privat</span>' : ''}
+                `;
+                
+                wishesContainer.appendChild(wishElement);
+            });
         }
         
         // Membuat efek bintang
@@ -2077,6 +2235,9 @@
                 }
                 document.removeEventListener('scroll', enableAudioOnScroll);
             }, { once: true });
+            
+            // Tampilkan ucapan yang sudah ada
+            displayWishes();
         });
         
         // Tutup menu dropdown saat klik di luar
