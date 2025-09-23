@@ -62,7 +62,7 @@
             justify-content: center;
             align-items: center;
             width: 100%;
-            min-height: 100vh;
+            min-height: 50vh;
             padding: 15px;
             position: relative;
             z-index: 2;
@@ -74,13 +74,28 @@
             border-radius: 16px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             backdrop-filter: blur(2px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            border: 8px solid rgba(255, 255, 255, 0.18);
             position: relative;
             overflow: hidden;
             max-width: 400px;
             width: 100%;
             /* Menghilangkan style default card Bootstrap */
             color: inherit;
+            /* Tambahkan animasi scale in */
+            animation: myAnim 1.5s ease 0s 1 normal forwards;
+            transform-origin: center center;
+        }
+        
+        /* Animasi scale in untuk frame */
+        @keyframes myAnim {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
         }
         
         /* Frame transparan dengan efek glassmorphism */
@@ -301,7 +316,7 @@
             margin-bottom: 20px;
             position: relative;
             padding: 12px 8px;
-            border: 1px solid rgba(255, 215, 0, 0.4);
+            border: 2px solid rgba(255, 215, 0, 0.4);
             border-radius: 10px;
             background: rgba(255, 255, 255, 0.05);
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
