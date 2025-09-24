@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
-    <!-- Google Fonts - Hanya font yang digunakan -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Montserrat:wght@300;400;600;700&family=Amiri+Quran:wght@400;700&family=Merriweather:wght@400;700&family=Engagement&display=swap" rel="stylesheet">
@@ -98,38 +98,6 @@
         
         .invitation-container::-webkit-scrollbar-thumb:hover {
             background: rgba(255, 204, 77, 0.7);
-        }
-        
-        /* Ornamen Styles */
-        .ornamen-container {
-            text-align: center;
-            margin-bottom: 20px;
-            opacity: 0;
-            animation: fadeInDown 2s ease forwards;
-        }
-        
-        .ornamen-atas {
-            max-width: 100%;
-            height: auto;
-            width: 768px;
-            max-height: 332px;
-            object-fit: contain;
-            filter: drop-shadow(0 0 10px rgba(255, 204, 77, 0.3));
-        }
-
-        /* Ornamen Styles */
-        .ornamen-bawah-container {
-            text-align: center;
-            opacity: 0;
-            animation: fadeInDown 1s ease forwards;
-        }
-        
-        .ornamen-bawah {
-            max-width: 100%;
-            height: auto;
-            width: 768px;
-            max-height: 332px;
-            object-fit: contain;
         }
         
         .section-frame {
@@ -586,7 +554,6 @@
             line-height: 1.4;
         }
         
-        /* ============ MEMPELAI CARD STYLING - REVISI ============ */
         .mempelai-wrapper {
             display: flex;
             flex-direction: column;
@@ -1127,7 +1094,6 @@
             font-size: 0.9rem;
         }
         
-        /* ============ WISHES DISPLAY STYLING ============ */
         .wishes-container {
             max-height: 400px;
             overflow-y: auto;
@@ -1207,7 +1173,6 @@
             font-style: italic;
         }
         
-        /* ============ MEDIA QUERIES ============ */
         @media (max-width: 576px) {
             .invitation-wrapper {
                 padding: 10px;
@@ -1338,19 +1303,8 @@
                 min-height: 30px;
             }
             
-            /* Adjust border-radius for smaller screens */
             .mempelai-card {
                 border-radius: 80px 80px 0 0;
-            }
-            
-            /* Ornamen media query */
-            .ornamen-atas {
-                width: 100%;
-                max-height: 200px;
-            }
-            
-            .ornamen-container {
-                margin-bottom: 15px;
             }
             
             .wishes-container {
@@ -1363,15 +1317,8 @@
                 height: 350px;
             }
             
-            /* Adjust border-radius for medium screens */
             .mempelai-card {
                 border-radius: 100px 100px 0 0;
-            }
-            
-            /* Ornamen media query */
-            .ornamen-atas {
-                width: 90%;
-                max-height: 250px;
             }
         }
         
@@ -1399,7 +1346,6 @@
                 height: 450px;
             }
             
-            /* Full border-radius for large screens */
             .mempelai-card {
                 border-radius: 120px 120px 0 0;
             }
@@ -1454,11 +1400,8 @@
                     QS. Furqan: 74
                 </div>
             </div>
-            <!-- Ornamen Atas -->
-                <div class="ornamen-container">
-                    <img src="images/ornamen-tengah.png" alt="Ornament" class="ornamen-atas">
-                </div>
-            <!-- 2. Info Mempelai - REVISI -->
+            
+            <!-- 2. Info Mempelai -->
             <div class="mempelai-wrapper">
                 <!-- Mempelai Pria -->
                 <div class="mempelai-card">
@@ -1490,10 +1433,7 @@
                     </div>
                 </div>
             </div>
-            <!-- Ornamen Atas -->
-            <div class="ornamen-container">
-                <img src="images/jar-moon.png" alt="Ornament" class="ornamen-atas">
-            </div>
+            
             <!-- 3. Countdown -->
             <div class="section-frame">
                 <h2 class="section-title" id="cooldown">Menuju Hari Yang Dinanti</h2>
@@ -1589,10 +1529,7 @@
                     </div>
                 </div>
             </div>
-            <!-- Ornamen Atas -->
-            <div class="ornamen-container">
-                <img src="images/ornamen-tengah.png" alt="Ornament" class="ornamen-atas">
-            </div>
+            
             <!-- 7. RSVP -->
             <div class="section-frame">
                 <h2 class="section-title" id="rsvp">Konfirmasi Kehadiran</h2>
@@ -1627,10 +1564,7 @@
                     </form>
                 </div>
             </div>
-            <!-- Ornamen Atas -->
-            <div class="ornamen-container">
-                <img src="images/jar-moon.png" alt="Ornament" class="ornamen-atas">
-            </div>
+            
             <!-- 8. Love Story -->
             <div class="section-frame">
                 <h2 class="section-title" id="love-story">Love Story</h2>
@@ -1684,10 +1618,7 @@
                     </div>
                 </div>
             </div>
-            <!-- Ornamen Atas -->
-            <div class="ornamen-container">
-                <img src="images/ornamen-tengah.png" alt="Ornament" class="ornamen-atas">
-            </div>
+            
             <!-- 9. Amplop Digital -->
             <div class="section-frame">
                 <h2 class="section-title" id="amplop-digital">Amplop Digital</h2>
@@ -1721,10 +1652,7 @@
                     </div>
                 </div>
             </div>
-            <!-- Ornamen Atas -->
-            <div class="ornamen-container">
-                <img src="images/jar-moon.png" alt="Ornament" class="ornamen-atas">
-            </div>
+            
             <!-- 10. Barakallahu laka wa baarakaa alaika wa jamaa bainakumaa fii khoir -->
             <div class="section-frame">
                 <h2 class="section-title" id="doa-pengantin">Do'a Pengantin</h2>
@@ -1811,11 +1739,6 @@
                                 Jean & Dwi Beserta Keluarga
                             </div>
                         </div>
-                    
-                    <!-- Ornamen Atas -->
-                    <div class="ornamen-bawah-container">
-                        <img src="images/couple.png" alt="Ornament" class="ornamen-bawah">
-                    </div>
                 </div>
             </div>
 
@@ -1891,6 +1814,7 @@
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
         const database = firebase.database();
+        const rsvpRef = database.ref('rsvp');
         const wishesRef = database.ref('wishes');
         
         // Fungsi untuk toggle menu
@@ -2063,7 +1987,7 @@
             window.open(url, '_blank');
         }
         
-        // Fungsi untuk submit RSVP
+        // Fungsi untuk submit RSVP ke Firebase
         function submitRSVP(event) {
             event.preventDefault();
             
@@ -2072,11 +1996,43 @@
             const guests = document.getElementById('guests').value;
             const message = document.getElementById('message').value;
             
-            // Di sini Anda bisa mengirim data ke server atau menampilkan notifikasi
-            showToast(`Terima kasih ${name}! Konfirmasi kehadiran Anda telah diterima. Status: ${attendance}, Jumlah tamu: ${guests}`, "success");
+            // Tampilkan loading state
+            const submitButton = event.target.querySelector('button[type="submit"]');
+            const originalText = submitButton.innerHTML;
+            submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Mengirim...';
+            submitButton.disabled = true;
             
-            // Reset form
-            event.target.reset();
+            // Buat objek RSVP
+            const rsvp = {
+                name: name,
+                attendance: attendance,
+                guests: guests,
+                message: message,
+                timestamp: new Date().toISOString()
+            };
+            
+            // Simpan ke Firebase
+            rsvpRef.push(rsvp)
+                .then(() => {
+                    // Reset form
+                    event.target.reset();
+                    
+                    // Kembalikan button ke state semula
+                    submitButton.innerHTML = originalText;
+                    submitButton.disabled = false;
+                    
+                    // Tampilkan notifikasi
+                    showToast(`Terima kasih ${name}! Konfirmasi kehadiran Anda telah diterima. Status: ${attendance}, Jumlah tamu: ${guests}`, "success");
+                })
+                .catch((error) => {
+                    console.error('Error saving RSVP:', error);
+                    
+                    // Kembalikan button ke state semula
+                    submitButton.innerHTML = originalText;
+                    submitButton.disabled = false;
+                    
+                    showToast("Gagal mengirim konfirmasi. Silakan coba lagi.", "error");
+                });
         }
         
         // Fungsi untuk submit ucapan & doa ke Firebase
@@ -2087,6 +2043,12 @@
             const message = document.getElementById('wish-message').value;
             const privacy = document.getElementById('wish-privacy').value;
             
+            // Tampilkan loading state
+            const submitButton = event.target.querySelector('button[type="submit"]');
+            const originalText = submitButton.innerHTML;
+            submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Mengirim...';
+            submitButton.disabled = true;
+            
             // Buat objek ucapan
             const wish = {
                 name: name,
@@ -2094,12 +2056,6 @@
                 privacy: privacy,
                 timestamp: new Date().toISOString()
             };
-            
-            // Tampilkan loading state
-            const submitButton = event.target.querySelector('button[type="submit"]');
-            const originalText = submitButton.innerHTML;
-            submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Mengirim...';
-            submitButton.disabled = true;
             
             // Simpan ke Firebase
             wishesRef.push(wish)
