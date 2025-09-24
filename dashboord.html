@@ -276,7 +276,7 @@
     </div>
     
     <!-- Back Button -->
-    <a href="index.html" class="back-button">
+    <a href="undangan.html" class="back-button">
         <i class="fas fa-arrow-left"></i>
     </a>
     
@@ -298,14 +298,148 @@
             appId: "1:877292826662:web:903eff3cdd94c38cd736e7",
             measurementId: "G-N49XBBL4P3"
         };
-        
+
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
         const database = firebase.database();
         const rsvpRef = database.ref('rsvp');
-        
+
+        // Fungsi untuk memuat data RSVP
+        function loadRSVPData() {
+            // Tampilkan loading
+            document.getElementById('loading').style.display = 'block';
+            document.getElementById('table-container').style.display = 'none';
+            document.getElementById('empty-state').style.display = 'none';
+            
+            // Ambil data dari Firebase
+            rsvpRef.orderByChild('timestamp').once('value')
+                .then((snapshot) => {
+                    const tableBody = document.getElementById('rsvp-table-body');
+                    tableBody.innerHTML = '';
+                    
+                    if (!snapshot.exists()) {
+                        // Tidak ada data
+                        document.getElementById('loading').style.display = 'none';
+                        document.getElementById('empty-state').style.display = 'block';
+                        updateStatistics(0, 0, 0, 0);
+                        return;
+                    }
+                    
+                    let hadirCount = 0;
+                    let tidakHadirCount = 0;
+                    let raguCount = 0;
+                    let totalGuests = 0;
+                    
+                    let index = 1;
+                    snapshot.forEach((childSnapshot) => {
+                        const rsvp = childSnapshot.val();
+                        const id = childSnapshot.key;
+                        
+                        // Format tanggal
+                        const date = new Date(rsvp.timestamp);
+                        const formattedDate = date.toLocaleDateString('id-ID', { 
+                            day: 'numeric', 
+                            month: 'long', 
+                            year: 'numeric',
+                            hour: '2-digit',
+                            minute: '2-digit'
+                        });
+                        
+                        // Hitung statistik
+                        if (rsvp.attendance === 'hadir') {
+                            hadirCount++;
+                            totalGuests += parseInt(rsvp.guests || 0);
+                        } else if (rsvp.attendance === 'tidak-hadir') {
+                            tidakHadirCount++;
+                        } else if (rsvp.attendance === 'masih-ragu') {
+                            raguCount++;
+                        }
+                        
+                        // Buat baris tabel
+                        const row = document.createElement('tr');
+                        row.innerHTML = `
+                            <td>${index}</td>
+                            <td>${rsvp.name}</td>
+                            <td><span class="badge ${getAttendanceBadgeClass(rsvp.attendance)}">${formatAttendance(rsvp.attendance)}</span></td>
+                            <td>${rsvp.guests || 0}</td>
+                            <td>${rsvp.message || '-'}</td>
+                            <td>${formattedDate}</td>
+                            <td>
+                                <button class="btn btn-sm btn-delete" onclick="confirmDelete('${id}')">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </td>
+                        `;
+                        
+                        tableBody.appendChild(row);
+                        index++;
+                    });
+                    
+                    // Update statistik
+                    updateStatistics(hadirCount, tidakHadirCount, raguCount, totalGuests);
+                    
+                    // Tampilkan tabel
+                    document.getElementById('loading').style.display = 'none';
+                    document.getElementById('table-container').style.display = 'block';
+                    document.getElementById('total-rsvp').textContent = `${index - 1} Data`;
+                })
+                .catch((error) => {
+                    console.error('Error fetching RSVP data:', error);
+                    document.getElementById('loading').style.display = 'none';
+                    showToast('Gagal memuat data. Silakan refresh halaman.', 'error');
+                });
+        }
+
+        // Fungsi untuk mendapatkan kelas badge berdasarkan kehadiran
+        function getAttendanceBadgeClass(attendance) {
+            switch(attendance) {
+                case 'hadir': return 'bg-success';
+                case 'tidak-hadir': return 'bg-danger';
+                case 'masih-ragu': return 'bg-warning';
+                default: return 'bg-secondary';
+            }
+        }
+
+        // Fungsi untuk memformat teks kehadiran
+        function formatAttendance(attendance) {
+            switch(attendance) {
+                case 'hadir': return 'Hadir';
+                case 'tidak-hadir': return 'Tidak Hadir';
+                case 'masih-ragu': return 'Masih Ragu';
+                default: return attendance;
+            }
+        }
+
+        // Fungsi untuk update statistik
+        function updateStatistics(hadir, tidakHadir, ragu, totalGuests) {
+            document.getElementById('stat-hadir').textContent = hadir;
+            document.getElementById('stat-tidak-hadir').textContent = tidakHadir;
+            document.getElementById('stat-ragu').textContent = ragu;
+            document.getElementById('stat-total-guests').textContent = totalGuests;
+        }
+
+        // Fungsi untuk konfirmasi hapus data
+        function confirmDelete(id) {
+            if (confirm('Apakah Anda yakin ingin menghapus data ini?')) {
+                deleteRSVP(id);
+            }
+        }
+
+        // Fungsi untuk hapus data RSVP
+        function deleteRSVP(id) {
+            rsvpRef.child(id).remove()
+                .then(() => {
+                    showToast('Data berhasil dihapus', 'success');
+                    loadRSVPData(); // Reload data
+                })
+                .catch((error) => {
+                    console.error('Error deleting RSVP:', error);
+                    showToast('Gagal menghapus data', 'error');
+                });
+        }
+
         // Fungsi untuk menampilkan toast notification
-        function showToast(message, type = "info") {
+        function showToast(message, type = 'info') {
             const toastContainer = document.querySelector('.toast-container');
             
             const toast = document.createElement('div');
@@ -335,184 +469,10 @@
                 }, 300);
             }, 3000);
         }
-        
-        // Fungsi untuk menampilkan statistik RSVP
-        function updateRSVPStats(snapshot) {
-            let hadirCount = 0;
-            let tidakHadirCount = 0;
-            let raguCount = 0;
-            let totalGuests = 0;
-            let totalRSVP = 0;
-            
-            snapshot.forEach((childSnapshot) => {
-                const rsvp = childSnapshot.val();
-                totalRSVP++;
-                
-                if (rsvp.attendance === 'hadir') {
-                    hadirCount++;
-                    totalGuests += rsvp.guests;
-                } else if (rsvp.attendance === 'tidak-hadir') {
-                    tidakHadirCount++;
-                } else if (rsvp.attendance === 'masih-ragu') {
-                    raguCount++;
-                }
-            });
-            
-            // Update statistik di UI
-            document.getElementById('stat-hadir').textContent = hadirCount;
-            document.getElementById('stat-tidak-hadir').textContent = tidakHadirCount;
-            document.getElementById('stat-ragu').textContent = raguCount;
-            document.getElementById('stat-total-guests').textContent = totalGuests;
-            document.getElementById('total-rsvp').textContent = `${totalRSVP} Data`;
-        }
-        
-        // Fungsi untuk menampilkan tabel RSVP
-        function displayRSVPTable(snapshot) {
-            const tableBody = document.getElementById('rsvp-table-body');
-            const tableContainer = document.getElementById('table-container');
-            const table = document.getElementById('rsvp-table');
-            const loading = document.getElementById('loading');
-            const emptyState = document.getElementById('empty-state');
-            
-            // Sembunyikan loading dan empty state
-            loading.style.display = 'none';
-            emptyState.style.display = 'none';
-            
-            // Tampilkan tabel
-            tableContainer.style.display = 'block';
-            
-            // Kosongkan tabel
-            tableBody.innerHTML = '';
-            
-            if (!snapshot.exists()) {
-                // Tampilkan empty state jika tidak ada data
-                tableContainer.style.display = 'none';
-                emptyState.style.display = 'block';
-                return;
-            }
-            
-            // Ubah snapshot menjadi array dan urutkan dari yang terbaru
-            const rsvps = [];
-            snapshot.forEach((childSnapshot) => {
-                rsvps.push({
-                    id: childSnapshot.key,
-                    ...childSnapshot.val()
-                });
-            });
-            
-            // Urutkan dari yang terbaru
-            rsvps.reverse();
-            
-            // Tampilkan setiap RSVP di tabel
-            rsvps.forEach((rsvp, index) => {
-                // Format tanggal
-                const date = new Date(rsvp.timestamp);
-                const formattedDate = date.toLocaleDateString('id-ID', { 
-                    day: 'numeric', 
-                    month: 'short', 
-                    year: 'numeric'
-                });
-                
-                // Tentukan kelas badge berdasarkan kehadiran
-                let badgeClass = '';
-                if (rsvp.attendance === 'hadir') badgeClass = 'bg-success';
-                else if (rsvp.attendance === 'tidak-hadir') badgeClass = 'bg-danger';
-                else if (rsvp.attendance === 'masih-ragu') badgeClass = 'bg-warning';
-                
-                // Format teks kehadiran
-                let attendanceText = '';
-                if (rsvp.attendance === 'hadir') attendanceText = 'Hadir';
-                else if (rsvp.attendance === 'tidak-hadir') attendanceText = 'Tidak Hadir';
-                else if (rsvp.attendance === 'masih-ragu') attendanceText = 'Masih Ragu';
-                
-                // Buat baris tabel
-                const row = document.createElement('tr');
-                
-                row.innerHTML = `
-                    <td>${index + 1}</td>
-                    <td>${rsvp.name}</td>
-                    <td><span class="badge ${badgeClass}">${attendanceText}</span></td>
-                    <td>${rsvp.guests}</td>
-                    <td>
-                        <div class="text-truncate" style="max-width: 200px;" title="${rsvp.message || ''}">
-                            ${rsvp.message || '-'}
-                        </div>
-                    </td>
-                    <td><small class="text-muted">${formattedDate}</small></td>
-                    <td>
-                        <button class="btn btn-sm btn-delete" onclick="showDeleteConfirm('${rsvp.id}', '${rsvp.name}')">
-                            <i class="fas fa-trash"></i>
-                        </button>
-                    </td>
-                `;
-                
-                tableBody.appendChild(row);
-            });
-        }
-        
-        // Fungsi untuk menampilkan dialog konfirmasi hapus
-        function showDeleteConfirm(id, name) {
-            // Buat dialog konfirmasi
-            const confirmDialog = document.createElement('div');
-            confirmDialog.className = 'confirm-dialog';
-            
-            confirmDialog.innerHTML = `
-                <div class="confirm-content">
-                    <h5 class="mb-3">Konfirmasi Hapus</h5>
-                    <p class="mb-4">Apakah Anda yakin ingin menghapus data konfirmasi dari <strong>${name}</strong>?</p>
-                    <div class="d-flex justify-content-end gap-2">
-                        <button class="btn btn-secondary" onclick="closeDeleteConfirm()">Batal</button>
-                        <button class="btn btn-danger" onclick="deleteRSVP('${id}', '${name}')">Hapus</button>
-                    </div>
-                </div>
-            `;
-            
-            document.body.appendChild(confirmDialog);
-        }
-        
-        // Fungsi untuk menutup dialog konfirmasi hapus
-        function closeDeleteConfirm() {
-            const confirmDialog = document.querySelector('.confirm-dialog');
-            if (confirmDialog) {
-                document.body.removeChild(confirmDialog);
-            }
-        }
-        
-        // Fungsi untuk menghapus data RSVP
-        function deleteRSVP(id, name) {
-            // Tutup dialog konfirmasi
-            closeDeleteConfirm();
-            
-            // Tampilkan loading
-            showToast('Menghapus data...', 'info');
-            
-            // Hapus data dari Firebase
-            rsvpRef.child(id).remove()
-                .then(() => {
-                    showToast(`Data konfirmasi dari ${name} telah dihapus.`, "success");
-                })
-                .catch((error) => {
-                    console.error('Error deleting RSVP:', error);
-                    showToast("Gagal menghapus data. Silakan coba lagi.", "error");
-                });
-        }
-        
-        // Setup real-time listener untuk RSVP
-        function setupRSVPListener() {
-            rsvpRef.orderByChild('timestamp')
-                .on('value', (snapshot) => {
-                    // Update statistik
-                    updateRSVPStats(snapshot);
-                    
-                    // Update tabel RSVP
-                    displayRSVPTable(snapshot);
-                });
-        }
-        
-        // Inisialisasi halaman
+
+        // Inisialisasi saat halaman dimuat
         document.addEventListener('DOMContentLoaded', function() {
-            // Setup listener untuk data RSVP
-            setupRSVPListener();
+            loadRSVPData();
         });
     </script>
 </body>
